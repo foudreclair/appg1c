@@ -87,6 +87,44 @@ img {
 	float: left;
 
 }
+.corps {
+	margin-top: 150px;
+	width: 70%;
+	margin-left: 15%;
+	
+
+}
+
+.corps h1 {
+	color: MediumVioletRed;
+
+}
+
+
+.corps .form input {
+	margin-top: 50px;
+	margin-right: 10px; 
+	border: solid;
+	border: 1px;
+	border-radius: 2px;
+	height: 30px;
+	width: 200px;
+	opacity: 0.9;
+}
+.corps .form .button {
+	font-size: 17px;
+	margin-top: 20px;
+	font-family: LatoLight;
+	font-weight: bold;
+	color: MediumVioletRed;
+}
+.corps .form {
+	border-top: solid;
+	border-width: 1px;
+	border-color: MediumVioletRed;
+
+}
+
 
 
 
