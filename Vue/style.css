@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "LatoLight";
+    src: url('fonts/Lato-Light.ttf');
+    src: url('fonts/Lato-Light.woff');
+    src: url('fonts/Lato-Light.eot');
+    src: url('fonts/Lato-Light.woff2');
+}
+body {
+	font-family: LatoLight;
+	margin: 0;
+	padding: 0;
+	background-image: url('fond.jpg');
+	height: 1000px;
+}
+.header {
+	
+	
+	padding-bottom: 0.5%;
+	color: MediumVioletRed;
+	
+}
+
+.menu {
+	
+	
+	border-width: 1px;
+	padding: 0;
+	background-color: White;
+	text-align: center;
+	opacity: 0.7;
+	display: inline-block;
+	width: 100%;
+	position: fixed;
+	font-weight: bold;
+
+
+	
+}
+.header ul li {
+	list-style-type: none;
+	display: inline-block;
+	
+	
+}
+.menu ul li {
+
+	font-size: 20px;
+	width: 13%;
+	text-align: center;
+	display: inline-block;
+	font: bold;
+	height: 20px;
+
+
+}
+.menu ul {
+	text-align: right;
+	margin-right: 20px;
+}
+.sous_menu {
+	text-align: center;
+	position: relative;
+	border-width: 1px;
+	position: fixed;
+	top: 50px;
+	right: 10px;
+	width: 40%;
+	color: LavenderBlush;
+
+}
+.sous_menu ul li {
+	
+	list-style-type: none;
+	display: inline-block;
+	width: 25%;
+	border: solid;
+	border-width: 1px;
+
+}
+
+
+img {
+	height: 40px;
+
+	padding-left: 1%;
+	padding-top: 5px;
+	float: left;
+
+}
+
+
+
+
