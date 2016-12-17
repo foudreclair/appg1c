@@ -9,17 +9,17 @@
 <div class ="header">
 	
 
-	<div class ="menu">
+	<nav class ="menu">
 		<img src="logo.png">
 		<ul>
-			<li>Accueil</li>
-			<li>Réglages</li>
-			<li>Scénarios</li>
-			<li>Statistiques</li>
-			<li>Contact</li>
+			<li><a href="#">Accueil</a></li>
+			<li><a href="#">Réglages</a></li>
+			<li><a href="#">Scénarios</a></li>
+			<li><a href="#">Statistiques</a></li>
+			<li><a href="#">Contact</a></li>
 		</ul>
 		
-	</div>
+	</nav>
 	</div>
 	
 	<div class="sous_menu">

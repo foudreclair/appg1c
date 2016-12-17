@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "LatoLight";
+    src: url('fonts/Lato-Light.ttf');
+    src: url('fonts/Lato-Light.woff');
+    src: url('fonts/Lato-Light.eot');
+    src: url('fonts/Lato-Light.woff2');
+}
+body {
+	font-family: LatoLight;
+	background-image: url('fond.jpg');
+	background-size: 100%;
+	width: 100%;
+}
+.left_bloc{
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    float: left;
+}
+.left_bloc h3 {
+	text-align: center;
+}
+.right_bloc{
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    float: right;
+}
+.right_bloc h3 {
+	text-align: center;
+}
