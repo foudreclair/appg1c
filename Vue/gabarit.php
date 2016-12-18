@@ -1,9 +1,15 @@
-<?php
-
-session_start();
-
-$titre = "Accueil";
-$sous_menu =['Appartements', 'Pièces', 'Capteurs'];
+<?php 
+//On inclut le haut de page 
 include('header.php');
-include('form_con.html');
+?>
+
+
+<div id="contenu">
+<?php echo($contenu); ?>
+ </div>
+ 
+ 
+<?php
+//On inclut le bas de page
+include('footer.php');
 ?>
