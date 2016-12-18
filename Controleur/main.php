@@ -16,7 +16,7 @@ if (isset($_GET["page"])) { // On test la page a afficher
 	if (htmlentities($_GET["page"]) == "contact") {
 		include("Vue/contact.php");
 	}
-	if (htmlentities($_GET["check"]) == "contact") {
+	if (htmlentities($_GET["page"]) == "check") {
 		include("Vue/connexion.php");
 		include("Controleur/connexion.php");
 	}
