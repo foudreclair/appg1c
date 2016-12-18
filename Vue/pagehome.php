@@ -9,6 +9,8 @@
 <body>
 	<div class="left_bloc">
 		<h3> Ma consommation </h3>
+		<p> <?php echo $graph_consoelec ?> </p>
+		<p> <?php echo $graph_temperature ?> </p> 
 	</div>
 	<div class="right_bloc">
 		<h3>Etat de mon système</h3>
