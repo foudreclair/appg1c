@@ -11,7 +11,7 @@
 
 	<nav class ="menu">
 		<img src="logo.png">
-		<ul>
+		<ul id="menu_deroulant">
 			<li><a href="#">Accueil</a></li>
 			<li><a href="#">Réglages</a></li>
 			<li><a href="#">Scénarios</a></li>
