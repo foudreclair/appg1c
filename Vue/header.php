@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?php echo $titre ?></title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="Vue/style.css" type="text/css" />
 	<meta charset="utf-8">
 </head>
 <body>
@@ -10,13 +10,13 @@
 	
 
 	<nav class ="menu">
-		<img src="logo.png">
+		<img src="Vue/logo.png">
 		<ul id="menu_deroulant">
-			<li><a href="#">Accueil</a></li>
-			<li><a href="#">Réglages</a></li>
-			<li><a href="#">Scénarios</a></li>
-			<li><a href="#">Statistiques</a></li>
-			<li><a href="#">Contact</a></li>
+			<li <?php activepage("accueil")?>><a href="index.php?page=accueil">Accueil</a></li>
+			<li <?php activepage("reglages")?>><a href="index.php?page=reglages">Réglages</a></li>
+			<li <?php activepage("scenarios")?>><a href="index.php?page=scenarios">Scénarios</a></li>
+			<li <?php activepage("stats")?>><a href="index.php?page=stats">Statistiques</a></li>
+			<li <?php activepage("contact")?>><a href="index.php?page=contact">Contact</a></li>
 		</ul>
 		
 	</nav>
@@ -24,11 +24,11 @@
 	
 	<div class="sous_menu">
 		<ul>
-		<?php foreach ($sous_menu as $ssmenu) {
+    	<?php //foreach ($sous_menu as $ssmenu) {
 		?>
 			<li><?php echo $ssmenu ?></li>
 		<?php
-		}
+		//}
 		?>
 		</ul>
 	</div>
