@@ -34,13 +34,10 @@ body {
 	position: fixed;
 	font-weight: bold;
 }
-.menu ul li a:hover {
-	color: #C0C0C0;
-
-}
+git	color: #C0C0C0;
 
 li.current {
-	background: #6E6E6E;
+	background: #3ADF00;
 
 }
 .header ul li {
