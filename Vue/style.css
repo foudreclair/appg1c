@@ -34,8 +34,13 @@ body {
 	position: fixed;
 	font-weight: bold;
 }
-.menu a:hover {
+.menu ul li a:hover {
 	color: #C0C0C0;
+
+}
+
+li.current {
+	background: #6E6E6E;
 
 }
 .header ul li {
