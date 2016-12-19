@@ -1,9 +1,12 @@
 <?php
-require('connexion_bdd.php');
 
 function select_user($user) {
-	$result = $mysqli->query('SELECT Id, Password FROM utilisateur where Mail="' .$mail.'"');
-	return $result;
+	include('connexion_bdd.php');
+	$result = $mysqli->query('SELECT Id, Password FROM utilisateur where Mail="' .$user.'"');
+	$row = $result->fetch_array(MYSQLI_NUM);
+	print_r($row);
+	return $row;
+	$result->close();
 }
 
 ?>

@@ -1,9 +1,10 @@
 <?php
 	if (isset($_POST['mail']) || isset($_POST['password'])) {
 		if(!empty($_POST['mail']) && !empty($_POST['password'])){ 
-			$user = select_user($_POST['mail']);
-			if ($user[1] == $_POST['password']) {
-				echo 'VICTORY';
+			include('Modele/fonctions.php');
+			$test = select_user($_POST['mail']);
+			if ($test == $_POST['password']) {
+				echo "VICTORY";
 			}
 			
 		}
