@@ -23,7 +23,7 @@ function formulaire_connexion() {
 	<center>
 		<h1>Connectez-vous : </h1>
 		<div class ="form">
-			<form method ="post" action = "index.php?page=check">
+			<form method ="post" action = "controleur/connexion.php">
 				<input type = "text" name ="mail" placeholder="Entrez votre email"><br>
 				<input type ="password" name ="password" placeholder="Mot de passe"><br>
 				<input class ="button" type = "submit" name ='connexion' value ='Se connecter'>
