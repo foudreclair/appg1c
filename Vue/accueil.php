@@ -5,10 +5,13 @@ $titre = "Domisile | Accueil";
 
 $contenu = "";
 include 'gabarit.php';
+if(isset($_SESSION['mail']) AND isset($_SESSION['id'])) 
+{
+
 ?>
 
 <div class='corps'>
-	<h1>Bonjour !</h1>
+	<h1>Bonjour <?php echo $_SESSION['mail'];?>!</h1>
 	<h2>Consultez l'Ã©tat de vos capteurs : </h2>
 	<?php foreach ($val as $key => $value) {
 	?>
@@ -20,6 +23,9 @@ include 'gabarit.php';
 		<li>Valeur actuelle : </li>
 	</ul>
 	<?php
+	}
+	else {
+		echo 'Vous n êtes pas connectés !';
 	}
 	?>
 </div>

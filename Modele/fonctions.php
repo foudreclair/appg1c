@@ -37,7 +37,7 @@ function select($table,$quoi,$cond) {
 	$result -> close();
 
 }
-
+/*
 function insertion($table,$quoi,$valeurs) {
 	echo '/////insertion : ';
 	//On se connecte à la base de données
@@ -77,5 +77,5 @@ function insertion($table,$quoi,$valeurs) {
 >>>>>>> ddeb427d6fcb3c0fa3c8305bdea4cae23ee43582
 
 }
-
+*/
 ?>

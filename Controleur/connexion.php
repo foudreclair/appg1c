@@ -2,7 +2,6 @@
 	if (isset($_POST['mail']) || isset($_POST['password'])) {
 		if(!empty($_POST['mail']) && !empty($_POST['password'])){ 
 			include('../Modele/fonctions.php');
-			echo 'test';
 			$bdd = "bdd";
 			$user = "root";
 			$password = "root";
@@ -13,8 +12,16 @@
 			}
 			$result = $mysqli->query('SELECT Id, Mail, Password FROM utilisateur where Mail="' .$_POST['mail'].'"');
 			$row = $result->fetch_array(MYSQLI_NUM);
-			if ($row[2] == $_POST['password']) {
-				echo "VICTORY";
+			$id = $row[0];
+			$mail = $row[1];
+			$password_user = $row[2];
+			
+			
+			if ($password_user == $_POST['password']) {		//password ok
+				session_start();
+				$_SESSION['mail'] = $mail;
+				$_SESSION['id'] = $id;
+				include('Vue/accueil.php');
 			}
 			
 		}
