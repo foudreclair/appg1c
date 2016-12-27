@@ -4,7 +4,10 @@ require('fonctions.php');
 
 $test1 = select('Utilisateur',['*'],'1=1');
 echo $test1['Nom'];
+echo $test1['Prenom'];
 
-$test2 = select('Utilisateur',['Nom','Prenom'],'1=1');
-echo $test2['Prenom'];
+insertion('Utilisateur',['Nom','Mail', 'Password'],['Encule','encule@gmail.com','Lourd!']);
+
+
+	
 ?>
