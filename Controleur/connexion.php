@@ -8,7 +8,7 @@
 			
 			$mysqli = new mysqli("localhost", $user, $password, $bdd);
 			if ($mysqli->connect_errno) {
-				echo "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+				echo "Echec lors de la connexion Ã  MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 			}
 			$result = $mysqli->query('SELECT Id, Mail, Password FROM utilisateur where Mail="' .$_POST['mail'].'"');
 			$row = $result->fetch_array(MYSQLI_NUM);
@@ -21,15 +21,15 @@
 				session_start();
 				$_SESSION['mail'] = $mail;
 				$_SESSION['id'] = $id;
-				include('Vue/accueil.php');
+				header('Location:../index.php?page=accueil');
 			}
 			
 		}
 		else {
-			include('Vue/connexion_erreur.php');
+			echo 'Mauvais identifiant ou mot de passe !';
 			
 		}
 		} else { 
-			include('Vue/connexion_erreur.php');
+			echo 'Mauvais identifiant ou mot de passe !';
 		}
 ?>
