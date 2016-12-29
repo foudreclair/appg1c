@@ -1,0 +1,114 @@
+<?php
+
+function select_user($user) {
+	$bdd = "bdd";
+	$user = "root";
+	$password = "root";
+	
+	$mysqli = new mysqli("localhost", $user, $password, $bdd);
+	if ($mysqli->connect_errno) {
+		echo "Echec lors de la connexion � MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+	}
+	$result = $mysqli->query('SELECT Id, Mail, Password FROM utilisateur where Mail="' .$user.'"');
+	$row = $result->fetch_array(MYSQLI_NUM);
+	print_r($row);
+	return $row;
+	$result->close();
+}
+
+
+function select($table,$quoi,$cond) {
+	//On se connecte à la base de données
+	include('connexion_bdd.php');
+	//On crée une variable selection qui sera une chaine de caractère contenant tous les colonnes que l'on veut récupérer dans la base
+	$selection ='';
+	//On ajoute à selection toutes les valeurs du tableau 'quoi', séparés par une virgule
+	foreach ($quoi as $key => $value) {
+		$selection .= $value;
+		$selection .= ',';
+	}
+	//On enlève la dernière virgule
+	$selection = substr($selection, 0, -1);
+<<<<<<< HEAD
+	if ($cond =='all') {
+		//On effectue la sélection dans la table demandée
+		$result = $mysqli->query('SELECT '.$selection .' FROM '.$table);
+		//On récupère un tableau associant le nom des colonnes aux valeurs qu'elle contiennent
+		$donnees = $result ->fetch_array(MYSQLI_ASSOC);
+		return $donnees;
+		$result -> close();
+	}
+	else {
+		//On effectue la sélection dans la table demandée
+		$result = $mysqli->query('SELECT '.$selection .' FROM '.$table.' where '.$cond);
+		//On récupère un tableau associant le nom des colonnes aux valeurs qu'elle contiennent
+		$donnees = $result ->fetch_array(MYSQLI_ASSOC);
+		return $donnees;
+		$result -> close();
+	}
+	
+
+}
+
+=======
+	//On effectue la sélection dans la table demandée
+	$result = $mysqli->query('SELECT '.$selection .' FROM '.$table.' where '.$cond);
+	//On récupère un tableau associant le nom des colonnes aux valeurs qu'elle contiennent
+	$donnees = $result ->fetch_array(MYSQLI_ASSOC);
+	return $donnees;
+	$result -> close();
+
+}
+/*
+>>>>>>> 049bd3ce43b44c617323808ec94d730b13d9fa42
+function insertion($table,$quoi,$valeurs) {
+	echo '/////insertion : ';
+	//On se connecte à la base de données
+	include('connexion_bdd.php');
+	//Idem, on crée une variable selection (qui représente enfaite ce qu'on veut insérer)
+	$selection ='';
+	foreach ($quoi as $key => $value) {
+		$selection .= $value;
+		$selection .= ',';
+<<<<<<< HEAD
+	}
+	$selection = substr($selection, 0, -1);
+=======
+<<<<<<< HEAD
+		$va .= '?';
+		$va .= ',';
+	}
+	$selection = substr($selection, 0, -1);
+	$va = substr($va, 0, -1);
+	$req = $mysqli->prepare('INSERT INTO '.$table.'('.$selection.') VALUES('.$va.')');
+	$req -> execute($valeurs);
+=======
+	}
+	$selection = substr($selection, 0, -1);
+>>>>>>> 049bd3ce43b44c617323808ec94d730b13d9fa42
+	//On crée une chaine de caractère qui représente les valurs à insérer, avec la mise en forme (parenthèse et quotes)
+	$vaexec = "(";
+	foreach ($valeurs as $key => $value) {
+		$vaexec.="'";
+		$vaexec.= $value;
+		$vaexec.="'";
+		$vaexec.= ',';
+	}
+	$vaexec = substr($vaexec, 0, -1);
+	$vaexec .= ")";
+	//On assemble la commande sql
+	$sql = "INSERT INTO ".$table."(".$selection.") VALUES".$vaexec."";
+	//On execute la commande
+	$req = $mysqli->query($sql);
+<<<<<<< HEAD
+
+	
+=======
+>>>>>>> 049bd3ce43b44c617323808ec94d730b13d9fa42
+
+	
+>>>>>>> ddeb427d6fcb3c0fa3c8305bdea4cae23ee43582
+
+}
+*/
+?>
