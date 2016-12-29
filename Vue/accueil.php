@@ -1,10 +1,18 @@
 <?php
 
+session_start();
+
 $titre = "Domisile | Accueil";
 
 
 $contenu = "";
 include 'gabarit.php';
+
+?>
+
+<div class='corps'>
+	<h1>Bonjour !</h1>
+<?php
 if(isset($_SESSION['mail']) AND isset($_SESSION['id'])) 
 {
 
@@ -12,6 +20,7 @@ if(isset($_SESSION['mail']) AND isset($_SESSION['id']))
 
 <div class='corps'>
 	<h1>Bonjour <?php echo $_SESSION['mail'];?>!</h1>
+
 	<h2>Consultez l'Ã©tat de vos capteurs : </h2>
 	<?php foreach ($val as $key => $value) {
 	?>
@@ -24,8 +33,11 @@ if(isset($_SESSION['mail']) AND isset($_SESSION['id']))
 	</ul>
 	<?php
 	}
-	else {
-		echo 'Vous n êtes pas connectés !';
 	}
+
+	else {
+		echo 'Vous n Ãªtes pas connectÃ©s !';
+	}
+
 	?>
 </div>
