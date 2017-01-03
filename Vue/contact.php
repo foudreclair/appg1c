@@ -6,7 +6,12 @@ include 'gabarit.php';
 
 ?>
 
+<div id=info_client>
+  <p>Adresse :XX rue XXXXXX</p>
+  <p>Horraire : Lundi à Vendredi de 8h à 17h</p>
+  <p>Telephone : 01 XX XX XX XX</p>
 
+</div>
 <div class="contact">
   <form method="post" action="">
     <input type="email" name="email" placeholder="Entrer votre email"></br>
