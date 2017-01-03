@@ -20,6 +20,10 @@ if (isset($_GET["page"])) { // On test la page a afficher
 		include("Vue/connexion.php");
 		include("Controleur/connexion.php");
 	}
+	if (htmlentities($_GET["page"]) == "register") {
+		include("Vue/register.php");
+		include("Controleur/register.php");
+	}
 }
 
 else {	//La page par default pour l'instant la page connexion
