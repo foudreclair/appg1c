@@ -1,8 +1,8 @@
 <?php
 session_start();
-$option = '';
-foreach ($_POST['options'] as $key => $value) {
-	$value;
-}
+$_SESSION['date_debut']= $_POST['date_debut'];
+$_SESSION['date_fin']= $_POST['date_fin'];
+echo 'Valeurs enregistrées';
+header('Location:newscenario.php');
 
 ?>
