@@ -22,7 +22,6 @@ if (isset($_GET["page"])) { // On test la page a afficher
 	}
 	if (htmlentities($_GET["page"]) == "register") {
 		include("Vue/register.php");
-		include("Controleur/register.php");
 	}
 }
 

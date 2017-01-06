@@ -15,8 +15,7 @@
 			$id = $row[0];
 			$mail = $row[1];
 			$password_user = $row[2];
-			
-			
+		//	$password_hash = sha1($_POST['password']);
 			if ($password_user == $_POST['password']) {		//password ok
 				session_start();
 				$_SESSION['mail'] = $mail;
