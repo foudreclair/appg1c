@@ -2,7 +2,7 @@
 
 if (isset($_GET["page"])) { // On test la page a afficher
 	if (htmlentities($_GET["page"]) == "accueil") {
-		include("Vue/accueil.php");
+		include("Controleur/accueil.php");
 	}
 	if (htmlentities($_GET["page"]) == "scenarios") {
 		include("Vue/scenarios.php");
