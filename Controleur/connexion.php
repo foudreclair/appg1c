@@ -26,10 +26,10 @@
 			
 		}
 		else {
-			echo 'Mauvais identifiant ou mot de passe !';
+			echo '';
 			
 		}
 		} else { 
-			echo 'Mauvais identifiant ou mot de passe !';
+			echo '';
 		}
 ?>

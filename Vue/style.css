@@ -20,7 +20,12 @@ body {
 	color: Blue;
 
 }
-
+.corps .capt {
+	margin-top: 4px;
+	border: solid;
+	border-width: 1px;
+	display: inline-block;
+}
 .menu {
 
 

@@ -5,7 +5,7 @@ if (isset($_GET["page"])) { // On test la page a afficher
 		include("Controleur/accueil.php");
 	}
 	if (htmlentities($_GET["page"]) == "scenarios") {
-		include("Vue/scenarios.php");
+		include("Controleur/scenario.php");
 	}
 	if (htmlentities($_GET["page"]) == "reglages") {
 		include("Vue/reglages.php");
@@ -19,6 +19,10 @@ if (isset($_GET["page"])) { // On test la page a afficher
 	if (htmlentities($_GET["page"]) == "check") {
 		include("Vue/connexion.php");
 		include("Controleur/connexion.php");
+	}
+	if (htmlentities($_GET["page"]) == "register") {
+		include("Vue/register.php");
+		include("Controleur/register.php");
 	}
 }
 

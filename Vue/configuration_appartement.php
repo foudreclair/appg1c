@@ -14,6 +14,7 @@
       <li><a href="#">Pièce #1</a></li>
         <ul>
           <li><a href="#">Capteur #1</a></li>
+          <li><a href="#">Capteur #2</a></li>
         </ul>
       <li><a href="#">Pièce #2</a></li>
       <li><a href="#">Pièce #3</a></li>
