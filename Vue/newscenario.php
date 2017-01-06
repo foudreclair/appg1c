@@ -5,10 +5,12 @@ include 'gabarit.php';
 require 'Modele/fonctions.php';
 
 if(isset($_POST['options'])){
+	$_SESSION['sce_pieces'] = [];
 	foreach ($_POST['options'] as $key => $value) {
-	$value;
+	array_push($_SESSION['sce_pieces'], $value);
+	}
 }
-}
+
 if (!empty($_POST['date_debut'])){
 	$_SESSION['date_debut']= $_POST['date_debut'];
 }
@@ -34,9 +36,10 @@ if (!empty($_POST['appart'])){
 		if (!empty($_SESSION['date_debut']) && !empty($_SESSION['date_fin'])){
 		if (isset($_SESSION['idappart'])){
 			if($_POST['appart']!= 'rien'){
+				if (!isset($_SESSION['sce_pieces'])){
 		?>
 		<h2>Choisissez des pièces : </h2>
-		<form method = "post" action = "Vue/varscenar.php">
+		<form method = "post" action = "">
 		<?php
 				$appart = $_POST['appart'];
 				
@@ -46,14 +49,17 @@ if (!empty($_POST['appart'])){
 				$reqpiece = $mysqli->query($sql);
 				while ($piece = $reqpiece -> fetch_array(MYSQLI_ASSOC)) {
 					?>
-					<input type="checkbox" id="" name = "options[]" value="<?php echo $piece['Nom'] ?>"><?php echo $piece['Nom'] ?><br>
+					<input type="checkbox" id="" name = "options[]" value="<?php echo $piece['Id'] ?>"><?php echo $piece['Nom'] ?><br>
 					<?php
 				}
 				?>
 				<input type="submit" name="pieces" value = "Etape suivante">
 				</form>
 				<?php	
-				
+			}
+			else {
+				include 'programmation.php';
+			}	
 		}
 		}
 		else {
