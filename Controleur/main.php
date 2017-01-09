@@ -23,9 +23,13 @@ if (isset($_GET["page"])) { // On test la page a afficher
 	}
 	if (htmlentities($_GET["page"]) == "register") {
 		include("Vue/register.php");
+<<<<<<< HEAD
 		
 	}
 }
+=======
+	}
+>>>>>>> 4ff936d586c539137aef764263c21fa0f73f71d1
 }
 else {	//La page par default pour l'instant la page connexion
 	include("Vue/connexion.php");
