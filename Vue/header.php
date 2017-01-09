@@ -1,4 +1,6 @@
-
+<?php
+require 'fonctions.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>

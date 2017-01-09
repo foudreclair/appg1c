@@ -47,7 +47,9 @@ if (!empty($_POST['appart'])){
 				$sql ="SELECT * FROM Pieces WHERE Id_Appartements = '$appart'";
 				$i = 0;
 				$reqpiece = $mysqli->query($sql);
+				$_SESSION['pscenar']=[];
 				while ($piece = $reqpiece -> fetch_array(MYSQLI_ASSOC)) {
+					$_SESSION['pieces']
 					?>
 					<input type="checkbox" id="" name = "options[]" value="<?php echo $piece['Id'] ?>"><?php echo $piece['Nom'] ?><br>
 					<?php
@@ -101,6 +103,7 @@ if (!empty($_POST['appart'])){
 			<?php
 		}
 		?>
+		<form method = "post" action = "Controleur/annul_scenar.php"><input type = "submit" name ="annuler" value ="Annuler"></form>
 		<br><br><br>
 		<p>Date de début : <?php echo $_SESSION['date_debut'] ?></p>
 		<p>Date de fin : <?php echo $_SESSION['date_fin'] ?></p>
