@@ -35,7 +35,7 @@ if (!empty($_POST['appart'])){
 		<?php
 		if (!empty($_SESSION['date_debut']) && !empty($_SESSION['date_fin'])){
 		if (isset($_SESSION['idappart'])){
-			if($_POST['appart']!= 'rien'){
+			if($_SESSION['idappart']!= 'rien'){
 				if (!isset($_SESSION['sce_pieces'])){
 		?>
 		<h2>Choisissez des pièces : </h2>
@@ -49,7 +49,7 @@ if (!empty($_POST['appart'])){
 				$reqpiece = $mysqli->query($sql);
 				$_SESSION['pscenar']=[];
 				while ($piece = $reqpiece -> fetch_array(MYSQLI_ASSOC)) {
-					$_SESSION['pieces']
+					
 					?>
 					<input type="checkbox" id="" name = "options[]" value="<?php echo $piece['Id'] ?>"><?php echo $piece['Nom'] ?><br>
 					<?php
@@ -60,7 +60,7 @@ if (!empty($_POST['appart'])){
 				<?php	
 			}
 			else {
-				include 'programmation.php';
+				include 'Vue/programmation.php';
 			}	
 		}
 		}
@@ -103,6 +103,8 @@ if (!empty($_POST['appart'])){
 			<?php
 		}
 		?>
+		<br><br>
+		<p>Merci d'annuler avant de changer de page</p>
 		<form method = "post" action = "Controleur/annul_scenar.php"><input type = "submit" name ="annuler" value ="Annuler"></form>
 		<br><br><br>
 		<p>Date de début : <?php echo $_SESSION['date_debut'] ?></p>
