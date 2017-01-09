@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-CREATE TABLE `Affectation` (
-  `Id` int(11) NOT NULL,
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+CREATE TABLE Affectation(
+        Id                Int NOT NULL ,
+        Id_Pieces         Int NOT NULL ,
+        Id_Fonctionnalite Int NOT NULL ,
+        PRIMARY KEY (Id ,Id_Pieces ,Id_Fonctionnalite )
+)ENGINE=InnoDB;
 
-ALTER TABLE `Affectation`
-  ADD CONSTRAINT `FK_Affectation_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `Capteur` (`Id`);
-  ADD CONSTRAINT `FK_Affectation_Id_Fonctionnalite` FOREIGN KEY (`Id_Fonctionnalite`) REFERENCES `Fonctionnalite` (`Id`);
-  ADD CONSTRAINT `FK_Affectation_Id_Pieces` FOREIGN KEY (`Id_Pieces`) REFERENCES `Pieces` (`Id`);
-=======
-CREATE TABLE `Affectation` (
-  `Id` int(11) NOT NULL,
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-ALTER TABLE `Affectation`
-  ADD CONSTRAINT `FK_Affectation_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `Capteur` (`Id`);
-  ADD CONSTRAINT `FK_Affectation_Id_Fonctionnalite` FOREIGN KEY (`Id_Fonctionnalite`) REFERENCES `Fonctionnalite` (`Id`);
-  ADD CONSTRAINT `FK_Affectation_Id_Pieces` FOREIGN KEY (`Id_Pieces`) REFERENCES `Pieces` (`Id`);
->>>>>>> 643c7fe234eec32cbc67fe0743c28df6920ea3a0
+ALTER TABLE Affectation ADD CONSTRAINT FK_Affectation_Id FOREIGN KEY (Id) REFERENCES Capteur(Id);
+ALTER TABLE Affectation ADD CONSTRAINT FK_Affectation_Id_Pieces FOREIGN KEY (Id_Pieces) REFERENCES Pieces(Id);
+ALTER TABLE Affectation ADD CONSTRAINT FK_Affectation_Id_Fonctionnalite FOREIGN KEY (Id_Fonctionnalite) REFERENCES Fonctionnalite(Id);
