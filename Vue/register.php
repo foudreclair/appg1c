@@ -1,4 +1,14 @@
 <?php
+<<<<<<< HEAD
+$titre = "Domisile | CrÃ©e votre compte";
+$contenu = "";
+include 'gabarit.php';
+?>
+
+<div class='corps'>
+	<h1>CrÃ©er votre compte</h1>
+	<form method="post" action="Controleur/register.php" enctype="multipart/form-data">
+=======
 $titre = "Domisile | Crée votre compte";
 
 $contenu = "";
@@ -9,6 +19,7 @@ include 'gabarit.php';
 <div class='corps'>
 	<h1>Créer votre compte</h1>
 	<form method="post" action="../Controleur/register.php" enctype="multipart/form-data">
+>>>>>>> 4ff936d586c539137aef764263c21fa0f73f71d1
 		<fieldset><legend>Vos identifiants</legend>
 	<label for="mail">Mail :</label><input name="mail" type="text" id="mail" /><br />
 	<label for="password">Mot de Passe :</label><input type="password" name="password" id="password" /><br />

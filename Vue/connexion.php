@@ -6,9 +6,11 @@ if(isset($_GET["erreur"])) {
 	$contenu .= formulaire_connexion();
 }
 else {
-	$contenu = formulaire_connexion();
+
+	$contenu .= formulaire_connexion();
 }
 
 include 'gabarit.php';
+include 'form_con.html';
 
 ?>

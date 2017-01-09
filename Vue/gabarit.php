@@ -5,7 +5,6 @@ include('header.php');
 
 
 <div id="contenu">
-<?php echo($contenu); ?>
  </div>
  
  

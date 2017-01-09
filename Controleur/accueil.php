@@ -1,12 +1,17 @@
 <?php
+if (!isset($_SESSION ["Id"])) {
+		include ("Controleur/connexion.php");
+		}
 require('Modele/fonctions.php');
 include('Modele/connexion_bdd.php');
 
 $result = $mysqli->query('SELECT * FROM Programmation');
 $val=[];
+$captid = [];
 while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
 	
-	$capt = select('Capteur',['Nom'],'Id='.$donnees['Id_Capteur']);
+	
+	array_push($captid, $donnees['Id_Capteur']);
 	$donnees['Id_Capteur']=$capt['Nom'];
 	$fonc = select('Fonctionnalite',['Nom','Type_donnees'],'Id='.$donnees['Id_Fonctionnalite']);
 	$donnees['Id_Fonctionnalite']=[$fonc['Nom'],$fonc['Type_donnees']];

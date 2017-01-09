@@ -1,3 +1,6 @@
+<?php
+require 'fonctions.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +27,7 @@
 	
 	<div class="sous_menu">
 		<ul>
-    	<?php //foreach ($sous_menu as $ssmenu) {
-		?>
-			<li><?php echo $ssmenu ?></li>
-		<?php
-		//}
-		?>
+    	
 		</ul>
 	</div>
 
