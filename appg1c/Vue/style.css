@@ -123,8 +123,11 @@ img {
 	border-color: Blue;
 }
 
-#plangooglemap{
+/*.plangooglemap{
   width: 60%;
   height: auto;
   align-items: center;
-} /*sa marche pas*/
+} sa marche pas*/
+.champ_saisie{
+  width: 800px;
+}*/uyt

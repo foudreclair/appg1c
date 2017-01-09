@@ -78,7 +78,7 @@ li.current {
 
 }
 
-img {
+img#logo {
 	height: 40px;
 
 	padding-left: 1%;
@@ -123,8 +123,11 @@ img {
 	border-color: Blue;
 }
 
-#plangooglemap{
-  width: 60%;
-  height: auto;
-  align-items: center;
-} /*sa marche pas*/
+div info_client ,champ_saisie{
+  display: inline-block;
+  width: 48%;
+  margin-top: 20px;
+}
+div plan{
+  align-content: center;
+}
