@@ -7,7 +7,7 @@ include 'gabarit.php';
 //print_r($val);
 ?>
 
-<div class='corps'>
+
 	
 
 
@@ -15,7 +15,13 @@ include 'gabarit.php';
 	<h1>Bonjour <?php echo $_SESSION['mail'];?>!</h1>
 
 	<h2>Consultez l'état de vos capteurs : </h2>
-	<?php foreach ($val as $key => $value) {
+	<?php 
+	foreach ($valscenar as $key => $val) {
+	?>
+	<h2><?php echo $nomscenar[$key] ?> : </h2>
+	<?php
+	
+	foreach ($val as $key => $value) {
 	?>
 	<div class = "capt">
 	<ul>
@@ -25,7 +31,7 @@ include 'gabarit.php';
 		<li>Type : <?php echo utf8_encode($val[$key][0]['Id_Fonctionnalite'][0])?></li>
 		<p>Valeur demandée : </p>
 		<form method = "post" action = "Controleur/modifications.php?id=<?php echo $val[$key][0]['Id'] ?>">
-			<input type ="text" name = "consigne" placeholder = "<?php echo $val[$key][0]['Consigne'] ?>">
+			<input type ="text" name = "consigne" placeholder = "<?php echo $val[$key][0]['Consigne'] ?>"><br>
 			<input type = "submit" name = 'Modifier' value = "Modifier">
 		</form>
 		
@@ -35,7 +41,7 @@ include 'gabarit.php';
 	}
 	
 
-	
+	}
 
 	?>
 </div>

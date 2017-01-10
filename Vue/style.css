@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 3b7a1f28b7f982fe46be9265c9a647812617e249
 @font-face {
     font-family: "LatoLight";
     src: url('fonts/Lato-Light.ttf');
@@ -47,6 +44,7 @@ body {
 	display: inline-block;
 	width: 28%;
 	padding: 10px;
+	
 }
 .menu {
 
@@ -119,10 +117,13 @@ img {
 
 }
 .corps {
+	background-color:LightCyan;
 	margin-top: 150px;
 	width: 80%;
 	margin-left: 15%;
-
+	border: solid;
+	padding: 2%;
+	border-radius: 20px;
 
 }
 
@@ -216,8 +217,7 @@ img {
 #menu-accordeon li:hover li {
   max-height: 15em;
 }
-<<<<<<< HEAD
-=======
+
 @font-face {
     font-family: "LatoLight";
     src: url('fonts/Lato-Light.ttf');
@@ -349,7 +349,7 @@ img {
   align-items: center;
 } /*sa marche pas*/
 
-=======
+
 @font-face {
     font-family: "LatoLight";
     src: url('fonts/Lato-Light.ttf');
@@ -438,13 +438,7 @@ img {
 	float: left;
 
 }
-.corps {
-	margin-top: 150px;
-	width: 70%;
-	margin-left: 15%;
 
-
-}
 
 .corps h1 {
 	color: Blue;
@@ -480,4 +474,4 @@ img {
   height: auto;
   align-items: center;
 } /*sa marche pas*/
->>>>>>> 3b7a1f28b7f982fe46be9265c9a647812617e249
+

@@ -13,7 +13,7 @@
 				include("Vue/reglages.php");
 			}
 			if (htmlentities($_GET["page"]) == "stats") {
-				include("Vue/stats.php");
+				include("Controleur/stats.php");
 			}
 			if (htmlentities($_GET["page"]) == "contact") {
 				include("Vue/contact.php");
@@ -29,7 +29,7 @@
 	
 	else {	//La page par default pour l'instant la page connexion
 		if (htmlentities($_GET["page"]) == "register") {
-			include("Vue/register.php");
+			include("Controleur/register.php");
 		}
 		else {
 			include("Controleur/connexion.php");

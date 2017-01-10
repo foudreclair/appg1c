@@ -8,7 +8,7 @@
   } );
 </script>
 <?php
-$titre = "Domisile | Crée votre compte";
+$titre = "Domisile | Cr?e votre compte";
 
 $contenu = "";
 include 'gabarit.php';
@@ -18,7 +18,7 @@ include 'gabarit.php';
 <div class='corps'>
 <?php 
 	if(isset($_GET['succes'])) {
-		echo '<center>Inscription réussi</center>';
+		echo '<center>Inscription r?ussi</center>';
 	}
 	if(isset($_GET['erreur'])) {
 		$erreur = $_GET['erreur'];
@@ -27,7 +27,7 @@ include 'gabarit.php';
 				echo '<center>Au moins un des champs est vide</center>';
 				break;
 			case 2 :
-				echo '<center>Les mots de passe sont différents</center>';
+				echo '<center>Les mots de passe sont diff?rents</center>';
 				break;
 			case 3 :
 				echo '<center>Un utilisateur avec cet identifiant existe deja</center>';
@@ -35,8 +35,8 @@ include 'gabarit.php';
 		}
 	}
 ?>
-	<h1>Créer votre compte</h1>
-	<form method="post" action="../Controleur/register.php" enctype="multipart/form-data">
+	<h1>Cr?er votre compte</h1>
+	<form method="post" action="Controleur/register.php" enctype="multipart/form-data">
 		<fieldset><legend>Vos identifiants</legend>
 	<label for="mail">Mail :</label><input name="mail" type="text" id="mail" /><br />
 	<label for="password">Mot de Passe :</label><input type="password" name="password" id="password" /><br />
