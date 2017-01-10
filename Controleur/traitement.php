@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require ('../Modele/connexion_bdd.php');
 
 //////////////////////////////////////////////////////////////////////////////
@@ -28,62 +28,31 @@ header ("Location: ../Vue/ajouter_piece.php");
 exit();
 }
 
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// AJOUTER UNE PIECE ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 $result = $mysqli -> query ('SELECT Nom FROM appartements');
-if ($_POST['declencheur']=='2') {
-	$mysqli -> query ("INSERT INTO `bdd`.`piece` VALUES (NULL, '$nom_piece', '$donnes[$i]')");
-	
-header("Location: ../Vue/ajouter_capteurs.php");
-exit();
+if ($_POST['declencheur'] == 2) {
+	$mysqli -> query ("INSERT INTO `bdd`.`piece` VALUES (NULL, '$nom_piece', NULL)");
+	$nombre_capteurs=$_POST['nombre_capteurs'];
+	$mysqli -> query ("INSERT INTO `bdd`.`capteur` (`Id`, `Nom`) VALUES (NULL, '$nombre_capteurs')");
 }
 
 //////////////////////////////////////////////////////////////////////////////
-/////////////////////////// AJOUTER DES CAPTEURS /////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-
-if($_POST['declencheur']=='3'){
-	
-	$nombre_capteurs = $_POST['nombre_capteurs'];
-
-	$_SESSION['nombre_capteurs'] = $nombre_capteurs;
-	header("Location: ../Vue/ajouter_capteurs2.php");
-}
-
-
-//////////////////////////////////////////////////////////////////////////////
-////////////////////////// AJOUTER DES CAPTEURS 2 ////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-if ($_POST['declencheur']=='4') {
-	for ($a=0; $a < $_SESSION['nombre_capteurs']; $a++) { 
-		$nomcapteur = $_POST['nom_capteur_$i'];
-		echo ($nomcapteur);
-		$fonctioncapteur = $_POST['type_capteur_$i'];
-		echo ($fonctioncapteur);
-		$mysqli -> query ("INSERT INTO `bdd`.`capteur` VALUES (NULL, '$nomcapteur, '$fonctioncapteur')");
-	}
-	
-
-}
-
-/////////////////////////////////////////////////////////////////////////////
 /////////////////////// SUPPRIMER UN APPART //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
+$result = $mysqli -> query ('SELECT Id FROM appartements');
+//print_r ($result);
 if ($_POST['declencheur'] == 10){
 
-	$mysqli -> query ("DELETE FROM `bdd`.`appartements` WHERE `appartements`.`Id` = 148");
+	$id_appart = $_POST['appart_select'];
+	//echo (supprimer_appart_succes.php);
+	$mysqli -> query ("DELETE FROM `bdd`.`Appartements` WHERE `Appartements`.`Nom` = 'Bonjour'");
+	//$mysqli -> query ("DELETE FROM 'bdd'.'Appartements' WHERE 'Appartements'.'Nom' =67");
+	header ("Location: ../Vue/supprimer_appart_succes.php");
 
 
 exit();
 	}
-
-?>
-
 
 ?>
