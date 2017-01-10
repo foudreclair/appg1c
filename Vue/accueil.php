@@ -13,6 +13,7 @@ include 'gabarit.php';
 
 <div class='corps'>
 	<h1>Bonjour <?php echo $_SESSION['mail'];?>!</h1>
+	<h1><a href="index.php?page=deconnexion"><input type="submit" value="Se déconnecter"></h1></input></a>
 
 	<h2>Consultez l'Ã©tat de vos capteurs : </h2>
 	<?php 

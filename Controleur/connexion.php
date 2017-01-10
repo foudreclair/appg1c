@@ -38,17 +38,21 @@
 				$_SESSION['id'] = $id;
 				header('Location:../index.php?page=accueil');
 			}
+			else {
+				header('Location:../index.php?page=connexion&erreur=2');
+			}
 			
 		}
 		else {
-			echo 'bam';
-			
+			header('Location:../index.php?page=connexion&erreur=1');	
 		}
-		} else { 
-			echo '';
-		}
+<<<<<<< HEAD
 		require('Vue/connexion.php')
 	
 
+=======
+}
+		include('Vue/connexion.php')
+>>>>>>> 1933726074f1a3d61060ae90304eb71e021a7b4c
 		
 ?>
