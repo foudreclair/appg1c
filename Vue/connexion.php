@@ -10,14 +10,18 @@ include 'gabarit.php';
 if(isset($_GET["erreur"])) {
 	switch($_GET["erreur"]) {
 		case 1 :
-			echo 'Au moins un des champs est vide';
+			echo 'Au moins un des champs est vide.';
 			break;
 		case 2 :
-			echo "L'identifiant ou le mot de passe est incorrect";
+			echo "L'identifiant ou le mot de passe est incorrect.";
 			break;
 	}
 }
-
+if(isset($_GET["page"])) {
+	if($_GET["page"] == "deconnexion") {
+		echo 'Vous êtes désormais déconnecté.';
+	}
+}
 ?>
 <h1>Connectez-vous pour accéder à la plateforme : </h1>
 <div class ="form">
