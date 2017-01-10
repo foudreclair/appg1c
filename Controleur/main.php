@@ -13,7 +13,7 @@ if (isset($_GET["page"])) { // On test la page a afficher
 		include("Vue/reglages.php");
 	}
 	if (htmlentities($_GET["page"]) == "stats") {
-		include("Vue/stats.php");
+		include("Controleur/stats.php");
 	}
 	if (htmlentities($_GET["page"]) == "contact") {
 		include("Vue/contact.php");

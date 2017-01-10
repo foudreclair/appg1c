@@ -17,6 +17,12 @@ if (!empty($_POST['date_debut'])){
 if (!empty($_POST['date_fin'])){
 	$_SESSION['date_fin']= $_POST['date_fin'];
 }
+if (!empty($_POST['heure_debut'])){
+	$_SESSION['heure_debut']= $_POST['heure_debut'];
+}
+if (!empty($_POST['heure_fin'])){
+	$_SESSION['heure_fin']= $_POST['heure_fin'];
+}
 if (!empty($_POST['appart'])){
 	
 	$_SESSION['idappart']= $_POST['appart'];
@@ -30,6 +36,8 @@ if (!empty($_POST['appart'])){
 </head>
 <body>
 	<div class ="corps">
+		<a href="index.php?page=accueil">
+		<h2>Pour voir vos scénarios, cliquez ici</h2></a>
 		<h1>Vous allez pouvoir configurer votre scénario :</h1>
 		
 		<?php
@@ -95,9 +103,11 @@ if (!empty($_POST['appart'])){
 			?>
 			<form method = "post">
 			<h2>Sélectionnez une date de début : </h2>
-			<input type="date" name="date_debut" placeholder ="jj/mm/aaaa">
+			<input type="date" name="date_debut" placeholder ="jj/mm/aaaa"><br>
+			<input type="time" name="heure_debut" placeholder ="hh:mm">
 			<h2>Sélectionnez une date de fin : </h2>
 			<input type="date" name="date_fin" placeholder ="jj/mm/aaaa"><br>
+			<input type="time" name="heure_fin" placeholder ="hh:mm"><br>
 			<input type="submit" name="date" value = "Etape suivante">
 			</form>
 			<?php
