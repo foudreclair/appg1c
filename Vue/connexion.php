@@ -1,19 +1,24 @@
 <?php
 $titre = "Domisile | Page de connexion";
-
-if(isset($_GET["erreur"])) {
-	$contenu = "Erreur de saisi";
-	$contenu .= formulaire_connexion();
-}
-else {
-	$contenu = formulaire_connexion();
-}
-
 include 'gabarit.php';
 
 ?>
 
 <div class="corps">
+<?php 
+
+if(isset($_GET["erreur"])) {
+	switch($_GET["erreur"]) {
+		case 1 :
+			echo 'Au moins un des champs est vide';
+			break;
+		case 2 :
+			echo "L'identifiant ou le mot de passe est incorrect";
+			break;
+	}
+}
+
+?>
 <h1>Connectez-vous pour accéder à la plateforme : </h1>
 <div class ="form">
 <form method ="post" action = "Controleur/connexion.php">

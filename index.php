@@ -20,16 +20,19 @@
 			}
 			if (htmlentities($_GET["page"]) == "register") {
 				include("Vue/register.php");
-	
-	
 			}
 		}
 	
 	}
 	
 	else {	//La page par default pour l'instant la page connexion
-		if (htmlentities($_GET["page"]) == "register") {
-			include("Vue/register.php");
+		if(isset($_GET["page"])) {
+			if (htmlentities($_GET["page"]) == "register") {
+				include("Controleur/register.php");
+			}
+			if (htmlentities($_GET["page"]) == "connexion") {
+				include("Controleur/connexion.php");
+			}
 		}
 		else {
 			include("Controleur/connexion.php");
