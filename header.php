@@ -5,6 +5,7 @@
 	<title><?php echo $titre ?></title>
 	<link rel="stylesheet" href="Vue/style.css" type="text/css" />
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
 <div class ="header">

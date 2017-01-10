@@ -1,7 +1,4 @@
 <?php
-
-session_start();
-
 $titre = "Domisile | Accueil";
 
 

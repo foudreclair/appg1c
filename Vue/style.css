@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @font-face {
     font-family: "LatoLight";
     src: url('fonts/Lato-Light.ttf');
@@ -195,7 +194,6 @@ img {
 #menu-accordeon li:hover li {
   max-height: 15em;
 }
-=======
 @font-face {
     font-family: "LatoLight";
     src: url('fonts/Lato-Light.ttf');
@@ -326,4 +324,3 @@ img {
   height: auto;
   align-items: center;
 } /*sa marche pas*/
->>>>>>> 4ff936d586c539137aef764263c21fa0f73f71d1
