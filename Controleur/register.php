@@ -31,5 +31,5 @@ if (isset ( $_POST ['mail'] ) && isset ( $_POST ['password'] ) && isset ( $_POST
 		header ( 'Location:../index.php?page=register&erreur=1' );
 	}
 } 
-include('Vue/register.php');
+include('../Vue/register.php');
 ?>

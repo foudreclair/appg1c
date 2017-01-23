@@ -1,6 +1,6 @@
 <?php
-require ('../Controleur/traitement.php');
-
+require ('Controleur/traitement.php');
+//include 'gabarit.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,15 +11,41 @@ require ('../Controleur/traitement.php');
 	<meta charset="utf-8">
 </head>
 <body>
-	<nav class ="menu_appartement">
+	<div class ="corps">
+	<div id ="menu_appartement">
 		<ul>
-			<li><a href="#">Ajouter un appartement/pièce</a></li>
-			<li><a href="#">Modifier un appartement</a></li>
-			<li><a href="#">Supprimer un appartement</a></li>
+			<li><a onclick = "affich('newpie')">Ajouter une pièce</a></li>
+			<li><a href="index.php?page=modifappart">Modifier un appartement</a></li>
+			<li><a href="index.php?page=suppappart">Supprimer un appartement</a></li>
+			<li><a href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
 		</ul>
-	</nav>
+	</div>
+	<div id = "newpie">
+	<h2> Ajouter une pièce </h2>
+				<form method="post" action="Controleur/traitement.php">
+					<p> Choix de l'appartement :</p> 
+					<select name="appartement_selectionne">
+
+					<?php 
+					
+					include 'Modele/connexion_bdd.php';
+					$result =  $mysqli -> query("SELECT * FROM Appartements WHERE Id_Utilisateur ='$iduser' ");
+					while ($donnes = $result->fetch_array(MYSQLI_ASSOC)) {
+						?>
+					<option value="<?php echo $donnes['Id'] ?>"><?php echo $donnes['Nom'] ?></option>
+					<?php
+					}
+					?>
+						</select>
+					
+					<p>Nom de la pièce : <input type="text" name="nom_piece" id="nom_piece"></p>
+
+					<input type="hidden" name="declencheur" id="declencheur" value="2">
+					<input type="submit" name="valider_appart" value ="Valider">
+				</form>
+	</div>
 	<div id="full_bloc">
-		<form class="left_bloc" method="post" action="../Controleur/traitement.php">
+		<form class="left_bloc" method="post" action="Controleur/traitement.php">
 			<h2> Ajouter un appartement</h2>
 			<p> Nom appartement : 
 				<input type="text" name="nom_appartement" id="nom_appartement">
@@ -45,36 +71,23 @@ require ('../Controleur/traitement.php');
 			</p>
 			<input type="submit" value="Valider">
 		</form>
-		<div class="right_bloc">
-			
-			<form method="post" action="../Controleur/traitement.php">
-				<p>Nombre de capteurs : <input type="number" name="nombre_capteurs" id="nombre_capteurs" step="1" /></p>
-				<input type="submit" name="valider_nombre_capteurs">
-				<input type="hidden" name="declencheur" id="declencheur" value="3">
-			</form>
-			<form method="post" action="pagereglage.php">
-				<?php
-				for ($i=0; $i < "nombre_capteurs"; $i++) { 
-				 	echo '<input type="text" name="nom_capteur" id="nom_capteur"></br>
-				 	<select name="fonctionnalite" id="type_capteur">
-				 				<option value="temperature"> Température </option>
-				 				<option value="lumiere"> Lumière </option>
-				 				<option value="fumee"> Fumée </option>
-				 				<option value="camera"> Caméra </option>
-				 				<option value="co2"> co2 </option>
-				 				<option value="onde_em"> Ondes électromagnétiques </option>
-				 				<option value="humidite"> Humidité </option>
-				 				<option value="capteur_ouverture"> Capteur ouverture </option>
-				 				<option value="pluviometre"> Pluviomètre </option>
-				 	</select>';
-					}
-				?>
-				<input type="submit">
-			</form>
 
-				<input type="hidden" name="declencheur" value="2">
-				<input type="submit" name="valider_capteurs">
-			</form>
-		</div>
-	
+		
+	</div>
+</div>
 </body>
+<script>
+document.getElementById('newpie').style.visibility = "hidden";
+document.getElementById('newpie').style.display = 'none';
+function affich(val){
+	if (document.getElementById(val).style.display == 'none'){
+		document.getElementById(val).style.visibility = "visible";
+    	document.getElementById(val).style.display = 'block';
+	}
+	else {
+		document.getElementById('newpie').style.visibility = "hidden";
+	document.getElementById('newpie').style.display = 'none';
+	}
+	
+}
+</script>

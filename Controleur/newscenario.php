@@ -33,7 +33,7 @@ foreach ($_POST['consigne'] as $key => $value) {
 	$capt = $tab[$key]['0'];
 	$piece = $tab[$key]['1']; 
 	$fonc = $tab[$key]['2']; 
-	$sql = "INSERT INTO `bdd`.`Programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`,`Id_scenario`) VALUES (NULL, '$Date_start', '$Date_end', '$Time_start', '$Time_end', '$value', NULL,  '$fonc','$capt', '$piece','$i')";
+	$sql = "INSERT INTO `bdd`.`Programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`,`Id_scenario`) VALUES (NULL, '$Date_start', '$Date_end', '$Time_start', '$Time_end', '$value', NULL,  '$fonc','$capt', '$piece',$i)";
 	$req = $mysqli->query($sql);
 	
 	

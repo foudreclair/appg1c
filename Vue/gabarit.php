@@ -1,6 +1,6 @@
 <?php 
 //On inclut le haut de page 
-include('header.php');
+include('Vue/header.php');
 ?>
 
 

@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
 
-=======
->>>>>>> 1933726074f1a3d61060ae90304eb71e021a7b4c
 if (!isset($_SESSION['id'])) {
 		include ("Controleur/connexion.php");
 }
@@ -10,13 +7,13 @@ if (!isset($_SESSION['id'])) {
 $iduser = $_SESSION['id'];
 require('Modele/fonctions.php');
 include('Modele/connexion_bdd.php');
-<<<<<<< HEAD
+
 $reqscernar = $mysqli->query("SELECT * FROM Scenario WHERE Id_Utilisateur = '$iduser'");
 $valscenar = [];
 $nomscenar = [];
 while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 	//print_r($scenar);
-
+	//echo '<br>';
 	$val=[];
 	$scenarid = $scenar['Id'];		
 	$result = $mysqli->query("SELECT * FROM Programmation WHERE Id_scenario = '$scenarid'");
@@ -33,7 +30,7 @@ while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 		$donnees['Id_Fonctionnalite']=[$fonc['Nom'],$fonc['Type_donnees']];
 		$piece = select('Pieces',['Nom'],'Id='.$donnees['Id_Pieces']);
 		$donnees['Id_Pieces']=$piece['Nom'];
-		array_push($val, [$donnees]);
+		array_push($val, $donnees);
 		}
 
 			
@@ -41,9 +38,9 @@ while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 	
 	array_push($nomscenar, $scenar['Nom']);
 	array_push($valscenar, $val);
+	//print_r($valscenar);
 }
-
-=======
+/*
 $val=[];
 $resultappart = $mysqli->query("SELECT * FROM Appartements WHERE Id_Utilisateur = '$iduser'");
 while ($appart = $resultappart ->fetch_array(MYSQLI_ASSOC)){
@@ -70,6 +67,6 @@ while ($appart = $resultappart ->fetch_array(MYSQLI_ASSOC)){
 	}
 }
 
->>>>>>> 1933726074f1a3d61060ae90304eb71e021a7b4c
+*/
 include('Vue/accueil.php');
 ?>

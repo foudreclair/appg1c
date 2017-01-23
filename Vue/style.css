@@ -15,7 +15,26 @@ body {
 	height: 100%;
 
 }
-
+.corps #menu_appartement ul li {
+	font-size: 20px;
+	text-decoration: none;
+	list-style: none;
+	display: inline-block;
+	font: bold;
+	height: 20px;
+	
+	padding: 7px;
+}
+#deroulant {
+	transition: all .2s ease-out;
+}
+.corps #menu_appartement {
+	
+	margin: 0;
+	text-align: center;
+	display: inline-block;
+	
+}
 .header {
 
 

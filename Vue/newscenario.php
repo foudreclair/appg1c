@@ -42,6 +42,7 @@ if (!empty($_POST['appart'])){
 <body>
 	<div class ="corps">
 		<a href="index.php?page=accueil">
+			
 		<h2>Pour voir vos scénarios, cliquez ici</h2></a>
 		<h1>Vous allez pouvoir configurer votre scénario :</h1>
 		

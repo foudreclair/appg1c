@@ -7,22 +7,23 @@ ajouter supprimer et visualiser les pièce
 ajouter des capteurs dans les dites pièce  .?
 */
 $titre = "Domicile | Modifier un appartement";
-//include 'gabarit.php';
+include 'gabarit.php';
 
-include '../Modele/connexion_bdd.php';
-//include '../Controler/traitement.php';
+include 'Modele/connexion_bdd.php';
+include 'Controleur/traitement.php';
 $contenu="";
-/*try {
+try {
   $bdd=new PDO('mysql:host=localhost;dbname=bdd','root','root');
 }
 catch (Exception $e)
 {
   die('Erreur : '.$e->getMessage());
 }
-*/
+
 ?>
 <body>
-  <div id=menu_1>
+  <div class = "corps">
+  <div id="menu_1">
   <h2>Liste des appartement</h2>
   <form method="post" action="../Controleur/action.php">
     <label for="nom">Choix de l'appartement :</label>
@@ -46,12 +47,10 @@ catch (Exception $e)
     <!--<input class="button" type="submit" name="dell_appartement"value="Supprimer">-->
   </from>
   </div>
-  <div id=menu_2>
-    <from method=post action="../Controleur/action.php">
-      <p>
+  
 
 
-
+</div>
 
 
 </body>

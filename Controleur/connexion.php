@@ -4,7 +4,7 @@
 			include('../Modele/fonctions.php');
 			include('../Modele/connexion_bdd.php');
 			
-			$result = $mysqli->query('SELECT Id, Mail, Password FROM utilisateur where Mail="' .$_POST['mail'].'"');
+			$result = $mysqli->query('SELECT Id, Mail, Password, Permission FROM utilisateur where Mail="' .$_POST['mail'].'"');
 			$row = $result->fetch_array(MYSQLI_NUM);
 			$id = $row[0];
 			$mail = $row[1];
@@ -36,6 +36,10 @@
 				//session_regenerate_id();    // Génère une nouvelle session et efface la précédente
 				$_SESSION['mail'] = $mail;
 				$_SESSION['id'] = $id;
+				
+				$_SESSION['admin']=$row[3];
+				
+				
 				header('Location:../index.php?page=accueil');
 			}
 			else {
@@ -46,13 +50,13 @@
 		else {
 			header('Location:../index.php?page=connexion&erreur=1');	
 		}
-<<<<<<< HEAD
-		require('Vue/connexion.php')
-	
 
-=======
-}
-		include('Vue/connexion.php')
->>>>>>> 1933726074f1a3d61060ae90304eb71e021a7b4c
+		require('Vue/connexion.php');
+	}
+
+
+
+		include('Vue/connexion.php');
+
 		
 ?>
