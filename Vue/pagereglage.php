@@ -11,29 +11,7 @@ require ('Controleur/traitement.php');
 	<meta charset="utf-8">
 </head>
 <body>
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	  Launch demo modal
-	</button>
-
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-	      </div>
-	      <div class="modal-body">
-	        ...
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	
 	<div class ="corps">
 	<div id ="menu_appartement">
 		<ul>
@@ -43,6 +21,52 @@ require ('Controleur/traitement.php');
 			<li><a href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
 		</ul>
 	</div>
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" onclick='affi()'>
+  Ajouter une pièce
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ajouter un pièce</h4>
+      </div>
+      <div class="modal-body">
+        
+	
+				<form method="post" action="Controleur/traitement.php" id= "nouvpie">
+					<p> Choix de l'appartement :</p> 
+					<select name="appartement_selectionne">
+
+					<?php 
+					
+					include 'Modele/connexion_bdd.php';
+					$result =  $mysqli -> query("SELECT * FROM Appartements WHERE Id_Utilisateur ='$iduser' ");
+					while ($donnes = $result->fetch_array(MYSQLI_ASSOC)) {
+						?>
+					<option value="<?php echo $donnes['Id'] ?>"><?php echo $donnes['Nom'] ?></option>
+					<?php
+					}
+					?>
+						</select>
+					
+					<p>Nom de la pièce : <input type="text" name="nom_piece" id="nom_piece"></p>
+
+					<input type="hidden" name="declencheur" id="declencheur" value="2">
+					
+				</form>
+	
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick = "sub('#')">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 	<div id = "newpie">
 	<h2> Ajouter une pièce </h2>
 				<form method="post" action="Controleur/traitement.php">
@@ -67,6 +91,7 @@ require ('Controleur/traitement.php');
 					<input type="submit" name="valider_appart" value ="Valider">
 				</form>
 	</div>
+	
 	<div id="full_bloc">
 		<form class="left_bloc" method="post" action="Controleur/traitement.php">
 			<h2> Ajouter un appartement</h2>
@@ -100,8 +125,13 @@ require ('Controleur/traitement.php');
 </div>
 </body>
 <script>
+function affi(){
+	$('#myModal').modal('show');
+}
+
 document.getElementById('newpie').style.visibility = "hidden";
 document.getElementById('newpie').style.display = 'none';
+
 function affich(val){
 	if (document.getElementById(val).style.display == 'none'){
 		document.getElementById(val).style.visibility = "visible";

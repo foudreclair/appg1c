@@ -4,6 +4,8 @@ session_start ();
 // var_dump($_GET);
 if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 	if (isset ( $_GET ["page"] )) { // On test la page a afficher
+		
+		
 		switch (htmlentities ( $_GET ["page"] )) {
 			case "register" :
 				include ("Vue/register.php");
@@ -39,7 +41,11 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 				include ("Controleur/stats.php");
 				break;
 			case "catalogue" :
+<<<<<<< HEAD
 				include ("Controleur/stats.php");
+=======
+				include ("Controleur/catalogue.php");
+>>>>>>> 438f3917b8ed51b9e9b998feee2c67d98e91161a
 				break;
 			default :
 				include ("Controleur/accueil.php");
@@ -51,6 +57,12 @@ else { // La page par default pour l'instant la page connexion
 	
 	if (isset ( $_GET ["page"] )) {
 		switch (htmlentities ( $_GET ["page"] )) {
+			case "reglages" :
+				include ("Vue/reglages.php");
+				break; 
+			case "admin" :
+				include("Controleur/admin.php");
+				break;
 			case "register" :
 				include ("Vue/register.php");
 				break;
