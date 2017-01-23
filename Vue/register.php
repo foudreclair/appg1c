@@ -1,12 +1,4 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-</script>
+
 <?php
 $titre = "Domicile | Créer votre compte";
 
@@ -15,7 +7,6 @@ include 'gabarit.php';
 
 ?>
 
-<div class='corps'>
 <?php 
 	if(isset($_GET['succes'])) {
 		echo '<center>Inscription réussie</center>';
@@ -35,6 +26,13 @@ include 'gabarit.php';
 		}
 	}
 ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
 	<h1>Créez votre compte</h1>
 	<form method="post" action="Controleur/register.php" enctype="multipart/form-data" id ="register">
 		<fieldset><legend>Vos identifiants</legend>
@@ -52,7 +50,6 @@ include 'gabarit.php';
 	</div><br>
 	<input id ="sub" type="submit" value="S'inscrire"  />
 	</form>
-</div>
 
 
 <script>
@@ -94,7 +91,7 @@ function unvalid(val) {
 function validmail(val) {
 	
 	if (IsMail(val)){
-		var verif = file('http://localhost:80/appg1c/Vue/verifbdd.php?mail='+val);
+		var verif = file('http://localhost/appg1c/Vue/verifbdd.php?mail='+val);
 		if (verif !=0){
 			document.getElementById("errmail").innerHTML="Email existant ! ";
 			unvalid("password");
