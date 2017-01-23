@@ -48,14 +48,8 @@
 		}
 		else {
 			header('Location:../index.php?page=connexion&erreur=1');	
-		}
-
+		}		
 		require('Vue/connexion.php');
 	}
-
-
-
-		include('Vue/connexion.php');
-
-		
+		require('Vue/connexion.php');
 ?>
