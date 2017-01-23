@@ -6,7 +6,7 @@ if (!isset($_SESSION['id'])) {
 
 $iduser = $_SESSION['id'];
 include('Modele/connexion_bdd.php');
-
+require ('Modele/fonctions.php');
 $reqscernar = $mysqli->query("SELECT * FROM Scenario WHERE Id_Utilisateur = '$iduser'");
 $valscenar = [];
 $nomscenar = [];

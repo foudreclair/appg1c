@@ -40,6 +40,9 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 			case "stats" :
 				include ("Controleur/stats.php");
 				break;
+			case "catalogue" :
+				include ("Controleur/catalogue.php");
+				break;
 			default :
 				include ("Controleur/accueil.php");
 				break;

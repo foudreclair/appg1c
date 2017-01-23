@@ -50,6 +50,8 @@
 							href="index.php?page=scenarios">Scenarios</a></li>
 						<li <?php activepage("stats")?>><a href="index.php?page=stats">Statistiques</a></li>
 						<li <?php activepage("contact")?>><a href="index.php?page=contact">Contact</a></li>
+						<li <?php activepage("catalogue")?>><a
+							href="index.php?page=catalogue">Catalogue</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown navbar-right">
@@ -74,3 +76,6 @@
 
 		</ul>
 	</div>
+	<script>
+	$('.dropdown-toggle').dropdown();
+	</script>
