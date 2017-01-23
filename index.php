@@ -51,12 +51,6 @@ else { // La page par default pour l'instant la page connexion
 	
 	if (isset ( $_GET ["page"] )) {
 		switch (htmlentities ( $_GET ["page"] )) {
-			case "reglages" :
-				include ("Vue/reglages.php");
-				break; 
-			case "admin" :
-				include("Controleur/admin.php");
-				break;
 			case "register" :
 				include ("Vue/register.php");
 				break;
