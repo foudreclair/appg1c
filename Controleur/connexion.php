@@ -1,7 +1,6 @@
 <?php
 	if (isset($_POST['mail']) || isset($_POST['password'])) {
 		if(!empty($_POST['mail']) && !empty($_POST['password'])){ 
-			include('../Modele/fonctions.php');
 			include('../Modele/connexion_bdd.php');
 			
 			$result = $mysqli->query('SELECT Id, Mail, Password, Permission FROM utilisateur where Mail="' .$_POST['mail'].'"');
