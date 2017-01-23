@@ -1,10 +1,6 @@
 <?php
 $titre = "Domicile | Accueil";
-
-session_start();
-$contenu = "";
 include 'gabarit.php';
-//print_r($val);
 
 ?>
 
