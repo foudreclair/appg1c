@@ -4,7 +4,7 @@ session_start ();
 // var_dump($_GET);
 if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 	if (isset ( $_GET ["page"] )) { // On test la page a afficher
-		
+		/*
 		if (htmlentities ( $_GET ["page"] ) == "accueil") {
 			include ("Controleur/accueil.php");
 		}
@@ -40,7 +40,7 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 		}
 		if (htmlentities ( $_GET ["page"] ) == "register") {
 			include ("Vue/register.php");
-		}
+		}*/
 		
 		switch (htmlentities ( $_GET ["page"] )) {
 			case "register" :
@@ -57,6 +57,12 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 				break;
 			case "reglages" :
 				include ("Controleur/reglages.php");
+				break;
+			case "ajoutcapteur" :
+				include "Vue/ajouter_capteur2.php";
+				break;
+			case "ajoutpiece": 
+				include ("Vue/ajouter_piece.php");
 				break;
 			case "suppappart" :
 				include ("Vue/supprimer_appart.php");
