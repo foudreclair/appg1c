@@ -23,31 +23,57 @@ if (isset ( $_GET ["page"] )) {
 }
 ?>
 
- <div class="container">
-        <div class="card card-container">
-      <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-	
-		<form method="post"  class="form-signin" action="Controleur/connexion.php" id="con">
-		<span id="reauth-email" class="reauth-email"></span>
-			<input id="mail " type="text" name="mail"
-				placeholder="Entrez votre email"
+<div class="container">
+	<div class="card card-container">
+		<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+		<img id="profile-img" class="profile-img-card"
+			src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+		<p id="profile-name" class="profile-name-card"></p>
+
+		<form method="post" class="form-signin"
+			action="Controleur/connexion.php" id="con">
+			<span id="reauth-email" class="reauth-email"></span> <input
+				id="mail " type="text" name="mail" placeholder="Entrez votre email"
 				onchange='validtext(this.value,"mailvalid")'> <label id="mailvalid"></label><br />
 			<input type="password" name="password" placeholder="Mot de passe"><br>
 			<br />
 			<div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Se connecter</button>
-			<a href="index.php?page=register"><button  name='register'type="button" class="btn btn-primary">Créer un compte</button></a>
-		</form>
+				<label> <input type="checkbox" value="remember-me"> Remember me
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block btn-signin"
+				type="submit">Se connecter</button>
+			<a href="index.php?page=register"><button name='register'
+					type="button" class="btn btn-primary">Créer un compte</button></a>
+									<div style="text-align:center;"><button type="button" class="btn btn-lg" style="width:400px" href="add_scan.php" data-target="#myModal" data-toggle="modal">Programmer un scan</button></div>
+					
+ <!-- MODAL / POPUP:!-->
+<div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+			</div>
+		</div>
 	</div>
-</center>
+ </div>
+
+ <script  type="text/javascript">
+ //Script pop-up / modal
+		$("#myModal").on("show.bs.modal", function(e) {
+			var link = $(e.relatedTarget);
+			$(this).find(".modal-body").load(link.attr("href"));
+		});
+			$('body').on('hidden.bs.modal', '.modal', function(){
+			$(this).removeData('bs.modal');
+		});
+</script>
+
+  </div>
+</div>
+	</div>
+	</center>
 	</header>
-	
+
 </div>
 <script>
 function isEmail(myVar){
@@ -94,4 +120,5 @@ function file(fichier)
      if(xhr_object.readyState == 4) return(xhr_object.responseText);
      else return(false);
      }
+
 </script>

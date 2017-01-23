@@ -10,7 +10,7 @@
 <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- jQuery -->
-<script src="Vue/js/jquery.js"></script>
+ <!--   <script src="Vue/js/jquery.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="Vue/js/bootstrap.min.js"></script>
 
@@ -58,8 +58,8 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mon profil
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Editer mon profil</a></li>
-          <li><a href="#">Se déconnecter</a></li>
+          <li><a href="index.php?page=editer_profil">Editer mon profil</a></li>
+          <li><a href="index.php?page=deconnexion">Se déconnecter</a></li>
         </ul>
       </li>
 					</ul>

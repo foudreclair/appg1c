@@ -39,11 +39,7 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 				include ("Controleur/stats.php");
 				break;
 			case "catalogue" :
-<<<<<<< HEAD
-				include ("Controleur/catalogue.php");
-=======
 				include ("Controleur/stats.php");
->>>>>>> 3400e7c4a5a8e9c3ba69eff2d92096a43ed2984c
 				break;
 			default :
 				include ("Controleur/accueil.php");
