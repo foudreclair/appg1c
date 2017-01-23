@@ -82,8 +82,7 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 
 else { // La page par default pour l'instant la page connexion
 	
-	if (htmlentities ( $_GET ["page"] ) == "register") {
-		include ("Controleur/register.php");
+
 		
 		if (isset ( $_GET ["page"] )) {
 			switch (htmlentities ( $_GET ["page"] )) {
