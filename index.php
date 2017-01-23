@@ -4,8 +4,6 @@ session_start ();
 // var_dump($_GET);
 if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 	if (isset ( $_GET ["page"] )) { // On test la page a afficher
-		
-		
 		switch (htmlentities ( $_GET ["page"] )) {
 			case "register" :
 				include ("Vue/register.php");
@@ -38,6 +36,9 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 				include("Controleur/admin.php");
 				break;
 			case "stats" :
+				include ("Controleur/stats.php");
+				break;
+			case "catalogue" :
 				include ("Controleur/stats.php");
 				break;
 			default :
