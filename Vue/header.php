@@ -12,8 +12,6 @@
     <!-- jQuery -->
  <!--   <script src="Vue/js/jquery.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="Vue/js/bootstrap.min.js"></script>
-
 
 <!-- Bootstrap Core JavaScript -->
 <script src="Vue/js/bootstrap.min.js"></script>
@@ -38,8 +36,8 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php?page=connexion"><img
-						width="200" height="30" src="Vue/logo2.png"></img></a>
+					<a class="navbar-brand" href="index.php?page=accueil"><img
+						width="200" height="30" src="Vue/logo.png"></img></a>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">

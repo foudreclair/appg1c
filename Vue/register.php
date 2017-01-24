@@ -1,13 +1,15 @@
 
 <?php
+/*
 $titre = "Domicile | Créer votre compte";
 
 $contenu = "";
 include 'gabarit.php';
-
+*/
 ?>
 
 <?php 
+/*
 	if(isset($_GET['succes'])) {
 		echo '<center>Inscription réussie</center>';
 	}
@@ -15,24 +17,24 @@ include 'gabarit.php';
 		$erreur = $_GET['erreur'];
 		switch($erreur) {
 			case 1 :
-				echo '<center>Au moins un des champs est vide</center>';
+				echo 'Au moins un des champs est vide</center>';
 				break;
 			case 2 :
-				echo '<center>Les mots de passe sont diff?rents</center>';
+				echo 'Les mots de passe sont diff?rents';
 				break;
 			case 3 :
-				echo '<center>Un utilisateur avec cet identifiant existe deja</center>';
+				echo '<center>Un utilisateur avec cet identifiant existe deja';
 				break;
 		}
 	}
+	*/
 ?>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-</script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="Vue/js/bootstrap.min.js"></script>
+
 	<h1>Créez votre compte</h1>
 	<form method="post" action="Controleur/register.php" enctype="multipart/form-data" id ="register">
 		<fieldset><legend>Vos identifiants</legend>
@@ -45,14 +47,23 @@ include 'gabarit.php';
 	<fieldset><legend>Vos informations</legend>
 	<label for="Nom">Nom : </label><input name="nom" type="text" id="nom" /><br />
 	<label for="Prenom">Prenom : </label><input name="prenom" type="text" id="prenom" /><br />
-	<label for="Date_naissance">Date de naissance : </label><input type="text" id="datepicker" name="datepicker"><br />
+	<label for="Date_naissance">Date de naissance : </label><input type="text" id="datepicker" name="datepicker" class="hasDatepicker"><br />
 	</fieldset>
 	</div><br>
-	<input id ="sub" type="submit" value="S'inscrire"  />
-	</form>
-
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button id="sub" type="submit" class="btn btn-primary" onclick = "sub('#')">S'enrengistrer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
+$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
 setInterval("validform()", 1000);
 document.getElementById("sub").disabled = "true";
 document.getElementById("infos").style.visibility = "hidden";

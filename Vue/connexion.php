@@ -5,7 +5,7 @@ include 'gabarit.php';
 ?>
 
 <?php
-
+/*
 if (isset ( $_GET ["erreur"] )) {
 	switch ($_GET ["erreur"]) {
 		case 1 :
@@ -21,6 +21,7 @@ if (isset ( $_GET ["page"] )) {
 		echo 'Vous êtes désormais déconnecté.';
 	}
 }
+*/
 ?>
 
 <div class="container">
@@ -43,30 +44,19 @@ if (isset ( $_GET ["page"] )) {
 			</div>
 			<button class="btn btn-lg btn-primary btn-block btn-signin"
 				type="submit">Se connecter</button>
-			<a href="index.php?page=register"><button name='register'
-					type="button" class="btn btn-primary">Créer un compte</button></a>
-									<div style="text-align:center;"><button type="button" class="btn btn-lg" style="width:400px" href="add_scan.php" data-target="#myModal" data-toggle="modal">Programmer un scan</button></div>
-					
- <!-- MODAL / POPUP:!-->
-<div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-body">
-			</div>
-		</div>
-	</div>
- </div>
+	
+			<button data-toggle="modal" onclick='affi()'type="button" class="btn btn-primary"  >
+Créer un compte
+</button>
 
- <script  type="text/javascript">
- //Script pop-up / modal
-		$("#myModal").on("show.bs.modal", function(e) {
-			var link = $(e.relatedTarget);
-			$(this).find(".modal-body").load(link.attr("href"));
-		});
-			$('body').on('hidden.bs.modal', '.modal', function(){
-			$(this).removeData('bs.modal');
-		});
-</script>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+	<?php include('Vue/register.php'); ?>
+      
 
   </div>
 </div>
@@ -120,5 +110,8 @@ function file(fichier)
      if(xhr_object.readyState == 4) return(xhr_object.responseText);
      else return(false);
      }
+function affi(){
+	$('#myModal').modal('show');
+}
 
 </script>
