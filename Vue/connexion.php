@@ -46,7 +46,7 @@ function validtext(val,id){
 		
 		var verif = file('http://localhost:80/appg1c/Vue/verifbdd.php?mail='+val);
 		//document.getElementById(id).innerHTML = verif;
-		if (verif !=0){
+		if (verif){
 			document.getElementById(id).innerHTML = "Email correct ! ";
 		}
 		else{

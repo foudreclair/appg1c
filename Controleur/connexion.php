@@ -57,7 +57,6 @@
 
 
 		include('Vue/connexion.php');
-		include('../Vue/connexion.php');
 
 		
 ?>

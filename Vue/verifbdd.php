@@ -1,6 +1,6 @@
 <?php
 //echo "Mail : ". $_GET['mail'];
-$mail = $_GET['mail'];
+$mail = htmlentities($_GET['mail']);
 include('../Modele/connexion_bdd.php');
 $i = 0;
 $result = $mysqli->query("SELECT * FROM Utilisateur WHERE Mail = '$mail'");
@@ -8,9 +8,9 @@ $result = $mysqli->query("SELECT * FROM Utilisateur WHERE Mail = '$mail'");
 		$i+=1;
 	}
 if ($i == 0){
-	echo '0';
+	echo false;
 }
 else {
-	echo '1';
+	echo true;
 }
 ?>
