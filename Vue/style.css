@@ -42,6 +42,45 @@ body {
 	color: Blue;
 
 }
+.menuderoul {
+	vertical-align: middle;
+	
+	display:table-cell;
+	line-height: 100%;
+}
+/*.menuderoul h2 {
+	float: left;
+	height: 100%;
+
+	top:0;
+	
+}
+.menuderoul img {
+	max-height: 40px;
+	max-width: 40px;
+	width: auto;
+	height: auto;
+	line-height: 100%;
+	text-align: center;
+	
+}*/
+.menuderoul #txt {
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+.menuderoul #ima {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.menuderoul #ima img {
+	max-height: 20px;
+	max-width: 20px;
+	width: auto;
+	height: auto;
+	vertical-align: middle;
+	}
 .corps table
 {
     border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
@@ -63,6 +102,9 @@ body {
 	display: inline-block;
 	width: 28%;
 	padding: 10px;
+	-webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    transition: all .2s ease-out;
 	
 }
 .menu {
@@ -93,7 +135,7 @@ li.current {
 .menu ul li {
 
 	font-size: 20px;
-	width: 13%;
+	width: 10%;
 	text-align: center;
 	display: inline-block;
 	font: bold;

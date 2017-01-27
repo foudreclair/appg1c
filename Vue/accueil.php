@@ -27,8 +27,11 @@ include 'gabarit.php';
 	<?php 
 	foreach ($valscenar as $key => $val) {
 	?>
-	<div onmouseover='affich("<?php echo $nomscenar[$key] ?>")' onmouseout='disp("<?php echo $nomscenar[$key] ?>")'>
-	<h2><?php echo $nomscenar[$key] ?> : </h2>
+	
+	<h2 style="cursor:pointer" onclick ='affich("<?php echo $nomscenar[$key] ?>",this.id)' id = "titre_<?php echo $nomscenar[$key] ?>">+ <?php echo $nomscenar[$key] ?></h2>
+	
+	
+	
 	<div id = "<?php echo $nomscenar[$key] ?>" style="display:none" class ="deroulant"> 
 	<?php
 	
@@ -53,7 +56,7 @@ include 'gabarit.php';
 	
 	?>
 	</div>
-	</div>
+	
 	<?php
 	}
 
@@ -63,12 +66,21 @@ include 'gabarit.php';
 <script>
 	document.getElementById("infos").style.visibility = "hidden";
 	document.getElementById("infos").style.display = 'none';
-	function affich(val){
 
-		document.getElementById(val).style.display = 'block';
-	}
-	function disp(val){
-		
-		document.getElementById(val).style.display = 'none';
-	}
+	function affich(val,id){
+		//alert(titre);
+		//var signe = document.getElementById(titre).value;
+		//alert(signe);
+		if (document.getElementById(val).style.display == 'block'){
+			document.getElementById(val).style.display = 'none';
+			document.getElementById(id).innerHTML="+ "+val;
+		}
+		else {
+			document.getElementById(val).style.display = 'block';
+			document.getElementById(id).innerHTML="- "+val;
+			//alert(document.getElementById(titre).value.replace("+", "_"));
+			//document.getElementById("men_"+val).setAttribute("src","Vue/menuouvert.png");
+		}
+}
+	
 </script>
