@@ -15,6 +15,20 @@ body {
 	height: 100%;
 
 }
+.corps .panier {
+
+	border-bottom: solid;
+	border-width: 0.5px;
+}
+.corps .panier a{
+text-align: center;
+	}
+.corps .panier p{
+	display: inline-block;
+	width: 19%;
+	text-align: center;
+
+}
 .corps #menu_appartement ul li {
 	font-size: 20px;
 	text-decoration: none;
