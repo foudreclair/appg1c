@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:3306
--- Généré le :  Lun 30 Janvier 2017 à 15:55
+-- Généré le :  Lun 30 Janvier 2017 à 20:56
 -- Version du serveur :  5.5.42
 -- Version de PHP :  7.0.0
 
@@ -13,6 +13,42 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bdd`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Achats`
+--
+
+CREATE TABLE `Achats` (
+  `Id` int(10) NOT NULL,
+  `Id_Catalogue` int(10) NOT NULL,
+  `Quantite` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Expedition` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Date` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `Achats`
+--
+
+INSERT INTO `Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Date`) VALUES
+(1, 2, '1', 'Non', ''),
+(2, 4, '2', 'Non', ''),
+(3, 2, '1', 'Non', ''),
+(4, 4, '2', 'Non', ''),
+(5, 2, '1', 'Non', ''),
+(6, 4, '2', 'Non', ''),
+(7, 2, '1', 'Non', ''),
+(8, 4, '2', 'Non', ''),
+(9, 2, '1', 'Non', ''),
+(10, 4, '2', 'Non', ''),
+(11, 2, '1', 'Non', ''),
+(12, 4, '2', 'Non', ''),
+(13, 2, '1', 'Non', ''),
+(14, 4, '2', 'Non', ''),
+(15, 2, '1', 'Non', ''),
+(16, 4, '2', 'Non', '');
 
 -- --------------------------------------------------------
 
@@ -48,14 +84,15 @@ CREATE TABLE `Appartements` (
   `Pays` varchar(25) DEFAULT NULL,
   `Nb_personne` int(11) DEFAULT NULL,
   `Id_Utilisateur` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Appartements`
 --
 
 INSERT INTO `Appartements` (`Id`, `Nom`, `Type`, `Adresse`, `Ville`, `Pays`, `Nb_personne`, `Id_Utilisateur`) VALUES
-(3, 'Appart g1c', 1, '', '', '', 0, 7);
+(3, 'Appart g1c', 1, '', '', '', 0, 7),
+(4, 'Appart', 1, '', '', '', 0, 7);
 
 -- --------------------------------------------------------
 
@@ -127,6 +164,75 @@ INSERT INTO `categories` (`Id`, `Nom`, `Description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `CleAct`
+--
+
+CREATE TABLE `CleAct` (
+  `Id` int(10) NOT NULL,
+  `Cle` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Permission` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `Activee` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `CleAct`
+--
+
+INSERT INTO `CleAct` (`Id`, `Cle`, `Permission`, `Activee`) VALUES
+(1, 'AAA-BBB-CCC-DDD', '1', 'Non'),
+(2, 'AAA-BBB-CCC-DDD', '1', 'Non'),
+(3, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(4, '', '0', 'Non'),
+(5, '', '0', 'Non'),
+(6, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(7, '', '0', 'Non'),
+(8, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(9, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(10, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(11, '', '0', 'Non'),
+(12, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(13, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(14, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(15, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(16, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(17, '', '0', 'Non'),
+(18, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(19, '', '0', 'Non'),
+(20, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(21, '', '0', 'Non'),
+(22, 'zczcefcfe', '0', 'Non'),
+(23, 'zczcefcfe', '0', 'Non');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Commande`
+--
+
+CREATE TABLE `Commande` (
+  `Id` int(10) NOT NULL,
+  `Id_Utilisateur` int(10) NOT NULL,
+  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Adresse` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `CodePostal` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Ville` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Date` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Prix` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Payement` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `Commande`
+--
+
+INSERT INTO `Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`) VALUES
+(3, 7, 'G1C', 'Isep', '8 Avenue de Maintenon, 8', '78150', 'Le Chesnay', 'January 30, 2017, 5:24 pm', '62.58', 'Non'),
+(7, 7, 'G1C', 'Isep', '8 Avenue de Maintenon, 8', '78150', 'Le Chesnay', 'January 30, 2017, 5:26 pm', '62.58', 'Non');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `Fonctionnalite`
 --
 
@@ -168,14 +274,15 @@ CREATE TABLE `Pieces` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) DEFAULT NULL,
   `Id_Appartements` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Pieces`
 --
 
 INSERT INTO `Pieces` (`Id`, `Nom`, `Id_Appartements`) VALUES
-(6, 'Cuisine', 3);
+(6, 'Cuisine', 3),
+(7, 'Piece', 4);
 
 -- --------------------------------------------------------
 
@@ -279,6 +386,12 @@ INSERT INTO `Utilisateur` (`Id`, `Mail`, `Password`, `Nom`, `Prenom`, `Date_nais
 --
 
 --
+-- Index pour la table `Achats`
+--
+ALTER TABLE `Achats`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Index pour la table `Affectation`
 --
 ALTER TABLE `Affectation`
@@ -309,6 +422,18 @@ ALTER TABLE `Catalogue`
 -- Index pour la table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `CleAct`
+--
+ALTER TABLE `CleAct`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `Commande`
+--
+ALTER TABLE `Commande`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -364,10 +489,15 @@ ALTER TABLE `Utilisateur`
 --
 
 --
+-- AUTO_INCREMENT pour la table `Achats`
+--
+ALTER TABLE `Achats`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
 -- AUTO_INCREMENT pour la table `Appartements`
 --
 ALTER TABLE `Appartements`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `Capteur`
 --
@@ -384,6 +514,16 @@ ALTER TABLE `Catalogue`
 ALTER TABLE `categories`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT pour la table `CleAct`
+--
+ALTER TABLE `CleAct`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT pour la table `Commande`
+--
+ALTER TABLE `Commande`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT pour la table `Fonctionnalite`
 --
 ALTER TABLE `Fonctionnalite`
@@ -397,7 +537,7 @@ ALTER TABLE `Pannes`
 -- AUTO_INCREMENT pour la table `Pieces`
 --
 ALTER TABLE `Pieces`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `Programmation`
 --
