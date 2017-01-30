@@ -45,7 +45,7 @@ if (isset($_SESSION['pie'])){
 			
 	
 			<input type="hidden" name="declencheur" id="declencheur" value="4">
-			<input type="submit" name="Valider">
+			<input type="submit" name="Valider" value = "Valider">
 		</form>
 <?php
 }

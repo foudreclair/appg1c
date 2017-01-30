@@ -544,6 +544,24 @@ img {
 	border-color: Blue;
 }
 
+.corps .panier .nom {
+	width: 19%;
+
+}
+.corps .panier .prix {
+	width: 11%;
+
+}
+.corps .panier .date {
+	width: 27%;
+
+}
+.corps .panier .adresse {
+	width: 40%;
+	
+}
+
+
 #plangooglemap{
   width: 60%;
   height: auto;

@@ -18,6 +18,8 @@ include 'gabarit.php';
 			if ($_SESSION['admin']=='1') {
 				?>
 				<li <?php activepage("accueil")?>><a href="index.php?page=admin">Administration</a></li>
+				<li <?php activepage("accueil")?>><a href="index.php?page=cmd">Gérer les commandes</a></li>
+				<li <?php activepage("accueil")?>><a href="index.php?page=cleactiv">Ajouter des clés d'activation</a></li>
 			<?php
 			}
 			?>
