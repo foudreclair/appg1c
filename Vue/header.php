@@ -3,7 +3,7 @@
 <head>
 	<title><?php echo $titre ?></title>
 	<link rel="stylesheet" href="Vue/style.css" type="text/css" />
-	<link rel="stylesheet" href="Vue/stylead.css" type="text/css" />
+	<link rel="stylesheet" href="Vue/styleadg.css" type="text/css" />
 	 <style>
 
 
@@ -17,7 +17,7 @@
 	<nav class ="menu">
 		
 		<ul id="menu_deroulant" >
-			<img src="Vue/logo2.png">
+			<img src="Vue/logo3.png">
 			<li><a <?php activepage("accueil")?> href="index.php?page=accueil">Accueil</a></li>
 			<li><a <?php activepage("reglages")?> href="index.php?page=reglages">Gérer ma maison</a></li>
 			<li><a <?php activepage("scenarios")?> href="index.php?page=scenarios">Scénarios</a></li>
