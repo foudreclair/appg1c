@@ -44,7 +44,7 @@ function isEmail(myVar){
 function validtext(val,id){
 	if (isEmail(val)) {
 		
-		var verif = file('http://localhost:80/appg1c/Vue/verifbdd.php?mail='+val);
+		var verif = file('ht	p://localhost:80/appg1c/Vue/verifbdd.php?mail='+val);
 		//document.getElementById(id).innerHTML = verif;
 		if (verif){
 			document.getElementById(id).innerHTML = "Email correct ! ";
