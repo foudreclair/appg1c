@@ -1,6 +1,7 @@
 #main{
   height: 100%
 }
+/*pour l'exemple*/
 /*LE FOOTER*/
 /*tout le fond de la divvv*/
 .footer{
@@ -11,6 +12,7 @@
   background-color:#4CAEE3;
   width: 100%;
   height: auto;
+
 }
 
 .footer_2  li{
@@ -46,4 +48,17 @@ a:hover{
 #logo_f img{
   height: 25px;
   width:auto;
+}
+
+/*La page contact*/
+#plan{
+  display: block;
+  margin-left: 200px;
+  width: 35%;
+  height: auto;
+}
+#champ_saisie #info_client{
+  display: inline-block;
+  height: 45%;
+
 }
