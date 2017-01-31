@@ -28,17 +28,29 @@ if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
 			case "ajoutpiece" :
 				include ("Vue/ajouter_piece.php");
 				break;
+			case "validachat" :
+				include ("Vue/commander.php");
+				break;
 			case "suppappart" :
 				include ("Vue/supprimer_appart.php");
 				break;
 			case "contact" :
 				include ("Vue/contact.php");
 				break;
+			case "panier" :
+				include ("Vue/panier.php");
+				break;
 			case "admin" :
 				include("Controleur/admin.php");
 				break;
 			case "stats" :
 				include ("Controleur/stats.php");
+				break;
+			case "cmd" :
+				include ("Vue/gestioncommandes.php");
+				break;
+			case "cleactiv" :
+				include ("Vue/cleactive.php");
 				break;
 			case "catalogue" :
 

@@ -15,6 +15,20 @@ body {
 	height: 100%;
 
 }
+.corps .panier {
+
+	border-bottom: solid;
+	border-width: 0.5px;
+}
+.corps .panier a{
+text-align: center;
+	}
+.corps .panier p{
+	display: inline-block;
+	width: 19%;
+	text-align: center;
+
+}
 .corps #menu_appartement ul li {
 	font-size: 20px;
 	text-decoration: none;
@@ -529,6 +543,24 @@ img {
 	border-width: 1px;
 	border-color: Blue;
 }
+
+.corps .panier .nom {
+	width: 19%;
+
+}
+.corps .panier .prix {
+	width: 11%;
+
+}
+.corps .panier .date {
+	width: 27%;
+
+}
+.corps .panier .adresse {
+	width: 40%;
+	
+}
+
 
 #plangooglemap{
   width: 60%;

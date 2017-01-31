@@ -2,8 +2,8 @@
 -- version 4.4.10
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost:8889
--- Généré le :  Jeu 12 Janvier 2017 à 21:43
+-- Client :  localhost:3306
+-- Généré le :  Lun 30 Janvier 2017 à 20:56
 -- Version du serveur :  5.5.42
 -- Version de PHP :  7.0.0
 
@@ -13,6 +13,42 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bdd`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Achats`
+--
+
+CREATE TABLE `Achats` (
+  `Id` int(10) NOT NULL,
+  `Id_Catalogue` int(10) NOT NULL,
+  `Quantite` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Expedition` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Date` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `Achats`
+--
+
+INSERT INTO `Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Date`) VALUES
+(1, 2, '1', 'Non', ''),
+(2, 4, '2', 'Non', ''),
+(3, 2, '1', 'Non', ''),
+(4, 4, '2', 'Non', ''),
+(5, 2, '1', 'Non', ''),
+(6, 4, '2', 'Non', ''),
+(7, 2, '1', 'Non', ''),
+(8, 4, '2', 'Non', ''),
+(9, 2, '1', 'Non', ''),
+(10, 4, '2', 'Non', ''),
+(11, 2, '1', 'Non', ''),
+(12, 4, '2', 'Non', ''),
+(13, 2, '1', 'Non', ''),
+(14, 4, '2', 'Non', ''),
+(15, 2, '1', 'Non', ''),
+(16, 4, '2', 'Non', '');
 
 -- --------------------------------------------------------
 
@@ -31,17 +67,7 @@ CREATE TABLE `Affectation` (
 --
 
 INSERT INTO `Affectation` (`Id`, `Id_Pieces`, `Id_Fonctionnalite`) VALUES
-(3, 1, 1),
-(7, 1, 2),
-(4, 2, 1),
-(8, 2, 2),
-(9, 3, 2),
-(6, 4, 1),
-(10, 4, 2),
-(35, 5, 1),
-(36, 5, 1),
-(37, 5, 1),
-(38, 5, 1);
+(43, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -58,18 +84,15 @@ CREATE TABLE `Appartements` (
   `Pays` varchar(25) DEFAULT NULL,
   `Nb_personne` int(11) DEFAULT NULL,
   `Id_Utilisateur` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Appartements`
 --
 
 INSERT INTO `Appartements` (`Id`, `Nom`, `Type`, `Adresse`, `Ville`, `Pays`, `Nb_personne`, `Id_Utilisateur`) VALUES
-(1, 'Appart1', NULL, NULL, NULL, NULL, NULL, 6),
-(2, 'AymericAppart', 1, 'Maintenon', 'Vesailles', 'fr', 1, 6),
-(3, 'zce', 1, 'cs', 'sdc', 'cd', 0, 6),
-(4, 'zce', 1, 'cs', 'sdc', 'cd', 0, 6),
-(5, 'zce', 1, 'cs', 'sdc', 'cd', 0, 6);
+(3, 'Appart g1c', 1, '', '', '', 0, 7),
+(4, 'Appart', 1, '', '', '', 0, 7);
 
 -- --------------------------------------------------------
 
@@ -80,7 +103,7 @@ INSERT INTO `Appartements` (`Id`, `Nom`, `Type`, `Adresse`, `Ville`, `Pays`, `Nb
 CREATE TABLE `Capteur` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Capteur`
@@ -88,41 +111,124 @@ CREATE TABLE `Capteur` (
 
 INSERT INTO `Capteur` (`Id`, `Nom`) VALUES
 (3, 'Temperature'),
-(4, 'Temperature'),
-(5, 'Temperature'),
-(6, 'Temperature'),
 (7, 'Luminosite'),
-(8, 'Luminosite'),
-(9, 'Luminosite'),
-(10, 'Luminosite'),
-(11, ''),
-(12, ''),
-(13, ''),
-(14, 'tertemp'),
-(15, 'tempCHamis'),
-(16, 'tempdet'),
-(17, 'lumcuis'),
-(18, 'tempcuis'),
-(19, 'lumchamis'),
-(20, 'lumchamis'),
-(21, 'lumchamis'),
-(22, 'lumchamis'),
-(23, 'lumchamis'),
-(24, 'lumchamis'),
-(25, 'lumchamis'),
-(26, 'TemTerr'),
-(27, 'TemTerr'),
-(28, 'TemTerr'),
-(29, 'TemTerr'),
-(30, 'TemTerr'),
-(31, 'TemTerr'),
-(32, 'TemTerr'),
-(33, 'TemTerr'),
-(34, 'TemTerr'),
-(35, 'TemTerr'),
-(36, 'TemTerr'),
-(37, 'TemTerr'),
-(38, 'TemTerr');
+(40, 'TempCoding'),
+(41, 'Temp1'),
+(42, 'TempCuis'),
+(43, 'TempCuis');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Catalogue`
+--
+
+CREATE TABLE `Catalogue` (
+  `Id` int(10) NOT NULL,
+  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Description` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `Prix` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Id_categorie` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `Catalogue`
+--
+
+INSERT INTO `Catalogue` (`Id`, `Nom`, `Description`, `Prix`, `Id_categorie`) VALUES
+(1, 'Capteur 1', 'Lourd', '19,80', '4'),
+(2, 'eqvdfv', 'dvddv', '6,80', 'vvddv'),
+(3, 'nom', 'czrczrc', '12,30', '6'),
+(4, 'Alarme', 'Super alarme trop stylÃ©e', '27,89', '6');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories`
+--
+
+CREATE TABLE `categories` (
+  `Id` int(10) NOT NULL,
+  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Description` varchar(300) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `categories`
+--
+
+INSERT INTO `categories` (`Id`, `Nom`, `Description`) VALUES
+(4, 'Capteurs', ''),
+(6, 'SÃ©curitÃ©', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `CleAct`
+--
+
+CREATE TABLE `CleAct` (
+  `Id` int(10) NOT NULL,
+  `Cle` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Permission` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `Activee` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `CleAct`
+--
+
+INSERT INTO `CleAct` (`Id`, `Cle`, `Permission`, `Activee`) VALUES
+(1, 'AAA-BBB-CCC-DDD', '1', 'Non'),
+(2, 'AAA-BBB-CCC-DDD', '1', 'Non'),
+(3, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(4, '', '0', 'Non'),
+(5, '', '0', 'Non'),
+(6, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(7, '', '0', 'Non'),
+(8, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(9, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(10, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(11, '', '0', 'Non'),
+(12, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(13, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(14, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(15, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(16, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(17, '', '0', 'Non'),
+(18, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(19, '', '0', 'Non'),
+(20, 'AAA-BBB-CCC-DDD', '0', 'Non'),
+(21, '', '0', 'Non'),
+(22, 'zczcefcfe', '0', 'Non'),
+(23, 'zczcefcfe', '0', 'Non');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Commande`
+--
+
+CREATE TABLE `Commande` (
+  `Id` int(10) NOT NULL,
+  `Id_Utilisateur` int(10) NOT NULL,
+  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Adresse` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `CodePostal` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Ville` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Date` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Prix` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Payement` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `Commande`
+--
+
+INSERT INTO `Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`) VALUES
+(3, 7, 'G1C', 'Isep', '8 Avenue de Maintenon, 8', '78150', 'Le Chesnay', 'January 30, 2017, 5:24 pm', '62.58', 'Non'),
+(7, 7, 'G1C', 'Isep', '8 Avenue de Maintenon, 8', '78150', 'Le Chesnay', 'January 30, 2017, 5:26 pm', '62.58', 'Non');
 
 -- --------------------------------------------------------
 
@@ -168,22 +274,15 @@ CREATE TABLE `Pieces` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) DEFAULT NULL,
   `Id_Appartements` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Pieces`
 --
 
 INSERT INTO `Pieces` (`Id`, `Nom`, `Id_Appartements`) VALUES
-(1, 'Chambre d''amis', 1),
-(2, 'Cuisine', 1),
-(3, 'Baisodrome', 1),
-(4, 'Salle de détente', 1),
-(5, 'Terrasse', 2),
-(6, 'Terrasse', 2),
-(7, 'Terrasse', 2),
-(8, 'Sauna', 2),
-(9, 'zvefvfev', 2);
+(6, 'Cuisine', 3),
+(7, 'Piece', 4);
 
 -- --------------------------------------------------------
 
@@ -203,18 +302,14 @@ CREATE TABLE `Programmation` (
   `Id_Capteur` int(11) NOT NULL,
   `Id_Pieces` int(11) NOT NULL,
   `Id_scenario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Programmation`
 --
 
 INSERT INTO `Programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`, `Id_scenario`) VALUES
-(52, '14/10/1996', '10/02/1233', '00:00', '00:00', '12', NULL, 1, 3, 1, 5),
-(53, '14/10/1996', '10/02/1233', '00:00', '00:00', '24', NULL, 2, 7, 1, 5),
-(59, 'Lundi', 'Vendredi', '00:00', '00:00', '12', NULL, 1, 4, 2, 6),
-(60, 'Lundi', 'Vendredi', '00:00', '00:00', '20', NULL, 2, 8, 2, 6),
-(61, 'Lundi', 'Lundi', '00:00', '00:00', '20', NULL, 2, 9, 3, 7);
+(3, 'Lundi', 'Samedi', '00:00', '00:00', '26', NULL, 1, 43, 6, 15);
 
 -- --------------------------------------------------------
 
@@ -227,16 +322,15 @@ CREATE TABLE `Scenario` (
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Recurrence` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Id_Utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `Scenario`
 --
 
 INSERT INTO `Scenario` (`Id`, `Nom`, `Recurrence`, `Id_Utilisateur`) VALUES
-(5, 'Vacances', 'Non', 6),
-(6, 'Semaine', 'Non', 6),
-(7, 'Test', 'Non', 6);
+(12, 'Ne pas supprimer', 'Non', 0),
+(15, 'Semaine', 'Non', 7);
 
 -- --------------------------------------------------------
 
@@ -277,22 +371,25 @@ CREATE TABLE `Utilisateur` (
   `Prenom` varchar(25) DEFAULT NULL,
   `Date_naissance` varchar(25) DEFAULT NULL,
   `Permission` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Utilisateur`
 --
 
 INSERT INTO `Utilisateur` (`Id`, `Mail`, `Password`, `Nom`, `Prenom`, `Date_naissance`, `Permission`) VALUES
-(1, 'encule@gmail.com', 'Lourd!', 'Encule', NULL, NULL, NULL),
-(2, 'encule@gmail.com', 'Lourd!', 'Encule', NULL, NULL, NULL),
-(3, 'encule@gmail.com', 'Lourd!', 'Encule', NULL, NULL, NULL),
-(5, 'stefcardoux@gmail.com', 'yolo', 'StÃ©phane', 'Cardoux', NULL, NULL),
-(6, 'aymeric@dejavel.fr', 'bb21158c733229347bd4e681891e213d94c685be', 'de Javel', 'Aymeric', '14/10/1996', NULL);
+(7, 'isepg1c2016@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'G1C', 'Isep', '01/01/2000', 1),
+(8, 'aymeric@dejavel.fr', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '10/03/2000', NULL);
 
 --
 -- Index pour les tables exportées
 --
+
+--
+-- Index pour la table `Achats`
+--
+ALTER TABLE `Achats`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Index pour la table `Affectation`
@@ -313,6 +410,30 @@ ALTER TABLE `Appartements`
 -- Index pour la table `Capteur`
 --
 ALTER TABLE `Capteur`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `Catalogue`
+--
+ALTER TABLE `Catalogue`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `CleAct`
+--
+ALTER TABLE `CleAct`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `Commande`
+--
+ALTER TABLE `Commande`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -368,15 +489,40 @@ ALTER TABLE `Utilisateur`
 --
 
 --
+-- AUTO_INCREMENT pour la table `Achats`
+--
+ALTER TABLE `Achats`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
 -- AUTO_INCREMENT pour la table `Appartements`
 --
 ALTER TABLE `Appartements`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `Capteur`
 --
 ALTER TABLE `Capteur`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
+--
+-- AUTO_INCREMENT pour la table `Catalogue`
+--
+ALTER TABLE `Catalogue`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT pour la table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT pour la table `CleAct`
+--
+ALTER TABLE `CleAct`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT pour la table `Commande`
+--
+ALTER TABLE `Commande`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `Fonctionnalite`
 --
@@ -391,17 +537,17 @@ ALTER TABLE `Pannes`
 -- AUTO_INCREMENT pour la table `Pieces`
 --
 ALTER TABLE `Pieces`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `Programmation`
 --
 ALTER TABLE `Programmation`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=62;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `Scenario`
 --
 ALTER TABLE `Scenario`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `Statistiques`
 --
@@ -411,7 +557,7 @@ ALTER TABLE `Statistiques`
 -- AUTO_INCREMENT pour la table `Utilisateur`
 --
 ALTER TABLE `Utilisateur`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- Contraintes pour les tables exportées
 --

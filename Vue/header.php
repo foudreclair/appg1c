@@ -46,7 +46,7 @@ li a.active {
 		<ul id="menu_deroulant" >
 			
 			<li <?php activepage("accueil")?>><a href="index.php?page=accueil">Accueil</a></li>
-			<li <?php activepage("reglages")?>><a href="index.php?page=reglages">Réglages</a></li>
+			<li <?php activepage("reglages")?>><a href="index.php?page=reglages">Gérer ma maison</a></li>
 			<li <?php activepage("scenarios")?>><a href="index.php?page=scenarios">Scénarios</a></li>
 			<li <?php activepage("stats")?>><a href="index.php?page=stats">Statistiques</a></li>
 			<li <?php activepage("catalogue")?>><a href="index.php?page=catalogue">Catalogue</a></li>

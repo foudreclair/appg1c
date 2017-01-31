@@ -14,7 +14,7 @@ require ('Controleur/traitement.php');
 	<div class ="corps">
 	<div id ="menu_appartement">
 		<ul>
-			<li><a onclick = "affich('newpie')">Ajouter une pièce</a></li>
+			<li><a style="cursor:pointer" onclick = "affich('newpie')">Ajouter une pièce</a></li>
 			<li><a href="index.php?page=modifappart">Modifier un appartement</a></li>
 			<li><a href="index.php?page=suppappart">Supprimer un appartement</a></li>
 			<li><a href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
