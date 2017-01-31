@@ -1,34 +1,35 @@
-
 @font-face {
-    font-family: "LatoLight";
-    src: url('fonts/Lato-Light.ttf');
-    src: url('fonts/Lato-Light.woff');
-    src: url('fonts/Lato-Light.eot');
-    src: url('fonts/Lato-Light.woff2');
+	font-family: "LatoLight";
+	src: url('fonts/Lato-Light.ttf');
+	src: url('fonts/Lato-Light.woff');
+	src: url('fonts/Lato-Light.eot');
+	src: url('fonts/Lato-Light.woff2');
 }
+
 body {
 	font-family: LatoLight;
 	margin: 0;
 	padding: 0;
-	background-image: url('fond.jpg');
+	background-image: url('');
 	background-size: 100%;
 	height: 100%;
-
 }
-.corps .panier {
 
+.corps .panier {
 	border-bottom: solid;
 	border-width: 0.5px;
 }
-.corps .panier a{
-text-align: center;
-	}
-.corps .panier p{
+
+.corps .panier a {
+	text-align: center;
+}
+
+.corps .panier p {
 	display: inline-block;
 	width: 19%;
 	text-align: center;
-
 }
+
 .corps #menu_appartement ul li {
 	font-size: 20px;
 	text-decoration: none;
@@ -36,30 +37,27 @@ text-align: center;
 	display: inline-block;
 	font: bold;
 	height: 20px;
-	
 	padding: 7px;
 }
+
 #deroulant {
 	transition: all .2s ease-out;
 }
+
 .corps #menu_appartement {
-	
 	margin: 0;
 	text-align: center;
 	display: inline-block;
-	
 }
+
 .header {
-
-
 	padding-bottom: 0.5%;
 	color: Blue;
-
 }
+
 .menuderoul {
 	vertical-align: middle;
-	
-	display:table-cell;
+	display: table-cell;
 	line-height: 100%;
 }
 /*.menuderoul h2 {
@@ -83,32 +81,36 @@ text-align: center;
 	vertical-align: middle;
 	height: 100%;
 }
+
 .menuderoul #ima {
 	display: inline-block;
 	height: 100%;
 	vertical-align: middle;
 }
+
 .menuderoul #ima img {
 	max-height: 20px;
 	max-width: 20px;
 	width: auto;
 	height: auto;
 	vertical-align: middle;
-	}
-.corps table
-{
-    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
 }
-.corps td
-{
-    border: 1px solid black;
-    width: 50px;
+
+.corps table {
+	border-collapse: collapse;
+	/* Les bordures du tableau seront collées (plus joli) */
 }
-.corps th
-{
-    border: 1px solid black;
-    width :200px;
+
+.corps td {
+	border: 1px solid black;
+	width: 50px;
 }
+
+.corps th {
+	border: 1px solid black;
+	width: 200px;
+}
+
 .corps .capt {
 	margin-top: 4px;
 	border: solid;
@@ -117,13 +119,11 @@ text-align: center;
 	width: 28%;
 	padding: 10px;
 	-webkit-transition: width 2s; /* Safari */
-    transition: width 2s;
-    transition: all .2s ease-out;
-	
+	transition: width 2s;
+	transition: all .2s ease-out;
 }
+
 .menu {
-
-
 	border-width: 1px;
 	padding: 0;
 	background-color: Snow;
@@ -134,33 +134,47 @@ text-align: center;
 	position: fixed;
 	font-weight: bold;
 }
-git	color: #C0C0C0;
 
-li.current {
-	background: #3ADF00;
+git	color: #C0C0C0 ;
 
-}
 .header ul li {
 	list-style-type: none;
 	display: inline-block;
-
-
 }
-.menu ul li {
 
-	font-size: 20px;
-	width: 10%;
-	text-align: center;
-	display: inline-block;
-	font: bold;
-	height: 20px;
-
-
-}
 .menu ul {
-	text-align: right;
-	margin-right: 20px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 1px solid #e7e7e7;
+	background-color: #0072BB;
+	text-decoration-color: black;
 }
+
+.menu li {
+	float: left;
+}
+
+.menu li a {
+	display: block;
+	color: #666;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.menu li a:hover:not (.active ) {
+	background-color: #ddd;
+	color: black;
+}
+
+.menu li a.active {
+	color: black;
+	background-color: #ddd;
+}
+/*
 .sous_menu {
 	text-align: center;
 	position: relative;
@@ -181,32 +195,27 @@ li.current {
 	border-width: 1px;
 
 }
-
-
+*/
 img {
 	height: 40px;
-
 	padding-left: 1%;
 	padding-top: 5px;
 	float: left;
-
 }
+
 .corps {
-	background-color:LightCyan;
+	background-color: LightCyan;
 	margin-top: 150px;
 	width: 80%;
 	margin-left: 15%;
 	border: solid;
 	padding: 2%;
 	border-radius: 20px;
-
 }
 
 .corps h1 {
 	color: Blue;
-
 }
-
 
 .corps .form input {
 	margin-top: 50px;
@@ -218,6 +227,7 @@ img {
 	width: 200px;
 	opacity: 0.9;
 }
+
 .corps .form .button {
 	font-size: 17px;
 	margin-top: 20px;
@@ -225,346 +235,215 @@ img {
 	font-weight: bold;
 	color: Blue;
 }
+
 .corps .form {
 	border-top: solid;
 	border-width: 1px;
 	border-color: Blue;
-
 }
 
 /*Code CSS du menu déroulant
   On commence par définir la forme de la div
 */
 #menu-accordeon {
-  padding:0;
-  margin:0;
-  list-style:none;
-  text-align: left;
-  width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: left;
+	width: 100%;
 }
 /* on définit les action des élément de la première liste */
 #menu-accordeon ul {
-  padding:0;
-  margin:0;
-  list-style:none;
-  text-align: left;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: left;
 }
+
 #menu-accordeon li {
-   background-color:#729EBF;
-   background-image:-webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
-   background-image: linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
-   border-radius: 6px;
-   margin-bottom:2px;
-   box-shadow: 3px 3px 3px #999;
-   border:solid 1px #333A40;
+	background-color: #729EBF;
+	background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+	background-image: linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+	border-radius: 6px;
+	margin-bottom: 2px;
+	box-shadow: 3px 3px 3px #999;
+	border: solid 1px #333A40;
 }
+
 #menu-accordeon li li {
-   max-height:0;
-   overflow: hidden;
-   transition: all .5s;
-   border-radius:0;
-   background: #444;
-   box-shadow: none;
-   border:none;
-   margin:0;
+	max-height: 0;
+	overflow: hidden;
+	transition: all .5s;
+	border-radius: 0;
+	background: #444;
+	box-shadow: none;
+	border: none;
+	margin: 0;
 }
+
 #menu-accordeon a {
-  display:block;
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 0;
-  font-family: verdana;
-  font-size:1.2em;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	padding: 8px 0;
+	font-family: verdana;
+	font-size: 1.2em;
 }
-#menu-accordeon ul li a, #menu-accordeon li:hover li a{
-  font-size:1em;
+
+#menu-accordeon ul li a, #menu-accordeon li:hover li a {
+	font-size: 1em;
 }
+
 #menu-accordeon li:hover {
-   background: #729EBF;
+	background: #729EBF;
 }
+
 #menu-accordeon li li:hover {
-   background: #999;
+	background: #999;
 }
+
 #menu-accordeon ul li:last-child {
-   border-radius: 0 0 6px 6px;
-   border:none;
+	border-radius: 0 0 6px 6px;
+	border: none;
 }
+
 #menu-accordeon li:hover li {
-  max-height: 15em;
+	max-height: 15em;
 }
 
 @font-face {
-    font-family: "LatoLight";
-    src: url('fonts/Lato-Light.ttf');
-    src: url('fonts/Lato-Light.woff');
-    src: url('fonts/Lato-Light.eot');
-    src: url('fonts/Lato-Light.woff2');
+	font-family: "LatoLight";
+	src: url('fonts/Lato-Light.ttf');
+	src: url('fonts/Lato-Light.woff');
+	src: url('fonts/Lato-Light.eot');
+	src: url('fonts/Lato-Light.woff2');
 }
+
+/* Form sec */
 body {
-	font-family: LatoLight;
-	margin: 0;
-	padding: 0;
-	background-image: url('fond.jpg');
-	background-size: 100%;
-	height: 1000px;
+	background: #e9e9e9;
+	color: #666666;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.header {
-	padding-bottom: 0.5%;
-	color: Blue;
-}
-
-.menu {
-	border-width: 1px;
-	padding: 0;
-	background-color: Snow;
-	text-align: center;
-	opacity: 0.7;
-	display: inline-block;
+.module2 {
+	padding-top: 8%;
 	width: 100%;
-	position: fixed;
-	font-weight: bold;
+	height : 100%;
+	margin-bot : 100px;
 }
-git	color: #C0C0C0;
-
-li.current {
-	background: #3ADF00;
-
-}
-.header ul li {
-	list-style-type: none;
-	display: inline-block;
-
-
-}
-.menu ul li {
-
-	font-size: 20px;
-	width: 13%;
-	text-align: center;
-	display: inline-block;
-	font: bold;
-	height: 20px;
-
-
-}
-.menu ul {
-	text-align: right;
-	margin-right: 20px;
-}
-.sous_menu {
-	text-align: center;
+/* Form Module */
+.form-module {
 	position: relative;
-	border-width: 1px;
-	position: fixed;
-	top: 50px;
-	right: 10px;
-	width: 40%;
-	color: LavenderBlush;
-
-}
-.sous_menu ul li {
-
-	list-style-type: none;
-	display: inline-block;
-	width: 25%;
-	border: solid;
-	border-width: 1px;
-
+	background: #ffffff;
+	max-width: 420px;
+	border-top: 5px solid #33b5e5;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
 }
 
-img {
-	height: 40px;
-
-	padding-left: 1%;
-	padding-top: 5px;
-	float: left;
-
-}
-.corps {
-	margin-top: 150px;
-	width: 70%;
-	margin-left: 15%;
-
-
-}
-
-.corps h1 {
-	color: Blue;
-
-}
-
-
-.corps .form input {
-	margin-top: 50px;
-	margin-right: 10px;
-	border: solid;
-	border: 1px;
-	border-radius: 2px;
+.form-module .toggle {
+	cursor: pointer;
+	position: absolute;
+	top: -0;
+	right: -0;
+	background: #33b5e5;
+	width: 30px;
 	height: 30px;
-	width: 200px;
-	opacity: 0.9;
-}
-.corps .form .button {
-	font-size: 17px;
-	margin-top: 20px;
-	font-family: LatoLight;
-	font-weight: bold;
-	color: Blue;
-}
-.corps .form {
-	border-top: solid;
-	border-width: 1px;
-	border-color: Blue;
-}
-
-#plangooglemap{
-  width: 60%;
-  height: auto;
-  align-items: center;
-} /*sa marche pas*/
-
-
-@font-face {
-    font-family: "LatoLight";
-    src: url('fonts/Lato-Light.ttf');
-    src: url('fonts/Lato-Light.woff');
-    src: url('fonts/Lato-Light.eot');
-    src: url('fonts/Lato-Light.woff2');
-}
-body {
-	font-family: LatoLight;
-	margin: 0;
-	padding: 0;
-	background-image: url('fond.jpg');
-	background-size: 100%;
-	height: 1000px;
-}
-
-.header {
-	padding-bottom: 0.5%;
-	color: Blue;
-}
-
-.menu {
-	border-width: 1px;
-	padding: 0;
-	background-color: Snow;
+	margin: -5px 0 0;
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 30px;
 	text-align: center;
-	opacity: 0.7;
-	display: inline-block;
+}
+
+.form-module .toggle .tooltip {
+	position: absolute;
+	top: 5px;
+	right: -65px;
+	display: block;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	padding: 5px;
+	font-size: 10px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.form-module .toggle .tooltip:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -5px;
+	display: block;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid rgba(0, 0, 0, 0.6);
+}
+
+.form-module .form {
+	display: none;
+	padding: 40px;
+}
+
+.form-module .form:nth-child(2) {
+	display: block;
+}
+
+.form-module h2 {
+	margin: 0 0 20px;
+	color: #33b5e5;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.form-module input {
+	outline: none;
+	display: block;
 	width: 100%;
-	position: fixed;
-	font-weight: bold;
+	border: 1px solid #d9d9d9;
+	margin: 0 0 20px;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	font-wieght: 400;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
 }
-git	color: #C0C0C0;
 
-li.current {
-	background: #3ADF00;
-
+.form-module input:focus {
+	border: 1px solid #33b5e5;
+	color: #333333;
 }
-.header ul li {
-	list-style-type: none;
-	display: inline-block;
 
-
+.form-module button {
+	cursor: pointer;
+	background: #33b5e5;
+	width: 100%;
+	border: 0;
+	padding: 10px 15px;
+	color: #ffffff;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
 }
-.menu ul li {
 
-	font-size: 20px;
-	width: 13%;
+.form-module button:hover {
+	background: #178ab4;
+}
+
+.form-module .cta {
+	background: #f2f2f2;
+	width: 100%;
+	padding: 15px 40px;
+	box-sizing: border-box;
+	color: #666666;
+	font-size: 12px;
 	text-align: center;
-	display: inline-block;
-	font: bold;
-	height: 20px;
-
-
-}
-.menu ul {
-	text-align: right;
-	margin-right: 20px;
-}
-.sous_menu {
-	text-align: center;
-	position: relative;
-	border-width: 1px;
-	position: fixed;
-	top: 50px;
-	right: 10px;
-	width: 40%;
-	color: LavenderBlush;
-
-}
-.sous_menu ul li {
-
-	list-style-type: none;
-	display: inline-block;
-	width: 25%;
-	border: solid;
-	border-width: 1px;
-
 }
 
-img {
-	height: 40px;
-
-	padding-left: 1%;
-	padding-top: 5px;
-	float: left;
-
+.form-module .cta a {
+	color: #333333;
+	text-decoration: none;
 }
-
-
-.corps h1 {
-	color: Blue;
-
-}
-
-
-.corps .form input {
-	margin-top: 50px;
-	margin-right: 10px;
-	border: solid;
-	border: 1px;
-	border-radius: 2px;
-	height: 30px;
-	width: 200px;
-	opacity: 0.9;
-}
-.corps .form .button {
-	font-size: 17px;
-	margin-top: 20px;
-	font-family: LatoLight;
-	font-weight: bold;
-	color: Blue;
-}
-.corps .form {
-	border-top: solid;
-	border-width: 1px;
-	border-color: Blue;
-}
-
-.corps .panier .nom {
-	width: 19%;
-
-}
-.corps .panier .prix {
-	width: 11%;
-
-}
-.corps .panier .date {
-	width: 27%;
-
-}
-.corps .panier .adresse {
-	width: 40%;
-	
-}
-
-
-#plangooglemap{
-  width: 60%;
-  height: auto;
-  align-items: center;
-} /*sa marche pas*/
-

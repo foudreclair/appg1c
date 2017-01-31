@@ -28,7 +28,7 @@
   <ul>
     <li>copyright</li>
     <li>mention legal</li>
-    <li><img src="logo3.png"></li>
+    <li><img src="Vue/logo3.png"></li>
   </ul>
 </div>
 </div>
