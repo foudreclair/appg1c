@@ -11,7 +11,7 @@ include 'gabarit.php';
 <div class="module3">
 
 	<div class='form form-block'>
-
+	
 		<h1>Bonjour <?php echo $_SESSION['mail'];if ($_SESSION['admin']=='1') {echo " Vous êtes l'administrateur";}?>!</h1>
 	<?php
 	if ($_SESSION ['admin'] == '1') {
