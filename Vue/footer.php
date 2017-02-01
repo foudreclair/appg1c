@@ -17,20 +17,15 @@
     <ul>
       <li <?php //activepage(XXX) ?>><a href="#">Plan du site</a></li>
       <li <?php //activepage(XXX) ?>><a href="#">XXX</a></li>
-      <li <?php //activepage(XXX) ?>><a href="#">XXX</a></li>
-
+      <li <?php //activepage(XXX) ?>><a href="#contenu">Haut de page</a></li>
     </ul>
   </div>
-<div class="haut_page">
-  <a class="pied" href="#main">Haut de page</a><!-- #main à remplacer par le nom de la div à pointer-->
-</div>
-<div class="mention_legal">
+  <div class="mention_legal">
   <ul>
-    <li>copyright</li>
-    <li>mention legal</li>
-    <li><img src="Vue/logo3.png"></li>
+    <li>Mention légale</li>
+    <li>Réaliser par © Cocoricode 2017</li>
   </ul>
-</div>
+  </div>
 </div>
 </body>
 </html>
