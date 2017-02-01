@@ -1,28 +1,29 @@
-#main{
-  height: 100%
-}
-/*pour l'exemple*/
 /*LE FOOTER*/
-/*tout le fond de la divvv*/
+
 .footer{
   align-items : center;
   position: relative;
   text-align: center;
   border-width: 1px;
-  background-color:#4CAEE3;
+  background-color: Blue ;
   width: 100%;
-  height: auto;
+  height: 100px;
   bottom : 0;
+  /*J'arrive pas a modifier la couleur des textes
+   du footer et
+   */
+  color:#ffffff;
+
 
 }
 
 .footer_2  li{
-  display: inline-block;;
+  display: inline-block;
   list-style: none;
   padding-top: 12px;
   width:  32%;
   height: 10px;
-
+  text-decoration: none;
 }
 /*on enleve ici les soulignements des liens*/
 a:link{
@@ -32,34 +33,21 @@ a:hover{
   color:#FF33CC;
 }
 
-.haut_page{
-  right: 10px;
-}
-
-.mention_legal li{
-  list-style: none;
-}
-
-.mention_legal, .haut_page, #logo_f{
-  display: inline-block;
-  width: 20%;
-  margin-top: 0;
-}
-
-#logo_f img{
-  height: 25px;
-  width:auto;
+.mention_legal li {
+    display: inline-block;
+    list-style: none;
+    width:  40%;
+    height: 10px;
 }
 
 /*La page contact*/
 #plan{
   display: block;
-  margin-left: 200px;
-  width: 35%;
-  height: auto;
-}
-#champ_saisie #info_client{
-  display: inline-block;
-  height: 45%;
 
+
+}
+#champ_saisie {
+  display: inline-block;
+  width: 40%;
+  border: 2px;
 }
