@@ -4,9 +4,7 @@
 <title><?php echo $titre ?></title>
 <link rel="stylesheet" href="Vue/style.css" type="text/css" />
 <link rel="stylesheet" href="Vue/stylead.css" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script src="Vue/dropit.js"></script>
-<link rel="stylesheet" href="Vue/dropit.css" type="text/css" />
+
 <meta charset="utf-8">
 </head>
 <body>

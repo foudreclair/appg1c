@@ -5,7 +5,7 @@ include 'gabarit.php';
 if (isset ( $_GET ["erreur"] )) {
 	switch ($_GET ["erreur"]) {
 		case 1 :
-			$erreur = 'Au moins un des champs est vide.';
+			$erreur =  'Au moins un des champs est vide.';
 			break;
 		case 2 :
 			$erreur = "L'identifiant ou le mot de passe est incorrect.";
@@ -32,53 +32,54 @@ if (isset ( $_GET ["page"] )) {
 <div class="module2">
 	<div class="module form-module">
 		<div class="toggle">
-			<div class="tooltip">S'enrengistrer</div>
+		<!-- 	<img src="Vue/add.png" width="30" height="10"></img>-->	
+		 <div class="tooltip">S'enrengistrer</div>
 		</div>
-		<h2>Se connecter</h2>
-			<?php
-			
-if (isset ( $erreur )) {
-				echo '<font color="red">' . $erreur . '</font>';
-			}
-			?>
+		<div class="form">
+			<h2>Se connecter</h2>
+			<?php if (isset($erreur)) {
+			echo '<font color="red">' . $erreur.'</font>';
+			}?>
 			<form method="post" action="Controleur/connexion.php" id="con">
-			<label id="mailvalid"></label><br> <input id="mail " type="text"
-				name="mail" placeholder="Entrez votre email"
-				onchange='validtext(this.value,"mailvalid")'> <input type="password"
-				name="password" placeholder="Mot de passe"><br>
-			<button type="submit" name='connexion'>Se connecter</button>
-		</form>
-	</div>
-	<div class="form">
-		<h2>Create an account</h2>
-		<form method="post" action="Controleur/register.php"
-			enctype="multipart/form-data" id="register">
-			<div>
-				<label for="mail">Mail : </label><input name="mail" type="text"
-					id="mail" onchange='validmail(this.value)'><label
-					style="color: red" id="errmail"></label><br />
-			</div>
-			<div id="password">
-				<label for="password">Mot de Passe : </label><input type="password"
-					name="password" oninput='validmdp(this.value)' id="pass" /><label
-					style="color: red" id="errmdp"></label><br />
-			</div>
-			<div id="confirm">
-				<label for="confirm">Confirmer le mot de passe : </label><input
-					type="password" name="confirm" oninput='validmdp2(this.value)' /><label
-					style="color: red" id="errmdp2"></label>
-			</div>
+				<label id="mailvalid"></label><br> <input id="mail " type="text"
+					name="mail" placeholder="Entrez votre email"
+					onchange='validtext(this.value,"mailvalid")'> <input
+					type="password" name="password" placeholder="Mot de passe"><br>
+				<button type="submit" name='connexion'>Se connecter</button>
+			</form>
+		</div>
+		<div class="form">
+			<h2>Create an account</h2>
+			<form method="post" action="Controleur/register.php"
+				enctype="multipart/form-data" id="register">
+				<div>
+					<label for="mail">Mail : </label><input name="mail" type="text"
+						id="mail" onchange='validmail(this.value)'><label
+						style="color: red" id="errmail"></label><br />
+				</div>
+				<div id="password">
+					<label for="password">Mot de Passe : </label><input type="password"
+						name="password" oninput='validmdp(this.value)' id="pass" /><label
+						style="color: red" id="errmdp"></label><br />
+				</div>
+				<div id="confirm">
+					<label for="confirm">Confirmer le mot de passe : </label><input
+						type="password" name="confirm" oninput='validmdp2(this.value)' /><label
+						style="color: red" id="errmdp2"></label>
+				</div>
 
-			<div id="infos">
-				<label>Vos informations</label> <label for="Nom">Nom : </label><input
-					name="nom" type="text" id="nom" /><br /> <label for="Prenom">Prenom
-					: </label><input name="prenom" type="text" id="prenom" /><br /> <label
-					for="Date_naissance">Date de naissance : </label><input type="text"
-					id="datepicker" name="datepicker"><br />
-			</div>
-			<br>
-			<button id="sub" type="submit">S'inscrire</button>
-		</form>
+				<div id="infos">
+					<label>Vos informations</label>
+					<label for="Nom">Nom : </label><input name="nom" type="text"
+						id="nom" /><br /> <label for="Prenom">Prenom : </label><input
+						name="prenom" type="text" id="prenom" /><br /> <label
+						for="Date_naissance">Date de naissance : </label><input
+						type="text" id="datepicker" name="datepicker"><br />
+				</div>
+				<br>
+				<button id="sub" type="submit">S'inscrire</button>
+			</form>
+		</div>
 	</div>
 </div>
 
