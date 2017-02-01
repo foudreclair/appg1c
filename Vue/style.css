@@ -10,7 +10,7 @@ body {
 	font-family: LatoLight;
 	margin: 0;
 	padding: 0;
-	background-image: url('');
+	background-image: url('Vue/background.jpg');
 	background-size: 100%;
 	height: 100%;
 }
@@ -133,6 +133,8 @@ body {
 	width: 100%;
 	position: fixed;
 	font-weight: bold;
+	position : static;
+	color : white;
 }
 
 git	color: #C0C0C0 ;
@@ -369,10 +371,13 @@ img {
 /* Form sec */
 body {
 	background: #e9e9e9;
+	background-image:url(background.jpg);
 	color: #666666;
 	font-size: 14px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	
+	
 }
 
 .module2 {
