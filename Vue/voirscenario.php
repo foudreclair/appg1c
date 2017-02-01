@@ -4,8 +4,9 @@ include 'Modele/connexion_bdd';
 $result = $mysqli->query('SELECT * FROM Programmation');
 while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
 ?>
+<div class = "module3">
 
-<div class = "corps">
+<div class = "module form-block">
 	<div class = "capt">
 	<ul>
 		
@@ -22,6 +23,7 @@ while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
 		
 	</ul>
 	</div>
+</div>
 </div>
 <?php
 }

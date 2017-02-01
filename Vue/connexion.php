@@ -5,16 +5,16 @@ include 'gabarit.php';
 if (isset ( $_GET ["erreur"] )) {
 	switch ($_GET ["erreur"]) {
 		case 1 :
-			echo 'Au moins un des champs est vide.';
+			$erreur =  'Au moins un des champs est vide.';
 			break;
 		case 2 :
-			echo "L'identifiant ou le mot de passe est incorrect.";
+			$erreur = "L'identifiant ou le mot de passe est incorrect.";
 			break;
 	}
 }
 if (isset ( $_GET ["page"] )) {
 	if ($_GET ["page"] == "deconnexion") {
-		echo 'Vous êtes désormais déconnecté.';
+		$erreur = 'Vous êtes désormais déconnecté.';
 	}
 }
 ?>
@@ -32,11 +32,14 @@ if (isset ( $_GET ["page"] )) {
 <div class="module2">
 	<div class="module form-module">
 		<div class="toggle">
-			<i class="fa fa-times fa-pencil"></i>
-			<div class="tooltip">Click Me</div>
+		<!-- 	<img src="Vue/add.png" width="30" height="10"></img>-->	
+		 <div class="tooltip">S'enrengistrer</div>
 		</div>
 		<div class="form">
 			<h2>Se connecter</h2>
+			<?php if (isset($erreur)) {
+			echo '<font color="red">' . $erreur.'</font>';
+			}?>
 			<form method="post" action="Controleur/connexion.php" id="con">
 				<label id="mailvalid"></label><br> <input id="mail " type="text"
 					name="mail" placeholder="Entrez votre email"

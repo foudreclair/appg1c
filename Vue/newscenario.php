@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $titre = 'Domicile | Créez votre scénario';
 include 'gabarit.php';
 require 'Modele/fonctions.php';
@@ -40,9 +40,10 @@ if (!empty($_POST['appart'])){
 	<title></title>
 </head>
 <body>
-	<div class ="corps">
+	<div class="module3">
+	<div class ="module form-block">
 		<a href="index.php?page=accueil">
-			
+			<div class="form">
 		<h2>Pour voir vos scénarios, cliquez ici</h2></a>
 		<h1>Vous allez pouvoir configurer votre scénario :</h1>
 		
@@ -190,12 +191,15 @@ if (!empty($_POST['appart'])){
 		<p>Merci d'annuler avant de changer de page</p>
 		<form method = "post" action = "Controleur/annul_scenar.php?page=scenarios"><input type = "submit" name ="annuler" value ="Annuler"></form>
 		<br><br><br>
+		<?php if(isset($_SESSION['nom_scenar'])) {?>
 		<p>Nom du scénario : <?php echo $_SESSION['nom_scenar'] ?></p>
 		<p>Scénario récurrent : <?php echo $_SESSION['true_rec'] ?></p>
 		<p>Date de début : <?php echo $_SESSION['date_debut'] ?></p>
 		<p>Date de fin : <?php echo $_SESSION['date_fin'] ?></p>
 		<p>Appartement : <?php echo $_SESSION['idappart'] ?></p>
-
+		<?php }?>
+	</div>
+	</div>
 	</div>
 </body>
 </html>

@@ -164,8 +164,7 @@ git	color: #C0C0C0 ;
 	text-decoration: none;
 	color: #FFFFFF;
 }
-
-.menu li a:hover:not (.active ) {
+.menu li a:hover:not(.active ) {
 	background-color: #ddd;
 	color: black;
 }
@@ -174,6 +173,54 @@ git	color: #C0C0C0 ;
 	color: black;
 	background-color: #ddd;
 }
+
+
+// Réglages navbar
+
+.reglages {
+	border-width: 1px;
+	padding: 0;
+	background-color: Snow;
+	text-align: center;
+	opacity: 0.7;
+	display: inline-block;
+	width: 10%;
+	position: relative;
+	font-weight: bold;
+}
+
+.reglages ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 1px solid #e7e7e7;
+	background-color: #0072BB;
+	text-decoration-color: black;
+}
+
+.reglages li {
+	float: left;
+}
+
+.reglages li a {
+	display: block;
+	color: #666;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.reglages li a:hover:not(.active ) {
+	background-color: #ddd;
+	color: black;
+}
+
+.reglages li a.active {
+	color: black;
+	background-color: #ddd;
+}
+
 /*
 .sous_menu {
 	text-align: center;
@@ -332,7 +379,23 @@ body {
 	padding-top: 8%;
 	width: 100%;
 	height : 100%;
-	margin-bot : 100px;
+	margin-bottom : 100px;
+	
+}
+.nav-right {
+	position: absolute;left: 85%;
+}
+.nav-right2 {
+		position: absolute;left: 93%;
+}
+	
+.module3 {
+	position: relative;
+	padding-top: 8%;
+	width: 100%;
+	height : 100%;
+	margin-bottom : 100px;
+	
 }
 /* Form Module */
 .form-module {
@@ -444,6 +507,115 @@ body {
 }
 
 .form-module .cta a {
+	color: #333333;
+	text-decoration: none;
+}
+
+/* Form block */
+.form-block {
+	position: relative;
+	background: #ffffff;
+	max-width: 80%;
+	border-top: 5px solid #33b5e5;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+}
+
+.form-block .toggle {
+	cursor: pointer;
+	position: absolute;
+	top: -0;
+	right: -0;
+	background: #33b5e5;
+	width: 30px;
+	height: 30px;
+	margin: -5px 0 0;
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.form-block .toggle .tooltip {
+	position: absolute;
+	top: 5px;
+	right: -150px;
+	display: block;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	padding: 5px;
+	font-size: 10px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.form-block .toggle .tooltip:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -5px;
+	display: block;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid rgba(0, 0, 0, 0.6);
+}
+
+.form-block .form {
+	padding: 40px;
+}
+
+.form-block h2 {
+	margin: 0 0 20px;
+	color: #33b5e5;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.form-block input {
+	outline: none;
+	display: block;
+	width: 100%;
+	border: 1px solid #d9d9d9;
+	margin: 0 0 20px;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	font-wieght: 400;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
+}
+
+.form-block input:focus {
+	border: 1px solid #33b5e5;
+	color: #333333;
+}
+
+.form-block button {
+	cursor: pointer;
+	background: #33b5e5;
+	width: 100%;
+	border: 0;
+	padding: 10px 15px;
+	color: #ffffff;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
+}
+
+.form-block button:hover {
+	background: #178ab4;
+}
+
+.form-block .cta {
+	background: #f2f2f2;
+	width: 100%;
+	padding: 15px 40px;
+	box-sizing: border-box;
+	color: #666666;
+	font-size: 12px;
+	text-align: center;
+}
+
+.form-block .cta a {
 	color: #333333;
 	text-decoration: none;
 }
