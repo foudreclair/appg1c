@@ -420,12 +420,14 @@ body {
 	font-size: 12px;
 	line-height: 30px;
 	text-align: center;
+	
+	
 }
 
 .form-module .toggle .tooltip {
 	position: absolute;
 	top: 5px;
-	right: -65px;
+	right: -95px;
 	display: block;
 	background: rgba(0, 0, 0, 0.6);
 	width: auto;
@@ -433,6 +435,7 @@ body {
 	font-size: 10px;
 	line-height: 1;
 	text-transform: uppercase;
+	
 }
 
 .form-module .toggle .tooltip:before {
@@ -519,46 +522,9 @@ body {
 	border-top: 5px solid #33b5e5;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
+	padding: 40px;
 }
 
-.form-block .toggle {
-	cursor: pointer;
-	position: absolute;
-	top: -0;
-	right: -0;
-	background: #33b5e5;
-	width: 30px;
-	height: 30px;
-	margin: -5px 0 0;
-	color: #ffffff;
-	font-size: 12px;
-	line-height: 30px;
-	text-align: center;
-}
-
-.form-block .toggle .tooltip {
-	position: absolute;
-	top: 5px;
-	right: -150px;
-	display: block;
-	background: rgba(0, 0, 0, 0.6);
-	width: auto;
-	padding: 5px;
-	font-size: 10px;
-	line-height: 1;
-	text-transform: uppercase;
-}
-
-.form-block .toggle .tooltip:before {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: -5px;
-	display: block;
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-right: 5px solid rgba(0, 0, 0, 0.6);
-}
 
 .form-block .form {
 	padding: 40px;

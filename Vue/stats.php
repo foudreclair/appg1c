@@ -1,29 +1,32 @@
 <?php
 $titre = "Domicile | Statistiques";
 
-
 include 'gabarit.php';
-print_r($stattot);
-print_r($statnom);
+print_r ( $stattot );
+print_r ( $statnom );
 
 ?>
-<div class ="corps">
-	<h1>Consultez vos dernières valeurs et statistiques :</h1><br>
+<div class="module3">
+	<div class="module form-block">
+		<h1>Consultez vos dernières valeurs et statistiques :</h1>
+		<br>
 <?php
 
-foreach ($statnom as $key => $value) {
-/*
-$tabnom = "['Degré','Lux']";
+foreach ( $statnom as $key => $value ) {
+	/*
+	 * $tabnom = "['Degré','Lux']";
+	 *
+	 * $titretable = $value['0'];
+	 */
+	$tabtest = "[[1,0],[2,1],[3,2]]";
+	echo $value;
+	?>
 
-$titretable = $value['0'];*/
-$tabtest = "[[1,0],[2,1],[3,2]]";
-echo $value;
-?>
 
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <div id="chart_div"></div>
-  <script>
+    <script type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"></script>
+		<div id="chart_div"></div>
+		<script>
   for (var i = 0; i < 2; i++) {
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(drawBasic);
@@ -65,10 +68,11 @@ function drawBasic() {
 
     }
     </script>
-    <br><br>
+		<br>
+		<br>
     <?php
-    
 }
 
 ?>
+</div>
 </div>
