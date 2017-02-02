@@ -29,6 +29,12 @@ text-align: center;
 	text-align: center;
 
 }
+.corps .commandes {
+	margin-bottom: 30px;
+	padding: 10px;
+	border: solid;
+	
+}
 .corps #menu_appartement ul li {
 	font-size: 20px;
 	text-decoration: none;

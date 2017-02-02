@@ -19,7 +19,7 @@ include 'gabarit.php';
 				?>
 				<li <?php activepage("accueil")?>><a href="index.php?page=admin">Administration</a></li>
 				<li <?php activepage("accueil")?>><a href="index.php?page=cmd">Gérer les commandes</a></li>
-				<li <?php activepage("accueil")?>><a href="index.php?page=cleactiv">Ajouter des clés d'activation</a></li>
+				<li <?php activepage("accueil")?>><a href="index.php?page=cleactiv">Clés d'activation</a></li>
 			<?php
 			}
 			?>
