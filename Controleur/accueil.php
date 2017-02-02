@@ -1,4 +1,4 @@
-a<?php
+<?php
 
 if (!isset($_SESSION['id'])) {
 		include ("Controleur/connexion.php");

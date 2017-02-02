@@ -23,7 +23,7 @@ include 'Vue/gabarit.php';
 		<?
 	}
 	?>
-	
+
 </div>
 <script>
 function supprimer(id,nom,prenom){
@@ -31,7 +31,7 @@ function supprimer(id,nom,prenom){
 	if (c==true){
 		//var idsup = file('http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id);
 		document.location.href='http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id;
-	
+
 	}
 }
 function file(fichier)
@@ -48,3 +48,4 @@ function file(fichier)
      else return(false);
  }
 </script>
+<?php include 'footer.php' ?>
