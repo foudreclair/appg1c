@@ -15,13 +15,13 @@ while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 	//print_r($scenar);
 	//echo '<br>';
 	$val=[];
-	$scenarid = $scenar['Id'];		
+	$scenarid = $scenar['Id'];
 	$result = $mysqli->query("SELECT * FROM Programmation WHERE Id_scenario = '$scenarid'");
-			
+
 	while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
-				
-				
-				
+
+
+
 		$idcapt = $donnees['Id_Capteur'];
 		$resultcapt = $mysqli->query("SELECT * FROM Capteur WHERE Id = '$idcapt'");
 		$idcapteur = $resultcapt->fetch_array(MYSQLI_ASSOC);
@@ -33,9 +33,9 @@ while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 		array_push($val, $donnees);
 		}
 
-			
-			
-	
+
+
+
 	array_push($nomscenar, $scenar['Nom']);
 	array_push($valscenar, $val);
 	//print_r($valscenar);
@@ -50,11 +50,11 @@ while ($appart = $resultappart ->fetch_array(MYSQLI_ASSOC)){
 	while ($pieces = $resultpieces ->fetch_array(MYSQLI_ASSOC)){
 		$pieceid = $pieces['Id'];
 		$result = $mysqli->query("SELECT * FROM Programmation WHERE Id_Pieces = '$pieceid'");
-		
+
 		$captid = [];
 		while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
-			
-			
+
+
 			array_push($captid, $donnees['Id_Capteur']);
 			$donnees['Id_Capteur']=$capt['Nom'];
 			$fonc = select('Fonctionnalite',['Nom','Type_donnees'],'Id='.$donnees['Id_Fonctionnalite']);

@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 $iduser = $_SESSION['id'];
 //include ('Modele/connexion_bdd.php');
 
@@ -13,7 +13,7 @@ $iduser = $_SESSION['id'];
 //////////////////////////////////////////////////////////////////////////////
 //Premier formulaire
 //On teste le type d'appartement car la donnée à stocker dans le bdd est un entier
-if ($_POST['declencheur'] == 1){  //on déclenche uniquement si le bouton "valider" a été appuyé pour le formulaire 1
+if (isset($_POST['declencheur']) AND $_POST['declencheur'] == 1){  //on déclenche uniquement si le bouton "valider" a été appuyé pour le formulaire 1
 	//il faut : ('NULL','nom','type','adresse','ville','pays','nbpersonne','NULL(qui deviendra ID_utilisateur')
 	if ($_POST['type_appartement'] == 'primaire') {
 		$type_appartement = 1;
@@ -49,7 +49,7 @@ exit();
 //////////////////////////// AJOUTER UNE PIECE ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-if ($_POST['declencheur'] == '2'){
+if (isset($_POST['declencheur']) AND $_POST['declencheur'] == '2'){
 	//echo 'pièce';
 include ('../Modele/connexion_bdd.php');
 $idappart = $_POST['appartement_selectionne'];
@@ -59,7 +59,7 @@ header('Location: ../index.php?page=reglages');
 	//$nombre_capteurs=$_POST['nombre_capteurs'];
 	//$mysqli -> query ("INSERT INTO `bdd`.`capteur` (`Id`, `Nom`) VALUES (NULL, '$nombre_capteurs')");
 }
-if ($_POST['declencheur'] == 4){
+if (isset($_POST['declencheur']) AND $_POST['declencheur'] == 4){
 	$idpiece = $_SESSION['pie'];
 	/*if ($_POST['type_capteur']=='temperature'){
 		$fonc = "Température";
@@ -107,7 +107,7 @@ if ($_POST['declencheur'] == 4){
 
 
 
-if ($_POST['declencheur'] == 2) {
+if (isset($_POST['declencheur']) AND $_POST['declencheur'] == 2) {
 	include ('../Modele/connexion_bdd.php');
 	include ('Modele/connexion_bdd.php');
 	$appartement_select=$_POST['appartement_selectionne'];
@@ -124,7 +124,7 @@ header("Location: ../Vue/ajouter_capteurs.php");
 /////////////////////////// AJOUTER DES CAPTEURS /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-if($_POST['declencheur']=='page_ajouter_capteur'){
+if(isset($_POST['declencheur']) AND $_POST['declencheur']=='page_ajouter_capteur'){
 	
 	$nombre_capteurs = $_POST['nombre_capteurs'];
 
@@ -140,7 +140,7 @@ if($_POST['declencheur']=='page_ajouter_capteur'){
 //include ('../Modele/connexion_bdd.php');
 //$result = $mysqli -> query ('SELECT Id FROM appartements');
 //print_r ($result);
-if ($_POST['declencheur']  == '10'){
+if (isset($_POST['declencheur']) AND $_POST['declencheur']  == '10'){
 	$Id = intval($_POST['Nom']);
 	//echo "Id = ".$Id;
 	include ('../Modele/connexion_bdd.php');

@@ -16,7 +16,7 @@ include 'gabarit.php';
 ?>
 
 <div class='corps'>
-<?php 
+<?php
 	if(isset($_GET['succes'])) {
 		echo '<center>Inscription réussie</center>';
 	}
@@ -89,10 +89,10 @@ function unvalid(val) {
     	document.getElementById(val).style.display = 'none';
 		document.getElementById(val).value= '';
 	}
-		
+
 }
 function validmail(val) {
-	
+
 	if (IsMail(val)){
 		var verif = file('http://localhost:80/appg1c/Vue/verifbdd.php?mail='+val);
 		if (verif !=0){
@@ -100,12 +100,12 @@ function validmail(val) {
 			unvalid("password");
 		}
 		else {
-			
+
 			document.getElementById("errmail").innerHTML="Email valide !"+verif;
 			valmail = true;
 			valid("password");
 		}
-		
+
 	}
 	else {
 		document.getElementById("errmail").innerHTML="Email invalide !";
@@ -160,3 +160,4 @@ function file(fichier) {
      }
 }
 </script>
+<?php include 'footer.php' ?>

@@ -36,7 +36,7 @@ catch (Exception $e)
         <?php
       }
 
-    // vider donner si sa ram trop 
+    // vider donner si sa ram trop
       ?>
     </select>
     </br>
@@ -47,10 +47,11 @@ catch (Exception $e)
     <!--<input class="button" type="submit" name="dell_appartement"value="Supprimer">-->
   </from>
   </div>
-  
+
 
 
 </div>
 
 
 </body>
+<?php include 'footer.php' ?>
