@@ -37,6 +37,9 @@ if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
 			case "contact" :
 				include ("Vue/contact.php");
 				break;
+			case "cmdclient" :
+				include ("Vue/cmdclient.php");
+				break;
 			case "panier" :
 				include ("Vue/panier.php");
 				break;

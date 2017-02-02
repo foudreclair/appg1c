@@ -2,6 +2,7 @@
 include ('Controleur/traitement.php');
 $titre = 'Domicile | Nouvelle pièce';
 include 'gabarit.php';
+session_start();
 $iduser = $_SESSION['id'];
 ?>
 <!DOCTYPE html>

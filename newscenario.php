@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $titre = 'Domicile | Créez votre scénario';
 include 'gabarit.php';
 require 'Modele/fonctions.php';
@@ -29,8 +29,7 @@ if (!empty($_POST['appart'])){
 	<title></title>
 </head>
 <body>
-	<div class="module3">
-	<div class ="form form-block">
+	<div class ="corps">
 		<h1>Vous allez pouvoir configurer votre scénario :</h1>
 		
 		<?php
@@ -107,7 +106,6 @@ if (!empty($_POST['appart'])){
 		<p>Date de fin : <?php echo $_SESSION['date_fin'] ?></p>
 		<p>Appartement : <?php echo $_SESSION['idappart'] ?></p>
 
-	</div>
 	</div>
 </body>
 </html>
