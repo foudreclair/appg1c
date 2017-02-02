@@ -4,11 +4,12 @@
 			include('../Modele/fonctions.php');
 			include('../Modele/connexion_bdd.php');
 			
-			$result = $mysqli->query('SELECT Id, Mail, Password, Permission FROM utilisateur where Mail="' .$_POST['mail'].'"');
+			$result = $mysqli->query('SELECT Id, Mail, Password, Permission, Prenom FROM utilisateur where Mail="' .$_POST['mail'].'"');
 			$row = $result->fetch_array(MYSQLI_NUM);
 			$id = $row[0];
 			$mail = $row[1];
 			$password_user = $row[2];
+			$prenom = $row[4];
 			//HASH du mdp en sha1
 		    $password_hash = hash('sha1', $_POST['password']);
 
@@ -36,7 +37,7 @@
 				//session_regenerate_id();    // Génère une nouvelle session et efface la précédente
 				$_SESSION['mail'] = $mail;
 				$_SESSION['id'] = $id;
-				
+				$_SESSION['prenom'] = $prenom;
 				$_SESSION['admin']=$row[3];
 				
 				

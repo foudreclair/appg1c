@@ -2,7 +2,6 @@
 include ('Controleur/traitement.php');
 $titre = 'Domicile | Nouvelle pièce';
 include 'gabarit.php';
-session_start();
 $iduser = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
@@ -13,14 +12,15 @@ $iduser = $_SESSION['id'];
 	<meta charset="utf-8">
 </head>
 <body>
-	<div class ="corps">
+	<div class ="module3">
+	<div class ="module form-block"
 	<h2> Ajouter une pièce </h2>
 				<form method="post" action="Controleur/traitement.php">
-					<p> Choix de l'appartement : 
+					<p> Choix de l'appartement :
 					<select name="appartement_selectionne">
 
-					<?php 
-					
+					<?php
+
 					include 'Modele/connexion_bdd.php';
 					$result =  $mysqli -> query("SELECT * FROM Appartements WHERE Id_Utilisateur ='$iduser' ");
 					while ($donnes = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -36,5 +36,8 @@ $iduser = $_SESSION['id'];
 					<input type="hidden" name="declencheur" id="declencheur" value="2">
 					<input type="submit" name="valider_appart" value ="Valider">
 				</form>
-			</div>
+		</div>
+		</div>
 				</body>
+
+<?php include 'footer.php' ?>

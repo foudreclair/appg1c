@@ -17,3 +17,5 @@ require ('../Controleur/traitement.php');
 			<input type="submit" name="valider">
 		</form>
 </body>
+
+<?php include 'footer.php' ?>
