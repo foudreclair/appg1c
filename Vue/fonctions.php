@@ -1,6 +1,7 @@
 <?php
 
-//Active li pour le menu 
+//Active li pour le menu
+//Cette page à quelle usage ?
 
 function activepage($requestUri)
 {
@@ -17,7 +18,7 @@ function activepage($requestUri)
 
 function formulaire_connexion() {
 	ob_start();
-	
+
 	?>
 	<div class="corps">
 	<center>
@@ -31,7 +32,7 @@ function formulaire_connexion() {
 		</div>
 		</center>
 	</div>
-	<?php 
+	<?php
 	$formulaire_connexion = ob_get_clean();
 	return $formulaire_connexion;
 }

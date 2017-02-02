@@ -4,14 +4,6 @@ require ('Controleur/traitement.php');
 //on l'utilise?
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title><?php echo $titre ?></title>
-<link rel="stylesheet" href="stylereglage.css" type="text/css" />
-<meta charset="utf-8">
-</head>
-<body>
 	<div class="module3">
 		<div class="form form-block">
 			<div id="menu_appartement">
@@ -95,7 +87,7 @@ require ('Controleur/traitement.php');
 		</div>
 	</div>
 
-</body>
+
 <script>
 document.getElementById('newpie').style.visibility = "hidden";
 document.getElementById('newpie').style.display = 'none';

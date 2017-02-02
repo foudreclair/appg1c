@@ -14,7 +14,7 @@ if (isset ( $_GET ["erreur"] )) {
 }
 if (isset ( $_GET ["page"] )) {
 	if ($_GET ["page"] == "deconnexion") {
-		$erreur = 'Vous �tes d�sormais d�connect�.';
+		$erreur = 'Vous étes désormais déconnecté.';
 	}
 }
 ?>

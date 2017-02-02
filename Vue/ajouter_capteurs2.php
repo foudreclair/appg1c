@@ -10,12 +10,6 @@ if (isset ( $_POST ['app'] ) && $_POST ['app'] != 'rien') {
 	$_SESSION ['app'] = $_POST ['app'];
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="stylereglage.css" type="text/css" />
-<meta charset="utf-8">
-</head>
 
 <body>
 	<div class="module3">

@@ -4,13 +4,7 @@ $titre = 'Domicile | Nouvelle pièce';
 include 'gabarit.php';
 $iduser = $_SESSION['id'];
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title><?php echo $titre ?></title>
-	<link rel="stylesheet" href="stylereglage.css" type="text/css" />
-	<meta charset="utf-8">
-</head>
+
 <body>
 	<div class ="module3">
 	<div class ="module form-block"

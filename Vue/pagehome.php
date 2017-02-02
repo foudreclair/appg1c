@@ -1,12 +1,5 @@
 <?php include ('../modele/connexion_bdd.php') ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title><?php echo $titre ?></title>
-	<link rel="stylesheet" href="stylehome.css" type="text/css" />
-	<meta charset="utf-8">
-</head>
-<body>
+
 	<div class="left_bloc">
 		<h3> Ma consommation </h3>
 		<p> <?php echo $graph_consoelec ?> </p>

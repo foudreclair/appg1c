@@ -1,12 +1,5 @@
 <?php include ('../modele/connexion_bdd.php') ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title><?php echo $titre ?></title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<meta charset="utf-8">
-</head>
-  <body>
+
     <!- Menu déroulant pour choisir la pièce que l'on veut modifier ->
   <ul id="menu-accordeon">
     <li><a href="#">Appartement #1</a>
@@ -38,5 +31,3 @@
       </ul>
     </li>
   </ul>
-</body>
-</html>
