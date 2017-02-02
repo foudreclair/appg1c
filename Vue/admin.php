@@ -1,29 +1,31 @@
 <?php
 $titre = "Domicile | Administration";
 include 'Vue/gabarit.php';
-
-
 ?>
-<div class="corps">
-	<h1>Cliquez pour supprimer :</h1>
+<div class="module3">
+	<div class="module form-block">
+		<h1>Cliquez pour supprimer :</h1>
 
 	<?php
-	foreach ($tab as $key => $value) {
+	foreach ( $tab as $key => $value ) {
 		?>
-			<div class = "capt">
-				<ul>
-					<li>Id : <?php echo $tab[$key]['Id'] ?></li>
-					<li>Nom : <?php echo $tab[$key]['Nom'] ?></li>
-					<li>Prénom : <?php echo $tab[$key]['Prenom'] ?></li>
-					<li>Date de naissance : <?php echo $tab[$key]['Date_naissance'] ?></li>
-					<li>Adresse mail : <?php echo $tab[$key]['Mail'] ?></li><br>
-					<button onclick= 'supprimer("<?php echo $tab[$key]['Id'] ?>","<?php echo $tab[$key]['Nom'] ?>","<?php echo $tab[$key]['Prenom'] ?>")'>Supprimer le compte</button>
-				</ul>
-			</div>
+			<div class="capt">
+			<ul>
+				<li>Id : <?php echo $tab[$key]['Id'] ?></li>
+				<li>Nom : <?php echo $tab[$key]['Nom'] ?></li>
+				<li>Prénom : <?php echo $tab[$key]['Prenom'] ?></li>
+				<li>Date de naissance : <?php echo $tab[$key]['Date_naissance'] ?></li>
+				<li>Adresse mail : <?php echo $tab[$key]['Mail'] ?></li>
+				<br>
+				<button
+					onclick='supprimer("<?php echo $tab[$key]['Id'] ?>","<?php echo $tab[$key]['Nom'] ?>","<?php echo $tab[$key]['Prenom'] ?>")'>Supprimer
+					le compte</button>
+			</ul>
+		</div>
 		<?
 	}
 	?>
-
+	</div>
 </div>
 <script>
 function supprimer(id,nom,prenom){
@@ -31,7 +33,7 @@ function supprimer(id,nom,prenom){
 	if (c==true){
 		//var idsup = file('http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id);
 		document.location.href='http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id;
-
+	
 	}
 }
 function file(fichier)
@@ -48,4 +50,3 @@ function file(fichier)
      else return(false);
  }
 </script>
-<?php include 'footer.php' ?>

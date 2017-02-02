@@ -1,7 +1,6 @@
 <?php
 
 $tab=[];
-session_start();
 $iduser = $_SESSION['id'];
 include 'Modele/connexion_bdd.php';
 $req= $mysqli->query("SELECT * FROM Utilisateur WHERE id != $iduser");

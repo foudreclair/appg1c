@@ -33,7 +33,11 @@ if (! empty ( $_POST ['appart'] )) {
 }
 
 ?>
-
+<html>
+<head>
+<title></title>
+</head>
+<body>
 	<div class="module3">
 		<div class="module form-block">
 			<a href="index.php?page=accueil">

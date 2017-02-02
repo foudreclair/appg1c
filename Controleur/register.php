@@ -16,14 +16,14 @@ if (isset ( $_POST ['mail'] ) && isset ( $_POST ['password'] ) && isset ( $_POST
 		$mail1 = $mysqli->query ( 'SELECT mail FROM utilisateur WHERE Mail="' . $mail . '"' );
 		$row = $mail1->fetch_array ( MYSQLI_NUM );
 		if ($row [0] == $mail) {
-			header ( 'Location:../index.php?page=register&erreur=3' );
+			header ( 'Location:../index.php?page=connexion&erreur=3' );
 		} else {
 			if ($password_user != $confirm || empty ( $confirm ) || empty ( $password_user )) {
-				header ( 'Location:../index.php?page=register&erreur=2' );
+				header ( 'Location:../index.php?page=connexion&erreur=2' );
 			} else {
 				$insert_user = $mysqli->query ( "INSERT INTO utilisateur (Mail, Password, Nom, Prenom, Date_naissance, Permission) VALUES ('$mail', '$password_user_hash', '$nom', '$prenom', '$date_naissance', NULL)" );
 				// header('Location:index.php?page=accueil');
-				header ( 'Location:../index.php?page=register&succes' );
+				header ( 'Location:../index.php?page=connexion&succes' );
 			}
 		}
 	}

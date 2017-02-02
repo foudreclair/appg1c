@@ -1,9 +1,17 @@
 <?php
 require ('Controleur/traitement.php');
-//include 'gabarit.php';
-//on l'utilise?
+// include 'gabarit.php';
+// on l'utilise?
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+<title><?php echo $titre ?></title>
+<link rel="stylesheet" href="stylereglage.css" type="text/css" />
+<meta charset="utf-8">
+</head>
+<body>
 	<div class="module3">
 		<div class="form form-block">
 			<div id="menu_appartement">
@@ -11,14 +19,15 @@ require ('Controleur/traitement.php');
 					<ul>
 						<li><a style="cursor: pointer" onclick="affich('newpie')">Ajouter
 								une pièce</a></li>
-						<li><a href="index.php?page=modifappart">Modifier un appartement</a></li>
-						<li><a href="index.php?page=suppappart">Supprimer un appartement</a></li>
 						<li><a href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
+
+						<li><a href="index.php?page=suppmaison">Supprimer ma maison</a></li>
 					</ul>
 				</nav>
 			</div>
 
 			<div id="newpie">
+
 				<h2>Ajouter une pièce</h2>
 
 				<form method="post" action="Controleur/traitement.php">
@@ -26,7 +35,7 @@ require ('Controleur/traitement.php');
 					<select name="appartement_selectionne">
 
 					<?php
-
+					
 					include 'Modele/connexion_bdd.php';
 					$result = $mysqli->query ( "SELECT * FROM Appartements WHERE Id_Utilisateur ='$iduser' " );
 					while ( $donnes = $result->fetch_array ( MYSQLI_ASSOC ) ) {
@@ -87,7 +96,7 @@ require ('Controleur/traitement.php');
 		</div>
 	</div>
 
-
+</body>
 <script>
 document.getElementById('newpie').style.visibility = "hidden";
 document.getElementById('newpie').style.display = 'none';
@@ -103,4 +112,4 @@ function affich(val){
 
 }
 </script>
-<?php include 'footer.php' ?>
+<?php include 'footer.php'?>

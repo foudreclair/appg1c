@@ -1,3 +1,8 @@
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <?php
 $titre = "Domisile | Page de connexion";
 include 'gabarit.php';
@@ -5,7 +10,7 @@ include 'gabarit.php';
 if (isset ( $_GET ["erreur"] )) {
 	switch ($_GET ["erreur"]) {
 		case 1 :
-			$erreur =  'Au moins un des champs est vide.';
+			$erreur = 'Au moins un des champs est vide.';
 			break;
 		case 2 :
 			$erreur = "L'identifiant ou le mot de passe est incorrect.";
@@ -14,33 +19,33 @@ if (isset ( $_GET ["erreur"] )) {
 }
 if (isset ( $_GET ["page"] )) {
 	if ($_GET ["page"] == "deconnexion") {
-		$erreur = 'Vous étes désormais déconnecté.';
+		$erreur = 'Vous �tes d�sormais d�connect�.';
 	}
 }
 ?>
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-</script>
 <!-- Form Module-->
 <div class="module2">
 	<div class="module form-module">
 
 		<div class="toggle">
-			<img src="Vue/add.png" style="width:30px;height:30px;padding-top:0;"></img>
-		 	<div class="tooltip">S'enregistrer</div>
+			<img src="Vue/add.png"
+				style="width: 30px; height: 30px; padding-top: 0;"></img>
+			<div class="tooltip">S'enregistrer</div>
 		</div>
 		<div class="form">
 			<h2>Se connecter</h2>
-			<?php if (isset($erreur)) {
-			echo '<font color="red">' . $erreur.'</font>';
-			}?>
+			<?php
+			
+if (isset ( $erreur )) {
+				echo '<font color="red">' . $erreur . '</font>';
+			}
+			?>
+			<?php
+			
+if (isset ( $_GET ["succes"] )) {
+				echo '<font color="green">Vous etes desormais inscrit.</font>';
+			}
+			?>
 			<form method="post" action="Controleur/connexion.php" id="con">
 				<label id="mailvalid"></label><br> <input id="mail " type="text"
 					name="mail" placeholder="Entrez votre email"
@@ -70,10 +75,9 @@ if (isset ( $_GET ["page"] )) {
 				</div>
 
 				<div id="infos">
-					<label>Vos informations</label></br>
-					<label for="Nom">Nom : </label><input name="nom" type="text"
-						id="nom" /><br /> <label for="Prenom">Prenom : </label><input
-						name="prenom" type="text" id="prenom" /><br /> <label
+					<label>Vos informations</label></br> <label for="Nom">Nom : </label><input
+						name="nom" type="text" id="nom" /><br /> <label for="Prenom">Prenom
+						: </label><input name="prenom" type="text" id="prenom" /><br /> <label
 						for="Date_naissance">Date de naissance : </label><input
 						type="text" id="datepicker" name="datepicker"><br />
 				</div>
@@ -249,5 +253,9 @@ function file(fichier) {
      }
 }
 </script>
-
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
 <?php include 'Vue/footer.php'?>

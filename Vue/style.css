@@ -15,21 +15,6 @@ body {
 	height: 100%;
 }
 
-.corps .panier {
-	border-bottom: solid;
-	border-width: 0.5px;
-}
-
-.corps .panier a {
-	text-align: center;
-}
-
-.corps .panier p {
-	display: inline-block;
-	width: 19%;
-	text-align: center;
-}
-
 .corps #menu_appartement ul li {
 	font-size: 20px;
 	text-decoration: none;
@@ -60,6 +45,22 @@ body {
 	display: table-cell;
 	line-height: 100%;
 }
+/*.menuderoul h2 {
+	float: left;
+	height: 100%;
+
+	top:0;
+	
+}
+.menuderoul img {
+	max-height: 40px;
+	max-width: 40px;
+	width: auto;
+	height: auto;
+	line-height: 100%;
+	text-align: center;
+	
+}*/
 .menuderoul #txt {
 	display: inline-block;
 	vertical-align: middle;
@@ -80,32 +81,7 @@ body {
 	vertical-align: middle;
 }
 
-.corps table {
-	border-collapse: collapse;
-	/* Les bordures du tableau seront collées (plus joli) */
-}
 
-.corps td {
-	border: 1px solid black;
-	width: 50px;
-}
-
-.corps th {
-	border: 1px solid black;
-	width: 200px;
-}
-
-.corps .capt {
-	margin-top: 4px;
-	border: solid;
-	border-width: 1px;
-	display: inline-block;
-	width: 28%;
-	padding: 10px;
-	-webkit-transition: width 2s; /* Safari */
-	transition: width 2s;
-	transition: all .2s ease-out;
-}
 
 .menu {
 	border-width: 1px;
@@ -120,6 +96,9 @@ body {
 	position : static;
 	color : white;
 }
+
+git	color: #C0C0C0 ;
+
 .header ul li {
 	list-style-type: none;
 	display: inline-block;
@@ -158,7 +137,7 @@ body {
 }
 
 
-// Réglages navbar
+// R�glages navbar
 
 .reglages {
 	border-width: 1px;
@@ -203,6 +182,29 @@ body {
 	color: black;
 	background-color: #ddd;
 }
+
+/*
+.sous_menu {
+	text-align: center;
+	position: relative;
+	border-width: 1px;
+	position: fixed;
+	top: 50px;
+	right: 10px;
+	width: 40%;
+	color: LavenderBlush;
+
+}
+.sous_menu ul li {
+
+	list-style-type: none;
+	display: inline-block;
+	width: 25%;
+	border: solid;
+	border-width: 1px;
+
+}
+*/
 img {
 	height: 40px;
 	padding-left: 1%;
@@ -318,14 +320,32 @@ img {
 	max-height: 15em;
 }
 
+@font-face {
+	font-family: "LatoLight";
+	src: url('fonts/Lato-Light.ttf');
+	src: url('fonts/Lato-Light.woff');
+	src: url('fonts/Lato-Light.eot');
+	src: url('fonts/Lato-Light.woff2');
+}
+
 /* Form sec */
+body {
+	background: #e9e9e9;
+	background-image:url(background.jpg);
+	color: #666666;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	
+}
 
 .module2 {
 	padding-top: 8%;
 	width: 100%;
 	height : 100%;
 	margin-bottom : 100px;
-
+	
 }
 .nav-right {
 	position: absolute;left: 85%;
@@ -333,14 +353,56 @@ img {
 .nav-right2 {
 		position: absolute;left: 93%;
 }
-
+	
 .module3 {
 	position: relative;
 	padding-top: 8%;
 	width: 100%;
 	height : 100%;
 	margin-bottom : 100px;
+	
+}
 
+.module3 .panier {
+	border-bottom: solid;
+	border-width: 0.5px;
+}
+
+.module3 .panier a {
+	text-align: center;
+}
+
+.module3 .panier p {
+	display: inline-block;
+	width: 19%;
+	text-align: center;
+}
+
+.module3 table {
+	border-collapse: collapse;
+	/* Les bordures du tableau seront collées (plus joli) */
+}
+
+.module3 td {
+	border: 1px solid black;
+	width: 50px;
+}
+
+.module3 th {
+	border: 1px solid black;
+	width: 200px;
+}
+
+.module3 .capt {
+	margin-top: 4px;
+	border: solid;
+	border-width: 1px;
+	display: inline-block;
+	width: 28%;
+	padding: 10px;
+	-webkit-transition: width 2s; /* Safari */
+	transition: width 2s;
+	transition: all .2s ease-out;
 }
 /* Form Module */
 .form-module {
@@ -365,8 +427,8 @@ img {
 	font-size: 12px;
 	line-height: 30px;
 	text-align: center;
-
-
+	
+	
 }
 
 .form-module .toggle .tooltip {
@@ -380,7 +442,7 @@ img {
 	font-size: 10px;
 	line-height: 1;
 	text-transform: uppercase;
-
+	
 }
 
 .form-module .toggle .tooltip:before {
@@ -530,308 +592,3 @@ img {
 	color: #333333;
 	text-decoration: none;
 }
-/*LE FOOTER*/
-
-.footer{
-  align-items : center;
-  position: relative;
-  text-align: center;
-  border-width: 1px;
-  background-color: #0072BB ;
-  width: 100%;
-  height: 100px;
-  bottom : 0;
-  /*J'arrive pas a modifier la couleur des textes
-   du footer et
-   */
-  color:#ffffff;
-
-
-}
-
-.footer_2  li{
-  display: inline-block;
-  list-style: none;
-  padding-top: 12px;
-  width:  32%;
-  height: 10px;
-  text-decoration: none;
-}
-/*on enleve ici les soulignements des liens*/
-a:link{
-  text-decoration: none;
-}
-a:hover{
-  color:#FF33CC;
-}
-
-.mention_legal li {
-    display: inline-block;
-    list-style: none;
-    width:  40%;
-    height: 10px;
-}
-
-/*La page contact*/
-#plan{
-  display: block;
-
-
-}
-#champ_saisie {
-  display: inline-block;
-  width: 40%;
-  border: 2px;
-}
-.left_bloc{
-    display: inline-block;
-    width: 50%;
-    height: auto;
-    float: left;
-}
-.left_bloc h3 {
-	text-align: center;
-}
-.right_bloc{
-    display: inline-block;
-    width: 50%;
-    height: auto;
-    float: right;
-}
-.right_bloc h3 {
-	text-align: center;
-}
-#menu_appartement ul li{
-	display: inline-block;
-	width: 32%;
-	text-align: center;
-	border: solid;
-	border-height:200px;
-}
-.header {
-	padding-bottom: 0.5%;
-	color: Blue;
-}
-.corps .capt {
-	margin-top: 4px;
-	border: solid;
-	border-width: 1px;
-	display: inline-block;
-	width: 30%;
-	padding: 10px;
-}
-.menu {
-
-
-	border-width: 1px;
-	padding: 0;
-	background-color: Snow;
-	text-align: center;
-	opacity: 0.7;
-	display: inline-block;
-	width: 100%;
-	position: fixed;
-	font-weight: bold;
-}
-li.current {
-	background: #3ADF00;
-}
-.header ul li {
-	list-style-type: none;
-	display: inline-block;
-}
-.menu ul li {
-	font-size: 20px;
-	width: 13%;
-	text-align: center;
-	display: inline-block;
-	font: bold;
-	height: 20px;
-}
-
-.menu ul {
-	text-align: right;
-	margin-right: 20px;
-}
-.sous_menu {
-	text-align: center;
-	position: relative;
-	border-width: 1px;
-	position: fixed;
-	top: 50px;
-	right: 10px;
-	width: 40%;
-	color: LavenderBlush;
-
-}
-.sous_menu ul li {
-
-	list-style-type: none;
-	display: inline-block;
-	width: 25%;
-	border: solid;
-	border-width: 1px;
-
-}
-
-
-img {
-	height: 40px;
-
-	padding-left: 1%;
-	padding-top: 5px;
-	float: left;
-
-}
-.corps {
-	margin-top: 150px;
-	width: 70%;
-	margin-left: 15%;
-
-
-}
-
-.corps h1 {
-	color: Blue;
-
-}
-
-
-.corps .form input {
-	margin-top: 50px;
-	margin-right: 10px;
-	border: solid;
-	border: 1px;
-	border-radius: 2px;
-	height: 30px;
-	width: 200px;
-	opacity: 0.9;
-}
-.corps .form .button {
-	font-size: 17px;
-	margin-top: 20px;
-	font-family: LatoLight;
-	font-weight: bold;
-	color: Blue;
-}
-.corps .form {
-	border-top: solid;
-	border-width: 1px;
-	border-color: Blue;
-
-}
-
-.header {
-	padding-bottom: 0.5%;
-	color: Blue;
-}
-
-.menu {
-	border-width: 1px;
-	padding: 0;
-	background-color: Snow;
-	text-align: center;
-	opacity: 0.7;
-	display: inline-block;
-	width: 100%;
-	position: fixed;
-	font-weight: bold;
-}
-git	color: #C0C0C0;
-
-li.current {
-	background: #3ADF00;
-
-}
-.header ul li {
-	list-style-type: none;
-	display: inline-block;
-
-
-}
-.menu ul li {
-
-	font-size: 20px;
-	width: 13%;
-	text-align: center;
-	display: inline-block;
-	font: bold;
-	height: 20px;
-
-
-}
-.menu ul {
-	text-align: right;
-	margin-right: 20px;
-}
-.sous_menu {
-	text-align: center;
-	position: relative;
-	border-width: 1px;
-	position: fixed;
-	top: 50px;
-	right: 10px;
-	width: 40%;
-	color: LavenderBlush;
-
-}
-.sous_menu ul li {
-
-	list-style-type: none;
-	display: inline-block;
-	width: 25%;
-	border: solid;
-	border-width: 1px;
-
-}
-
-img {
-	height: 40px;
-
-	padding-left: 1%;
-	padding-top: 5px;
-	float: left;
-
-}
-.corps {
-	margin-top: 150px;
-	width: 70%;
-	margin-left: 15%;
-
-
-}
-
-.corps h1 {
-	color: Blue;
-
-}
-
-
-.corps .form input {
-	margin-top: 50px;
-	margin-right: 10px;
-	border: solid;
-	border: 1px;
-	border-radius: 2px;
-	height: 30px;
-	width: 200px;
-	opacity: 0.9;
-}
-.corps .form .button {
-	font-size: 17px;
-	margin-top: 20px;
-	font-family: LatoLight;
-	font-weight: bold;
-	color: Blue;
-}
-.corps .form {
-	border-top: solid;
-	border-width: 1px;
-	border-color: Blue;
-}
-
-#plangooglemap{
-  width: 60%;
-  height: auto;
-  align-items: center;
-} /*sa marche pas*/

@@ -11,24 +11,28 @@ include 'gabarit.php';
 <div class="module3">
 
 	<div class='form form-block'>
-
+	
 		<h1>Bonjour <?php echo $_SESSION['mail'];if ($_SESSION['admin']=='1') {echo " Vous êtes l'administrateur";}?>!</h1>
 	<?php
 	if ($_SESSION ['admin'] == '1') {
 		?>
+		<nav class="menu">
+		<ul id="menu_deroulant">
 				<li <?php activepage("accueil")?>><a href="index.php?page=admin">Administration</a></li>
 		<li <?php activepage("accueil")?>><a href="index.php?page=cmd">Gérer
 				les commandes</a></li>
 		<li <?php activepage("accueil")?>><a href="index.php?page=cleactiv">Ajouter
 				des clés d'activation</a></li>
+				</ul>
+				</nav>
 			<?php
 	}
 	?>
 	<h1>
-
+		
 			<a href="index.php?page=deconnexion"><input type="submit"
 				value="Se déconnecter">
-
+		
 		</h1>
 		</input></a>
 
@@ -36,7 +40,7 @@ include 'gabarit.php';
 	<?php
 	foreach ( $valscenar as $key => $val ) {
 		?>
-
+	
 	<h2 style="cursor: pointer"
 			onclick='affich("<?php echo $nomscenar[$key] ?>",this.id)'
 			id="titre_<?php echo $nomscenar[$key] ?>">+ <?php echo $nomscenar[$key] ?></h2>
@@ -44,9 +48,9 @@ include 'gabarit.php';
 
 
 		<div id="<?php echo $nomscenar[$key] ?>" style="display: none"
-			class="deroulant">
+			class="deroulant"> 
 	<?php
-
+		
 		foreach ( $val as $key => $value ) {
 			?>
 	<div class="capt">
@@ -67,13 +71,13 @@ include 'gabarit.php';
 			</div>
 	<?php
 		}
-
+		
 		?>
 	</div>
-
+	
 	<?php
 	}
-
+	
 	?>
 
 </div>
@@ -97,6 +101,6 @@ include 'gabarit.php';
 			//document.getElementById("men_"+val).setAttribute("src","Vue/menuouvert.png");
 		}
 }
-
+	
 </script>
-<?php include 'footer.php' ?>
+

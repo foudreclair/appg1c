@@ -1,6 +1,5 @@
 <?php
 require("Vue/fonctions.php");
-
 session_start();
 //session_start();
 // var_dump($_GET);
@@ -31,7 +30,7 @@ if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
 			case "validachat" :
 				include ("Vue/commander.php");
 				break;
-			case "suppappart" :
+			case "suppmaison" :
 				include ("Vue/supprimer_appart.php");
 				break;
 			case "contact" :
