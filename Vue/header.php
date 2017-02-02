@@ -1,59 +1,38 @@
+<?php
+//require 'Modele/fonctions.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo $titre ?></title>
-<link rel="stylesheet" href="Vue/style.css" type="text/css" />
-<link rel="stylesheet" href="Vue/stylead.css" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script src="Vue/dropit.js"></script>
-<link rel="stylesheet" href="Vue/dropit.css" type="text/css" />
-<meta charset="utf-8">
+	<title><?php echo $titre ?></title>
+	<link rel="stylesheet" href="Vue/style.css" type="text/css" />
+	<meta charset="utf-8">
 </head>
 <body>
-	<div class="header">
+<div class ="header">
+	
 
+	<nav class ="menu">
+		<img src="Vue/logo2.png">
+		<ul id="menu_deroulant" >
+			
+			<li <?php activepage("accueil")?>><a href="index.php?page=accueil">Accueil</a></li>
+			<li <?php activepage("reglages")?>><a href="index.php?page=reglages">Gérer ma maison</a></li>
+			<li <?php activepage("scenarios")?>><a href="index.php?page=scenarios">Scénarios</a></li>
+			<li <?php activepage("stats")?>><a href="index.php?page=stats">Statistiques</a></li>
+			<li <?php activepage("catalogue")?>><a href="index.php?page=catalogue">Catalogue</a></li>
+			<li <?php activepage("contact")?>><a href="index.php?page=contact">Contact</a></li>
 
-		<nav class="menu">
-
-			<ul id="menu_deroulant">
-				<img src="Vue/logo3.png">
-				<li><a <?php activepage("accueil")?> href="index.php?page=accueil">Accueil</a></li>
-				<li><a <?php activepage("reglages")?> href="index.php?page=reglages">Gérer
-						ma maison</a></li>
-				<li><a <?php activepage("scenarios")?>
-					href="index.php?page=scenarios">Scénarios</a></li>
-				<li><a <?php activepage("stats")?> href="index.php?page=stats">Statistiques</a></li>
-				<li><a <?php activepage("catalogue")?>
-					href="index.php?page=catalogue">Catalogue</a></li>
-				<li><a <?php activepage("contact")?> href="index.php?page=contact">Contact</a></li>
-			<?php if (isset($_SESSION['id'])) {?>
-			<div class="nav-right">
-					<img src="Vue/user2.svg" hight="30" width="40"></img>
-					<div class="nav-right2">
-						<ul class="dropit">
-							<li class="dropit-trigger dropit-open"><a href="#"><?php echo $_SESSION['prenom']; ?></a>
-								<ul class="dropit-submenu">
-									<li><a href="#">Modifier mon profil</a></li>
-									<li><a href="#">Se d�connecter</a></li>
-								</ul></li>
-						</ul>
-				</div>
-				</div>
-			<?php }?>
 		</ul>
-
-
-
-		</nav>
+		
+	</nav>
 	</div>
-
+	
 	<div class="sous_menu">
 		<ul>
-
+    	
 		</ul>
 	</div>
-<script>
-$(document).ready(function() {
-    $('.menu').dropit();
-});</script>
-	</div>
+
+</div>

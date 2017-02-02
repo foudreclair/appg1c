@@ -12,7 +12,7 @@ function activepage($requestUri)
 	}
 
 	if ($current_file_name == $requestUri)
-		echo 'class="active"';
+		echo 'class="current"';
 }
 
 function formulaire_connexion() {
