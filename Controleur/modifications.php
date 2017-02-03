@@ -1,6 +1,4 @@
 <?php
-
-
 if (empty($_POST['consigne'])){
 	echo "Vous n'avez pas rentré de valeur";
 	header("location:".  $_SERVER['HTTP_REFERER']);
@@ -12,5 +10,4 @@ else {
 	$result = $mysqli->query($sql);
 	header("location:".  $_SERVER['HTTP_REFERER']);
 }
-
 ?>

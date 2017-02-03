@@ -1,4 +1,5 @@
 <?php
+
 $titre = 'Domicile | Ajouter un capteur';
 $iduser = $_SESSION ['id'];
 require ('Controleur/traitement.php');
@@ -41,7 +42,8 @@ if (isset ( $_SESSION ['app'] )) {
 				 				<option value="onde_em"> Ondes électromagnétiques </option>
 				 				<option value="humidite"> Humidité </option>
 				 				<option value="capteur_ouverture"> Capteur ouverture </option>
-				 				<option value="pluviometre"> Pluviomètre </option>>-->
+				 				<option value="pluviometre"> Pluviomètre </option>>
+							-->
 				</select> <input type="hidden" name="declencheur" id="declencheur"
 					value="4"> <input type="submit" name="Valider" value="Valider">
 			</form>

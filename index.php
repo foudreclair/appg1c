@@ -1,10 +1,10 @@
 <?php
 require("Vue/fonctions.php");
 session_start();
-//session_start();
-// var_dump($_GET);
+
 if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
-	if (isset ( $_GET["page"] )) { // On test la page a afficher
+	if (isset ( $_GET["page"] )) {
+		// On test la page a afficher
 		switch (htmlentities ( $_GET["page"] )) {
 			case "register" :
 				include ("Vue/register.php");
@@ -64,9 +64,10 @@ if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
 				break;
 		}
 	}
-} 
-else { // La page par default pour l'instant la page connexion
-	
+}
+else {
+	// La page par default pour l'instant la page connexion
+
 	if (isset ( $_GET["page"] )) {
 		switch (htmlentities ( $_GET["page"] )) {
 			case "register" :
@@ -85,7 +86,7 @@ else { // La page par default pour l'instant la page connexion
 				include ("Controleur/connexion.php");
 				break;
 		}
-	} 
+	}
 	else {
 		include ("Controleur/connexion.php");
 	}

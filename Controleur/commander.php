@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 include '../Modele/connexion_bdd.php';
 $iduser = $_SESSION['id'];
 $prix = $_SESSION['prixtot'];
@@ -22,15 +20,14 @@ while($donne = $reqid->fetch_array(MYSQLI_ASSOC)){
 	}
 }
 $idcom+=1;
-//echo $idcom;
+//Récapitulatif du pannier
 foreach ($_SESSION['panier'] as $key => $value) {
 	$cat = $value['0'];
 	$quant = $value['1'];
 	$mysqli -> query("INSERT INTO `bdd`.`Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Commande`) VALUES (NULL, '$cat', '$quant', 'Non', '$idcom')");
-	
+
 }
 $mysqli ->query("INSERT INTO `bdd`.`Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`) VALUES (NULL, '$iduser', '$nom', '$prenom', '$adresse', '$cp', '$ville', '$date', $prix, 'Non')");
 unset($_SESSION['panier']);
-//unset($_SESSION['prixtot']);
 header('Location: ../index.php?page=validachat');
 ?>
