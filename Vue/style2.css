@@ -15,8 +15,11 @@ body {
 	height: 1000px;
 }
 .header {
+
+
 	padding-bottom: 0.5%;
 	color: Blue;
+
 }
 .corps .capt {
 	margin-top: 4px;
@@ -27,6 +30,8 @@ body {
 	padding: 10px;
 }
 .menu {
+
+
 	border-width: 1px;
 	padding: 0;
 	background-color: Snow;
@@ -37,6 +42,8 @@ body {
 	position: fixed;
 	font-weight: bold;
 }
+git	color: #C0C0C0;
+
 li.current {
 	background: #3ADF00;
 

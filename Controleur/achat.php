@@ -1,5 +1,7 @@
 <?php
-
+//echo $_GET['id'];
+//echo $_POST['quant'];
+session_start();
 if (!isset($_SESSION['panier'])){
 	$_SESSION['panier']=[];
 }

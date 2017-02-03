@@ -5,7 +5,9 @@ include('Modele/connexion_bdd.php');
 $stattot=[];
 $statnom =[];
 $resultstattot = $mysqli->query("SELECT DISTINCT Type FROM Statistiques");
+//print_r($resultstattot);
 while ($statstot = $resultstattot ->fetch_array(MYSQLI_ASSOC)) {
+	//print_r($statstot);
 	$type = $statstot['Type'];
 	$stat=[];
 	array_push($statnom, $type);

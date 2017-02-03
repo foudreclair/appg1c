@@ -1,5 +1,6 @@
 <?php
-//No NEED à supprimer
+//No NEED
+//session_start();
 if ($_POST['validation']=='Valider'){//Si le formulaire est envoyer
 $_SESSION['modif_app']=1;
 $_SESSION['id_appart']=$_POST['nom_appart'];

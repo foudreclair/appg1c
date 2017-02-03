@@ -2,6 +2,8 @@
 require ('../Controleur/traitement.php');
 
 ?>
+<!DOCTYPE html>
+<html>
 <head>
 	<title><?php echo $titre ?></title>
 	<link rel="stylesheet" href="stylereglage.css" type="text/css" />
