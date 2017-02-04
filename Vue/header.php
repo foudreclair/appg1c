@@ -28,7 +28,7 @@
 				<li><a <?php activepage("contact")?> href="index.php?page=contact">Contact</a></li>
 			<?php if (isset($_SESSION['id'])) {?>
 			<div class="nav-right">
-					<img src="Vue/user2.svg" style="padding-top:0;width=30px;height=30px;"></img>
+					<img src="Vue/user.svg" style="padding-right:5px;width=30px;height=30px;"></img>
 					<div class="nav-right2">
 						<ul class="dropit">
 							<li class="dropit-trigger dropit-open"><a href="#"><?php echo $_SESSION['prenom']; ?></a>
