@@ -6,7 +6,7 @@ $iduser = $_SESSION['id'];
 ?>
 <div class = "module3">
 <div class="module form-block">
-	<h1>Consultez et validez les commandes : </h1>
+	<h1>Consultez vos commandes : </h1>
 	
 	<?php
 	
@@ -15,6 +15,7 @@ $iduser = $_SESSION['id'];
 	
 
 while($don = $req->fetch_array(MYSQLI_ASSOC)){
+
 	?>
 
 	
@@ -28,6 +29,7 @@ while($don = $req->fetch_array(MYSQLI_ASSOC)){
 				<p class = "adresse"><?php echo $don['Adresse'] ?></p>
 				<p class = "codepostal"><?php echo $don['CodePostal'] ?></p>
 				<p class = "ville"><?php echo $don['Ville'] ?></p>
+				<p><a href="Vue/pdf.php?cmd=<?php echo $don['Id'] ?>" download="">Télécharger</a></p>
 
 	</div>
 	<div id = "<?php echo $don['Id'] ?>" style="display:none" class ="deroulant">
