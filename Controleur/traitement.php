@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 $iduser = $_SESSION['id'];
 //include ('Modele/connexion_bdd.php');
 

@@ -58,10 +58,36 @@
 	<p>Description : </p>
 	<TEXTAREA name = "descriptionaj"></TEXTAREA><br>
 	<p>Prix : </p>
-	<input type="number" name="eur" min="0" max="1000" step="5" value="00">
-	<input type="number" name="cent" min="0" max="99" step="5" value="00"><br><br>
+	<input type="number" name="eur" min="0" max="1000" step="1" value="00">
+	<input type="number" name="cent" min="0" max="99" step="1" value="00"><br><br>
 	<input id = "valaj" type = "submit" value = "Valider" name = "valider">
 
+</form>
+</div>
+<h1 style="cursor:pointer" onclick = 'affich("suppdt","Supprimer un produit","tsuppdt")' id = "tsuppdt">+ Supprimer un produit</h1>
+<div style="display:none" id = 'suppdt'>
+<form action = "Controleur/suppdt.php" method = "post">
+
+<select name = "pdtsup">
+	<?php
+	include 'Modele/connexion_bdd.php';
+	$reqcat = $mysqli->query("SELECT * FROM categories");
+	while ($cat = $reqcat ->fetch_array(MYSQLI_ASSOC)){
+		$idcate = $cat['Id'];
+		$reqpdt = $mysqli->query("SELECT * FROM Catalogue WHERE Id_categorie = '$idcate'");
+		while ($pdt = $reqpdt ->fetch_array(MYSQLI_ASSOC)){
+			?>
+			<option value = "<?php echo $pdt['Id'] ?>"><?php echo $cat['Nom'] ?> // <?php echo $pdt['Nom'] ?></option>
+			<?php
+		}
+		?>
+		
+		<?php
+	}
+	?>
+</select>
+<input type="submit" name="Valider">
+	
 </form>
 </div>
 <script type="text/javascript">

@@ -39,11 +39,14 @@ if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
 			case "panier" :
 				include ("Vue/panier.php");
 				break;
+			case "cmdclient" :
+				include ("Vue/cmdclient.php");
+				break;
 			case "admin" :
 				include("Controleur/admin.php");
 				break;
 			case "stats" :
-				include ("Controleur/stats.php");
+				include ("Vue/stats.php");
 				break;
 			case "cmd" :
 				include ("Vue/gestioncommandes.php");

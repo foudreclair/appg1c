@@ -2,26 +2,77 @@
 $titre = "Domicile | Statistiques";
 
 include 'gabarit.php';
-print_r ( $stattot );
-print_r ( $statnom );
+$iduser = $_SESSION['id'];
 
 ?>
 <div class="module3">
 	<div class="module form-block">
-		<h1>Consultez vos dernières valeurs et statistiques :</h1>
+		<h1>Choisissez le capteur :</h1>
+    <form id = "choixcapt" method = "post" action ="">
+    <select name ="capt" onchange="change()">
+    <option>--</option>
+    <?php
+    include 'Modele/connexion_bdd.php';
+    $reqappart = $mysqli->query("SELECT * FROM Appartements WHERE Id_Utilisateur = '$iduser'");
+    while($appart = $reqappart ->fetch_array(MYSQLI_ASSOC)){
+      echo $appart['Nom'];
+      $idappart = $appart['Id'];
+      $reqpie = $mysqli->query("SELECT * FROM Pieces WHERE Id_Appartements = '$idappart'");
+      while($pie = $reqpie ->fetch_array(MYSQLI_ASSOC)){
+        $idpie = $pie['Id'];
+        $reqaffec = $mysqli->query("SELECT * FROM Affectation WHERE Id_Pieces = '$idpie'");
+        while($affec = $reqaffec ->fetch_array(MYSQLI_ASSOC)){
+          $idcapt = $affec['Id'];
+          $idfonc = $affec['Id_Fonctionnalite'];
+          $reqnomcapt = $mysqli->query("SELECT * FROM Capteur WHERE Id = '$idcapt'");
+          while($capt = $reqnomcapt ->fetch_array(MYSQLI_ASSOC)){
+            $captnom = $capt['Nom'];
+          }
+          $reqnomfonc = $mysqli->query("SELECT * FROM Fonctionnalite WHERE Id = '$idfonc'");
+          while($fonc = $reqnomfonc ->fetch_array(MYSQLI_ASSOC)){
+            $foncnom = $fonc['Nom'];
+          }
+          ?>
+
+          <option value = "<?php echo $idcapt ?>"><?php echo $appart['Nom'] ?> // <?php echo $pie['Nom'] ?> // <?php echo $captnom ?> (<?php echo $foncnom ?>)</option>
+          <?php
+        }
+        ?>
+        
+        <?php
+
+      }
+    }
+
+    ?>
+    </select>
+    </form>
+    <script>
+      function change(){
+          document.getElementById("choixcapt").submit();
+      }
+      </script>
 		<br>
+
 <?php
 
-foreach ( $statnom as $key => $value ) {
-	/*
-	 * $tabnom = "['Degré','Lux']";
-	 *
-	 * $titretable = $value['0'];
-	 */
-	$tabtest = "[[1,0],[2,1],[3,2]]";
-	echo $value;
-	?>
+if (isset($_POST['capt'])){
+  $idcapt = $_POST['capt'];
+  include 'Modele/connexion_bdd.php';
+  $reqaffect = $mysqli->query("SELECT * FROM Affectation WHERE Id = '$idcapt'");
+  while ($fonct = $reqaffect ->fetch_array(MYSQLI_ASSOC)){
+    $idfonct = $fonct['Id_Fonctionnalite'];
+  }
+  
+  $reqfonct =$mysqli->query("SELECT * FROM Fonctionnalite WHERE Id = '$idfonct");
+  while ($fon = $reqfonct ->fetch_array(MYSQLI_ASSOC)){
+    $fonnom = $fon['Nom'];
+  }
+  
+  echo $fonnom;
 
+
+?>
 
     <script type="text/javascript"
 			src="https://www.gstatic.com/charts/loader.js"></script>
@@ -68,12 +119,12 @@ function drawBasic() {
 
     }
     </script>
-		<br>
-		<br>
     <?php
-}
-
-?>
+  }
+    ?>
+		<br>
+		<br>
+    
 </div>
 </div>
 <?php include 'footer.php' ?>

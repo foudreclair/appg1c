@@ -8,7 +8,8 @@ if ($_SESSION['admin']!='1') {
 include 'Modele/connexion_bdd.php';
 ?>
 
-<div class = "corps">
+<div class = "module3">
+<div class ="form form-block">
 	<h2><?php echo $erreur ?></h2>
 	<h1>Créer une clé d'activation : </h1>
 	<form method = "post" action = "Controleur/nouvcle.php">
@@ -16,7 +17,8 @@ include 'Modele/connexion_bdd.php';
 		<select name = "permission">
 			<option value = "0">Utilisateur classique</option>
 			<option value = "1">Administrateur</option>
-		</select>
+		</select><br>
+		<br>
 		<input type = "submit" name ="valider" value = "Valider">
 	</form>
 	<h1>Récapitulatif des clés : </h1>
@@ -50,4 +52,5 @@ include 'Modele/connexion_bdd.php';
 	 	<?php
 	}	
 	?>
+</div>
 </div>

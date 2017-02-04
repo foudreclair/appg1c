@@ -11,7 +11,8 @@ if ($_SESSION ['admin'] != '1') {
 	<div class="module form-block">
 		<h1>Consultez et validez les commandes :</h1>
 		<button onclick='document.location.href="index.php?page=cmd" '>Voir
-			toutes les commandes</button>
+			toutes les commandes</button><br>
+		<br>
 		<button
 			onclick='document.location.href="index.php?page=cmd&voir=nonpaye" '>Voir
 			les commandes non payées</button>
@@ -19,7 +20,7 @@ if ($_SESSION ['admin'] != '1') {
 		<br>
 	<?php
 	
-	if ($_GET ['voir'] == "nonpaye") {
+	if ($_GET['voir'] == "nonpaye") {
 		$req = $mysqli->query ( "SELECT * FROM Commande WHERE Payement ='Non'" );
 	} else {
 		$req = $mysqli->query ( "SELECT * FROM Commande" );
@@ -67,8 +68,8 @@ if ($_SESSION ['admin'] != '1') {
 		?>
 	<?php
 		$idcom = $don ['Id'];
-		$reqachat = $mysqli->query ( "SELECT * FROM Achats WHERE Id_Commande = '$idcom'" );
-		while ( $achat = $reqachat->fetch_array ( MYSQLI_ASSOC ) ) {
+		$reqachat = $mysqli->query( "SELECT * FROM Achats WHERE Id_Commande = '$idcom'" );
+		while ( $achat = $reqachat->fetch_array( MYSQLI_ASSOC ) ) {
 			$idcata = $achat ['Id_Catalogue'];
 			$reqnompdt = $mysqli->query ( "SELECT * FROM Catalogue WHERE Id = '$idcata'" );
 			while ( $pdt = $reqnompdt->fetch_array ( MYSQLI_ASSOC ) ) {

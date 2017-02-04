@@ -87,10 +87,8 @@ while ( $don = $req->fetch_array ( MYSQLI_ASSOC ) ) {
 				<li><?php echo $don['Description'] ?></li>
 				<li>Catégorie : <?php echo $catg ?></li>
 				<li>Prix : <?php echo $don['Prix'] ?> €</li>
-				<form method="post"
-					action="Controleur/achat.php?id=<?php echo $don['Id'] ?>">
-					<li>Quantité : <input type="number" name="quant" min="0" max="100"
-						step="1" value="0"></li>
+				<form method="post" action="Controleur/achat.php?id=<?php echo $don['Id'] ?>">
+					<li>Quantité : <input type="number" name="quant" min="0" max="100" step="1" value="0"></li>
 					<br> <input type="submit" name='aj' value="Ajouter au panier">
 				</form>
 

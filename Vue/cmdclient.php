@@ -1,9 +1,11 @@
 <?php
+$titre = 'Domisep | Mes commandes';
 include 'gabarit.php';
 include 'Modele/connexion_bdd.php';
 $iduser = $_SESSION['id'];
 ?>
-<div class = "corps">
+<div class = "module3">
+<div class="module form-block">
 	<h1>Consultez et validez les commandes : </h1>
 	
 	<?php
@@ -72,6 +74,7 @@ while($don = $req->fetch_array(MYSQLI_ASSOC)){
 
 	?>
 
+</div>
 </div>
 <script>
 

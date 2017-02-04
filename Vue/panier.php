@@ -4,7 +4,8 @@ include 'gabarit.php';
 include 'Modele/connexion_bdd.php';
 
 ?>
-<div class ="corps">
+<div class ="module3">
+<div class ="form form-block">
 	<h1>Votre panier : </h1>
 	<h2>Articles : </h2>
 	<div class = "panier">
@@ -56,6 +57,7 @@ include 'Modele/connexion_bdd.php';
 		<input type = "text" name = "ville" placeholder= "Ville">
 		<input type = "submit" name = "commander" value = "Valider et commander">
 	</form>
+</div>
 </div>
 <?php
 $_SESSION['prixtot']=$total;
