@@ -30,18 +30,20 @@ if (isset ( $_SESSION ['app'] )) {
 <form method="post" action="Controleur/traitement.php">
 
 
-				<p>Nommer ce capteur</p>
-				<input type="text" name="nom_capteur" id="nom_capteur"></br> <select
-					name="type_capteur" id="type_capteur">
+				<p>Nommez ce capteur</p>
+				<input type="text" name="nom_capteur" id="nom_capteur"></br> 
+				<p>Rentrez la clé du produit</p>
+					<input type = "text" name = "id_capteur">
+				<select name="type_capteur" id="type_capteur">
+
 					<option value="1">Température</option>
 					<option value="2">Lumière</option>
-					<!--<option value="fumee"> Fumée </option>
-				 				<option value="camera"> Caméra </option>
-				 				<option value="co2"> co2 </option>
-				 				<option value="onde_em"> Ondes électromagnétiques </option>
-				 				<option value="humidite"> Humidité </option>
-				 				<option value="capteur_ouverture"> Capteur ouverture </option>
-				 				<option value="pluviometre"> Pluviomètre </option>>-->
+					<option value="4">Détecteur de particules</option>
+				 				<option value="5">Caméra</option>
+				 				
+				 				
+				 				<option value="3">Humidité</option>
+				 			
 				</select> <input type="hidden" name="declencheur" id="declencheur"
 					value="4"> <input type="submit" name="Valider" value="Valider">
 			</form>

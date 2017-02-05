@@ -15,11 +15,14 @@ if (isset ( $_GET ["erreur"] )) {
 		case 2 :
 			$erreur = "L'identifiant ou le mot de passe est incorrect.";
 			break;
+		case 4 :
+			$erreur = "Clé invalide.";
+			break;
 	}
 }
 if (isset ( $_GET ["page"] )) {
 	if ($_GET ["page"] == "deconnexion") {
-		$erreur = 'Vous �tes d�sormais d�connect�.';
+		$erreur = 'Vous êtes désormais déconnecté.';
 	}
 }
 ?>
@@ -79,7 +82,7 @@ if (isset ( $_GET ["succes"] )) {
 						name="nom" type="text" id="nom" /><br /> <label for="Prenom">Prenom
 						: </label><input name="prenom" type="text" id="prenom" /><br /> <label
 						for="Date_naissance">Date de naissance : </label><input
-						type="text" id="datepicker" name="datepicker"><br />
+						type="text" id="datepicker" name="datepicker"><br /><label for="Key">Clé d'activation compte : </label><input type="text" id="key" name="key"><br />
 				</div>
 				<br>
 				<button id="sub" type="submit">S'inscrire</button>

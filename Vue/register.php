@@ -48,6 +48,7 @@ include 'gabarit.php';
 	<label for="Nom">Nom : </label><input name="nom" type="text" id="nom" /><br />
 	<label for="Prenom">Prenom : </label><input name="prenom" type="text" id="prenom" /><br />
 	<label for="Date_naissance">Date de naissance : </label><input type="text" id="datepicker" name="datepicker"><br />
+	<label for="Key">Clé d'activation compte : </label><input type="text" id="key" name="key"><br />
 	</fieldset>
 	</div><br>
 	<input id ="sub" type="submit" value="S'inscrire"  />

@@ -70,8 +70,9 @@ if (isset($_POST['declencheur']) AND $_POST['declencheur'] == 4){
 	*/
 	$fonc = $_POST['type_capteur'];
 	$nomcapt = $_POST['nom_capteur'];
+	$clecapt = $_POST['id_capteur'];
 	include ('../Modele/connexion_bdd.php');
-	$mysqli -> query ("INSERT INTO `bdd`.`Capteur` VALUES (NULL, '$nomcapt')");
+	$mysqli -> query ("INSERT INTO `bdd`.`Capteur` VALUES (NULL, '$nomcapt','$clecapt')");
 	$reqid = $mysqli->query("SELECT * FROM Capteur");
 	$a = 0;
 	while ($idma = $reqid -> fetch_array(MYSQLI_NUM)){
