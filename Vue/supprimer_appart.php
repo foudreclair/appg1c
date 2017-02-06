@@ -17,15 +17,18 @@ $iduser = $_SESSION ['id'];
 <body>
 	<div class="module3">
 		<div class="module form-block">
-			<!--
-	<nav class ="menu_appartement">
-		<ul>
-			<li><a href="#">Ajouter un appartement/pièce</a></li>
-			<li><a href="#">Modifier un appartement</a></li>
-			<li><a href="#">Supprimer un appartement</a></li>
-		</ul>
-	</nav>
-/////////////////////////////////////////////////////////////////// -->
+		<div id="menu_appartement">
+				<nav class="reglages">
+					<ul>
+						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter
+								une maison</a></li>
+						<li><a <?php activepage("ajoutcapteur")?> href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
+
+						<li><a <?php activepage("suppmaison")?> href="index.php?page=suppmaison">Supprimer une maison</a></li>
+					</ul>
+				</nav>
+			</div>
+			
 			<h1>Choisissez l'appartement à supprimer :</h1>
 			<!--/////////////////////////////////////////////////////////////////// -->
 
