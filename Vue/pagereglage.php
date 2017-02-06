@@ -3,15 +3,7 @@ require ('Controleur/traitement.php');
 // include 'gabarit.php';
 // on l'utilise?
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title><?php echo $titre ?></title>
 <link rel="stylesheet" href="stylereglage.css" type="text/css" />
-<meta charset="utf-8">
-</head>
-<body>
 	<div class="module3">
 		<div class="form form-block">
 			<div id="menu_appartement">
@@ -82,7 +74,7 @@ require ('Controleur/traitement.php');
 							id="ville_appartement">
 					</p>
 					<p>
-						Pays de Résidence <input type="text" name="pays_appartement"
+						Pays de Résidence <input type="text" readonly="readonly" value ="France" name="pays_appartement"
 							id="pays_appartement"> <input type="hidden" name="declencheur"
 							id="declencheur" value="1">
 					</p>
