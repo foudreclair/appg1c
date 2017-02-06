@@ -31,7 +31,7 @@ require ('Controleur/traitement.php');
 				<h2>Ajouter une pièce</h2>
 
 				<form method="post" action="Controleur/traitement.php">
-					<p>Choix de l'appartement :</p>
+					<p>Choix de la maison :</p>
 					<select name="appartement_selectionne">
 
 					<?php
@@ -58,13 +58,16 @@ require ('Controleur/traitement.php');
 			<div id="full_bloc">
 				<form class="left_bloc" method="post"
 					action="Controleur/traitement.php">
-					<h2>Ajouter un appartement</h2>
+					
+					<br />
+					<br />
+					<h2>Ajouter une maison</h2>
 					<p>
-						Nom appartement : <input type="text" name="nom_appartement"
+						Ma maison : <input type="text" name="nom_appartement"
 							id="nom_appartement">
 					</p>
 					<p>
-						Type appartement <select name="type_appartement"
+						Type de maison <select name="type_appartement"
 							id="type_appartement">
 							<option value="primaire">Primaire</option>
 							<option value="secondaire">Secondaire</option>
@@ -84,7 +87,7 @@ require ('Controleur/traitement.php');
 							id="declencheur" value="1">
 					</p>
 					<p>
-						Nombre de personnes dans l'appartement <input type="number"
+						Nombre de personnes dans la maison <input type="number"
 							name="nombre_personne_appartement"
 							id="nombre_personne_appartement" step="1" value="0" min="0">
 					</p>

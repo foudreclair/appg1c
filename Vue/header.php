@@ -16,7 +16,7 @@
 		<nav class="menu">
 
 			<ul id="menu_deroulant">
-				<img src="Vue/logo3.png">
+				<img src="Vue/logo.png">
 				<li><a <?php activepage("accueil")?> href="index.php?page=accueil">Accueil</a></li>
 				<li><a <?php activepage("reglages")?> href="index.php?page=reglages">Gérer
 						ma maison</a></li>

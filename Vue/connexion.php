@@ -58,7 +58,7 @@ if (isset ( $_GET ["succes"] )) {
 			</form>
 		</div>
 		<div class="form">
-			<h2>Create an account</h2>
+			<h2>S'enregistrer</h2>
 			<form method="post" action="Controleur/register.php"
 				enctype="multipart/form-data" id="register">
 				<div>

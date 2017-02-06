@@ -1,8 +1,8 @@
 <?php
 
-session_start();
 $iduser = $_SESSION['id'];
 //include ('Modele/connexion_bdd.php');
+session_start();
 
 
 
@@ -11,6 +11,9 @@ $iduser = $_SESSION['id'];
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////// AJOUTER UN APPARTEMENT ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
+
+if(isset($_POST['declencheur'])) {
+}
 //Premier formulaire
 //On teste le type d'appartement car la donnée à stocker dans le bdd est un entier
 if (isset($_POST['declencheur']) AND $_POST['declencheur'] == 1){  //on déclenche uniquement si le bouton "valider" a été appuyé pour le formulaire 1

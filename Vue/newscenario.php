@@ -68,8 +68,9 @@ if (! empty ( $_POST ['appart'] )) {
 									while ( $piece = $reqpiece->fetch_array ( MYSQLI_ASSOC ) ) {
 
 										?>
+										<?php echo '<center>' . $piece['Nom'] . '</center>'?>
 					<input type="checkbox" id="" name="options[]"
-					value="<?php echo $piece['Id'] ?>"><?php echo $piece['Nom'] ?><br>
+					value="<?php echo $piece['Id'] ?>">
 					<?php
 									}
 									?>
