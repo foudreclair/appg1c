@@ -45,13 +45,10 @@ $mail->Subject = $objet;
 //Replace the plain text body with one created manually
 $mail->Body = $contenu;
 //send the message, check for errors
-/*
+
 if (!$mail->send()) {
-	echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
 	echo "Message sent!";
 }
-}*/
-
-sendMail ('isepg1c2016@gmail.com', 'Email validation', 'Voici l exemple pour valider son email');
+}
 ?>
