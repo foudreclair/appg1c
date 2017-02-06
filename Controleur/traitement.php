@@ -58,7 +58,7 @@ include ('../Modele/connexion_bdd.php');
 $idappart = $_POST['appartement_selectionne'];
 $nom_piece=$_POST['nom_piece'];
 $mysqli -> query ("INSERT INTO `bdd`.`Pieces` VALUES (NULL, '$nom_piece', '$idappart')");
-header('Location: ../index.php?page=reglages');
+header('Location: ../index.php?page=ajoutcapteur');
 	//$nombre_capteurs=$_POST['nombre_capteurs'];
 	//$mysqli -> query ("INSERT INTO `bdd`.`capteur` (`Id`, `Nom`) VALUES (NULL, '$nombre_capteurs')");
 }
@@ -105,7 +105,7 @@ if (isset($_POST['declencheur']) AND $_POST['declencheur'] == 4){
 	$sqlaff="INSERT INTO `bdd`.`Affectation` VALUES ('$a', '$idpiece','$fonc')";
 	//echo $sqlaff;
 	$mysqli -> query ($sqlaff);
-	header('Location: ../index.php?page=accueil');
+	header('Location: ../index.php?page=ajoutcapteur');
 }
 
 
