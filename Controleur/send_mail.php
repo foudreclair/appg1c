@@ -1,35 +1,7 @@
 <?php
-define('GMailUSER', 'isepg1c2016@gmail.com'); // utilisateur Gmail
-define('GMailPWD', 'sucemabite'); // Mot de passe Gmail
+function sendMail ($destinataire, $objet, $contenu) {
+	
 
-/*
-function smtpMailer($to, $from, $from_name, $subject, $body) {
-	$mail = new PHPMailer();  // Cree un nouvel objet PHPMailer
-	$mail->IsSMTP(); // active SMTP
-	$mail->SMTPDebug = 0;  // debogage: 1 = Erreurs et messages, 2 = messages seulement
-	$mail->SMTPAuth = true;  // Authentification SMTP active
-	$mail->SMTPSecure = 'ssl'; // Gmail REQUIERT Le transfert securise
-	$mail->Host = 'smtp.gmail.com';
-	$mail->Port = 465;
-	$mail->Username = GMailUSER;
-	$mail->Password = GMailPWD;
-	$mail->SetFrom($from, $from_name);
-	$mail->Subject = $subject;
-	$mail->Body = $body;
-	$mail->AddAddress($to);
-	if(!$mail->Send()) {
-		return 'Mail error: '.$mail->ErrorInfo;
-	} else {
-		return true;
-	}
-}
-
-$reglages = smtpmailer('isepg1c2016@gmail.com', 'isepg1c2016@gmail.com', 'Cocoricode', 'Premier mail envoyer depuis notre site !', 'Cocoricode');
-echo $reglages;
-*/
-/**
- * This example shows settings to use when sending via Google's Gmail servers.
- */
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
@@ -61,21 +33,24 @@ $mail->Username = "isepg1c2016@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "sucemabite";
 //Set who the message is to be sent from
-$mail->setFrom('isepg1c2016@gmail.com', 'First Last');
+$mail->setFrom('isepg1c2016@gmail.com', 'DomIsep');
 //Set an alternative reply-to address
-$mail->addReplyTo('isepg1c2016@gmail.com', 'First Last');
+$mail->addReplyTo('isepg1c2016@gmail.com', 'DomIsep');
 //Set who the message is to be sent to
-$mail->addAddress('isepg1c2016@gmail.com', 'John Doe');
+$mail->addAddress($destinataire, 'DomIsep');
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->Subject = $objet;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->Body = 'This is a plain-text message body';
+$mail->Body = $contenu;
 //send the message, check for errors
 if (!$mail->send()) {
 	echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
 	echo "Message sent!";
 }
+}
+
+sendMail ('isepg1c2016@gmail.com', 'Email validation', 'Voici l exemple pour valider son email');
 ?>
