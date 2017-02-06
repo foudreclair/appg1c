@@ -1,10 +1,11 @@
 <?php
 
 ?>
+<div id="fond_admin" style="background-color:#33b5e5; color: #FFFFFF">
 <h1 style="cursor:pointer" onclick = 'affich("nouvcat","Ajouter une catégorie","tnouvcat")' id = "tnouvcat">+ Ajouter une catégorie</h1>
 <div style="display:none" id = 'nouvcat'>
 <form action = "Controleur/newcat.php" method = "post">
-	
+
 	<p>Nom : </p>
 	<input type="text" name="nom"></br>
 	<p>Description : </p>
@@ -17,7 +18,7 @@
 <h1 style="cursor:pointer" onclick = 'affich("suppcat","Supprimer une catégorie","tsuppcat")' id = "tsuppcat">+ Supprimer une catégorie</h1>
 <div style="display:none" id = 'suppcat'>
 <form action = "Controleur/suppcat.php" method = "post">
-	
+
 	<p>Catégorie à supprimer : </p>
 	<select id = "suppc" name = "suppc" onchange="valid()">
 		<option value = "rien">--</option>
@@ -39,7 +40,7 @@
 <h1 style="cursor:pointer" onclick = 'affich("ajpdt","Ajouter un produit","tajpdt")' id = "tajpdt">+ Ajouter un produit</h1>
 <div style="display:none" id = 'ajpdt'>
 <form action = "Controleur/ajpdt.php" method = "post">
-	
+
 	<p>Dans quelle catégorie voulez-vous ajouter ce produit ?</p>
 	<select id = "ajc" name = "ajc" onchange="valid2()">
 		<option value = "rien">--</option>
@@ -81,13 +82,13 @@
 			<?php
 		}
 		?>
-		
+
 		<?php
 	}
 	?>
 </select>
 <input type="submit" name="Valider">
-	
+
 </form>
 </div>
 <script type="text/javascript">
@@ -102,7 +103,7 @@ function valid2(){
 	}
 }
 function valid(){
-	
+
 	if (document.getElementById("suppc").value != "rien"){
 		document.getElementById("valsupp").disabled="";
 	}
@@ -111,7 +112,7 @@ function valid(){
 	}
 }
 function affich(val,titre,id){
-		
+
 		if (document.getElementById(val).style.display == 'block'){
 			document.getElementById(val).style.display = 'none';
 			document.getElementById(id).innerHTML="+ "+titre;
@@ -119,7 +120,8 @@ function affich(val,titre,id){
 		else {
 			document.getElementById(val).style.display = 'block';
 			document.getElementById(id).innerHTML="- "+titre;
-			
+
 		}
 	}
 </script>
+</div>
