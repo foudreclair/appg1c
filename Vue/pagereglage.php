@@ -35,7 +35,7 @@ require ('Controleur/traitement.php');
 					<select name="appartement_selectionne">
 
 					<?php
-					
+
 					include 'Modele/connexion_bdd.php';
 					$result = $mysqli->query ( "SELECT * FROM Appartements WHERE Id_Utilisateur ='$iduser' " );
 					while ( $donnes = $result->fetch_array ( MYSQLI_ASSOC ) ) {
@@ -86,7 +86,7 @@ require ('Controleur/traitement.php');
 					<p>
 						Nombre de personnes dans l'appartement <input type="number"
 							name="nombre_personne_appartement"
-							id="nombre_personne_appartement" step="1">
+							id="nombre_personne_appartement" step="1" value="0" min="0">
 					</p>
 					<input type="submit" value="Valider">
 				</form>
