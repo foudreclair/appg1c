@@ -15,9 +15,9 @@ include 'gabarit.php';
 				<input type="email" name="email" placeholder="Entrer votre email"></br>
 				<input type="text" name="name" placeholder="Entrez votre nom"></br>
 				<input type="text" name="objet"
-					placeholder="Entrez l'objet du message"></br>
-				<textarea name="comment" rows="10" cols="142" name="message_complet"
-					placeholder="Entrez votre message"></textarea>
+					placeholder="Entrez l'object du message"></br>
+				<textarea name="comment" name="message_complet"
+					placeholder="Entrez votre message" style="width:100%; height:100px;"></textarea>
 				</br>
 				<button class="button" type="submit" name="envoyer">Envoyer</button>
 			</form>
