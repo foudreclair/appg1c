@@ -40,13 +40,14 @@ include 'gabarit.php';
 		?>
 	
 	<h2 style="cursor: pointer"
-			onclick='affich("<?php echo $nomscenar[$key] ?>",this.id)'
-			id="titre_<?php echo $nomscenar[$key] ?>">+ <?php echo $nomscenar[$key] ?></h2>
+			onclick='affich("<?php echo $nomscenar[$key][0] ?>",this.id)'
+			id="titre_<?php echo $nomscenar[$key][0] ?>">+ <?php echo $nomscenar[$key][0] ?></h2>
 
 
 
-		<div id="<?php echo $nomscenar[$key] ?>" style="display: none"
+		<div id="<?php echo $nomscenar[$key][0] ?>" style="display: none"
 			class="deroulant"> 
+			<a href="Controleur/supscenar.php?id=<?php echo $nomscenar[$key][1] ?>">Supprimer le scénario</a><br>
 	<?php
 		
 		foreach ( $val as $key => $value ) {

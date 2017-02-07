@@ -4,9 +4,9 @@ session_start();
 include '../Modele/connexion_bdd.php';
 $iduser = $_SESSION['id'];
 $prix = $_SESSION['prixtot'];
-$adresse = $_POST['adresse'];
-$cp = $_POST['CodePostal'];
-$ville = $_POST['ville'];
+$adresse = htmlspecialchars($_POST['adresse']);
+$cp = htmlspecialchars($_POST['CodePostal']);
+$ville = htmlspecialchars($_POST['ville']);
 $date = date("F j, Y, g:i a");
 $req = $mysqli ->query("SELECT * FROM Utilisateur WHERE id = '$iduser'");
 while ($don = $req->fetch_array(MYSQLI_ASSOC)){
@@ -57,8 +57,11 @@ $mess.="
 
 Bonne journée et à bientôt chez Domisep !";
 include 'send_mail.php';
-
-sendMail("aymeric@dejavel.fr",'Confirmation de votre commande', $mess);
+$reqmail = $mysqli -> query("SELECT * FROM Utilisateur WHERE Id = '$iduser'");
+while($mailuser = $reqmail->fetch_array(MYSQLI_ASSOC)){
+	$mail = $mailuser['Mail'];
+}
+sendMail($mail,'Confirmation de votre commande', $mess);
 $mysqli ->query("INSERT INTO `bdd`.`Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`,`KeyCom`) VALUES (NULL, '$iduser', '$nom', '$prenom', '$adresse', '$cp', '$ville', '$date', $prix, 'Non','$code_aleatoire')");
 unset($_SESSION['panier']);
 //unset($_SESSION['prixtot']);
