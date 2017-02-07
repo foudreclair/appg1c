@@ -8,7 +8,7 @@ $prix = "";
 $prix.=strval($eur);
 $prix.=",";
 $prix.=strval($cent);
-//echo $prix;
+
 
 include '../Modele/connexion_bdd.php';
 $mysqli -> query("INSERT INTO `bdd`.`Catalogue` (`Id`, `Nom`, `Description`, `Prix`, `Id_categorie`) VALUES (NULL, '$nom', '$desc','$prix', '$cat')");
