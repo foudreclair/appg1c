@@ -18,3 +18,4 @@ require ('../Controleur/traitement.php');
 		</form>
 </body>
 
+<?php include 'footer.php' ?>

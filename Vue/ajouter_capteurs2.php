@@ -1,5 +1,5 @@
 <?php
-$titre = 'Domicile | Ajouter un capteur';
+$titre = 'Domisep | Ajouter un capteur';
 $iduser = $_SESSION ['id'];
 require ('Controleur/traitement.php');
 include 'gabarit.php';
@@ -20,20 +20,6 @@ if (isset ( $_POST ['app'] ) && $_POST ['app'] != 'rien') {
 <body>
 	<div class="module3">
 		<div class="module form-block">
-		<div id="menu_appartement">
-				<nav class="reglages">
-					<ul>
-						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter
-								une maison</a></li>
-						
-						<li><a <?php activepage("ajoutcapteur")?> href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
-
-						<li><a <?php activepage("suppmaison")?> href="index.php?page=suppmaison">Supprimer une maison</a></li>
-					</ul>
-				</nav>
-			</div>
-			<br />
-			<br />
 			<h2>Choisir les types de capteurs à ajouter</h2>
 
 <?php
@@ -125,3 +111,4 @@ if (isset ( $_SESSION ['app'] )) {
 	</div>
 
 </body>
+<?php include 'footer.php'?>

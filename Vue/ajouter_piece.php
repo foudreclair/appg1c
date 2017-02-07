@@ -1,6 +1,6 @@
 <?php
 include ('Controleur/traitement.php');
-$titre = 'Domicile | Nouvelle pièce';
+$titre = 'Domisep | Nouvelle pièce';
 include 'gabarit.php';
 $iduser = $_SESSION['id'];
 ?>
@@ -38,5 +38,5 @@ $iduser = $_SESSION['id'];
 				</form>
 		</div>
 		</div>
-	</body>
+				</body>
 

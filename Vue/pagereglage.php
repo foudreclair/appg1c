@@ -9,13 +9,11 @@ require ('Controleur/traitement.php');
 			<div id="menu_appartement">
 				<nav class="reglages">
 					<ul>
-						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter
-								une maison</a></li>
 						<li><a style="cursor: pointer" onclick="affich('newpie')">Ajouter
 								une pièce</a></li>
-						<li><a <?php activepage("ajoutcapteur")?> href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
+						<li><a href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
 
-						<li><a <?php activepage("suppmaison")?> href="index.php?page=suppmaison">Supprimer une maison</a></li>
+						<li><a href="index.php?page=suppmaison">Supprimer ma maison</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -109,3 +107,4 @@ function affich(val){
 
 }
 </script>
+<?php include 'footer.php'?>

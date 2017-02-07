@@ -1,5 +1,5 @@
 <?php
-$titre = "Domicile | Catalogue";
+$titre = "Domisep | Catalogue";
 include 'Vue/gabarit.php';
 include 'Modele/connexion_bdd.php';
 if (! isset ( $_SESSION ['panier'] )) {
@@ -7,6 +7,7 @@ if (! isset ( $_SESSION ['panier'] )) {
 } else {
 	$panier = count ( $_SESSION ['panier'] ) . " article(s) dans votre panier";
 }
+// print_r($_SESSION['panier']);
 ?>
 
 <div class="module3">

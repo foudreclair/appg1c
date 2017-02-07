@@ -76,3 +76,4 @@ foreach ($tab as $key => $value) {
 <br>
 <input type ="submit" name = "enregistrer" value = "Enregistrer">
 </form>
+<?php include 'footer.php' ?>

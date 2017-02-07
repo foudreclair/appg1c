@@ -1,5 +1,5 @@
 <?php
-$titre = 'Domicile | Créez votre scénario';
+$titre = 'Domisep | Créez votre scénario';
 include 'gabarit.php';
 require 'Modele/fonctions.php';
 $iduser = $_SESSION ['id'];
@@ -200,3 +200,4 @@ if (! empty ( $_POST ['appart'] )) {
 
 		</div>
 	</div>
+<?php include 'footer.php' ?>

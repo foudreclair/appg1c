@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <?php
-$titre = "Domisile | Page de connexion";
+$titre = "Domisep | Page de connexion";
 include 'gabarit.php';
 
 if (isset ( $_GET ["erreur"] )) {
@@ -26,6 +26,7 @@ if (isset ( $_GET ["page"] )) {
 	}
 }
 ?>
+<!-- Form Module-->
 <div class="module2">
 	<div class="module form-module">
 
@@ -105,6 +106,7 @@ function validtext(val,id){
 	if (isEmail(val)) {
 
 		var verif = file('ht	p://localhost:80/appg1c/Vue/verifbdd.php?mail='+val);
+		//document.getElementById(id).innerHTML = verif;
 		if (verif){
 			document.getElementById(id).innerHTML = "Email correct ! ";
 		}
@@ -158,6 +160,8 @@ document.getElementById("password").style.visibility = "hidden";
 document.getElementById("password").style.display = 'none';
 document.getElementById("confirm").style.visibility = "hidden";
 document.getElementById("confirm").style.display = 'none';
+//document.getElementById("sub").style.visibility = "hidden";
+//document.getElementById("sub").style.display = 'none';
 valmail = false;
 valmdp = false;
 valmdp2 = false;
@@ -220,11 +224,13 @@ function validmdp2(val) {
 	if (val == mdp){
 		document.getElementById("errmdp2").innerHTML="";
 		valid("infos");
+		//valid("sub");
 		valmdp2 = true;
 	}
 	else {
 		document.getElementById("errmdp2").innerHTML="Erreur de mot de passe";
 		unvalid("infos");
+		//unvalid("sub");
 	}
 }
 function validform(){

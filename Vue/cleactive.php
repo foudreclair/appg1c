@@ -1,6 +1,6 @@
 <?php
 $erreur = $_GET['erreur'];
-$titre = "Domicile | Gestion des clés d'activation";
+$titre = "Domisep | Gestion des clés d'activation";
 include 'gabarit.php';
 if ($_SESSION['admin']!='1') {
 	header('Location: index.php?page=accueil');
