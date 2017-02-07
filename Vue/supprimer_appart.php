@@ -17,12 +17,15 @@ $iduser = $_SESSION ['id'];
 <body>
 	<div class="module3">
 		<div class="module form-block">
-		<div id="menu_appartement">
+					<div id="menu_appartement">
 				<nav class="reglages">
 					<ul>
-						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter une maison</a></li>
-						<li><a <?php activepage("reglages")?> href="index.php?page=reglages">Ajouter une pièce</a></li>
+						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter
+								une maison</a></li>
+						<li><a <?php activepage("ajoutpiece")?>href="index.php?page=ajoutpiece">Ajouter
+								une pièce</a></li>
 						<li><a <?php activepage("ajoutcapteur")?> href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
+
 						<li><a <?php activepage("suppmaison")?> href="index.php?page=suppmaison">Supprimer une maison</a></li>
 					</ul>
 				</nav>

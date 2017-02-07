@@ -30,7 +30,7 @@
 			<div class="nav-right">
 					<img src="Vue/user.svg" style="padding-right:5px;width=30px;height=30px;"></img>
 					<div class="nav-right2">
-						<ul class="dropit">
+						<ul id ="dropit" class="dropit">
 							<li class="dropit-trigger dropit-open"><a href="#"><?php echo $_SESSION['prenom']; ?></a>
 								<ul class="dropit-submenu">
 									<li><a href="#">Modifier mon profil</a></li>
@@ -54,6 +54,18 @@
 	</div>
 <script>
 $(document).ready(function() {
-    $('.menu').dropit();
-});</script>
+
+		$('dropit').dropit( {
+			action: 'click', // The open action for the trigger
+			submenuEl: 'ul', // The submenu element
+			triggerEl: 'a', // The trigger element
+			triggerParentEl: 'li', // The trigger parent element
+			afterLoad: function(){}, // Triggers when plugin has loaded
+			beforeShow: function(){}, // Triggers before submenu is shown
+			afterShow: function(){}, // Triggers after submenu is shown
+			beforeHide: function(){}, // Triggers before submenu is hidden
+			afterHide: function(){} // Triggers before submenu is hidden
+		});
+		});
+</script>
 	</div>
