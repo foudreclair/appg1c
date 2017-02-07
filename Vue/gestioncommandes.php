@@ -125,18 +125,12 @@ if ($_SESSION ['admin'] != '1') {
 
 
 	function affich(val){
-		//alert(titre);
-		//var signe = document.getElementById(titre).value;
-		//alert(signe);
+
 		if (document.getElementById(val).style.display == 'block'){
 			document.getElementById(val).style.display = 'none';
-			//document.getElementById(id).innerHTML="+ "+val;
 		}
 		else {
 			document.getElementById(val).style.display = 'block';
-			//document.getElementById(id).innerHTML="- "+val;
-			//alert(document.getElementById(titre).value.replace("+", "_"));
-			//document.getElementById("men_"+val).setAttribute("src","Vue/menuouvert.png");
 		}
 }
 	

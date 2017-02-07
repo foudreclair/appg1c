@@ -38,5 +38,5 @@ $iduser = $_SESSION['id'];
 				</form>
 		</div>
 		</div>
-				</body>
+	</body>
 

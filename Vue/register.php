@@ -158,4 +158,3 @@ function file(fichier) {
      }
 }
 </script>
-<?php include 'footer.php' ?>

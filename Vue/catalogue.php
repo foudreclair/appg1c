@@ -7,7 +7,6 @@ if (! isset ( $_SESSION ['panier'] )) {
 } else {
 	$panier = count ( $_SESSION ['panier'] ) . " article(s) dans votre panier";
 }
-// print_r($_SESSION['panier']);
 ?>
 
 <div class="module3">

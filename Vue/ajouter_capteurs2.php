@@ -125,4 +125,3 @@ if (isset ( $_SESSION ['app'] )) {
 	</div>
 
 </body>
-<?php include 'footer.php'?>

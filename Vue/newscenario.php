@@ -200,4 +200,3 @@ if (! empty ( $_POST ['appart'] )) {
 
 		</div>
 	</div>
-<?php include 'footer.php' ?>

@@ -87,9 +87,6 @@ include 'gabarit.php';
 	document.getElementById("infos").style.display = 'none';
 
 	function affich(val,id){
-		//alert(titre);
-		//var signe = document.getElementById(titre).value;
-		//alert(signe);
 		if (document.getElementById(val).style.display == 'block'){
 			document.getElementById(val).style.display = 'none';
 			document.getElementById(id).innerHTML="+ "+val;
@@ -97,8 +94,6 @@ include 'gabarit.php';
 		else {
 			document.getElementById(val).style.display = 'block';
 			document.getElementById(id).innerHTML="- "+val;
-			//alert(document.getElementById(titre).value.replace("+", "_"));
-			//document.getElementById("men_"+val).setAttribute("src","Vue/menuouvert.png");
 		}
 }
 	

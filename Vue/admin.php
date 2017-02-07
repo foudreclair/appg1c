@@ -31,7 +31,6 @@ include 'Vue/gabarit.php';
 function supprimer(id,nom,prenom){
 	var c = confirm(id+nom+prenom);
 	if (c==true){
-		//var idsup = file('http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id);
 		document.location.href='http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id;
 	
 	}

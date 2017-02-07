@@ -39,7 +39,7 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 			</form>
 		</div>
 		<br />
-		<h1>Vous pouvez aussi venir nous voir :)</h1>
+		<h1>Vous pouvez aussi venir nous voir</h1>
 		<br />
 		<iframe width="100%" height="450" frameborder="0" style="border: 0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBIt8hoxhdyDdXNJSj02q2wnru7iW_75Cg
@@ -48,4 +48,3 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 
 	</div>
 </div>
-<?php include 'Vue/footer.php'?>

@@ -109,4 +109,3 @@ function affich(val){
 
 }
 </script>
-<?php include 'footer.php'?>

@@ -54,4 +54,3 @@ catch (Exception $e)
 
 
 </body>
-<?php include 'footer.php' ?>
