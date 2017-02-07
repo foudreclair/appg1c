@@ -1,5 +1,4 @@
 <?php
-$erreur = $_GET['erreur'];
 $titre = "Domicile | Gestion des clés d'activation";
 include 'gabarit.php';
 if ($_SESSION['admin']!='1') {
@@ -10,7 +9,12 @@ include 'Modele/connexion_bdd.php';
 
 <div class = "module3">
 <div class ="form form-block">
-	<h2><?php echo $erreur ?></h2>
+	<h2><?php 
+	if (isset($_GET['erreur'])) {
+		$erreur = htmlspecialchars($_GET['erreur']);
+		echo $erreur;
+	}
+	 ?></h2>
 	<h1>Créer une clé d'activation : </h1>
 	<form method = "post" action = "Controleur/nouvcle.php">
 		<input type = "text" name = "cle" placeholder = "Clé">
