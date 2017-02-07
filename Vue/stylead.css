@@ -1,7 +1,6 @@
 /*LE FOOTER*/
 
 .footer{
-  align-items : center;
   position: relative;
   text-align: center;
   border-width: 1px;
@@ -9,42 +8,24 @@
   width: 100%;
   height: 100px;
   bottom : 0;
-  /*J'arrive pas a modifier la couleur des textes
-   du footer et
-   */
   color:#ffffff;
+  padding-top: 15px;
 
-
-}
-
-.footer_2  li{
-  display: inline-block;
-  list-style: none;
-  padding-top: 12px;
-  width:  32%;
-  height: 10px;
-  text-decoration: none;
 }
 /*on enleve ici les soulignements des liens*/
-a:link{
-  text-decoration: none;
-}
-a:hover{
-  color:#FF33CC;
+.footer li a:link, .footer li a:visited{
+  color:#ffffff;
 }
 
-.mention_legal li {
-    display: inline-block;
+.footer li {
     list-style: none;
-    width:  40%;
-    height: 10px;
+    display: inline-block;
+    width:  30%;
 }
 
 /*La page contact*/
 #plan{
   display: block;
-
-
 }
 #champ_saisie {
   display: inline-block;

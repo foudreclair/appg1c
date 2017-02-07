@@ -1,8 +1,10 @@
 <?php
 
 ?>
-<div id="fond_admin" style="background-color:#33b5e5; color: #FFFFFF">
+<div>
+<div class="fond_admin" style="background-color:#33b5e5; color: #FFFFFF">
 <h1 style="cursor:pointer" onclick = 'affich("nouvcat","Ajouter une catégorie","tnouvcat")' id = "tnouvcat">+ Ajouter une catégorie</h1>
+</div>
 <div style="display:none" id = 'nouvcat'>
 <form action = "Controleur/newcat.php" method = "post">
 
@@ -15,7 +17,9 @@
 
 </form>
 </div>
+<div class="fond_admin" style="background-color:#33b5e5; color: #FFFFFF">
 <h1 style="cursor:pointer" onclick = 'affich("suppcat","Supprimer une catégorie","tsuppcat")' id = "tsuppcat">+ Supprimer une catégorie</h1>
+</div>
 <div style="display:none" id = 'suppcat'>
 <form action = "Controleur/suppcat.php" method = "post">
 
@@ -37,7 +41,9 @@
 
 </form>
 </div>
+<div class="fond_admin" style="background-color:#33b5e5; color: #FFFFFF">
 <h1 style="cursor:pointer" onclick = 'affich("ajpdt","Ajouter un produit","tajpdt")' id = "tajpdt">+ Ajouter un produit</h1>
+</div>
 <div style="display:none" id = 'ajpdt'>
 <form action = "Controleur/ajpdt.php" method = "post">
 
@@ -65,7 +71,9 @@
 
 </form>
 </div>
+<div id="fond_admin" style="background-color:#33b5e5; color: #FFFFFF">
 <h1 style="cursor:pointer" onclick = 'affich("suppdt","Supprimer un produit","tsuppdt")' id = "tsuppdt">+ Supprimer un produit</h1>
+</div>
 <div style="display:none" id = 'suppdt'>
 <form action = "Controleur/suppdt.php" method = "post">
 
