@@ -25,15 +25,15 @@ if (isset ( $_POST ['app'] ) && $_POST ['app'] != 'rien') {
 <?php
 if (isset ( $_SESSION ['app'] )) {
 	if (isset ( $_SESSION ['pie'] )) {
-		
+
 		?>
 <form method="post" action="Controleur/traitement.php">
 
 
 				<p>Nommez ce capteur</p>
-				<input type="text" name="nom_capteur" id="nom_capteur"></br> 
+				<input type="text" name="nom_capteur" id="nom_capteur"></br>
 				<label>Choisir
-					le type de capteur</label></br> 
+					le type de capteur</label></br>
 					<select name="type_capteur"
 					id="type_capteur">
 
@@ -111,4 +111,3 @@ if (isset ( $_SESSION ['app'] )) {
 	</div>
 
 </body>
-<?php include 'footer.php'?>

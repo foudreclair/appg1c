@@ -50,7 +50,7 @@ require ('Controleur/traitement.php');
 			<div id="full_bloc">
 				<form class="left_bloc" method="post"
 					action="Controleur/traitement.php">
-					
+
 					<br />
 					<br />
 					<h2>Ajouter une maison</h2>
@@ -107,4 +107,3 @@ function affich(val){
 
 }
 </script>
-<?php include 'footer.php'?>

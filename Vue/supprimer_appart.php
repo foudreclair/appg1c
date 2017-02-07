@@ -2,9 +2,10 @@
 $titre = "Domisep | Supprimer un appartement";
 include 'gabarit.php';
 require ('Controleur/traitement.php');
-
+// include ("Controleur/connexion.php");
 $iduser = $_SESSION ['id'];
 ?>
+<!--/////////////////////////////////////////////////////////////////// -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +13,21 @@ $iduser = $_SESSION ['id'];
 <link rel="stylesheet" href="stylereglage.css" type="text/css" />
 <meta charset="utf-8">
 </head>
-
+<!--/////////////////////////////////////////////////////////////////// -->
 <body>
 	<div class="module3">
 		<div class="module form-block">
-
+			<!--
+	<nav class ="menu_appartement">
+		<ul>
+			<li><a href="#">Ajouter un appartement/pièce</a></li>
+			<li><a href="#">Modifier un appartement</a></li>
+			<li><a href="#">Supprimer un appartement</a></li>
+		</ul>
+	</nav>
+/////////////////////////////////////////////////////////////////// -->
 			<h1>Choisissez l'appartement à supprimer :</h1>
+			<!--/////////////////////////////////////////////////////////////////// -->
 
 			<form method="post" action="Controleur/traitement.php">
 

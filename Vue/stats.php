@@ -162,4 +162,4 @@ function drawBasic() {
     
 </div>
 </div>
-<?php include 'footer.php' ?>
+ 
