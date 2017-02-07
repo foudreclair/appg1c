@@ -4,7 +4,7 @@
 			include('../Modele/fonctions.php');
 			include('../Modele/connexion_bdd.php');
 			
-			$result = $mysqli->query('SELECT Id, Mail, Password, Permission, Prenom FROM utilisateur where Mail="' .$_POST['mail'].'"');
+			$result = $mysqli->query('SELECT Id, Mail, Password, Permission, Prenom, Activee FROM utilisateur where Mail="' .$_POST['mail'].'"');
 			$row = $result->fetch_array(MYSQLI_NUM);
 			$id = $row[0];
 			$mail = $row[1];
@@ -12,7 +12,10 @@
 			$prenom = $row[4];
 			//HASH du mdp en sha1
 		    $password_hash = hash('sha1', $_POST['password']);
-
+		    if($row[5]!='Oui'){
+		    	header('Location:../index.php?page=connexion&erreur=5');
+		    	exit();
+		    }
 			if ($password_user == $password_hash) {		//password ok
 				/*
 				$session_name = 'session_id';   // Attribue un nom de session

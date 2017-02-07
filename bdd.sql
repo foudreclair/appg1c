@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:3306
--- Généré le :  Dim 05 Février 2017 à 21:57
+-- Généré le :  Mar 07 Février 2017 à 23:32
 -- Version du serveur :  5.5.42
 -- Version de PHP :  7.0.0
 
@@ -26,7 +26,7 @@ CREATE TABLE `Achats` (
   `Quantite` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Expedition` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Id_Commande` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `Achats`
@@ -44,7 +44,22 @@ INSERT INTO `Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Comman
 (35, 1, '1', 'Non', '26'),
 (36, 4, '1', 'Non', '26'),
 (37, 5, '11', 'Non', '26'),
-(38, 6, '4', 'Non', '26');
+(38, 6, '4', 'Non', '26'),
+(39, 1, '1', 'Non', '27'),
+(40, 5, '2', 'Non', '31'),
+(41, 4, '1', 'Non', '31'),
+(42, 6, '1', 'Non', '31'),
+(43, 1, '1', 'Non', '32'),
+(44, 4, '1', 'Non', '33'),
+(45, 5, '7', 'Non', '33'),
+(46, 5, '3', 'Non', '34'),
+(47, 1, '2', 'Non', '35'),
+(48, 1, '1', 'Non', '36'),
+(49, 1, '1', 'Non', '36'),
+(50, 1, '1', 'Non', '36'),
+(51, 1, '1', 'Non', '38'),
+(52, 1, '1', 'Non', '40'),
+(53, 1, '1', 'Non', '41');
 
 -- --------------------------------------------------------
 
@@ -177,7 +192,7 @@ CREATE TABLE `CleAct` (
   `Cle` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Permission` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `Activee` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `CleAct`
@@ -185,7 +200,8 @@ CREATE TABLE `CleAct` (
 
 INSERT INTO `CleAct` (`Id`, `Cle`, `Permission`, `Activee`) VALUES
 (1, 'AAA-BBB-CCC-DDD', '0', 'Oui'),
-(2, 'ABC-ABC-ABC-ABC', '0', 'Oui');
+(2, 'ABC-ABC-ABC-ABC', '0', 'Oui'),
+(3, 'AZERTY', '0', 'Oui');
 
 -- --------------------------------------------------------
 
@@ -203,19 +219,35 @@ CREATE TABLE `Commande` (
   `Ville` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `Date` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Prix` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `Payement` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `Payement` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `KeyCom` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `Commande`
 --
 
-INSERT INTO `Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`) VALUES
-(18, 0, 'Ne pas supprimer', 'Ne pas supprimer', 'Ne pas supprimer', '', 'Ne pas supprimer', 'Ne pas supprimer', '', ''),
-(23, 0, '0', '0', '0', '0', '0', '0', '', ''),
-(24, 9, 'de Javel', 'Aymeric', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 2, 2017, 6:13 pm', '35.4', 'Non'),
-(25, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 2:00 pm', '67.49', 'Non'),
-(26, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 4:03 pm', '567.84', 'Non');
+INSERT INTO `Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`, `KeyCom`) VALUES
+(18, 0, 'Ne pas supprimer', 'Ne pas supprimer', 'Ne pas supprimer', '', 'Ne pas supprimer', 'Ne pas supprimer', '', '', ''),
+(23, 0, '0', '0', '0', '0', '0', '0', '', '', ''),
+(24, 9, 'de Javel', 'Aymeric', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 2, 2017, 6:13 pm', '35.4', 'Non', ''),
+(25, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 2:00 pm', '67.49', 'Non', ''),
+(26, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 4:03 pm', '567.84', 'Non', ''),
+(27, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 3:58 pm', '19.8', 'Non', ''),
+(28, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:01 pm', '19.8', 'Non', 'ZDAtqTAA0hqAJWpUWMkmJMOGlC554p'),
+(29, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:03 pm', '19.8', 'Non', ''),
+(30, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:11 pm', '19.8', 'Non', ''),
+(31, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:13 pm', '127.29', 'Non', ''),
+(32, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:24 pm', '19.8', 'Non', 'Mu8gzIgf00qhqEp7cdJaITTGh9idUu'),
+(33, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:28 pm', '313.84', 'Non', 'FAo1CjafEx1NEIjkO4mVV7IB4YH4r2'),
+(34, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:34 pm', '122.55', 'Non', '01Lws7UhzJ9tz8gw8rKkFc5d3Fy0Pr'),
+(35, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:34 pm', '39.6', 'Non', 'yWPloiaovccBXYHRZFj4sss5t03s5X'),
+(36, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:53 pm', '19.8', 'Non', 'auM6zbBFeAEsGTWVPZZmXv4G29C9ck'),
+(37, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:56 pm', '19.8', 'Non', 'ST1b0JByHGO8fAk1kUaxuKbYTCSMv8'),
+(38, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 5:02 pm', '19.8', 'Non', 'Z1zEh6JHRZvtFngjP6zMs1aNaiQixL'),
+(39, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 5:07 pm', '19.8', 'Non', '4U5FXf5DsjswcT79hYNavKEJIDsH6F'),
+(40, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 5:21 pm', '19.8', 'Non', 'T1k6gtfUzOPMaE0HWPj9nFIWUYQ880'),
+(41, 7, 'G1C', 'Isep', '12', 'zcdd', 'csdcsd', 'February 7, 2017, 7:48 pm', '19.8', 'Non', 'ncGQBCx94EE8Pa6H3PoTNrJGTRgLcU');
 
 -- --------------------------------------------------------
 
@@ -314,16 +346,14 @@ CREATE TABLE `Scenario` (
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Recurrence` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Id_Utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `Scenario`
 --
 
 INSERT INTO `Scenario` (`Id`, `Nom`, `Recurrence`, `Id_Utilisateur`) VALUES
-(12, 'Ne pas supprimer', 'Non', 0),
-(15, 'Semaine', 'Non', 7),
-(16, 'Vac', 'Non', 7);
+(12, 'Ne pas supprimer', 'Non', 0);
 
 -- --------------------------------------------------------
 
@@ -765,20 +795,23 @@ CREATE TABLE `Utilisateur` (
   `Nom` varchar(25) DEFAULT NULL,
   `Prenom` varchar(25) DEFAULT NULL,
   `Date_naissance` varchar(25) DEFAULT NULL,
-  `Permission` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `Permission` int(11) DEFAULT NULL,
+  `KeyUser` varchar(50) NOT NULL,
+  `Activee` varchar(10) NOT NULL DEFAULT 'Non'
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Utilisateur`
 --
 
-INSERT INTO `Utilisateur` (`Id`, `Mail`, `Password`, `Nom`, `Prenom`, `Date_naissance`, `Permission`) VALUES
-(7, 'isepg1c2016@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'G1C', 'Isep', '01/01/2000', 1),
-(8, 'aymeric@dejavel.fr', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '10/03/2000', NULL),
-(9, 'ay@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '02/02/2017', NULL),
-(10, 'stef@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Stef', 'Lecon', '12/12/2000', NULL),
-(11, 'stefcardoux@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Cardoux', 'Stef', '12/10/1996', 0),
-(12, 'stecardoux@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Cardoux', 'Ste', '12/10/1996', 0);
+INSERT INTO `Utilisateur` (`Id`, `Mail`, `Password`, `Nom`, `Prenom`, `Date_naissance`, `Permission`, `KeyUser`, `Activee`) VALUES
+(7, 'isepg1c2016@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'G1C', 'Isep', '01/01/2000', 1, '', 'Non'),
+(9, 'ay@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '02/02/2017', NULL, '', 'Non'),
+(10, 'stef@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Stef', 'Lecon', '12/12/2000', NULL, '', 'Non'),
+(11, 'stefcardoux@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Cardoux', 'Stef', '12/10/1996', 0, '', 'Non'),
+(12, 'stecardoux@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Cardoux', 'Ste', '12/10/1996', 0, '', 'Non'),
+(13, 'test@mail.fr', 'c7623106b1bd5b11c0132e86934e1e401ace10d9', 'Moi', 'Moi', 'Youpi', 0, 'YoUu3lXniORMJwKD2AiejTvQndxrMz', 'Oui'),
+(15, 'aymeric@dejavel.fr', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '14/10/1996', 0, 'qrElQgL19yhDXYCjDbNQxI3dLGh75p', 'Oui');
 
 --
 -- Index pour les tables exportées
@@ -891,7 +924,7 @@ ALTER TABLE `Utilisateur`
 -- AUTO_INCREMENT pour la table `Achats`
 --
 ALTER TABLE `Achats`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT pour la table `Appartements`
 --
@@ -916,12 +949,12 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `CleAct`
 --
 ALTER TABLE `CleAct`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `Commande`
 --
 ALTER TABLE `Commande`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT pour la table `Fonctionnalite`
 --
@@ -946,7 +979,7 @@ ALTER TABLE `Programmation`
 -- AUTO_INCREMENT pour la table `Scenario`
 --
 ALTER TABLE `Scenario`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `Statistiques`
 --
@@ -956,7 +989,7 @@ ALTER TABLE `Statistiques`
 -- AUTO_INCREMENT pour la table `Utilisateur`
 --
 ALTER TABLE `Utilisateur`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- Contraintes pour les tables exportées
 --

@@ -41,7 +41,19 @@ if (isset ( $_POST ['mail'] ) && isset ( $_POST ['password'] ) && isset ( $_POST
 				header ( 'Location:../index.php?page=connexion&erreur=2' );
 			} else {
 				$mysqli ->query("UPDATE `bdd`.`CleAct` SET `Activee` = 'Oui' WHERE `cleact`.`Id` = '$idkey'");
-				$insert_user = $mysqli->query ( "INSERT INTO utilisateur (Mail, Password, Nom, Prenom, Date_naissance, Permission) VALUES ('$mail', '$password_user_hash', '$nom', '$prenom', '$date_naissance', '$perm')" );
+				require 'genaleatoire.php';
+				$code_aleatoire = gen();
+				$insert_user = $mysqli->query ( "INSERT INTO utilisateur (Mail, Password, Nom, Prenom, Date_naissance, Permission, KeyUser) VALUES ('$mail', '$password_user_hash', '$nom', '$prenom', '$date_naissance', '$perm','$code_aleatoire')" );
+				include 'send_mail.php';
+$mess= "
+Bonjour,
+
+Vous venez de vous inscrire sur le site Domisep. Votre compte n'est pas encore actif.
+Afin de l'activer, cliquez sur le lien : http://localhost/appg1c/Controleur/activcompte.php?cle=".$code_aleatoire;
+$mess.= "
+Merci !
+Bonne journée, l'équipe Domisep";
+				sendMail($mail,'Inscription sur Domisep', $mess);
 				// header('Location:index.php?page=accueil');
 				header ( 'Location:../index.php?page=connexion&succes' );
 			}

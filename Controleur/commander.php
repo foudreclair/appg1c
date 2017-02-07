@@ -25,7 +25,7 @@ $idcom+=1;
 $mess = "Bonjour,
 
 Merci de votre commande sur Domisep.
-Elle sera expédiée dès la recpetion d'un chèque de ".$prix." €.
+Elle sera expédiée dès la récepetion d'un chèque de ".$prix." €.
 Voici le bilan de votre commande : ";
 //echo $idcom;
 foreach ($_SESSION['panier'] as $key => $value) {
@@ -41,15 +41,8 @@ foreach ($_SESSION['panier'] as $key => $value) {
 	- ".$quant." x ".$nompdt." à ".$prixpdt. " € (soit ".(floatval(str_replace(',', '.', $prixpdt))*$quant)." €)";
 	
 }
-$characts    = 'abcdefghijklmnopqrstuvwxyz';
-    $characts   .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';	
-	$characts   .= '1234567890'; 
-	$code_aleatoire      = null; //Plus propre de demarre � null que vide
-
-	for($i=0;$i < 30;$i++)    //10 est le nombre de caractères
-	{ 
-        $code_aleatoire .= substr($characts,rand()%(strlen($characts)),1); 
-	}
+require 'genal.php';
+$code_aleatoire = gen();
 $mess.="
 
 Vous pouvez consulter votre facture ici : http://localhost/appg1c/Vue/pdf.php?cmd=".$code_aleatoire;

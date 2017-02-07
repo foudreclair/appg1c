@@ -18,6 +18,9 @@ if (isset ( $_GET ["erreur"] )) {
 		case 4 :
 			$erreur = "Clé invalide.";
 			break;
+		case 5 :
+			$erreur = "Votre compte n'est pas encore activé ! Cliquez sur le lien reçu par mail lors de votre inscription pour activer votre compte.";
+			break;
 	}
 }
 if (isset ( $_GET ["page"] )) {
@@ -47,6 +50,9 @@ if (isset ( $erreur )) {
 
 if (isset ( $_GET ["succes"] )) {
 				echo '<font color="green">Vous etes desormais inscrit.</font>';
+			}
+if (isset ( $_GET ["valid"] )) {
+				echo "<font color='green'>Votre compte vient d'être validé !</font>";
 			}
 			?>
 			<form method="post" action="Controleur/connexion.php" id="con">

@@ -16,14 +16,14 @@ function genal(){
 function gen(){
 	$code = genal();
 	include '../Modele/connexion_bdd.php';
-	$reqexist = $mysqli ->query("SELECT * FROM Commande WHERE KeyCom='$code'");
+	$reqexist = $mysqli ->query("SELECT * FROM Utilisateur WHERE KeyUser='$code'");
 	$compte = 0;
 	while ($exist = $reqexist ->fetch_array(MYSQLI_ASSOC)){
 		$compte+=1;
 	}
 	while ($compte != 0){
 		$code = genal();
-		$reqexist = $mysqli ->query("SELECT * FROM Commande WHERE KeyCom='$code'");
+		$reqexist = $mysqli ->query("SELECT * FROM Utilisateur WHERE KeyUser='$code'");
 		$compte = 0;
 		while ($exist = $reqexist ->fetch_array(MYSQLI_ASSOC)){
 			$compte+=1;
