@@ -24,11 +24,24 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 			<p>Horraire : Lundi à Vendredi de 8h à 17h</p>
 			<p>Telephone : 01 XX XX XX XX</p>
 			<br />
-			<p>Suivez-nous sur les réseaux sociaux : <br />
-				<a href="https://www.youtube.com/channel/UCjjcGKR9mVnNxyWZSVWVO5A" style="color:#0080FF;"> Notre chaîne YouTube</a><br />
-				<a href="https://www.facebook.com/Domisep-1204103683040258/" style="color:#0080FF;">Notre FaceBook</a>
-			</p>
+			<p>Suivez-nous sur les réseaux sociaux :</p>
+			<!--boutton youtube -->
+			<p>Notre chaîne YouTube</p>
+			<script src="https://apis.google.com/js/platform.js"></script>
+			<div class="g-ytsubscribe" data-channelid="UCjjcGKR9mVnNxyWZSVWVO5A" data-layout="default" data-count="default"></div>
+			<!-- boutton facebook-->
+				<p>Notre FaceBook</p>
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+  			var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8";
+  			fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<div class="fb-like" data-href="https://www.facebook.com/Domisep-1204103683040258/?ref=aymt_homepage_panel&amp;__mref=message_bubble" data-width="200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 		</div>
+		<br />
 		<div id="champ_saisie">
 			<h2>Nous contacter par email :</h2>
 			<form method="post" action="index.php?page=contact">
