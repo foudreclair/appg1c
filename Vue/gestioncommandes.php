@@ -19,8 +19,7 @@ if ($_SESSION ['admin'] != '1') {
 		<br>
 		<br>
 	<?php
-	
-	if ($_GET['voir'] == "nonpaye") {
+	if (isset($_GET['voir']) AND $_GET['voir'] == "nonpaye") {
 		$req = $mysqli->query ( "SELECT * FROM Commande WHERE Payement ='Non'" );
 	} else {
 		$req = $mysqli->query ( "SELECT * FROM Commande" );

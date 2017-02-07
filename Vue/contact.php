@@ -15,7 +15,7 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 <div class="module3">
 	<div class="form-block">
 		<div id="info_client">
-			<?php 
+			<?php
 			if(isset($text)) {
 				echo '<font color="green">' . $text . '</font>';
 			}
@@ -23,9 +23,14 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 			<p>Adresse :XX rue XXXXXX</p>
 			<p>Horraire : Lundi à Vendredi de 8h à 17h</p>
 			<p>Telephone : 01 XX XX XX XX</p>
+			<br />
+			<p>Suivez-nous sur les réseaux sociaux : <br />
+				<a href="https://www.youtube.com/channel/UCjjcGKR9mVnNxyWZSVWVO5A" style="color:#0080FF;"> Notre chaîne YouTube</a><br />
+				<a href="https://www.facebook.com/Domisep-1204103683040258/" style="color:#0080FF;">Notre FaceBook</a>
+			</p>
 		</div>
 		<div id="champ_saisie">
-
+			<h2>Nous contacter par email :</h2>
 			<form method="post" action="index.php?page=contact">
 				<input type="email" name="email" placeholder="Entrer votre email"></br>
 				<input type="text" name="name" placeholder="Entrez votre nom"></br>

@@ -44,11 +44,11 @@ $mail->Subject = $objet;
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
 $mail->Body = $contenu;
+$mail->SMTPDebug = false;
+$mail->do_debug = 0;
 //send the message, check for errors
 
-if (!$mail->send()) {
-} else {
-	echo "Message sent!";
-}
+if ($mail->send()) {
+} 
 }
 ?>
