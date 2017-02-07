@@ -23,4 +23,4 @@
 
 
 
-<?php include 'footer.php' ?>
+ 

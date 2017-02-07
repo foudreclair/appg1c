@@ -1,5 +1,5 @@
 <?php
-$titre = "Domicile | Supprimer un appartement";
+$titre = "Domisep | Supprimer un appartement";
 include 'gabarit.php';
 require ('Controleur/traitement.php');
 // include ("Controleur/connexion.php");

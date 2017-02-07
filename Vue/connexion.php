@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <?php
-$titre = "Domisile | Page de connexion";
+$titre = "Domisep | Page de connexion";
 include 'gabarit.php';
 
 if (isset ( $_GET ["erreur"] )) {
@@ -38,13 +38,13 @@ if (isset ( $_GET ["page"] )) {
 		<div class="form">
 			<h2>Se connecter</h2>
 			<?php
-			
+
 if (isset ( $erreur )) {
 				echo '<font color="red">' . $erreur . '</font>';
 			}
 			?>
 			<?php
-			
+
 if (isset ( $_GET ["succes"] )) {
 				echo '<font color="green">Vous etes desormais inscrit.</font>';
 			}
@@ -261,4 +261,3 @@ function file(fichier) {
     $( "#datepicker" ).datepicker();
   } );
 </script>
-<?php include 'Vue/footer.php'?>

@@ -1,5 +1,5 @@
 <?php
-$titre = "Domicile | Validation";
+$titre = "Domisep | Validation";
 include 'Vue/gabarit.php';
 session_start();
 

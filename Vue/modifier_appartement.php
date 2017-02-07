@@ -6,7 +6,7 @@ NOM/ADRESSE/type /nb_personne( à quoi cela nous sert ?)
 ajouter supprimer et visualiser les pièce
 ajouter des capteurs dans les dites pièce  .?
 */
-$titre = "Domicile | Modifier un appartement";
+$titre = "Domisep | Modifier un appartement";
 include 'gabarit.php';
 
 include 'Modele/connexion_bdd.php';
@@ -54,4 +54,4 @@ catch (Exception $e)
 
 
 </body>
-<?php include 'footer.php' ?>
+ 

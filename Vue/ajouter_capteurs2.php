@@ -1,5 +1,5 @@
 <?php
-$titre = 'Domicile | Ajouter un capteur';
+$titre = 'Domisep | Ajouter un capteur';
 $iduser = $_SESSION ['id'];
 require ('Controleur/traitement.php');
 include 'gabarit.php';

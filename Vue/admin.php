@@ -1,5 +1,5 @@
 <?php
-$titre = "Domicile | Administration";
+$titre = "Domisep | Administration";
 include 'Vue/gabarit.php';
 ?>
 <div class="module3">

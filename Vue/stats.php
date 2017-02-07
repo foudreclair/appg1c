@@ -1,5 +1,5 @@
 <?php
-$titre = "Domicile | Statistiques";
+$titre = "Domisep | Statistiques";
 
 include 'gabarit.php';
 $iduser = $_SESSION['id'];

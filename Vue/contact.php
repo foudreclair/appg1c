@@ -1,5 +1,5 @@
 <?php
-$titre = "Domicile | Contact";
+$titre = "Domisep | Contact";
 include 'gabarit.php';
 
 if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST ["objet"] )) {
