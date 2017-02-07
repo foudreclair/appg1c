@@ -23,11 +23,9 @@ if (isset ( $_POST ['app'] ) && $_POST ['app'] != 'rien') {
 		<div id="menu_appartement">
 				<nav class="reglages">
 					<ul>
-						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter
-								une maison</a></li>
-						
+						<li><a <?php activepage("reglages")?>href="index.php?page=reglages">Ajouter une maison</a></li>
+						<li><a <?php activepage("reglages")?> href="index.php?page=reglages">Ajouter une pièce</a></li>
 						<li><a <?php activepage("ajoutcapteur")?> href="index.php?page=ajoutcapteur">Ajouter un capteur</a></li>
-
 						<li><a <?php activepage("suppmaison")?> href="index.php?page=suppmaison">Supprimer une maison</a></li>
 					</ul>
 				</nav>
@@ -39,15 +37,14 @@ if (isset ( $_POST ['app'] ) && $_POST ['app'] != 'rien') {
 <?php
 if (isset ( $_SESSION ['app'] )) {
 	if (isset ( $_SESSION ['pie'] )) {
-		
+
 		?>
 <form method="post" action="Controleur/traitement.php">
 
 
 				<p>Nommez ce capteur</p>
-				<input type="text" name="nom_capteur" id="nom_capteur"></br> 
-				<label>Choisir
-					le type de capteur</label></br> 
+				<input type="text" name="nom_capteur" id="nom_capteur"></br>
+				<label>Choisir le type de capteur</label></br>
 					<select name="type_capteur"
 					id="type_capteur">
 
@@ -55,8 +52,6 @@ if (isset ( $_SESSION ['app'] )) {
 					<option value="2">Lumière</option>
 					<option value="4">Détecteur de particules</option>
 					<option value="5">Caméra</option>
-
-
 					<option value="3">Humidité</option>
 
 				</select>
@@ -125,3 +120,4 @@ if (isset ( $_SESSION ['app'] )) {
 	</div>
 
 </body>
+<?php  ?>
