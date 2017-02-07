@@ -13,9 +13,10 @@
 
 }
 /*on enleve ici les soulignements des liens*/
-.footer li a:link{
+.footer li a:link, .footer li a:visited{
   color:#ffffff;
 }
+
 .footer li {
     list-style: none;
     display: inline-block;
