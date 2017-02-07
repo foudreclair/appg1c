@@ -86,11 +86,11 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 				include ("Vue/contact.php");
 				break;
 			default :
-				include ("Controleur/connexion.php");
+				include ("Vue/pub.php");
 				break;
 		}
 	} else {
-		include ("Controleur/connexion.php");
+		include ("Vue/pub.php");
 	}
 }
 
