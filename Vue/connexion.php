@@ -81,7 +81,7 @@ if (isset ( $_GET ["succes"] )) {
 					<label>Vos informations</label></br> <label for="Nom">Nom : </label><input
 						name="nom" type="text" id="nom" /><br /> <label for="Prenom">Prenom
 						: </label><input name="prenom" type="text" id="prenom" /><br /> <label
-						for="Date_naissance">Date de naissance : </label><input
+						for="Date_naissance">Date de naissance : (JJ/MM/AAAA)</label><input
 						type="text" id="datepicker" name="datepicker"><br /><label for="Key">Clé d'activation compte : </label><input type="text" id="key" name="key"><br />
 				</div>
 				<br>
