@@ -35,7 +35,7 @@ text-align : center;
 <h2>
 <font color="white">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-DomISEP ce n&#39;est pas l&#39;avenir, c&#39;est votre pr&egrave;sent.<br />
+DomISEP ce n&#39;est pas l&#39;avenir, c&#39;est votre pr&#233;sent.<br />
 Domisep, c&#39;est la plateforme qui rend votre maison autonome.<br />
 Domisep, c&#39;est la plateforme qui vous fait gagner du temps, de l&#39;argent, en respectant l&#39;environnement.<br />
 </font>
