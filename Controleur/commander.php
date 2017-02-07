@@ -22,14 +22,44 @@ while($donne = $reqid->fetch_array(MYSQLI_ASSOC)){
 	}
 }
 $idcom+=1;
+$mess = "Bonjour,
+
+Merci de votre commande sur Domisep.
+Elle sera expédiée dès la recpetion d'un chèque de ".$prix." €.
+Voici le bilan de votre commande : ";
 //echo $idcom;
 foreach ($_SESSION['panier'] as $key => $value) {
 	$cat = $value['0'];
 	$quant = $value['1'];
 	$mysqli -> query("INSERT INTO `bdd`.`Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Commande`) VALUES (NULL, '$cat', '$quant', 'Non', '$idcom')");
+	$reqcat = $mysqli -> query("SELECT * FROM Catalogue WHERE Id = '$cat'");
+	while($categ = $reqcat->fetch_array(MYSQLI_ASSOC)){
+		$nompdt = $categ['Nom'];
+		$prixpdt = $categ['Prix'];
+	}
+	$mess.= "
+	- ".$quant." x ".$nompdt." à ".$prixpdt. " € (soit ".(floatval(str_replace(',', '.', $prixpdt))*$quant)." €)";
 	
 }
-$mysqli ->query("INSERT INTO `bdd`.`Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`) VALUES (NULL, '$iduser', '$nom', '$prenom', '$adresse', '$cp', '$ville', '$date', $prix, 'Non')");
+$characts    = 'abcdefghijklmnopqrstuvwxyz';
+    $characts   .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';	
+	$characts   .= '1234567890'; 
+	$code_aleatoire      = ''; 
+
+	for($i=0;$i < 30;$i++)    //10 est le nombre de caractères
+	{ 
+        $code_aleatoire .= substr($characts,rand()%(strlen($characts)),1); 
+	}
+$mess.="
+
+Vous pouvez consulter votre facture ici : http://localhost/appg1c/Vue/pdf.php?cmd=".$code_aleatoire;
+$mess.="
+
+Bonne journée et à bientôt chez Domisep !";
+include 'send_mail.php';
+
+sendMail("aymeric@dejavel.fr",'Confirmation de votre commande', $mess);
+$mysqli ->query("INSERT INTO `bdd`.`Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`,`KeyCom`) VALUES (NULL, '$iduser', '$nom', '$prenom', '$adresse', '$cp', '$ville', '$date', $prix, 'Non','$code_aleatoire')");
 unset($_SESSION['panier']);
 //unset($_SESSION['prixtot']);
 header('Location: ../index.php?page=validachat');

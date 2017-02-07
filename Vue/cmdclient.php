@@ -29,7 +29,7 @@ while($don = $req->fetch_array(MYSQLI_ASSOC)){
 				<p class = "adresse"><?php echo $don['Adresse'] ?></p>
 				<p class = "codepostal"><?php echo $don['CodePostal'] ?></p>
 				<p class = "ville"><?php echo $don['Ville'] ?></p>
-				<p><a href="Vue/pdf.php?cmd=<?php echo $don['Id'] ?>" download="">Télécharger</a></p>
+				<p><a href="Vue/pdf.php?cmd=<?php echo $don['KeyCom'] ?>" download="">Télécharger</a></p>
 
 	</div>
 	<div id = "<?php echo $don['Id'] ?>" style="display:none" class ="deroulant">

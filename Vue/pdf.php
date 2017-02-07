@@ -61,15 +61,17 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 
 
-$pdf->Cell(50,10,'Numéro de commande : '.$cmd,0,1);
+
 include '../Modele/connexion_bdd.php';
-$req = $mysqli -> query("SELECT * FROM Commande WHERE Id = '$cmd'");
+$req = $mysqli -> query("SELECT * FROM Commande WHERE KeyCom = '$cmd'");
 while($com = $req ->fetch_array(MYSQLI_ASSOC)){
+    $idcom = $com['Id'];
+    $pdf->Cell(50,10,'Numéro de commande : '.$idcom,0,1);
     $pdf->Cell(50,10,'Nom et Prénom : '.$com['Nom'].' '.$com['Prenom'],0,1);
     $pdf->Cell(50,10,'Adresse de livraison : '.$com['Adresse'].', '.$com['CodePostal'].', '.$com['Ville'],0,1);
     $pdf->Cell(50,10,'Date de commande : '.$com['Date'],0,1);
 }
-$reqachat = $mysqli -> query("SELECT * FROM Achats WHERE Id_Commande = '$cmd'");
+$reqachat = $mysqli -> query("SELECT * FROM Achats WHERE Id_Commande = '$idcom'");
 $data=[];
 while($achat = $reqachat ->fetch_array(MYSQLI_ASSOC)){
     $pdt = [];
