@@ -18,4 +18,3 @@ require ('../Controleur/traitement.php');
 		</form>
 </body>
 
- 

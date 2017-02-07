@@ -205,13 +205,12 @@ git	color: #C0C0C0 ;
 
 }
 */
-img {
+.logo img {
 	height: 40px;
 	padding-left: 1%;
 	padding-top: 5px;
 	float: left;
 }
-
 .corps {
 	background-color: LightCyan;
 	margin-top: 150px;

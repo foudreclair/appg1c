@@ -16,7 +16,7 @@
 		<nav class="menu">
 
 			<ul id="menu_deroulant">
-				<img src="Vue/logo.png">
+				<div class ="logo"><img src="Vue/logo.png"></img>
 				<li><a <?php activepage("accueil")?> href="index.php?page=accueil">Accueil</a></li>
 				<li><a <?php activepage("reglages")?> href="index.php?page=reglages">Gérer
 						ma maison</a></li>
@@ -37,6 +37,7 @@
 									<li><a href="#">Se déconnecter</a></li>
 								</ul></li>
 						</ul>
+				</div>
 				</div>
 				</div>
 			<?php }?>

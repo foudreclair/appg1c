@@ -62,6 +62,9 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 		case "stats" :
 			include ("Controleur/stats.php");
 			break;
+		case "pub" :
+			include ("Vue/pub.php");
+			break;
 		default :
 			include ("Controleur/accueil.php");
 			break;
@@ -91,5 +94,5 @@ if (isset ( $_SESSION ['id'] ) && isset ( $_SESSION ['mail'] )) {
 	}
 }
 
-require('Vue/footer.php');
+require ('Vue/footer.php');
 ?>

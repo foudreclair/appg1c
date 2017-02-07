@@ -36,7 +36,10 @@ $iduser = $_SESSION ['id'];
 
 			<form method="post" action="Controleur/traitement.php">
 
-				<label for="Nom">Quel appartement souhaitez-vous supprimer ?</label><br />
+				<label for="Nom">Quel appartement souhaitez-vous supprimer ?</label>
+				<br />
+				<br />
+				
 				<select name="Nom" id="Nom">
 
 			<?php
@@ -55,7 +58,10 @@ $iduser = $_SESSION ['id'];
 			
 			?>
 
-			</select> <input type="hidden" name="declencheur" id="declencheur"
+			</select>
+			<br />
+			<br />
+			 <input type="hidden" name="declencheur" id="declencheur"
 					value="10"> <input type="submit" value="Supprimer">
 			</form>
 		</div>
