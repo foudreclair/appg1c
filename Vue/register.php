@@ -8,7 +8,7 @@
   } );
 </script>
 <?php
-$titre = "Domisep | Créer votre compte";
+$titre = "Domicile | Créer votre compte";
 
 $contenu = "";
 include 'gabarit.php';
@@ -158,4 +158,4 @@ function file(fichier) {
      }
 }
 </script>
- 
+<?php include 'footer.php' ?>

@@ -1,5 +1,5 @@
 <?php
-$titre = "Domisep | Statistiques";
+$titre = "Domicile | Statistiques";
 
 include 'gabarit.php';
 $iduser = $_SESSION['id'];
@@ -162,4 +162,4 @@ function drawBasic() {
     
 </div>
 </div>
- 
+<?php include 'footer.php' ?>

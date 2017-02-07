@@ -1,5 +1,5 @@
 <?php
-$titre = "Domisep | Scénarios";
+$titre = "Domisile | Scénarios";
 
 
 include 'gabarit.php';

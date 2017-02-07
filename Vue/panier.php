@@ -1,5 +1,5 @@
 <?php
-$titre = "Domisep | Mon panier";
+$titre = "Domicile | Mon panier";
 include 'gabarit.php';
 include 'Modele/connexion_bdd.php';
 

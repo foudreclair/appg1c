@@ -1,6 +1,6 @@
 <?php
 include ('Controleur/traitement.php');
-$titre = 'Domisep | Nouvelle pièce';
+$titre = 'Domicile | Nouvelle pièce';
 include 'gabarit.php';
 $iduser = $_SESSION['id'];
 ?>

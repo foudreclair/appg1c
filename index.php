@@ -67,9 +67,9 @@ if (isset ( $_SESSION['id'] ) && isset ( $_SESSION['mail'] )) {
 				break;
 		}
 	}
-}
+} 
 else { // La page par default pour l'instant la page connexion
-
+	
 	if (isset ( $_GET["page"] )) {
 		switch (htmlentities ( $_GET["page"] )) {
 			case "register" :
@@ -88,10 +88,9 @@ else { // La page par default pour l'instant la page connexion
 				include ("Controleur/connexion.php");
 				break;
 		}
-	}
+	} 
 	else {
 		include ("Controleur/connexion.php");
 	}
 }
-include("Vue/footer.php");
 ?>

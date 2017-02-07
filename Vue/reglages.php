@@ -1,5 +1,5 @@
 <?php
-$titre = "Domisep | Reglages";
+$titre = "Domicile | Reglages";
 
 
 include 'gabarit.php';

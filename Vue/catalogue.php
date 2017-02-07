@@ -1,5 +1,5 @@
 <?php
-$titre = "Domisep | Catalogue";
+$titre = "Domicile | Catalogue";
 include 'Vue/gabarit.php';
 include 'Modele/connexion_bdd.php';
 if (! isset ( $_SESSION ['panier'] )) {
