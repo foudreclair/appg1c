@@ -74,7 +74,7 @@ if (! empty ( $_POST ['appart'] )) {
 					<?php
 									}
 									?>
-				<input type="submit" name="pieces" value="Etape suivante">
+				<input type="submit" name="pieces" value=" Suivant">
 			</form>
 				<?php
 								} else {
@@ -115,7 +115,7 @@ if (! empty ( $_POST ['appart'] )) {
 				<h2>Sélectionnez une date de fin :</h2>
 				<input type="date" name="date_fin" placeholder="jj/mm/aaaa"><br> <input
 					type="time" name="heure_fin" placeholder="hh:mm"><br> <input
-					type="submit" name="date" value="Etape suivante">
+					type="submit" name="date" value=" Suivant">
 			</form>
 			<?php
 					}
@@ -145,7 +145,7 @@ if (! empty ( $_POST ['appart'] )) {
 					<option value="Dimanche">Dimanche</option>
 				</select><br> <input type="time" name="heure_fin"
 					placeholder="hh:mm"><br> <br> <input type="submit" name="date"
-					value="Etape suivante">
+					value=" Suivant">
 			</form>
 		<?php
 					$_SESSION ['true_rec'] = $_SESSION ['recurrence'];
