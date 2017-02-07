@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "LatoLight";
+    src: url('fonts/Lato-Light.ttf');
+    src: url('fonts/Lato-Light.woff');
+    src: url('fonts/Lato-Light.eot');
+    src: url('fonts/Lato-Light.woff2');
+}
+body {
+	font-family: LatoLight;
+	background-image: url('fond.jpg');
+	background-size: 100%;
+	width: 100%;
+
+}
+#menu_appartement ul li{
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+	border: solid;
+	border-height:200px;
+}
