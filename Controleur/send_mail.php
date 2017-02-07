@@ -1,6 +1,5 @@
 <?php
 function sendMail ($destinataire, $objet, $contenu) {
-	
 
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
@@ -45,7 +44,6 @@ $mail->Subject = $objet;
 //Replace the plain text body with one created manually
 $mail->Body = $contenu;
 //send the message, check for errors
-
 if (!$mail->send()) {
 } else {
 	echo "Message sent!";
