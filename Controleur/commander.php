@@ -44,7 +44,7 @@ foreach ($_SESSION['panier'] as $key => $value) {
 $characts    = 'abcdefghijklmnopqrstuvwxyz';
     $characts   .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';	
 	$characts   .= '1234567890'; 
-	$code_aleatoire      = ''; 
+	$code_aleatoire      = null; //Plus propre de demarre à null que vide
 
 	for($i=0;$i < 30;$i++)    //10 est le nombre de caractÃ¨res
 	{ 
