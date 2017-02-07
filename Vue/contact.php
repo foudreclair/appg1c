@@ -48,4 +48,3 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 
 	</div>
 </div>
-<?php include 'Vue/footer.php'?>

@@ -1,8 +1,6 @@
 <?php
 $titre = "Domicile | Accueil";
-$contenu = "";
 include 'gabarit.php';
-// print_r($val);
 
 ?>
 

@@ -3,6 +3,10 @@ if (isset ( $_POST ['declencheur'] )) {
 	session_start();
 	$iduser = $_SESSION ['id'];
 }
+
+if(!isset($iduser)) {
+	$iduser = $_SESSION ['id'];
+}
 // include ('Modele/connexion_bdd.php');
 
 // require ('Modele/connexion_bdd.php');
