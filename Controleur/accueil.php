@@ -36,7 +36,7 @@ while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 
 
 
-	array_push($nomscenar, $scenar['Nom']);
+	array_push($nomscenar, [$scenar['Nom'],$scenar['Id']]);
 	array_push($valscenar, $val);
 	//print_r($valscenar);
 }
