@@ -1,6 +1,6 @@
 <?php
-function sendMail ($destinataire, $objet, $contenu) {
-	
+function sendMail ($destinataire, $objet, $contenu,$name) {
+
 
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
@@ -31,24 +31,24 @@ $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
 $mail->Username = "isepg1c2016@gmail.com";
 //Password to use for SMTP authentication
-$mail->Password = "sucemabite";
+$mail->Password = "domisep2017";
 //Set who the message is to be sent from
-$mail->setFrom('isepg1c2016@gmail.com', 'DomIsep');
+$mail->setFrom($destinataire, $name);
 //Set an alternative reply-to address
-$mail->addReplyTo('isepg1c2016@gmail.com', 'DomIsep');
+//$mail->addReplyTo('isepg1c2016@gmail.com', 'DomIsep');
 //Set who the message is to be sent to
-$mail->addAddress($destinataire, 'DomIsep');
+$mail->addAddress('isepg1c2016@gmail.com', 'DomIsep');
 //Set the subject line
 $mail->Subject = $objet;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->Body = $contenu;
+$mail->Body = $destinataire."   ".$contenu;
 $mail->SMTPDebug = false;
 $mail->do_debug = 0;
 //send the message, check for errors
 
 if ($mail->send()) {
-} 
+}
 }
 ?>

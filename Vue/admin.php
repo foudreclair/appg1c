@@ -29,10 +29,10 @@ include 'Vue/gabarit.php';
 </div>
 <script>
 function supprimer(id,nom,prenom){
-	var c = confirm(id+nom+prenom);
+	var c = confirm("Etes vous sur de vouloir supprimer le compte : "+id+nom+prenom);
 	if (c==true){
 		//var idsup = file('http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id);
-		document.location.href='http://localhost:8888/appg1c/Vue/suppcompte.php?id='+id;
+		document.location.href='http://localhost:80/appg1c/Vue/suppcompte.php?id='+id;
 	
 	}
 }

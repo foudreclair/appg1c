@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:3306
--- Généré le :  Mar 07 Février 2017 à 23:32
+-- Généré le :  Jeu 16 Février 2017 à 20:07
 -- Version du serveur :  5.5.42
 -- Version de PHP :  7.0.0
 
@@ -17,79 +17,93 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Achats`
+-- Structure de la table `achats`
 --
 
-CREATE TABLE `Achats` (
+CREATE TABLE `achats` (
   `Id` int(10) NOT NULL,
   `Id_Catalogue` int(10) NOT NULL,
   `Quantite` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Expedition` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Id_Commande` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `Achats`
+-- Contenu de la table `achats`
 --
 
-INSERT INTO `Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Commande`) VALUES
+INSERT INTO `achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Commande`) VALUES
 (27, 1, '1', 'Non', '1'),
 (28, 1, '1', 'Oui', '19'),
 (29, 1, '1', 'Non', '20'),
 (30, 6, '2', 'Non', '21'),
 (31, 6, '2', 'Non', '21'),
 (32, 6, '2', 'Non', '24'),
-(33, 1, '2', 'Non', '25'),
+(33, 1, '2', 'Oui', '25'),
 (34, 4, '1', 'Non', '25'),
 (35, 1, '1', 'Non', '26'),
 (36, 4, '1', 'Non', '26'),
 (37, 5, '11', 'Non', '26'),
 (38, 6, '4', 'Non', '26'),
-(39, 1, '1', 'Non', '27'),
-(40, 5, '2', 'Non', '31'),
-(41, 4, '1', 'Non', '31'),
-(42, 6, '1', 'Non', '31'),
-(43, 1, '1', 'Non', '32'),
-(44, 4, '1', 'Non', '33'),
-(45, 5, '7', 'Non', '33'),
-(46, 5, '3', 'Non', '34'),
-(47, 1, '2', 'Non', '35'),
-(48, 1, '1', 'Non', '36'),
-(49, 1, '1', 'Non', '36'),
-(50, 1, '1', 'Non', '36'),
-(51, 1, '1', 'Non', '38'),
-(52, 1, '1', 'Non', '40'),
-(53, 1, '1', 'Non', '41');
+(49, 1, '1', 'Non', '27'),
+(50, 1, '1', 'Non', '28'),
+(51, 4, '1', 'Non', '29'),
+(52, 1, '1', 'Non', '32'),
+(53, 1, '1', 'Non', '33'),
+(54, 6, '1', 'Non', '33'),
+(55, 1, '1', 'Non', '34'),
+(56, 4, '1', 'Non', '34');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Affectation`
+-- Structure de la table `affectation`
 --
 
-CREATE TABLE `Affectation` (
+CREATE TABLE `affectation` (
   `Id` int(11) NOT NULL,
   `Id_Pieces` int(11) NOT NULL,
   `Id_Fonctionnalite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `Affectation`
+-- Contenu de la table `affectation`
 --
 
-INSERT INTO `Affectation` (`Id`, `Id_Pieces`, `Id_Fonctionnalite`) VALUES
+INSERT INTO `affectation` (`Id`, `Id_Pieces`, `Id_Fonctionnalite`) VALUES
 (43, 6, 1),
 (44, 8, 2),
 (46, 8, 5),
-(47, 8, 3);
+(47, 8, 3),
+(48, 9, 1),
+(49, 9, 2),
+(50, 9, 3),
+(51, 10, 1),
+(52, 10, 2),
+(53, 10, 3),
+(54, 11, 1),
+(55, 11, 2),
+(56, 11, 3),
+(57, 12, 1),
+(58, 12, 2),
+(59, 12, 3),
+(60, 13, 1),
+(61, 13, 2),
+(62, 13, 3),
+(63, 14, 1),
+(64, 14, 2),
+(65, 14, 3),
+(66, 15, 1),
+(67, 15, 2),
+(68, 15, 3);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Appartements`
+-- Structure de la table `appartements`
 --
 
-CREATE TABLE `Appartements` (
+CREATE TABLE `appartements` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) DEFAULT NULL,
   `Type` int(11) DEFAULT NULL,
@@ -98,33 +112,35 @@ CREATE TABLE `Appartements` (
   `Pays` varchar(25) DEFAULT NULL,
   `Nb_personne` int(11) DEFAULT NULL,
   `Id_Utilisateur` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Appartements`
+-- Contenu de la table `appartements`
 --
 
-INSERT INTO `Appartements` (`Id`, `Nom`, `Type`, `Adresse`, `Ville`, `Pays`, `Nb_personne`, `Id_Utilisateur`) VALUES
+INSERT INTO `appartements` (`Id`, `Nom`, `Type`, `Adresse`, `Ville`, `Pays`, `Nb_personne`, `Id_Utilisateur`) VALUES
 (3, 'Appart g1c', 1, '', '', '', 0, 7),
-(4, 'Appart', 1, '', '', '', 0, 7);
+(4, 'Appart', 1, '', '', '', 0, 7),
+(5, 'Maison Paris', 1, 'Rue du Palais', 'Paris', 'France', 4, 13),
+(6, 'Maison de vacances', 1, 'rue de la mer', 'Biarritz', 'France', 3, 13);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Capteur`
+-- Structure de la table `capteur`
 --
 
-CREATE TABLE `Capteur` (
+CREATE TABLE `capteur` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) DEFAULT NULL,
   `Cle_Produit` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Capteur`
+-- Contenu de la table `capteur`
 --
 
-INSERT INTO `Capteur` (`Id`, `Nom`, `Cle_Produit`) VALUES
+INSERT INTO `capteur` (`Id`, `Nom`, `Cle_Produit`) VALUES
 (3, 'Temperature', ''),
 (7, 'Luminosite', ''),
 (40, 'TempCoding', ''),
@@ -134,15 +150,39 @@ INSERT INTO `Capteur` (`Id`, `Nom`, `Cle_Produit`) VALUES
 (44, 'LumSalon', ''),
 (45, 'CamCuis', ''),
 (46, 'CamCuis', ''),
-(47, 'HumCuis', 'AZERTYUIOPQS');
+(47, 'HumCuis', 'AZERTYUIOPQS'),
+(48, 'TempÃ©rature Salon', '12345'),
+(49, 'LumiÃ¨re Salon', '12345'),
+(50, 'HumiditÃ©', '12345'),
+(51, 'TempÃ©rature Salle Ã  man', '12345'),
+(52, 'LumiÃ¨re Salle Ã  manger', '12345'),
+(53, 'HumiditÃ© Salle Ã  manger', '12345'),
+(54, 'TempÃ©rature Chambre pare', '12345'),
+(55, 'LumiÃ¨re chambre parents', '12345'),
+(56, 'HumiditÃ© Chambre parents', '12345'),
+(57, 'TempÃ©rature Chambre enfa', '12345'),
+(58, 'LumiÃ¨re chambre enfants', '12345'),
+(59, 'HumiditÃ© Chambre enfants', '12345'),
+(60, 'TempÃ©rature Salon', '12345'),
+(61, 'LumiÃ¨re Salon', '12345'),
+(62, 'HumiditÃ© Salon', '12345'),
+(63, 'TempÃ©rature Garage', '12345'),
+(64, 'LumiÃ¨re Garage', '12345'),
+(65, 'HumiditÃ© Garage', '12345'),
+(66, 'TempÃ©rature Chambre', '12345'),
+(67, 'LumiÃ¨re Chambre', '12345'),
+(68, 'HumiditÃ© Chambre', '12345'),
+(69, 'Temperature chambre cleme', '2017'),
+(70, 'Temperature chambre cleme', '0001'),
+(71, 'TempÃ©rature chambre clem', '0001');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Catalogue`
+-- Structure de la table `catalogue`
 --
 
-CREATE TABLE `Catalogue` (
+CREATE TABLE `catalogue` (
   `Id` int(10) NOT NULL,
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Description` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
@@ -151,10 +191,10 @@ CREATE TABLE `Catalogue` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `Catalogue`
+-- Contenu de la table `catalogue`
 --
 
-INSERT INTO `Catalogue` (`Id`, `Nom`, `Description`, `Prix`, `Id_categorie`) VALUES
+INSERT INTO `catalogue` (`Id`, `Nom`, `Description`, `Prix`, `Id_categorie`) VALUES
 (1, 'Capteur 1', 'Capteur de temperature', '19,80', '4'),
 (4, 'Alarme', 'Super alarme trop stylée', '27,89', '6'),
 (5, 'Volet déroulant', 'Volet pour se protéger du soleil', '40,85', '7'),
@@ -184,32 +224,34 @@ INSERT INTO `categories` (`Id`, `Nom`, `Description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `CleAct`
+-- Structure de la table `cleact`
 --
 
-CREATE TABLE `CleAct` (
+CREATE TABLE `cleact` (
   `Id` int(10) NOT NULL,
   `Cle` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Permission` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `Activee` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `CleAct`
+-- Contenu de la table `cleact`
 --
 
-INSERT INTO `CleAct` (`Id`, `Cle`, `Permission`, `Activee`) VALUES
+INSERT INTO `cleact` (`Id`, `Cle`, `Permission`, `Activee`) VALUES
 (1, 'AAA-BBB-CCC-DDD', '0', 'Oui'),
 (2, 'ABC-ABC-ABC-ABC', '0', 'Oui'),
-(3, 'AZERTY', '0', 'Oui');
+(3, '12345', '0', 'Oui'),
+(4, 'ale', '0', 'Non'),
+(5, 'clle', '0', 'Non');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Commande`
+-- Structure de la table `commande`
 --
 
-CREATE TABLE `Commande` (
+CREATE TABLE `commande` (
   `Id` int(10) NOT NULL,
   `Id_Utilisateur` int(10) NOT NULL,
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -220,42 +262,33 @@ CREATE TABLE `Commande` (
   `Date` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Prix` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Payement` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `KeyCom` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `KeyCom` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `Commande`
+-- Contenu de la table `commande`
 --
 
-INSERT INTO `Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`, `KeyCom`) VALUES
-(18, 0, 'Ne pas supprimer', 'Ne pas supprimer', 'Ne pas supprimer', '', 'Ne pas supprimer', 'Ne pas supprimer', '', '', ''),
-(23, 0, '0', '0', '0', '0', '0', '0', '', '', ''),
-(24, 9, 'de Javel', 'Aymeric', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 2, 2017, 6:13 pm', '35.4', 'Non', ''),
-(25, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 2:00 pm', '67.49', 'Non', ''),
-(26, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 4:03 pm', '567.84', 'Non', ''),
-(27, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 3:58 pm', '19.8', 'Non', ''),
-(28, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:01 pm', '19.8', 'Non', 'ZDAtqTAA0hqAJWpUWMkmJMOGlC554p'),
-(29, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:03 pm', '19.8', 'Non', ''),
-(30, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:11 pm', '19.8', 'Non', ''),
-(31, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:13 pm', '127.29', 'Non', ''),
-(32, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:24 pm', '19.8', 'Non', 'Mu8gzIgf00qhqEp7cdJaITTGh9idUu'),
-(33, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:28 pm', '313.84', 'Non', 'FAo1CjafEx1NEIjkO4mVV7IB4YH4r2'),
-(34, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:34 pm', '122.55', 'Non', '01Lws7UhzJ9tz8gw8rKkFc5d3Fy0Pr'),
-(35, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:34 pm', '39.6', 'Non', 'yWPloiaovccBXYHRZFj4sss5t03s5X'),
-(36, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 4:53 pm', '19.8', 'Non', 'auM6zbBFeAEsGTWVPZZmXv4G29C9ck'),
-(37, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 4:56 pm', '19.8', 'Non', 'ST1b0JByHGO8fAk1kUaxuKbYTCSMv8'),
-(38, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 5:02 pm', '19.8', 'Non', 'Z1zEh6JHRZvtFngjP6zMs1aNaiQixL'),
-(39, 7, 'G1C', 'Isep', '', '', '', 'February 7, 2017, 5:07 pm', '19.8', 'Non', '4U5FXf5DsjswcT79hYNavKEJIDsH6F'),
-(40, 7, 'G1C', 'Isep', '12 rue de vanves', '92000', 'Issy les moulineaux', 'February 7, 2017, 5:21 pm', '19.8', 'Non', 'T1k6gtfUzOPMaE0HWPj9nFIWUYQ880'),
-(41, 7, 'G1C', 'Isep', '12', 'zcdd', 'csdcsd', 'February 7, 2017, 7:48 pm', '19.8', 'Non', 'ncGQBCx94EE8Pa6H3PoTNrJGTRgLcU');
+INSERT INTO `commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`, `KeyCom`) VALUES
+(24, 9, 'de Javel', 'Aymeric', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 2, 2017, 6:13 pm', '35.4', 'Oui', ''),
+(25, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 2:00 pm', '67.49', 'Oui', ''),
+(26, 7, 'G1C', 'Isep', '12 rue de Vanves', '92000', 'Issy les moulineaux', 'February 4, 2017, 4:03 pm', '567.84', 'Oui', ''),
+(27, 13, 'Deschamp', 'Michel', '', '', '', 'February 10, 2017, 11:50 am', '19.8', 'Non', 'rUYsJls3i93wSsEwmkqnQiCanKMFlt'),
+(28, 7, 'G1C', 'Isep', '', '', '', 'February 10, 2017, 12:04 pm', '19.8', 'Non', 'BbGRJP0BV9ufOMJ0WUp9ywAwJa9dkp'),
+(29, 7, 'G1C', 'Isep', '', '', '', 'February 10, 2017, 12:05 pm', '27.89', 'Non', 'zeBM1qzSrxtNdP1dAUmmDLzqTps3VH'),
+(30, 7, 'G1C', 'Isep', '', '', '', 'February 10, 2017, 12:07 pm', '27.89', 'Non', 'jnKCiNyR8DHSgkayjjxaUVnhZDOHNX'),
+(31, 7, 'G1C', 'Isep', '', '', '', 'February 10, 2017, 12:07 pm', '27.89', 'Non', 'USuitIGNkJVXng9L2f3plqc4f0MyA2'),
+(32, 7, 'G1C', 'Isep', '', '', '', 'February 10, 2017, 12:07 pm', '19.8', 'Non', 'DCsNaYfRZBqxv1KOYjT07dql5hIQC1'),
+(33, 16, 'Domisep', 'G1C', '20 rue de Domisep', '54321', 'DomVille', 'February 10, 2017, 12:25 pm', '37.5', 'Non', 'bkWZlVsrXRbouLN7PbtL6kNVhhbADt'),
+(34, 17, 'de Javel', 'Aymeric', '20 riue de Domisep', '54321', 'DomIsepVille', 'February 10, 2017, 2:20 pm', '47.69', 'Non', 'xtWQKYwF8RZDvOhpIz4lvfjP03Adha');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Fonctionnalite`
+-- Structure de la table `fonctionnalite`
 --
 
-CREATE TABLE `Fonctionnalite` (
+CREATE TABLE `fonctionnalite` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Etat` int(11) DEFAULT NULL,
@@ -263,10 +296,10 @@ CREATE TABLE `Fonctionnalite` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `Fonctionnalite`
+-- Contenu de la table `fonctionnalite`
 --
 
-INSERT INTO `Fonctionnalite` (`Id`, `Nom`, `Etat`, `Type_donnees`) VALUES
+INSERT INTO `fonctionnalite` (`Id`, `Nom`, `Etat`, `Type_donnees`) VALUES
 (1, 'Température', NULL, 1),
 (2, 'Luminosité', NULL, 2),
 (3, 'Humidité', NULL, NULL),
@@ -276,10 +309,10 @@ INSERT INTO `Fonctionnalite` (`Id`, `Nom`, `Etat`, `Type_donnees`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Pannes`
+-- Structure de la table `pannes`
 --
 
-CREATE TABLE `Pannes` (
+CREATE TABLE `pannes` (
   `Id` int(11) NOT NULL,
   `Niveau` int(11) DEFAULT NULL,
   `Etat` int(11) DEFAULT NULL,
@@ -289,31 +322,38 @@ CREATE TABLE `Pannes` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Pieces`
+-- Structure de la table `pieces`
 --
 
-CREATE TABLE `Pieces` (
+CREATE TABLE `pieces` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(25) DEFAULT NULL,
   `Id_Appartements` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Pieces`
+-- Contenu de la table `pieces`
 --
 
-INSERT INTO `Pieces` (`Id`, `Nom`, `Id_Appartements`) VALUES
+INSERT INTO `pieces` (`Id`, `Nom`, `Id_Appartements`) VALUES
 (6, 'Cuisine', 3),
 (7, 'Piece', 4),
-(8, 'Salon', 3);
+(8, 'Salon', 3),
+(9, 'Salon', 5),
+(10, 'Salle Ã  manger', 5),
+(11, 'Chambre parents', 5),
+(12, 'Chambre enfants', 5),
+(13, 'Salon', 6),
+(14, 'Garage', 6),
+(15, 'Chambre', 6);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Programmation`
+-- Structure de la table `programmation`
 --
 
-CREATE TABLE `Programmation` (
+CREATE TABLE `programmation` (
   `Id` int(11) NOT NULL,
   `Date_start` varchar(30) DEFAULT NULL,
   `Date_end` varchar(30) DEFAULT NULL,
@@ -325,55 +365,98 @@ CREATE TABLE `Programmation` (
   `Id_Capteur` int(11) NOT NULL,
   `Id_Pieces` int(11) NOT NULL,
   `Id_scenario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Programmation`
+-- Contenu de la table `programmation`
 --
 
-INSERT INTO `Programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`, `Id_scenario`) VALUES
+INSERT INTO `programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`, `Id_scenario`) VALUES
 (3, 'Lundi', 'Samedi', '00:00', '00:00', '26', NULL, 1, 43, 6, 15),
-(4, 'Mercredi', 'Jeudi', '00:00', '00:00', '23', NULL, 1, 43, 6, 16);
+(4, 'Mercredi', 'Jeudi', '00:00', '00:00', '23', NULL, 1, 43, 6, 16),
+(5, '2016-12-21', '2017-03-21', '12:00', '12:00', '12', NULL, 1, 60, 13, 17),
+(6, '2016-12-21', '2017-03-21', '12:00', '12:00', '0%', NULL, 2, 61, 13, 17),
+(7, '2016-12-21', '2017-03-21', '12:00', '12:00', '', NULL, 3, 62, 13, 17),
+(8, '2016-12-21', '2017-03-21', '12:00', '12:00', '12', NULL, 1, 63, 14, 17),
+(9, '2016-12-21', '2017-03-21', '12:00', '12:00', '0%', NULL, 2, 64, 14, 17),
+(10, '2016-12-21', '2017-03-21', '12:00', '12:00', '', NULL, 3, 65, 14, 17),
+(11, '2016-12-21', '2017-03-21', '12:00', '12:00', '12', NULL, 1, 66, 15, 17),
+(12, '2016-12-21', '2017-03-21', '12:00', '12:00', '0%', NULL, 2, 67, 15, 17),
+(13, '2016-12-21', '2017-03-21', '12:00', '12:00', '', NULL, 3, 68, 15, 17),
+(14, '', '', '12:00', '12:00', '12', NULL, 1, 60, 13, 18),
+(15, '', '', '12:00', '12:00', '0', NULL, 2, 61, 13, 18),
+(16, '', '', '12:00', '12:00', '', NULL, 3, 62, 13, 18),
+(17, '', '', '12:00', '12:00', '12', NULL, 1, 63, 14, 18),
+(18, '', '', '12:00', '12:00', '0', NULL, 2, 64, 14, 18),
+(19, '', '', '12:00', '12:00', '', NULL, 3, 65, 14, 18),
+(20, '', '', '12:00', '12:00', '12', NULL, 1, 66, 15, 18),
+(21, '', '', '12:00', '12:00', '0', NULL, 2, 67, 15, 18),
+(22, '', '', '12:00', '12:00', '', NULL, 3, 68, 15, 18),
+(23, '', '', '12:00', '12:00', '12', NULL, 1, 60, 13, 19),
+(24, '', '', '12:00', '12:00', '0', NULL, 2, 61, 13, 19),
+(25, '', '', '12:00', '12:00', '0', NULL, 3, 62, 13, 19),
+(26, '', '', '12:00', '12:00', '12', NULL, 1, 63, 14, 19),
+(27, '', '', '12:00', '12:00', '0', NULL, 2, 64, 14, 19),
+(28, '', '', '12:00', '12:00', '0', NULL, 3, 65, 14, 19),
+(29, '', '', '12:00', '12:00', '12', NULL, 1, 66, 15, 19),
+(30, '', '', '12:00', '12:00', '0', NULL, 2, 67, 15, 19),
+(31, '', '', '12:00', '12:00', '0', NULL, 3, 68, 15, 19),
+(32, 'Lundi', 'Vendredi', '05:00', '16:00', '22', NULL, 1, 48, 9, 20),
+(33, 'Lundi', 'Vendredi', '05:00', '16:00', '70', NULL, 2, 49, 9, 20),
+(34, 'Lundi', 'Vendredi', '05:00', '16:00', '', NULL, 3, 50, 9, 20),
+(35, 'Lundi', 'Vendredi', '05:00', '16:00', '22', NULL, 1, 51, 10, 20),
+(36, 'Lundi', 'Vendredi', '05:00', '16:00', '78', NULL, 2, 52, 10, 20),
+(37, 'Lundi', 'Vendredi', '05:00', '16:00', '', NULL, 3, 53, 10, 20),
+(38, 'Lundi', 'Vendredi', '05:00', '16:00', '22', NULL, 1, 54, 11, 20),
+(39, 'Lundi', 'Vendredi', '05:00', '16:00', '70', NULL, 2, 55, 11, 20),
+(40, 'Lundi', 'Vendredi', '05:00', '16:00', '', NULL, 3, 56, 11, 20),
+(41, 'Lundi', 'Vendredi', '05:00', '16:00', '22', NULL, 1, 57, 12, 20),
+(42, 'Lundi', 'Vendredi', '05:00', '16:00', '70', NULL, 2, 58, 12, 20),
+(43, 'Lundi', 'Vendredi', '05:00', '16:00', '', NULL, 3, 59, 12, 20);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Scenario`
+-- Structure de la table `scenario`
 --
 
-CREATE TABLE `Scenario` (
+CREATE TABLE `scenario` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Recurrence` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Id_Utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `Scenario`
+-- Contenu de la table `scenario`
 --
 
-INSERT INTO `Scenario` (`Id`, `Nom`, `Recurrence`, `Id_Utilisateur`) VALUES
-(12, 'Ne pas supprimer', 'Non', 0);
+INSERT INTO `scenario` (`Id`, `Nom`, `Recurrence`, `Id_Utilisateur`) VALUES
+(12, 'Ne pas supprimer', 'Non', 0),
+(15, 'Semaine', 'Non', 7),
+(16, 'Vac', 'Non', 7),
+(17, 'Hiver', 'Non', 13),
+(20, 'Semaine', 'Non', 13);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Statistiques`
+-- Structure de la table `statistiques`
 --
 
-CREATE TABLE `Statistiques` (
+CREATE TABLE `statistiques` (
   `Id` int(11) NOT NULL,
   `Date` datetime NOT NULL,
   `Type` varchar(25) DEFAULT NULL,
   `Valeur` float DEFAULT NULL,
   `Id_Capteur` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=408 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1208 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Statistiques`
+-- Contenu de la table `statistiques`
 --
 
-INSERT INTO `Statistiques` (`Id`, `Date`, `Type`, `Valeur`, `Id_Capteur`) VALUES
+INSERT INTO `statistiques` (`Id`, `Date`, `Type`, `Valeur`, `Id_Capteur`) VALUES
 (1, '0000-00-00 00:00:00', 'Degré', 23, 3),
 (2, '0000-00-00 00:00:00', 'Degré', 23, 3),
 (3, '0000-00-00 00:00:00', 'Degré', 25, 3),
@@ -780,74 +863,873 @@ INSERT INTO `Statistiques` (`Id`, `Date`, `Type`, `Valeur`, `Id_Capteur`) VALUES
 (404, '2017-02-05 04:00:44', 'Degré', 23, 42),
 (405, '2017-02-05 04:00:44', 'Degré', 16, 43),
 (406, '2017-02-05 04:00:44', 'Lux', 97, 44),
-(407, '2017-02-05 04:00:44', '%', 62, 47);
+(407, '2017-02-05 04:00:44', '%', 62, 47),
+(408, '2017-02-10 09:37:29', 'DegrÃ©', 25, 48),
+(409, '2017-02-10 09:37:29', 'Lux', 25, 49),
+(410, '2017-02-10 09:37:29', 'DegrÃ©', 18, 51),
+(411, '2017-02-10 09:37:29', 'DegrÃ©', 19, 41),
+(412, '2017-02-10 09:37:29', 'DegrÃ©', 17, 42),
+(413, '2017-02-10 09:37:29', 'DegrÃ©', 20, 43),
+(414, '2017-02-10 09:37:29', 'Lux', 104, 44),
+(415, '2017-02-10 09:37:29', '%', 55, 50),
+(416, '2017-02-10 09:37:30', 'DegrÃ©', 20, 48),
+(417, '2017-02-10 09:37:30', 'Lux', 28, 49),
+(418, '2017-02-10 09:37:30', 'DegrÃ©', 17, 51),
+(419, '2017-02-10 09:37:30', 'DegrÃ©', 22, 41),
+(420, '2017-02-10 09:37:30', 'DegrÃ©', 25, 42),
+(421, '2017-02-10 09:37:30', 'DegrÃ©', 17, 43),
+(422, '2017-02-10 09:37:30', 'Lux', 108, 44),
+(423, '2017-02-10 09:37:30', '%', 43, 50),
+(424, '2017-02-10 09:37:30', 'DegrÃ©', 24, 48),
+(425, '2017-02-10 09:37:30', 'Lux', 89, 49),
+(426, '2017-02-10 09:37:30', 'DegrÃ©', 17, 51),
+(427, '2017-02-10 09:37:30', 'DegrÃ©', 19, 41),
+(428, '2017-02-10 09:37:30', 'DegrÃ©', 24, 42),
+(429, '2017-02-10 09:37:30', 'DegrÃ©', 19, 43),
+(430, '2017-02-10 09:37:30', 'Lux', 35, 44),
+(431, '2017-02-10 09:37:30', '%', 34, 50),
+(432, '2017-02-10 09:37:31', 'DegrÃ©', 22, 48),
+(433, '2017-02-10 09:37:31', 'Lux', 39, 49),
+(434, '2017-02-10 09:37:31', 'DegrÃ©', 23, 51),
+(435, '2017-02-10 09:37:31', 'DegrÃ©', 22, 41),
+(436, '2017-02-10 09:37:31', 'DegrÃ©', 17, 42),
+(437, '2017-02-10 09:37:31', 'DegrÃ©', 18, 43),
+(438, '2017-02-10 09:37:31', 'Lux', 6, 44),
+(439, '2017-02-10 09:37:31', '%', 67, 50),
+(440, '2017-02-10 09:37:31', 'DegrÃ©', 23, 48),
+(441, '2017-02-10 09:37:31', 'Lux', 103, 49),
+(442, '2017-02-10 09:37:31', 'DegrÃ©', 21, 51),
+(443, '2017-02-10 09:37:31', 'DegrÃ©', 21, 41),
+(444, '2017-02-10 09:37:31', 'DegrÃ©', 22, 42),
+(445, '2017-02-10 09:37:31', 'DegrÃ©', 21, 43),
+(446, '2017-02-10 09:37:31', 'Lux', 120, 44),
+(447, '2017-02-10 09:37:31', '%', 58, 50),
+(448, '2017-02-10 09:37:32', 'DegrÃ©', 19, 48),
+(449, '2017-02-10 09:37:32', 'Lux', 88, 49),
+(450, '2017-02-10 09:37:32', 'DegrÃ©', 16, 51),
+(451, '2017-02-10 09:37:32', 'DegrÃ©', 15, 41),
+(452, '2017-02-10 09:37:32', 'DegrÃ©', 16, 42),
+(453, '2017-02-10 09:37:32', 'DegrÃ©', 19, 43),
+(454, '2017-02-10 09:37:32', 'Lux', 30, 44),
+(455, '2017-02-10 09:37:32', '%', 64, 50),
+(456, '2017-02-10 09:37:32', 'DegrÃ©', 20, 48),
+(457, '2017-02-10 09:37:32', 'Lux', 81, 49),
+(458, '2017-02-10 09:37:32', 'DegrÃ©', 25, 51),
+(459, '2017-02-10 09:37:32', 'DegrÃ©', 15, 41),
+(460, '2017-02-10 09:37:32', 'DegrÃ©', 19, 42),
+(461, '2017-02-10 09:37:32', 'DegrÃ©', 23, 43),
+(462, '2017-02-10 09:37:32', 'Lux', 82, 44),
+(463, '2017-02-10 09:37:32', '%', 45, 50),
+(464, '2017-02-10 09:37:33', 'DegrÃ©', 18, 48),
+(465, '2017-02-10 09:37:33', 'Lux', 76, 49),
+(466, '2017-02-10 09:37:33', 'DegrÃ©', 19, 51),
+(467, '2017-02-10 09:37:33', 'DegrÃ©', 22, 41),
+(468, '2017-02-10 09:37:33', 'DegrÃ©', 22, 42),
+(469, '2017-02-10 09:37:33', 'DegrÃ©', 23, 43),
+(470, '2017-02-10 09:37:33', 'Lux', 48, 44),
+(471, '2017-02-10 09:37:33', '%', 40, 50),
+(472, '2017-02-10 09:37:33', 'DegrÃ©', 25, 48),
+(473, '2017-02-10 09:37:33', 'Lux', 122, 49),
+(474, '2017-02-10 09:37:33', 'DegrÃ©', 23, 51),
+(475, '2017-02-10 09:37:33', 'DegrÃ©', 16, 41),
+(476, '2017-02-10 09:37:33', 'DegrÃ©', 20, 42),
+(477, '2017-02-10 09:37:33', 'DegrÃ©', 21, 43),
+(478, '2017-02-10 09:37:33', 'Lux', 83, 44),
+(479, '2017-02-10 09:37:33', '%', 48, 50),
+(480, '2017-02-10 09:37:34', 'DegrÃ©', 15, 48),
+(481, '2017-02-10 09:37:34', 'Lux', 79, 49),
+(482, '2017-02-10 09:37:34', 'DegrÃ©', 24, 51),
+(483, '2017-02-10 09:37:34', 'DegrÃ©', 25, 41),
+(484, '2017-02-10 09:37:34', 'DegrÃ©', 24, 42),
+(485, '2017-02-10 09:37:34', 'DegrÃ©', 22, 43),
+(486, '2017-02-10 09:37:34', 'Lux', 34, 44),
+(487, '2017-02-10 09:37:34', '%', 55, 50),
+(488, '2017-02-10 09:37:34', 'DegrÃ©', 17, 48),
+(489, '2017-02-10 09:37:34', 'Lux', 112, 49),
+(490, '2017-02-10 09:37:34', 'DegrÃ©', 23, 51),
+(491, '2017-02-10 09:37:34', 'DegrÃ©', 16, 41),
+(492, '2017-02-10 09:37:34', 'DegrÃ©', 18, 42),
+(493, '2017-02-10 09:37:34', 'DegrÃ©', 15, 43),
+(494, '2017-02-10 09:37:34', 'Lux', 34, 44),
+(495, '2017-02-10 09:37:34', '%', 36, 50),
+(496, '2017-02-10 09:37:35', 'DegrÃ©', 15, 48),
+(497, '2017-02-10 09:37:35', 'Lux', 11, 49),
+(498, '2017-02-10 09:37:35', 'DegrÃ©', 17, 51),
+(499, '2017-02-10 09:37:35', 'DegrÃ©', 17, 41),
+(500, '2017-02-10 09:37:35', 'DegrÃ©', 18, 42),
+(501, '2017-02-10 09:37:35', 'DegrÃ©', 17, 43),
+(502, '2017-02-10 09:37:35', 'Lux', 121, 44),
+(503, '2017-02-10 09:37:35', '%', 70, 50),
+(504, '2017-02-10 09:37:35', 'DegrÃ©', 24, 48),
+(505, '2017-02-10 09:37:35', 'Lux', 107, 49),
+(506, '2017-02-10 09:37:35', 'DegrÃ©', 22, 51),
+(507, '2017-02-10 09:37:35', 'DegrÃ©', 20, 41),
+(508, '2017-02-10 09:37:35', 'DegrÃ©', 19, 42),
+(509, '2017-02-10 09:37:35', 'DegrÃ©', 22, 43),
+(510, '2017-02-10 09:37:35', 'Lux', 9, 44),
+(511, '2017-02-10 09:37:35', '%', 74, 50),
+(512, '2017-02-10 09:37:36', 'DegrÃ©', 25, 48),
+(513, '2017-02-10 09:37:36', 'Lux', 19, 49),
+(514, '2017-02-10 09:37:36', 'DegrÃ©', 24, 51),
+(515, '2017-02-10 09:37:36', 'DegrÃ©', 15, 41),
+(516, '2017-02-10 09:37:36', 'DegrÃ©', 21, 42),
+(517, '2017-02-10 09:37:36', 'DegrÃ©', 15, 43),
+(518, '2017-02-10 09:37:36', 'Lux', 91, 44),
+(519, '2017-02-10 09:37:36', '%', 76, 50),
+(520, '2017-02-10 09:37:36', 'DegrÃ©', 18, 48),
+(521, '2017-02-10 09:37:36', 'Lux', 120, 49),
+(522, '2017-02-10 09:37:36', 'DegrÃ©', 25, 51),
+(523, '2017-02-10 09:37:36', 'DegrÃ©', 22, 41),
+(524, '2017-02-10 09:37:36', 'DegrÃ©', 22, 42),
+(525, '2017-02-10 09:37:36', 'DegrÃ©', 21, 43),
+(526, '2017-02-10 09:37:36', 'Lux', 123, 44),
+(527, '2017-02-10 09:37:36', '%', 62, 50),
+(528, '2017-02-10 09:37:37', 'DegrÃ©', 22, 48),
+(529, '2017-02-10 09:37:37', 'Lux', 23, 49),
+(530, '2017-02-10 09:37:37', 'DegrÃ©', 21, 51),
+(531, '2017-02-10 09:37:37', 'DegrÃ©', 18, 41),
+(532, '2017-02-10 09:37:37', 'DegrÃ©', 25, 42),
+(533, '2017-02-10 09:37:37', 'DegrÃ©', 25, 43),
+(534, '2017-02-10 09:37:37', 'Lux', 71, 44),
+(535, '2017-02-10 09:37:37', '%', 79, 50),
+(536, '2017-02-10 09:37:37', 'DegrÃ©', 21, 48),
+(537, '2017-02-10 09:37:37', 'Lux', 93, 49),
+(538, '2017-02-10 09:37:37', 'DegrÃ©', 23, 51),
+(539, '2017-02-10 09:37:37', 'DegrÃ©', 15, 41),
+(540, '2017-02-10 09:37:37', 'DegrÃ©', 18, 42),
+(541, '2017-02-10 09:37:37', 'DegrÃ©', 19, 43),
+(542, '2017-02-10 09:37:37', 'Lux', 56, 44),
+(543, '2017-02-10 09:37:37', '%', 59, 50),
+(544, '2017-02-10 09:37:38', 'DegrÃ©', 21, 48),
+(545, '2017-02-10 09:37:38', 'Lux', 54, 49),
+(546, '2017-02-10 09:37:38', 'DegrÃ©', 25, 51),
+(547, '2017-02-10 09:37:38', 'DegrÃ©', 19, 41),
+(548, '2017-02-10 09:37:38', 'DegrÃ©', 16, 42),
+(549, '2017-02-10 09:37:38', 'DegrÃ©', 17, 43),
+(550, '2017-02-10 09:37:38', 'Lux', 116, 44),
+(551, '2017-02-10 09:37:38', '%', 36, 50),
+(552, '2017-02-10 09:37:38', 'DegrÃ©', 18, 48),
+(553, '2017-02-10 09:37:38', 'Lux', 29, 49),
+(554, '2017-02-10 09:37:38', 'DegrÃ©', 22, 51),
+(555, '2017-02-10 09:37:38', 'DegrÃ©', 22, 41),
+(556, '2017-02-10 09:37:38', 'DegrÃ©', 17, 42),
+(557, '2017-02-10 09:37:38', 'DegrÃ©', 25, 43),
+(558, '2017-02-10 09:37:38', 'Lux', 97, 44),
+(559, '2017-02-10 09:37:38', '%', 33, 50),
+(560, '2017-02-10 09:37:39', 'DegrÃ©', 17, 48),
+(561, '2017-02-10 09:37:39', 'Lux', 21, 49),
+(562, '2017-02-10 09:37:39', 'DegrÃ©', 18, 51),
+(563, '2017-02-10 09:37:39', 'DegrÃ©', 21, 41),
+(564, '2017-02-10 09:37:39', 'DegrÃ©', 18, 42),
+(565, '2017-02-10 09:37:39', 'DegrÃ©', 18, 43),
+(566, '2017-02-10 09:37:39', 'Lux', 52, 44),
+(567, '2017-02-10 09:37:39', '%', 43, 50),
+(568, '2017-02-10 09:37:39', 'DegrÃ©', 23, 48),
+(569, '2017-02-10 09:37:39', 'Lux', 63, 49),
+(570, '2017-02-10 09:37:39', 'DegrÃ©', 21, 51),
+(571, '2017-02-10 09:37:39', 'DegrÃ©', 17, 41),
+(572, '2017-02-10 09:37:39', 'DegrÃ©', 16, 42),
+(573, '2017-02-10 09:37:39', 'DegrÃ©', 21, 43),
+(574, '2017-02-10 09:37:39', 'Lux', 15, 44),
+(575, '2017-02-10 09:37:39', '%', 52, 50),
+(576, '2017-02-10 09:37:40', 'DegrÃ©', 19, 48),
+(577, '2017-02-10 09:37:40', 'Lux', 34, 49),
+(578, '2017-02-10 09:37:40', 'DegrÃ©', 18, 51),
+(579, '2017-02-10 09:37:40', 'DegrÃ©', 25, 41),
+(580, '2017-02-10 09:37:40', 'DegrÃ©', 18, 42),
+(581, '2017-02-10 09:37:40', 'DegrÃ©', 15, 43),
+(582, '2017-02-10 09:37:40', 'Lux', 115, 44),
+(583, '2017-02-10 09:37:40', '%', 79, 50),
+(584, '2017-02-10 09:37:41', 'DegrÃ©', 21, 48),
+(585, '2017-02-10 09:37:41', 'Lux', 8, 49),
+(586, '2017-02-10 09:37:41', 'DegrÃ©', 16, 51),
+(587, '2017-02-10 09:37:41', 'DegrÃ©', 17, 41),
+(588, '2017-02-10 09:37:41', 'DegrÃ©', 21, 42),
+(589, '2017-02-10 09:37:41', 'DegrÃ©', 16, 43),
+(590, '2017-02-10 09:37:41', 'Lux', 112, 44),
+(591, '2017-02-10 09:37:41', '%', 38, 50),
+(592, '2017-02-10 09:37:41', 'DegrÃ©', 16, 48),
+(593, '2017-02-10 09:37:41', 'Lux', 65, 49),
+(594, '2017-02-10 09:37:41', 'DegrÃ©', 18, 51),
+(595, '2017-02-10 09:37:41', 'DegrÃ©', 16, 41),
+(596, '2017-02-10 09:37:41', 'DegrÃ©', 19, 42),
+(597, '2017-02-10 09:37:41', 'DegrÃ©', 24, 43),
+(598, '2017-02-10 09:37:41', 'Lux', 18, 44),
+(599, '2017-02-10 09:37:41', '%', 30, 50),
+(600, '2017-02-10 09:37:42', 'DegrÃ©', 24, 48),
+(601, '2017-02-10 09:37:42', 'Lux', 85, 49),
+(602, '2017-02-10 09:37:42', 'DegrÃ©', 17, 51),
+(603, '2017-02-10 09:37:42', 'DegrÃ©', 16, 41),
+(604, '2017-02-10 09:37:42', 'DegrÃ©', 15, 42),
+(605, '2017-02-10 09:37:42', 'DegrÃ©', 22, 43),
+(606, '2017-02-10 09:37:42', 'Lux', 90, 44),
+(607, '2017-02-10 09:37:42', '%', 50, 50),
+(608, '2017-02-10 09:37:42', 'DegrÃ©', 17, 48),
+(609, '2017-02-10 09:37:42', 'Lux', 11, 49),
+(610, '2017-02-10 09:37:42', 'DegrÃ©', 19, 51),
+(611, '2017-02-10 09:37:42', 'DegrÃ©', 19, 41),
+(612, '2017-02-10 09:37:42', 'DegrÃ©', 17, 42),
+(613, '2017-02-10 09:37:42', 'DegrÃ©', 18, 43),
+(614, '2017-02-10 09:37:42', 'Lux', 67, 44),
+(615, '2017-02-10 09:37:42', '%', 54, 50),
+(616, '2017-02-10 09:37:43', 'DegrÃ©', 24, 48),
+(617, '2017-02-10 09:37:43', 'Lux', 57, 49),
+(618, '2017-02-10 09:37:43', 'DegrÃ©', 15, 51),
+(619, '2017-02-10 09:37:43', 'DegrÃ©', 16, 41),
+(620, '2017-02-10 09:37:43', 'DegrÃ©', 19, 42),
+(621, '2017-02-10 09:37:43', 'DegrÃ©', 23, 43),
+(622, '2017-02-10 09:37:43', 'Lux', 24, 44),
+(623, '2017-02-10 09:37:43', '%', 40, 50),
+(624, '2017-02-10 09:37:43', 'DegrÃ©', 20, 48),
+(625, '2017-02-10 09:37:43', 'Lux', 111, 49),
+(626, '2017-02-10 09:37:43', 'DegrÃ©', 15, 51),
+(627, '2017-02-10 09:37:43', 'DegrÃ©', 24, 41),
+(628, '2017-02-10 09:37:43', 'DegrÃ©', 17, 42),
+(629, '2017-02-10 09:37:43', 'DegrÃ©', 20, 43),
+(630, '2017-02-10 09:37:43', 'Lux', 16, 44),
+(631, '2017-02-10 09:37:43', '%', 63, 50),
+(632, '2017-02-10 09:37:44', 'DegrÃ©', 18, 48),
+(633, '2017-02-10 09:37:44', 'Lux', 91, 49),
+(634, '2017-02-10 09:37:44', 'DegrÃ©', 19, 51),
+(635, '2017-02-10 09:37:44', 'DegrÃ©', 19, 41),
+(636, '2017-02-10 09:37:44', 'DegrÃ©', 18, 42),
+(637, '2017-02-10 09:37:44', 'DegrÃ©', 20, 43),
+(638, '2017-02-10 09:37:44', 'Lux', 112, 44),
+(639, '2017-02-10 09:37:44', '%', 73, 50),
+(640, '2017-02-10 09:37:44', 'DegrÃ©', 22, 48),
+(641, '2017-02-10 09:37:44', 'Lux', 53, 49),
+(642, '2017-02-10 09:37:44', 'DegrÃ©', 22, 51),
+(643, '2017-02-10 09:37:44', 'DegrÃ©', 15, 41),
+(644, '2017-02-10 09:37:44', 'DegrÃ©', 19, 42),
+(645, '2017-02-10 09:37:44', 'DegrÃ©', 21, 43),
+(646, '2017-02-10 09:37:44', 'Lux', 124, 44),
+(647, '2017-02-10 09:37:44', '%', 59, 50),
+(648, '2017-02-10 09:37:45', 'DegrÃ©', 20, 48),
+(649, '2017-02-10 09:37:45', 'Lux', 5, 49),
+(650, '2017-02-10 09:37:45', 'DegrÃ©', 16, 51),
+(651, '2017-02-10 09:37:45', 'DegrÃ©', 16, 41),
+(652, '2017-02-10 09:37:45', 'DegrÃ©', 16, 42),
+(653, '2017-02-10 09:37:45', 'DegrÃ©', 25, 43),
+(654, '2017-02-10 09:37:45', 'Lux', 44, 44),
+(655, '2017-02-10 09:37:45', '%', 78, 50),
+(656, '2017-02-10 09:37:45', 'DegrÃ©', 15, 48),
+(657, '2017-02-10 09:37:45', 'Lux', 39, 49),
+(658, '2017-02-10 09:37:45', 'DegrÃ©', 22, 51),
+(659, '2017-02-10 09:37:45', 'DegrÃ©', 20, 41),
+(660, '2017-02-10 09:37:45', 'DegrÃ©', 16, 42),
+(661, '2017-02-10 09:37:45', 'DegrÃ©', 24, 43),
+(662, '2017-02-10 09:37:45', 'Lux', 69, 44),
+(663, '2017-02-10 09:37:45', '%', 49, 50),
+(664, '2017-02-10 09:37:46', 'DegrÃ©', 22, 48),
+(665, '2017-02-10 09:37:46', 'Lux', 72, 49),
+(666, '2017-02-10 09:37:46', 'DegrÃ©', 15, 51),
+(667, '2017-02-10 09:37:46', 'DegrÃ©', 23, 41),
+(668, '2017-02-10 09:37:46', 'DegrÃ©', 17, 42),
+(669, '2017-02-10 09:37:46', 'DegrÃ©', 23, 43),
+(670, '2017-02-10 09:37:46', 'Lux', 21, 44),
+(671, '2017-02-10 09:37:46', '%', 34, 50),
+(672, '2017-02-10 09:37:46', 'DegrÃ©', 24, 48),
+(673, '2017-02-10 09:37:46', 'Lux', 120, 49),
+(674, '2017-02-10 09:37:46', 'DegrÃ©', 23, 51),
+(675, '2017-02-10 09:37:46', 'DegrÃ©', 16, 41),
+(676, '2017-02-10 09:37:46', 'DegrÃ©', 18, 42),
+(677, '2017-02-10 09:37:46', 'DegrÃ©', 18, 43),
+(678, '2017-02-10 09:37:46', 'Lux', 77, 44),
+(679, '2017-02-10 09:37:46', '%', 69, 50),
+(680, '2017-02-10 09:37:47', 'DegrÃ©', 17, 48),
+(681, '2017-02-10 09:37:47', 'Lux', 26, 49),
+(682, '2017-02-10 09:37:47', 'DegrÃ©', 16, 51),
+(683, '2017-02-10 09:37:47', 'DegrÃ©', 21, 41),
+(684, '2017-02-10 09:37:47', 'DegrÃ©', 25, 42),
+(685, '2017-02-10 09:37:47', 'DegrÃ©', 18, 43),
+(686, '2017-02-10 09:37:47', 'Lux', 102, 44),
+(687, '2017-02-10 09:37:47', '%', 43, 50),
+(688, '2017-02-10 09:37:47', 'DegrÃ©', 16, 48),
+(689, '2017-02-10 09:37:47', 'Lux', 86, 49),
+(690, '2017-02-10 09:37:47', 'DegrÃ©', 21, 51),
+(691, '2017-02-10 09:37:47', 'DegrÃ©', 19, 41),
+(692, '2017-02-10 09:37:47', 'DegrÃ©', 16, 42),
+(693, '2017-02-10 09:37:47', 'DegrÃ©', 22, 43),
+(694, '2017-02-10 09:37:47', 'Lux', 7, 44),
+(695, '2017-02-10 09:37:47', '%', 73, 50),
+(696, '2017-02-10 09:37:48', 'DegrÃ©', 15, 48),
+(697, '2017-02-10 09:37:48', 'Lux', 32, 49),
+(698, '2017-02-10 09:37:48', 'DegrÃ©', 22, 51),
+(699, '2017-02-10 09:37:48', 'DegrÃ©', 18, 41),
+(700, '2017-02-10 09:37:48', 'DegrÃ©', 22, 42),
+(701, '2017-02-10 09:37:48', 'DegrÃ©', 21, 43),
+(702, '2017-02-10 09:37:48', 'Lux', 30, 44),
+(703, '2017-02-10 09:37:48', '%', 43, 50),
+(704, '2017-02-10 09:37:48', 'DegrÃ©', 16, 48),
+(705, '2017-02-10 09:37:48', 'Lux', 86, 49),
+(706, '2017-02-10 09:37:48', 'DegrÃ©', 24, 51),
+(707, '2017-02-10 09:37:48', 'DegrÃ©', 20, 41),
+(708, '2017-02-10 09:37:48', 'DegrÃ©', 17, 42),
+(709, '2017-02-10 09:37:48', 'DegrÃ©', 24, 43),
+(710, '2017-02-10 09:37:48', 'Lux', 17, 44),
+(711, '2017-02-10 09:37:48', '%', 45, 50),
+(712, '2017-02-10 09:37:49', 'DegrÃ©', 21, 48),
+(713, '2017-02-10 09:37:49', 'Lux', 44, 49),
+(714, '2017-02-10 09:37:49', 'DegrÃ©', 19, 51),
+(715, '2017-02-10 09:37:49', 'DegrÃ©', 22, 41),
+(716, '2017-02-10 09:37:49', 'DegrÃ©', 18, 42),
+(717, '2017-02-10 09:37:49', 'DegrÃ©', 23, 43),
+(718, '2017-02-10 09:37:49', 'Lux', 83, 44),
+(719, '2017-02-10 09:37:49', '%', 80, 50),
+(720, '2017-02-10 09:37:49', 'DegrÃ©', 16, 48),
+(721, '2017-02-10 09:37:49', 'Lux', 103, 49),
+(722, '2017-02-10 09:37:49', 'DegrÃ©', 24, 51),
+(723, '2017-02-10 09:37:49', 'DegrÃ©', 18, 41),
+(724, '2017-02-10 09:37:49', 'DegrÃ©', 21, 42),
+(725, '2017-02-10 09:37:49', 'DegrÃ©', 18, 43),
+(726, '2017-02-10 09:37:49', 'Lux', 87, 44),
+(727, '2017-02-10 09:37:49', '%', 56, 50),
+(728, '2017-02-10 09:37:50', 'DegrÃ©', 18, 48),
+(729, '2017-02-10 09:37:50', 'Lux', 93, 49),
+(730, '2017-02-10 09:37:50', 'DegrÃ©', 23, 51),
+(731, '2017-02-10 09:37:50', 'DegrÃ©', 20, 41),
+(732, '2017-02-10 09:37:50', 'DegrÃ©', 20, 42),
+(733, '2017-02-10 09:37:50', 'DegrÃ©', 24, 43),
+(734, '2017-02-10 09:37:50', 'Lux', 76, 44),
+(735, '2017-02-10 09:37:50', '%', 67, 50),
+(736, '2017-02-10 09:37:50', 'DegrÃ©', 18, 48),
+(737, '2017-02-10 09:37:50', 'Lux', 59, 49),
+(738, '2017-02-10 09:37:50', 'DegrÃ©', 21, 51),
+(739, '2017-02-10 09:37:50', 'DegrÃ©', 21, 41),
+(740, '2017-02-10 09:37:50', 'DegrÃ©', 23, 42),
+(741, '2017-02-10 09:37:50', 'DegrÃ©', 17, 43),
+(742, '2017-02-10 09:37:50', 'Lux', 52, 44),
+(743, '2017-02-10 09:37:50', '%', 75, 50),
+(744, '2017-02-10 09:37:51', 'DegrÃ©', 15, 48),
+(745, '2017-02-10 09:37:51', 'Lux', 97, 49),
+(746, '2017-02-10 09:37:51', 'DegrÃ©', 18, 51),
+(747, '2017-02-10 09:37:51', 'DegrÃ©', 15, 41),
+(748, '2017-02-10 09:37:51', 'DegrÃ©', 16, 42),
+(749, '2017-02-10 09:37:51', 'DegrÃ©', 16, 43),
+(750, '2017-02-10 09:37:51', 'Lux', 41, 44),
+(751, '2017-02-10 09:37:51', '%', 37, 50),
+(752, '2017-02-10 09:37:51', 'DegrÃ©', 24, 48),
+(753, '2017-02-10 09:37:51', 'Lux', 6, 49),
+(754, '2017-02-10 09:37:51', 'DegrÃ©', 17, 51),
+(755, '2017-02-10 09:37:51', 'DegrÃ©', 15, 41),
+(756, '2017-02-10 09:37:51', 'DegrÃ©', 22, 42),
+(757, '2017-02-10 09:37:51', 'DegrÃ©', 18, 43),
+(758, '2017-02-10 09:37:51', 'Lux', 114, 44),
+(759, '2017-02-10 09:37:51', '%', 71, 50),
+(760, '2017-02-10 09:37:52', 'DegrÃ©', 19, 48),
+(761, '2017-02-10 09:37:52', 'Lux', 5, 49),
+(762, '2017-02-10 09:37:52', 'DegrÃ©', 20, 51),
+(763, '2017-02-10 09:37:52', 'DegrÃ©', 16, 41),
+(764, '2017-02-10 09:37:52', 'DegrÃ©', 21, 42),
+(765, '2017-02-10 09:37:52', 'DegrÃ©', 22, 43),
+(766, '2017-02-10 09:37:52', 'Lux', 49, 44),
+(767, '2017-02-10 09:37:52', '%', 40, 50),
+(768, '2017-02-10 09:37:52', 'DegrÃ©', 25, 48),
+(769, '2017-02-10 09:37:52', 'Lux', 101, 49),
+(770, '2017-02-10 09:37:52', 'DegrÃ©', 18, 51),
+(771, '2017-02-10 09:37:52', 'DegrÃ©', 17, 41),
+(772, '2017-02-10 09:37:52', 'DegrÃ©', 22, 42),
+(773, '2017-02-10 09:37:52', 'DegrÃ©', 19, 43),
+(774, '2017-02-10 09:37:52', 'Lux', 66, 44),
+(775, '2017-02-10 09:37:52', '%', 72, 50),
+(776, '2017-02-10 09:37:53', 'DegrÃ©', 15, 48),
+(777, '2017-02-10 09:37:53', 'Lux', 98, 49),
+(778, '2017-02-10 09:37:53', 'DegrÃ©', 25, 51),
+(779, '2017-02-10 09:37:53', 'DegrÃ©', 19, 41),
+(780, '2017-02-10 09:37:53', 'DegrÃ©', 20, 42),
+(781, '2017-02-10 09:37:53', 'DegrÃ©', 21, 43),
+(782, '2017-02-10 09:37:53', 'Lux', 48, 44),
+(783, '2017-02-10 09:37:53', '%', 70, 50),
+(784, '2017-02-10 09:37:53', 'DegrÃ©', 17, 48),
+(785, '2017-02-10 09:37:53', 'Lux', 45, 49),
+(786, '2017-02-10 09:37:53', 'DegrÃ©', 16, 51),
+(787, '2017-02-10 09:37:53', 'DegrÃ©', 24, 41),
+(788, '2017-02-10 09:37:53', 'DegrÃ©', 22, 42),
+(789, '2017-02-10 09:37:53', 'DegrÃ©', 23, 43),
+(790, '2017-02-10 09:37:53', 'Lux', 53, 44),
+(791, '2017-02-10 09:37:53', '%', 30, 50),
+(792, '2017-02-10 09:37:54', 'DegrÃ©', 18, 48),
+(793, '2017-02-10 09:37:54', 'Lux', 15, 49),
+(794, '2017-02-10 09:37:54', 'DegrÃ©', 18, 51),
+(795, '2017-02-10 09:37:54', 'DegrÃ©', 23, 41),
+(796, '2017-02-10 09:37:54', 'DegrÃ©', 25, 42),
+(797, '2017-02-10 09:37:54', 'DegrÃ©', 24, 43),
+(798, '2017-02-10 09:37:54', 'Lux', 71, 44),
+(799, '2017-02-10 09:37:54', '%', 30, 50),
+(800, '2017-02-10 09:37:54', 'DegrÃ©', 17, 48),
+(801, '2017-02-10 09:37:54', 'Lux', 8, 49),
+(802, '2017-02-10 09:37:54', 'DegrÃ©', 21, 51),
+(803, '2017-02-10 09:37:54', 'DegrÃ©', 25, 41),
+(804, '2017-02-10 09:37:54', 'DegrÃ©', 17, 42),
+(805, '2017-02-10 09:37:54', 'DegrÃ©', 15, 43),
+(806, '2017-02-10 09:37:54', 'Lux', 111, 44),
+(807, '2017-02-10 09:37:54', '%', 38, 50),
+(808, '2017-02-10 09:37:55', 'DegrÃ©', 22, 48),
+(809, '2017-02-10 09:37:55', 'Lux', 113, 49),
+(810, '2017-02-10 09:37:55', 'DegrÃ©', 15, 51),
+(811, '2017-02-10 09:37:55', 'DegrÃ©', 23, 41),
+(812, '2017-02-10 09:37:55', 'DegrÃ©', 15, 42),
+(813, '2017-02-10 09:37:55', 'DegrÃ©', 18, 43),
+(814, '2017-02-10 09:37:55', 'Lux', 117, 44),
+(815, '2017-02-10 09:37:55', '%', 52, 50),
+(816, '2017-02-10 09:37:55', 'DegrÃ©', 15, 48),
+(817, '2017-02-10 09:37:55', 'Lux', 22, 49),
+(818, '2017-02-10 09:37:55', 'DegrÃ©', 17, 51),
+(819, '2017-02-10 09:37:55', 'DegrÃ©', 23, 41),
+(820, '2017-02-10 09:37:55', 'DegrÃ©', 19, 42),
+(821, '2017-02-10 09:37:55', 'DegrÃ©', 16, 43),
+(822, '2017-02-10 09:37:55', 'Lux', 73, 44),
+(823, '2017-02-10 09:37:55', '%', 50, 50),
+(824, '2017-02-10 09:37:56', 'DegrÃ©', 18, 48),
+(825, '2017-02-10 09:37:56', 'Lux', 58, 49),
+(826, '2017-02-10 09:37:56', 'DegrÃ©', 20, 51),
+(827, '2017-02-10 09:37:56', 'DegrÃ©', 25, 41),
+(828, '2017-02-10 09:37:56', 'DegrÃ©', 16, 42),
+(829, '2017-02-10 09:37:56', 'DegrÃ©', 25, 43),
+(830, '2017-02-10 09:37:56', 'Lux', 21, 44),
+(831, '2017-02-10 09:37:56', '%', 41, 50),
+(832, '2017-02-10 09:37:56', 'DegrÃ©', 25, 48),
+(833, '2017-02-10 09:37:56', 'Lux', 114, 49),
+(834, '2017-02-10 09:37:56', 'DegrÃ©', 21, 51),
+(835, '2017-02-10 09:37:56', 'DegrÃ©', 21, 41),
+(836, '2017-02-10 09:37:56', 'DegrÃ©', 18, 42),
+(837, '2017-02-10 09:37:56', 'DegrÃ©', 16, 43),
+(838, '2017-02-10 09:37:56', 'Lux', 54, 44),
+(839, '2017-02-10 09:37:56', '%', 60, 50),
+(840, '2017-02-10 09:37:57', 'DegrÃ©', 22, 48),
+(841, '2017-02-10 09:37:57', 'Lux', 10, 49),
+(842, '2017-02-10 09:37:57', 'DegrÃ©', 21, 51),
+(843, '2017-02-10 09:37:57', 'DegrÃ©', 17, 41),
+(844, '2017-02-10 09:37:57', 'DegrÃ©', 21, 42),
+(845, '2017-02-10 09:37:57', 'DegrÃ©', 25, 43),
+(846, '2017-02-10 09:37:57', 'Lux', 125, 44),
+(847, '2017-02-10 09:37:57', '%', 75, 50),
+(848, '2017-02-10 09:37:57', 'DegrÃ©', 19, 48),
+(849, '2017-02-10 09:37:57', 'Lux', 70, 49),
+(850, '2017-02-10 09:37:57', 'DegrÃ©', 20, 51),
+(851, '2017-02-10 09:37:57', 'DegrÃ©', 16, 41),
+(852, '2017-02-10 09:37:57', 'DegrÃ©', 18, 42),
+(853, '2017-02-10 09:37:57', 'DegrÃ©', 24, 43),
+(854, '2017-02-10 09:37:57', 'Lux', 23, 44),
+(855, '2017-02-10 09:37:57', '%', 60, 50),
+(856, '2017-02-10 09:37:58', 'DegrÃ©', 15, 48),
+(857, '2017-02-10 09:37:58', 'Lux', 41, 49),
+(858, '2017-02-10 09:37:58', 'DegrÃ©', 22, 51),
+(859, '2017-02-10 09:37:58', 'DegrÃ©', 25, 41),
+(860, '2017-02-10 09:37:58', 'DegrÃ©', 17, 42),
+(861, '2017-02-10 09:37:58', 'DegrÃ©', 17, 43),
+(862, '2017-02-10 09:37:58', 'Lux', 125, 44),
+(863, '2017-02-10 09:37:58', '%', 74, 50),
+(864, '2017-02-10 09:37:58', 'DegrÃ©', 25, 48),
+(865, '2017-02-10 09:37:58', 'Lux', 99, 49),
+(866, '2017-02-10 09:37:58', 'DegrÃ©', 21, 51),
+(867, '2017-02-10 09:37:58', 'DegrÃ©', 16, 41),
+(868, '2017-02-10 09:37:58', 'DegrÃ©', 23, 42),
+(869, '2017-02-10 09:37:58', 'DegrÃ©', 19, 43),
+(870, '2017-02-10 09:37:58', 'Lux', 45, 44),
+(871, '2017-02-10 09:37:58', '%', 72, 50),
+(872, '2017-02-10 09:37:59', 'DegrÃ©', 16, 48),
+(873, '2017-02-10 09:37:59', 'Lux', 9, 49),
+(874, '2017-02-10 09:37:59', 'DegrÃ©', 22, 51),
+(875, '2017-02-10 09:37:59', 'DegrÃ©', 17, 41),
+(876, '2017-02-10 09:37:59', 'DegrÃ©', 19, 42),
+(877, '2017-02-10 09:37:59', 'DegrÃ©', 21, 43),
+(878, '2017-02-10 09:37:59', 'Lux', 85, 44),
+(879, '2017-02-10 09:37:59', '%', 65, 50),
+(880, '2017-02-10 09:37:59', 'DegrÃ©', 21, 48),
+(881, '2017-02-10 09:37:59', 'Lux', 69, 49),
+(882, '2017-02-10 09:37:59', 'DegrÃ©', 21, 51),
+(883, '2017-02-10 09:37:59', 'DegrÃ©', 15, 41),
+(884, '2017-02-10 09:37:59', 'DegrÃ©', 22, 42),
+(885, '2017-02-10 09:37:59', 'DegrÃ©', 16, 43),
+(886, '2017-02-10 09:37:59', 'Lux', 57, 44),
+(887, '2017-02-10 09:37:59', '%', 58, 50),
+(888, '2017-02-10 09:38:00', 'DegrÃ©', 15, 48),
+(889, '2017-02-10 09:38:00', 'Lux', 30, 49),
+(890, '2017-02-10 09:38:00', 'DegrÃ©', 22, 51),
+(891, '2017-02-10 09:38:00', 'DegrÃ©', 17, 41),
+(892, '2017-02-10 09:38:00', 'DegrÃ©', 16, 42),
+(893, '2017-02-10 09:38:00', 'DegrÃ©', 23, 43),
+(894, '2017-02-10 09:38:00', 'Lux', 55, 44),
+(895, '2017-02-10 09:38:00', '%', 71, 50),
+(896, '2017-02-10 09:38:00', 'DegrÃ©', 15, 48),
+(897, '2017-02-10 09:38:00', 'Lux', 8, 49),
+(898, '2017-02-10 09:38:00', 'DegrÃ©', 16, 51),
+(899, '2017-02-10 09:38:00', 'DegrÃ©', 19, 41),
+(900, '2017-02-10 09:38:00', 'DegrÃ©', 16, 42),
+(901, '2017-02-10 09:38:00', 'DegrÃ©', 21, 43),
+(902, '2017-02-10 09:38:00', 'Lux', 125, 44),
+(903, '2017-02-10 09:38:00', '%', 60, 50),
+(904, '2017-02-10 09:38:01', 'DegrÃ©', 24, 48),
+(905, '2017-02-10 09:38:01', 'Lux', 6, 49),
+(906, '2017-02-10 09:38:01', 'DegrÃ©', 25, 51),
+(907, '2017-02-10 09:38:01', 'DegrÃ©', 19, 41),
+(908, '2017-02-10 09:38:01', 'DegrÃ©', 25, 42),
+(909, '2017-02-10 09:38:01', 'DegrÃ©', 25, 43),
+(910, '2017-02-10 09:38:01', 'Lux', 45, 44),
+(911, '2017-02-10 09:38:01', '%', 30, 50),
+(912, '2017-02-10 09:38:01', 'DegrÃ©', 16, 48),
+(913, '2017-02-10 09:38:01', 'Lux', 63, 49),
+(914, '2017-02-10 09:38:01', 'DegrÃ©', 23, 51),
+(915, '2017-02-10 09:38:01', 'DegrÃ©', 19, 41),
+(916, '2017-02-10 09:38:01', 'DegrÃ©', 19, 42),
+(917, '2017-02-10 09:38:01', 'DegrÃ©', 24, 43),
+(918, '2017-02-10 09:38:01', 'Lux', 7, 44),
+(919, '2017-02-10 09:38:01', '%', 44, 50),
+(920, '2017-02-10 09:38:02', 'DegrÃ©', 18, 48),
+(921, '2017-02-10 09:38:02', 'Lux', 10, 49),
+(922, '2017-02-10 09:38:02', 'DegrÃ©', 15, 51),
+(923, '2017-02-10 09:38:02', 'DegrÃ©', 20, 41),
+(924, '2017-02-10 09:38:02', 'DegrÃ©', 18, 42),
+(925, '2017-02-10 09:38:02', 'DegrÃ©', 15, 43),
+(926, '2017-02-10 09:38:02', 'Lux', 50, 44),
+(927, '2017-02-10 09:38:02', '%', 54, 50),
+(928, '2017-02-10 09:38:02', 'DegrÃ©', 22, 48),
+(929, '2017-02-10 09:38:02', 'Lux', 77, 49),
+(930, '2017-02-10 09:38:02', 'DegrÃ©', 20, 51),
+(931, '2017-02-10 09:38:02', 'DegrÃ©', 20, 41),
+(932, '2017-02-10 09:38:02', 'DegrÃ©', 15, 42),
+(933, '2017-02-10 09:38:02', 'DegrÃ©', 23, 43),
+(934, '2017-02-10 09:38:02', 'Lux', 41, 44),
+(935, '2017-02-10 09:38:02', '%', 63, 50),
+(936, '2017-02-10 09:38:03', 'DegrÃ©', 15, 48),
+(937, '2017-02-10 09:38:03', 'Lux', 8, 49),
+(938, '2017-02-10 09:38:03', 'DegrÃ©', 22, 51),
+(939, '2017-02-10 09:38:03', 'DegrÃ©', 19, 41),
+(940, '2017-02-10 09:38:03', 'DegrÃ©', 21, 42),
+(941, '2017-02-10 09:38:03', 'DegrÃ©', 19, 43),
+(942, '2017-02-10 09:38:03', 'Lux', 18, 44),
+(943, '2017-02-10 09:38:03', '%', 62, 50),
+(944, '2017-02-10 09:38:03', 'DegrÃ©', 18, 48),
+(945, '2017-02-10 09:38:03', 'Lux', 110, 49),
+(946, '2017-02-10 09:38:03', 'DegrÃ©', 22, 51),
+(947, '2017-02-10 09:38:03', 'DegrÃ©', 25, 41),
+(948, '2017-02-10 09:38:03', 'DegrÃ©', 15, 42),
+(949, '2017-02-10 09:38:03', 'DegrÃ©', 16, 43),
+(950, '2017-02-10 09:38:03', 'Lux', 69, 44),
+(951, '2017-02-10 09:38:03', '%', 33, 50),
+(952, '2017-02-10 09:38:04', 'DegrÃ©', 21, 48),
+(953, '2017-02-10 09:38:04', 'Lux', 96, 49),
+(954, '2017-02-10 09:38:04', 'DegrÃ©', 24, 51),
+(955, '2017-02-10 09:38:04', 'DegrÃ©', 22, 41),
+(956, '2017-02-10 09:38:04', 'DegrÃ©', 20, 42),
+(957, '2017-02-10 09:38:04', 'DegrÃ©', 17, 43),
+(958, '2017-02-10 09:38:04', 'Lux', 67, 44),
+(959, '2017-02-10 09:38:04', '%', 48, 50),
+(960, '2017-02-10 09:38:04', 'DegrÃ©', 16, 48),
+(961, '2017-02-10 09:38:04', 'Lux', 86, 49),
+(962, '2017-02-10 09:38:04', 'DegrÃ©', 20, 51),
+(963, '2017-02-10 09:38:04', 'DegrÃ©', 18, 41),
+(964, '2017-02-10 09:38:04', 'DegrÃ©', 17, 42),
+(965, '2017-02-10 09:38:04', 'DegrÃ©', 20, 43),
+(966, '2017-02-10 09:38:04', 'Lux', 111, 44),
+(967, '2017-02-10 09:38:04', '%', 46, 50),
+(968, '2017-02-10 09:38:05', 'DegrÃ©', 17, 48),
+(969, '2017-02-10 09:38:05', 'Lux', 67, 49),
+(970, '2017-02-10 09:38:05', 'DegrÃ©', 23, 51),
+(971, '2017-02-10 09:38:05', 'DegrÃ©', 17, 41),
+(972, '2017-02-10 09:38:05', 'DegrÃ©', 20, 42),
+(973, '2017-02-10 09:38:05', 'DegrÃ©', 16, 43),
+(974, '2017-02-10 09:38:05', 'Lux', 35, 44),
+(975, '2017-02-10 09:38:05', '%', 70, 50),
+(976, '2017-02-10 09:38:05', 'DegrÃ©', 25, 48),
+(977, '2017-02-10 09:38:05', 'Lux', 79, 49),
+(978, '2017-02-10 09:38:05', 'DegrÃ©', 23, 51),
+(979, '2017-02-10 09:38:05', 'DegrÃ©', 18, 41),
+(980, '2017-02-10 09:38:05', 'DegrÃ©', 20, 42),
+(981, '2017-02-10 09:38:05', 'DegrÃ©', 23, 43),
+(982, '2017-02-10 09:38:05', 'Lux', 77, 44),
+(983, '2017-02-10 09:38:05', '%', 39, 50),
+(984, '2017-02-10 09:38:06', 'DegrÃ©', 16, 48),
+(985, '2017-02-10 09:38:06', 'Lux', 36, 49),
+(986, '2017-02-10 09:38:06', 'DegrÃ©', 18, 51),
+(987, '2017-02-10 09:38:06', 'DegrÃ©', 20, 41),
+(988, '2017-02-10 09:38:06', 'DegrÃ©', 17, 42),
+(989, '2017-02-10 09:38:06', 'DegrÃ©', 22, 43),
+(990, '2017-02-10 09:38:06', 'Lux', 123, 44),
+(991, '2017-02-10 09:38:06', '%', 45, 50),
+(992, '2017-02-10 09:38:06', 'DegrÃ©', 19, 48),
+(993, '2017-02-10 09:38:06', 'Lux', 12, 49),
+(994, '2017-02-10 09:38:06', 'DegrÃ©', 22, 51),
+(995, '2017-02-10 09:38:06', 'DegrÃ©', 19, 41),
+(996, '2017-02-10 09:38:06', 'DegrÃ©', 24, 42),
+(997, '2017-02-10 09:38:06', 'DegrÃ©', 25, 43),
+(998, '2017-02-10 09:38:06', 'Lux', 14, 44),
+(999, '2017-02-10 09:38:06', '%', 38, 50),
+(1000, '2017-02-10 09:38:07', 'DegrÃ©', 22, 48),
+(1001, '2017-02-10 09:38:07', 'Lux', 88, 49),
+(1002, '2017-02-10 09:38:07', 'DegrÃ©', 22, 51),
+(1003, '2017-02-10 09:38:07', 'DegrÃ©', 18, 41),
+(1004, '2017-02-10 09:38:07', 'DegrÃ©', 15, 42),
+(1005, '2017-02-10 09:38:07', 'DegrÃ©', 24, 43),
+(1006, '2017-02-10 09:38:07', 'Lux', 118, 44),
+(1007, '2017-02-10 09:38:07', '%', 63, 50),
+(1008, '2017-02-10 09:38:07', 'DegrÃ©', 24, 48),
+(1009, '2017-02-10 09:38:07', 'Lux', 96, 49),
+(1010, '2017-02-10 09:38:07', 'DegrÃ©', 16, 51),
+(1011, '2017-02-10 09:38:07', 'DegrÃ©', 24, 41),
+(1012, '2017-02-10 09:38:07', 'DegrÃ©', 24, 42),
+(1013, '2017-02-10 09:38:07', 'DegrÃ©', 22, 43),
+(1014, '2017-02-10 09:38:07', 'Lux', 115, 44),
+(1015, '2017-02-10 09:38:07', '%', 30, 50),
+(1016, '2017-02-10 09:38:08', 'DegrÃ©', 21, 48),
+(1017, '2017-02-10 09:38:08', 'Lux', 98, 49),
+(1018, '2017-02-10 09:38:08', 'DegrÃ©', 19, 51),
+(1019, '2017-02-10 09:38:08', 'DegrÃ©', 16, 41),
+(1020, '2017-02-10 09:38:08', 'DegrÃ©', 15, 42),
+(1021, '2017-02-10 09:38:08', 'DegrÃ©', 24, 43),
+(1022, '2017-02-10 09:38:08', 'Lux', 62, 44),
+(1023, '2017-02-10 09:38:08', '%', 45, 50),
+(1024, '2017-02-10 09:38:08', 'DegrÃ©', 18, 48),
+(1025, '2017-02-10 09:38:08', 'Lux', 50, 49),
+(1026, '2017-02-10 09:38:08', 'DegrÃ©', 18, 51),
+(1027, '2017-02-10 09:38:08', 'DegrÃ©', 21, 41),
+(1028, '2017-02-10 09:38:08', 'DegrÃ©', 24, 42),
+(1029, '2017-02-10 09:38:08', 'DegrÃ©', 16, 43),
+(1030, '2017-02-10 09:38:08', 'Lux', 116, 44),
+(1031, '2017-02-10 09:38:08', '%', 69, 50),
+(1032, '2017-02-10 09:38:09', 'DegrÃ©', 19, 48),
+(1033, '2017-02-10 09:38:09', 'Lux', 37, 49),
+(1034, '2017-02-10 09:38:09', 'DegrÃ©', 21, 51),
+(1035, '2017-02-10 09:38:09', 'DegrÃ©', 24, 41),
+(1036, '2017-02-10 09:38:09', 'DegrÃ©', 19, 42),
+(1037, '2017-02-10 09:38:09', 'DegrÃ©', 23, 43),
+(1038, '2017-02-10 09:38:09', 'Lux', 89, 44),
+(1039, '2017-02-10 09:38:09', '%', 58, 50),
+(1040, '2017-02-10 09:38:09', 'DegrÃ©', 23, 48),
+(1041, '2017-02-10 09:38:09', 'Lux', 86, 49),
+(1042, '2017-02-10 09:38:09', 'DegrÃ©', 16, 51),
+(1043, '2017-02-10 09:38:09', 'DegrÃ©', 18, 41),
+(1044, '2017-02-10 09:38:09', 'DegrÃ©', 20, 42),
+(1045, '2017-02-10 09:38:09', 'DegrÃ©', 22, 43),
+(1046, '2017-02-10 09:38:09', 'Lux', 64, 44),
+(1047, '2017-02-10 09:38:09', '%', 72, 50),
+(1048, '2017-02-10 09:38:10', 'DegrÃ©', 15, 48),
+(1049, '2017-02-10 09:38:10', 'Lux', 125, 49),
+(1050, '2017-02-10 09:38:10', 'DegrÃ©', 15, 51),
+(1051, '2017-02-10 09:38:10', 'DegrÃ©', 18, 41),
+(1052, '2017-02-10 09:38:10', 'DegrÃ©', 22, 42),
+(1053, '2017-02-10 09:38:10', 'DegrÃ©', 15, 43),
+(1054, '2017-02-10 09:38:10', 'Lux', 81, 44),
+(1055, '2017-02-10 09:38:10', '%', 48, 50),
+(1056, '2017-02-10 09:38:10', 'DegrÃ©', 23, 48),
+(1057, '2017-02-10 09:38:10', 'Lux', 23, 49),
+(1058, '2017-02-10 09:38:10', 'DegrÃ©', 17, 51),
+(1059, '2017-02-10 09:38:10', 'DegrÃ©', 21, 41),
+(1060, '2017-02-10 09:38:10', 'DegrÃ©', 16, 42),
+(1061, '2017-02-10 09:38:10', 'DegrÃ©', 18, 43),
+(1062, '2017-02-10 09:38:10', 'Lux', 99, 44),
+(1063, '2017-02-10 09:38:10', '%', 78, 50),
+(1064, '2017-02-10 09:38:11', 'DegrÃ©', 23, 48),
+(1065, '2017-02-10 09:38:11', 'Lux', 47, 49),
+(1066, '2017-02-10 09:38:11', 'DegrÃ©', 22, 51),
+(1067, '2017-02-10 09:38:11', 'DegrÃ©', 23, 41),
+(1068, '2017-02-10 09:38:11', 'DegrÃ©', 16, 42),
+(1069, '2017-02-10 09:38:11', 'DegrÃ©', 21, 43),
+(1070, '2017-02-10 09:38:11', 'Lux', 60, 44),
+(1071, '2017-02-10 09:38:11', '%', 68, 50),
+(1072, '2017-02-10 09:38:11', 'DegrÃ©', 16, 48),
+(1073, '2017-02-10 09:38:11', 'Lux', 118, 49),
+(1074, '2017-02-10 09:38:11', 'DegrÃ©', 23, 51),
+(1075, '2017-02-10 09:38:11', 'DegrÃ©', 25, 41),
+(1076, '2017-02-10 09:38:11', 'DegrÃ©', 21, 42),
+(1077, '2017-02-10 09:38:11', 'DegrÃ©', 22, 43),
+(1078, '2017-02-10 09:38:11', 'Lux', 123, 44),
+(1079, '2017-02-10 09:38:11', '%', 80, 50),
+(1080, '2017-02-10 09:38:12', 'DegrÃ©', 19, 48),
+(1081, '2017-02-10 09:38:12', 'Lux', 105, 49),
+(1082, '2017-02-10 09:38:12', 'DegrÃ©', 24, 51),
+(1083, '2017-02-10 09:38:12', 'DegrÃ©', 19, 41),
+(1084, '2017-02-10 09:38:12', 'DegrÃ©', 22, 42),
+(1085, '2017-02-10 09:38:12', 'DegrÃ©', 18, 43),
+(1086, '2017-02-10 09:38:12', 'Lux', 91, 44),
+(1087, '2017-02-10 09:38:12', '%', 36, 50),
+(1088, '2017-02-10 09:38:12', 'DegrÃ©', 15, 48),
+(1089, '2017-02-10 09:38:12', 'Lux', 38, 49),
+(1090, '2017-02-10 09:38:12', 'DegrÃ©', 21, 51),
+(1091, '2017-02-10 09:38:12', 'DegrÃ©', 25, 41),
+(1092, '2017-02-10 09:38:12', 'DegrÃ©', 20, 42),
+(1093, '2017-02-10 09:38:12', 'DegrÃ©', 20, 43),
+(1094, '2017-02-10 09:38:12', 'Lux', 90, 44),
+(1095, '2017-02-10 09:38:12', '%', 42, 50),
+(1096, '2017-02-10 09:38:13', 'DegrÃ©', 21, 48),
+(1097, '2017-02-10 09:38:13', 'Lux', 36, 49),
+(1098, '2017-02-10 09:38:13', 'DegrÃ©', 15, 51),
+(1099, '2017-02-10 09:38:13', 'DegrÃ©', 15, 41),
+(1100, '2017-02-10 09:38:13', 'DegrÃ©', 15, 42),
+(1101, '2017-02-10 09:38:13', 'DegrÃ©', 23, 43),
+(1102, '2017-02-10 09:38:13', 'Lux', 73, 44),
+(1103, '2017-02-10 09:38:13', '%', 36, 50),
+(1104, '2017-02-10 09:38:13', 'DegrÃ©', 16, 48),
+(1105, '2017-02-10 09:38:13', 'Lux', 102, 49),
+(1106, '2017-02-10 09:38:13', 'DegrÃ©', 21, 51),
+(1107, '2017-02-10 09:38:13', 'DegrÃ©', 21, 41),
+(1108, '2017-02-10 09:38:13', 'DegrÃ©', 20, 42),
+(1109, '2017-02-10 09:38:13', 'DegrÃ©', 15, 43),
+(1110, '2017-02-10 09:38:13', 'Lux', 60, 44),
+(1111, '2017-02-10 09:38:13', '%', 43, 50),
+(1112, '2017-02-10 09:38:14', 'DegrÃ©', 23, 48),
+(1113, '2017-02-10 09:38:14', 'Lux', 80, 49),
+(1114, '2017-02-10 09:38:14', 'DegrÃ©', 19, 51),
+(1115, '2017-02-10 09:38:14', 'DegrÃ©', 19, 41),
+(1116, '2017-02-10 09:38:14', 'DegrÃ©', 22, 42),
+(1117, '2017-02-10 09:38:14', 'DegrÃ©', 15, 43),
+(1118, '2017-02-10 09:38:14', 'Lux', 96, 44),
+(1119, '2017-02-10 09:38:14', '%', 49, 50),
+(1120, '2017-02-10 09:38:14', 'DegrÃ©', 17, 48),
+(1121, '2017-02-10 09:38:14', 'Lux', 91, 49),
+(1122, '2017-02-10 09:38:14', 'DegrÃ©', 24, 51),
+(1123, '2017-02-10 09:38:14', 'DegrÃ©', 18, 41),
+(1124, '2017-02-10 09:38:14', 'DegrÃ©', 15, 42);
+INSERT INTO `statistiques` (`Id`, `Date`, `Type`, `Valeur`, `Id_Capteur`) VALUES
+(1125, '2017-02-10 09:38:14', 'DegrÃ©', 22, 43),
+(1126, '2017-02-10 09:38:14', 'Lux', 37, 44),
+(1127, '2017-02-10 09:38:14', '%', 37, 50),
+(1128, '2017-02-10 09:38:15', 'DegrÃ©', 19, 48),
+(1129, '2017-02-10 09:38:15', 'Lux', 55, 49),
+(1130, '2017-02-10 09:38:15', 'DegrÃ©', 17, 51),
+(1131, '2017-02-10 09:38:15', 'DegrÃ©', 21, 41),
+(1132, '2017-02-10 09:38:15', 'DegrÃ©', 15, 42),
+(1133, '2017-02-10 09:38:15', 'DegrÃ©', 22, 43),
+(1134, '2017-02-10 09:38:15', 'Lux', 49, 44),
+(1135, '2017-02-10 09:38:15', '%', 50, 50),
+(1136, '2017-02-10 09:38:15', 'DegrÃ©', 21, 48),
+(1137, '2017-02-10 09:38:15', 'Lux', 13, 49),
+(1138, '2017-02-10 09:38:15', 'DegrÃ©', 16, 51),
+(1139, '2017-02-10 09:38:15', 'DegrÃ©', 17, 41),
+(1140, '2017-02-10 09:38:15', 'DegrÃ©', 23, 42),
+(1141, '2017-02-10 09:38:15', 'DegrÃ©', 16, 43),
+(1142, '2017-02-10 09:38:15', 'Lux', 29, 44),
+(1143, '2017-02-10 09:38:15', '%', 74, 50),
+(1144, '2017-02-10 09:38:16', 'DegrÃ©', 20, 48),
+(1145, '2017-02-10 09:38:16', 'Lux', 33, 49),
+(1146, '2017-02-10 09:38:16', 'DegrÃ©', 23, 51),
+(1147, '2017-02-10 09:38:16', 'DegrÃ©', 17, 41),
+(1148, '2017-02-10 09:38:16', 'DegrÃ©', 21, 42),
+(1149, '2017-02-10 09:38:16', 'DegrÃ©', 20, 43),
+(1150, '2017-02-10 09:38:16', 'Lux', 44, 44),
+(1151, '2017-02-10 09:38:16', '%', 39, 50),
+(1152, '2017-02-10 09:38:16', 'DegrÃ©', 19, 48),
+(1153, '2017-02-10 09:38:16', 'Lux', 99, 49),
+(1154, '2017-02-10 09:38:16', 'DegrÃ©', 23, 51),
+(1155, '2017-02-10 09:38:16', 'DegrÃ©', 24, 41),
+(1156, '2017-02-10 09:38:16', 'DegrÃ©', 18, 42),
+(1157, '2017-02-10 09:38:16', 'DegrÃ©', 20, 43),
+(1158, '2017-02-10 09:38:16', 'Lux', 15, 44),
+(1159, '2017-02-10 09:38:16', '%', 52, 50),
+(1160, '2017-02-10 09:38:17', 'DegrÃ©', 23, 48),
+(1161, '2017-02-10 09:38:17', 'Lux', 48, 49),
+(1162, '2017-02-10 09:38:17', 'DegrÃ©', 17, 51),
+(1163, '2017-02-10 09:38:17', 'DegrÃ©', 24, 41),
+(1164, '2017-02-10 09:38:17', 'DegrÃ©', 15, 42),
+(1165, '2017-02-10 09:38:17', 'DegrÃ©', 23, 43),
+(1166, '2017-02-10 09:38:17', 'Lux', 123, 44),
+(1167, '2017-02-10 09:38:17', '%', 71, 50),
+(1168, '2017-02-10 09:38:17', 'DegrÃ©', 18, 48),
+(1169, '2017-02-10 09:38:17', 'Lux', 83, 49),
+(1170, '2017-02-10 09:38:17', 'DegrÃ©', 15, 51),
+(1171, '2017-02-10 09:38:17', 'DegrÃ©', 24, 41),
+(1172, '2017-02-10 09:38:17', 'DegrÃ©', 22, 42),
+(1173, '2017-02-10 09:38:17', 'DegrÃ©', 20, 43),
+(1174, '2017-02-10 09:38:17', 'Lux', 16, 44),
+(1175, '2017-02-10 09:38:17', '%', 76, 50),
+(1176, '2017-02-10 09:38:18', 'DegrÃ©', 19, 48),
+(1177, '2017-02-10 09:38:18', 'Lux', 57, 49),
+(1178, '2017-02-10 09:38:18', 'DegrÃ©', 17, 51),
+(1179, '2017-02-10 09:38:18', 'DegrÃ©', 15, 41),
+(1180, '2017-02-10 09:38:18', 'DegrÃ©', 20, 42),
+(1181, '2017-02-10 09:38:18', 'DegrÃ©', 25, 43),
+(1182, '2017-02-10 09:38:18', 'Lux', 56, 44),
+(1183, '2017-02-10 09:38:18', '%', 78, 50),
+(1184, '2017-02-10 09:38:18', 'DegrÃ©', 17, 48),
+(1185, '2017-02-10 09:38:18', 'Lux', 122, 49),
+(1186, '2017-02-10 09:38:18', 'DegrÃ©', 17, 51),
+(1187, '2017-02-10 09:38:18', 'DegrÃ©', 18, 41),
+(1188, '2017-02-10 09:38:18', 'DegrÃ©', 21, 42),
+(1189, '2017-02-10 09:38:18', 'DegrÃ©', 20, 43),
+(1190, '2017-02-10 09:38:18', 'Lux', 60, 44),
+(1191, '2017-02-10 09:38:18', '%', 41, 50),
+(1192, '2017-02-10 09:38:19', 'DegrÃ©', 19, 48),
+(1193, '2017-02-10 09:38:19', 'Lux', 78, 49),
+(1194, '2017-02-10 09:38:19', 'DegrÃ©', 21, 51),
+(1195, '2017-02-10 09:38:19', 'DegrÃ©', 19, 41),
+(1196, '2017-02-10 09:38:19', 'DegrÃ©', 17, 42),
+(1197, '2017-02-10 09:38:19', 'DegrÃ©', 25, 43),
+(1198, '2017-02-10 09:38:19', 'Lux', 102, 44),
+(1199, '2017-02-10 09:38:19', '%', 67, 50),
+(1200, '2017-02-10 09:38:19', 'DegrÃ©', 21, 48),
+(1201, '2017-02-10 09:38:19', 'Lux', 74, 49),
+(1202, '2017-02-10 09:38:19', 'DegrÃ©', 19, 51),
+(1203, '2017-02-10 09:38:19', 'DegrÃ©', 19, 41),
+(1204, '2017-02-10 09:38:19', 'DegrÃ©', 22, 42),
+(1205, '2017-02-10 09:38:19', 'DegrÃ©', 22, 43),
+(1206, '2017-02-10 09:38:19', 'Lux', 33, 44),
+(1207, '2017-02-10 09:38:19', '%', 32, 50);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Utilisateur`
+-- Structure de la table `utilisateur`
 --
 
-CREATE TABLE `Utilisateur` (
+CREATE TABLE `utilisateur` (
   `Id` int(11) NOT NULL,
   `Mail` varchar(25) DEFAULT NULL,
   `Password` varchar(50) DEFAULT NULL,
   `Nom` varchar(25) DEFAULT NULL,
   `Prenom` varchar(25) DEFAULT NULL,
   `Date_naissance` varchar(25) DEFAULT NULL,
-  `Permission` int(11) DEFAULT NULL,
-  `KeyUser` varchar(50) NOT NULL,
-  `Activee` varchar(10) NOT NULL DEFAULT 'Non'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+  `Permission` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Utilisateur`
+-- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `Utilisateur` (`Id`, `Mail`, `Password`, `Nom`, `Prenom`, `Date_naissance`, `Permission`, `KeyUser`, `Activee`) VALUES
-(7, 'isepg1c2016@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'G1C', 'Isep', '01/01/2000', 1, '', 'Non'),
-(9, 'ay@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '02/02/2017', NULL, '', 'Non'),
-(10, 'stef@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Stef', 'Lecon', '12/12/2000', NULL, '', 'Non'),
-(11, 'stefcardoux@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Cardoux', 'Stef', '12/10/1996', 0, '', 'Non'),
-(12, 'stecardoux@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Cardoux', 'Ste', '12/10/1996', 0, '', 'Non'),
-(13, 'test@mail.fr', 'c7623106b1bd5b11c0132e86934e1e401ace10d9', 'Moi', 'Moi', 'Youpi', 0, 'YoUu3lXniORMJwKD2AiejTvQndxrMz', 'Oui'),
-(15, 'aymeric@dejavel.fr', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '14/10/1996', 0, 'qrElQgL19yhDXYCjDbNQxI3dLGh75p', 'Oui');
+INSERT INTO `utilisateur` (`Id`, `Mail`, `Password`, `Nom`, `Prenom`, `Date_naissance`, `Permission`) VALUES
+(7, 'isepg1c2016@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'G1C', 'Isep', '01/01/2000', 1),
+(8, 'aymeric@dejavel.fr', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '10/03/2000', NULL),
+(9, 'ay@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '02/02/2017', NULL),
+(13, 'michel@deschamp.com', '37f056a9776e376c2e60a938c1ccaa00c6d834b5', 'Deschamp', 'Michel', '15051960', 0),
+(14, 'clement@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Landouar', 'Clement', '05/12/1994', 0),
+(16, 'superdom@gmail.com', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'Domisep', 'G1C', '01/01/2000', 0),
+(17, 'domdom@isep.fr', 'b8489c3d1018dc378c6f2c1bf5bd8c69b16290e2', 'de Javel', 'Aymeric', '14/10/1996', 0);
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `Achats`
+-- Index pour la table `achats`
 --
-ALTER TABLE `Achats`
+ALTER TABLE `achats`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `Affectation`
+-- Index pour la table `affectation`
 --
-ALTER TABLE `Affectation`
+ALTER TABLE `affectation`
   ADD PRIMARY KEY (`Id`,`Id_Pieces`,`Id_Fonctionnalite`),
   ADD KEY `FK_Affectation_Id_Pieces` (`Id_Pieces`),
   ADD KEY `FK_Affectation_Id_Fonctionnalite` (`Id_Fonctionnalite`);
 
 --
--- Index pour la table `Appartements`
+-- Index pour la table `appartements`
 --
-ALTER TABLE `Appartements`
+ALTER TABLE `appartements`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_Appartements_Id_Utilisateur` (`Id_Utilisateur`);
 
 --
--- Index pour la table `Capteur`
+-- Index pour la table `capteur`
 --
-ALTER TABLE `Capteur`
+ALTER TABLE `capteur`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `Catalogue`
+-- Index pour la table `catalogue`
 --
-ALTER TABLE `Catalogue`
+ALTER TABLE `catalogue`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -857,63 +1739,63 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `CleAct`
+-- Index pour la table `cleact`
 --
-ALTER TABLE `CleAct`
+ALTER TABLE `cleact`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `Commande`
+-- Index pour la table `commande`
 --
-ALTER TABLE `Commande`
+ALTER TABLE `commande`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `Fonctionnalite`
+-- Index pour la table `fonctionnalite`
 --
-ALTER TABLE `Fonctionnalite`
+ALTER TABLE `fonctionnalite`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `Pannes`
+-- Index pour la table `pannes`
 --
-ALTER TABLE `Pannes`
+ALTER TABLE `pannes`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_Pannes_Id_Capteur` (`Id_Capteur`);
 
 --
--- Index pour la table `Pieces`
+-- Index pour la table `pieces`
 --
-ALTER TABLE `Pieces`
+ALTER TABLE `pieces`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_Pieces_Id_Appartements` (`Id_Appartements`);
 
 --
--- Index pour la table `Programmation`
+-- Index pour la table `programmation`
 --
-ALTER TABLE `Programmation`
+ALTER TABLE `programmation`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_Programmation_Id_Fonctionnalite` (`Id_Fonctionnalite`),
   ADD KEY `FK_Programmation_Id_Capteur` (`Id_Capteur`),
   ADD KEY `FK_Programmation_Id_Pieces` (`Id_Pieces`);
 
 --
--- Index pour la table `Scenario`
+-- Index pour la table `scenario`
 --
-ALTER TABLE `Scenario`
+ALTER TABLE `scenario`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `Statistiques`
+-- Index pour la table `statistiques`
 --
-ALTER TABLE `Statistiques`
+ALTER TABLE `statistiques`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_Statistiques_Id_Capteur` (`Id_Capteur`);
 
 --
--- Index pour la table `Utilisateur`
+-- Index pour la table `utilisateur`
 --
-ALTER TABLE `Utilisateur`
+ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -921,24 +1803,24 @@ ALTER TABLE `Utilisateur`
 --
 
 --
--- AUTO_INCREMENT pour la table `Achats`
+-- AUTO_INCREMENT pour la table `achats`
 --
-ALTER TABLE `Achats`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+ALTER TABLE `achats`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
 --
--- AUTO_INCREMENT pour la table `Appartements`
+-- AUTO_INCREMENT pour la table `appartements`
 --
-ALTER TABLE `Appartements`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+ALTER TABLE `appartements`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT pour la table `Capteur`
+-- AUTO_INCREMENT pour la table `capteur`
 --
-ALTER TABLE `Capteur`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
+ALTER TABLE `capteur`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
--- AUTO_INCREMENT pour la table `Catalogue`
+-- AUTO_INCREMENT pour la table `catalogue`
 --
-ALTER TABLE `Catalogue`
+ALTER TABLE `catalogue`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `categories`
@@ -946,90 +1828,90 @@ ALTER TABLE `Catalogue`
 ALTER TABLE `categories`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT pour la table `CleAct`
+-- AUTO_INCREMENT pour la table `cleact`
 --
-ALTER TABLE `CleAct`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+ALTER TABLE `cleact`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `Commande`
+-- AUTO_INCREMENT pour la table `commande`
 --
-ALTER TABLE `Commande`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+ALTER TABLE `commande`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
--- AUTO_INCREMENT pour la table `Fonctionnalite`
+-- AUTO_INCREMENT pour la table `fonctionnalite`
 --
-ALTER TABLE `Fonctionnalite`
+ALTER TABLE `fonctionnalite`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `Pannes`
+-- AUTO_INCREMENT pour la table `pannes`
 --
-ALTER TABLE `Pannes`
+ALTER TABLE `pannes`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `Pieces`
+-- AUTO_INCREMENT pour la table `pieces`
 --
-ALTER TABLE `Pieces`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT pour la table `Programmation`
---
-ALTER TABLE `Programmation`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT pour la table `Scenario`
---
-ALTER TABLE `Scenario`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT pour la table `Statistiques`
---
-ALTER TABLE `Statistiques`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=408;
---
--- AUTO_INCREMENT pour la table `Utilisateur`
---
-ALTER TABLE `Utilisateur`
+ALTER TABLE `pieces`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT pour la table `programmation`
+--
+ALTER TABLE `programmation`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
+--
+-- AUTO_INCREMENT pour la table `scenario`
+--
+ALTER TABLE `scenario`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT pour la table `statistiques`
+--
+ALTER TABLE `statistiques`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1208;
+--
+-- AUTO_INCREMENT pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- Contraintes pour les tables exportées
 --
 
 --
--- Contraintes pour la table `Affectation`
+-- Contraintes pour la table `affectation`
 --
-ALTER TABLE `Affectation`
-  ADD CONSTRAINT `FK_Affectation_Id` FOREIGN KEY (`Id`) REFERENCES `Capteur` (`Id`),
-  ADD CONSTRAINT `FK_Affectation_Id_Fonctionnalite` FOREIGN KEY (`Id_Fonctionnalite`) REFERENCES `Fonctionnalite` (`Id`),
-  ADD CONSTRAINT `FK_Affectation_Id_Pieces` FOREIGN KEY (`Id_Pieces`) REFERENCES `Pieces` (`Id`);
+ALTER TABLE `affectation`
+  ADD CONSTRAINT `FK_Affectation_Id` FOREIGN KEY (`Id`) REFERENCES `capteur` (`Id`),
+  ADD CONSTRAINT `FK_Affectation_Id_Fonctionnalite` FOREIGN KEY (`Id_Fonctionnalite`) REFERENCES `fonctionnalite` (`Id`),
+  ADD CONSTRAINT `FK_Affectation_Id_Pieces` FOREIGN KEY (`Id_Pieces`) REFERENCES `pieces` (`Id`);
 
 --
--- Contraintes pour la table `Appartements`
+-- Contraintes pour la table `appartements`
 --
-ALTER TABLE `Appartements`
-  ADD CONSTRAINT `FK_Appartements_Id_Utilisateur` FOREIGN KEY (`Id_Utilisateur`) REFERENCES `Utilisateur` (`Id`);
+ALTER TABLE `appartements`
+  ADD CONSTRAINT `FK_Appartements_Id_Utilisateur` FOREIGN KEY (`Id_Utilisateur`) REFERENCES `utilisateur` (`Id`);
 
 --
--- Contraintes pour la table `Pannes`
+-- Contraintes pour la table `pannes`
 --
-ALTER TABLE `Pannes`
-  ADD CONSTRAINT `FK_Pannes_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `Capteur` (`Id`);
+ALTER TABLE `pannes`
+  ADD CONSTRAINT `FK_Pannes_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `capteur` (`Id`);
 
 --
--- Contraintes pour la table `Pieces`
+-- Contraintes pour la table `pieces`
 --
-ALTER TABLE `Pieces`
-  ADD CONSTRAINT `FK_Pieces_Id_Appartements` FOREIGN KEY (`Id_Appartements`) REFERENCES `Appartements` (`Id`);
+ALTER TABLE `pieces`
+  ADD CONSTRAINT `FK_Pieces_Id_Appartements` FOREIGN KEY (`Id_Appartements`) REFERENCES `appartements` (`Id`);
 
 --
--- Contraintes pour la table `Programmation`
+-- Contraintes pour la table `programmation`
 --
-ALTER TABLE `Programmation`
-  ADD CONSTRAINT `FK_Programmation_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `Capteur` (`Id`),
-  ADD CONSTRAINT `FK_Programmation_Id_Fonctionnalite` FOREIGN KEY (`Id_Fonctionnalite`) REFERENCES `Fonctionnalite` (`Id`),
-  ADD CONSTRAINT `FK_Programmation_Id_Pieces` FOREIGN KEY (`Id_Pieces`) REFERENCES `Pieces` (`Id`);
+ALTER TABLE `programmation`
+  ADD CONSTRAINT `FK_Programmation_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `capteur` (`Id`),
+  ADD CONSTRAINT `FK_Programmation_Id_Fonctionnalite` FOREIGN KEY (`Id_Fonctionnalite`) REFERENCES `fonctionnalite` (`Id`),
+  ADD CONSTRAINT `FK_Programmation_Id_Pieces` FOREIGN KEY (`Id_Pieces`) REFERENCES `pieces` (`Id`);
 
 --
--- Contraintes pour la table `Statistiques`
+-- Contraintes pour la table `statistiques`
 --
-ALTER TABLE `Statistiques`
-  ADD CONSTRAINT `FK_Statistiques_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `Capteur` (`Id`);
+ALTER TABLE `statistiques`
+  ADD CONSTRAINT `FK_Statistiques_Id_Capteur` FOREIGN KEY (`Id_Capteur`) REFERENCES `capteur` (`Id`);

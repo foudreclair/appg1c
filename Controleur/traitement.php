@@ -147,26 +147,26 @@ if (isset ( $_POST ['declencheur'] ) and $_POST ['declencheur'] == '10') {
 	include ('Modele/connexion_bdd.php');
 	// echo (supprimer_appart_succes.php);
 	$sq = "SELECT * FROM Pieces WHERE Id_Appartements = $Id";
-	echo $sq;
+	//echo $sq;
 	$res = $mysqli->query ( $sq );
 	// print_r($res);
-	echo '<br>';
+	//echo '<br>';
 	while ( $sup = $res->fetch_array ( MYSQLI_ASSOC ) ) {
-		echo '<br>';
+		//echo '<br>';
 		$Idp = $sup ['Id'];
 		$reqsql = "DELETE FROM Affectation WHERE Id_Pieces = $Idp";
-		echo $reqsql;
+		//echo $reqsql;
 		$mysqli->query ( $reqsql );
 		$sqfonc = "DELETE FROM Programmation WHERE Id_Pieces = '$Idp'";
-		echo $sqfonc;
+		//echo $sqfonc;
 		$mysqli->query ( $sqfonc );
 		$sqpiece = "DELETE FROM Pieces WHERE Id = '$Idp'";
-		echo $sqpiece;
+		//echo $sqpiece;
 		$mysqli->query ( $sqpiece );
 	}
 	
 	$queryDELETE = "DELETE FROM Appartements WHERE Id = $Id";
-	echo $queryDELETE;
+	//echo $queryDELETE;
 	$mysqli->query ( $queryDELETE );
 	// if ($result) echo "OK";
 	// else echo "$queryDELETE";

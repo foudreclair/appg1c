@@ -8,7 +8,7 @@ if (isset ( $_POST ["email"] ) and isset ( $_POST ["name"] ) and isset ( $_POST 
 	$name = htmlspecialchars($_POST ["name"]);
 	$objet = htmlspecialchars($_POST ["objet"]);
 	$message = htmlspecialchars($_POST ["body"]);
-	sendMail($_POST ["email"], $_POST ["objet"], $_POST ["body"]);
+	sendMail($_POST ["email"], $_POST ["objet"], $_POST ["body"],$_POST["name"]);
 	$text = "Votre mail a bien ete envoye. Nous vous contacterons prochainement !";
 }
 ?>

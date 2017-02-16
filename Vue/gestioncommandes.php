@@ -22,7 +22,7 @@ if ($_SESSION ['admin'] != '1') {
 	if (isset($_GET['voir']) AND $_GET['voir'] == "nonpaye") {
 		$req = $mysqli->query ( "SELECT * FROM Commande WHERE Payement ='Non'" );
 	} else {
-		$req = $mysqli->query ( "SELECT * FROM Commande" );
+		$req = $mysqli->query ( "SELECT * FROM Commande " );
 	}
 	
 	while ( $don = $req->fetch_array ( MYSQLI_ASSOC ) ) {
@@ -113,12 +113,12 @@ if ($_SESSION ['admin'] != '1') {
 		?>
 </div>
 		</div>
-	</div>
+	
 <?php
 	}
 	
 	?>
-
+</div>
 </div>
 <script>
 

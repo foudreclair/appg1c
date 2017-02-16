@@ -57,7 +57,7 @@ include 'gabarit.php';
 
 					<li>Nom du capteur : <?php echo $val[$key]['Id_Capteur'] ?></li>
 					<li>Pièce : <?php echo $val[$key]['Id_Pieces'] ?></li>
-					<li>Type : <?php echo utf8_encode($val[$key]['Id_Fonctionnalite'][0])?></li>
+					<li>Type : <?php echo ($val[$key]['Id_Fonctionnalite'][0])?></li>
 					<p>Valeur demandée :</p>
 					<form method="post"
 						action="Controleur/modifications.php?id=<?php echo $val[$key]['Id'] ?>">

@@ -54,7 +54,7 @@ function php2js($var) {
           }
           ?>
 
-          <option value = "<?php echo $idcapt ?>"><?php echo $appart['Nom'] ?> // <?php echo $pie['Nom'] ?> // <?php echo $captnom ?> (<?php echo utf8_encode($foncnom) ?>)</option>
+          <option value = "<?php echo $idcapt ?>"><?php echo $appart['Nom'] ?> // <?php echo $pie['Nom'] ?> // <?php echo $captnom ?> (<?php echo ($foncnom) ?>)</option>
           <?php
         }
         ?>

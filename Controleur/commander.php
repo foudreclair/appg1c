@@ -25,31 +25,38 @@ $idcom+=1;
 $mess = "Bonjour,
 
 Merci de votre commande sur Domisep.
-Elle sera expÃ©diÃ©e dÃ¨s la rÃ©cepetion d'un chÃ¨que de ".$prix." â‚¬.
+Elle sera expédiée dans la recpetion d'un chÃ¨que de ".$prix." €.
 Voici le bilan de votre commande : ";
 //echo $idcom;
 foreach ($_SESSION['panier'] as $key => $value) {
 	$cat = $value['0'];
 	$quant = $value['1'];
-	$mysqli -> query("INSERT INTO `bdd`.`Achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Commande`) VALUES (NULL, '$cat', '$quant', 'Non', '$idcom')");
-	$reqcat = $mysqli -> query("SELECT * FROM Catalogue WHERE Id = '$cat'");
+	$mysqli -> query("INSERT INTO `bdd`.`achats` (`Id`, `Id_Catalogue`, `Quantite`, `Expedition`, `Id_Commande`) VALUES (NULL, '$cat', '$quant', 'Non', '$idcom')");
+	$reqcat = $mysqli -> query("SELECT * FROM catalogue WHERE Id = '$cat'");
 	while($categ = $reqcat->fetch_array(MYSQLI_ASSOC)){
 		$nompdt = $categ['Nom'];
 		$prixpdt = $categ['Prix'];
 	}
 	$mess.= "
-	- ".$quant." x ".$nompdt." Ã  ".$prixpdt. " â‚¬ (soit ".(floatval(str_replace(',', '.', $prixpdt))*$quant)." â‚¬)";
+	- ".$quant." x ".$nompdt." à  ".$prixpdt. " € (soit ".(floatval(str_replace(',', '.', $prixpdt))*$quant)." €)";
 	
 }
-require 'genal.php';
-$code_aleatoire = gen();
+$characts    = 'abcdefghijklmnopqrstuvwxyz';
+    $characts   .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';	
+	$characts   .= '1234567890'; 
+	$code_aleatoire      = null; //Plus propre de demarre à null que vide
+
+	for($i=0;$i < 30;$i++)    //10 est le nombre de caractÃ¨res
+	{ 
+        $code_aleatoire .= substr($characts,rand()%(strlen($characts)),1); 
+	}
 $mess.="
 
 Vous pouvez consulter votre facture ici : http://localhost/appg1c/Vue/pdf.php?cmd=".$code_aleatoire;
 $mess.="
 
-Bonne journÃ©e et Ã  bientÃ´t chez Domisep !";
-include 'send_mail.php';
+Bonne journée et à bientÃ´t chez Domisep !";
+require 'send_mail.php';
 $reqmail = $mysqli -> query("SELECT * FROM Utilisateur WHERE Id = '$iduser'");
 while($mailuser = $reqmail->fetch_array(MYSQLI_ASSOC)){
 	$mail = $mailuser['Mail'];

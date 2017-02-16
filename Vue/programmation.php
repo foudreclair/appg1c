@@ -60,8 +60,8 @@ foreach ($tab as $key => $value) {
 <div class = "capt">
 <ul>
 <li>Nom du capteur : <?php echo $nom_capt ?></li>
-<li>Pièce : <?php echo utf8_encode($nom_piece) ?></li>
-<li>Type : <?php echo utf8_encode($nom_fonc) ?></li>
+<li>Pièce : <?php echo ($nom_piece) ?></li>
+<li>Type : <?php echo ($nom_fonc) ?></li>
 <p></p>
 
 <input type ="text" name = "consigne[]" placeholder = "Valeur demandée">
