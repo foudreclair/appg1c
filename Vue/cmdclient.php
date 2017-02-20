@@ -11,7 +11,7 @@ $iduser = $_SESSION['id'];
 	<?php
 	
 	
-		$req = $mysqli -> query("SELECT * FROM Commande WHERE Id_Utilisateur = '$iduser'");
+		$req = $mysqli -> query("SELECT * FROM commande WHERE Id_Utilisateur = '$iduser'");
 	
 
 while($don = $req->fetch_array(MYSQLI_ASSOC)){
@@ -37,10 +37,10 @@ while($don = $req->fetch_array(MYSQLI_ASSOC)){
 	
 	<?php
 	$idcom = $don['Id'];
-	$reqachat = $mysqli -> query("SELECT * FROM Achats WHERE Id_Commande = '$idcom'");
+	$reqachat = $mysqli -> query("SELECT * FROM Aachats WHERE Id_Commande = '$idcom'");
 	while($achat = $reqachat->fetch_array(MYSQLI_ASSOC)){
 		$idcata = $achat['Id_Catalogue'];
-		$reqnompdt = $mysqli -> query("SELECT * FROM Catalogue WHERE Id = '$idcata'");
+		$reqnompdt = $mysqli -> query("SELECT * FROM catalogue WHERE Id = '$idcata'");
 		while($pdt = $reqnompdt->fetch_array(MYSQLI_ASSOC)){
 			$nompdt = $pdt['Nom'];
 			$idcat = $pdt['Id_categorie'];

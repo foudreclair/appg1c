@@ -63,7 +63,7 @@ $pdf->SetFont('Times','',12);
 
 
 include '../Modele/connexion_bdd.php';
-$req = $mysqli -> query("SELECT * FROM Commande WHERE KeyCom = '$cmd'");
+$req = $mysqli -> query("SELECT * FROM commande WHERE KeyCom = '$cmd'");
 while($com = $req ->fetch_array(MYSQLI_ASSOC)){
     $idcom = $com['Id'];
     $pdf->Cell(50,10,'Numéro de commande : '.$idcom,0,1);
@@ -71,13 +71,13 @@ while($com = $req ->fetch_array(MYSQLI_ASSOC)){
     $pdf->Cell(50,10,'Adresse de livraison : '.$com['Adresse'].', '.$com['CodePostal'].', '.$com['Ville'],0,1);
     $pdf->Cell(50,10,'Date de commande : '.$com['Date'],0,1);
 }
-$reqachat = $mysqli -> query("SELECT * FROM Achats WHERE Id_Commande = '$idcom'");
+$reqachat = $mysqli -> query("SELECT * FROM achats WHERE Id_Commande = '$idcom'");
 $data=[];
 while($achat = $reqachat ->fetch_array(MYSQLI_ASSOC)){
     $pdt = [];
     $idpdt = $achat['Id_Catalogue'];$
     $totalt = 0;
-    $reqpdt = $mysqli -> query("SELECT * FROM Catalogue WHERE Id= '$idpdt'");
+    $reqpdt = $mysqli -> query("SELECT * FROM catalogue WHERE Id= '$idpdt'");
     while($pro = $reqpdt ->fetch_array(MYSQLI_ASSOC)){
         $pritot = floatval($achat['Quantite'])*(floatval(str_replace(',', '.', $pro['Prix'])));
         array_push($pdt, utf8_decode($pro['Nom']));

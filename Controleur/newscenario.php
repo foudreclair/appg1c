@@ -14,7 +14,7 @@ if ($Time_end==''){
 	$Time_end='00:00';
 }
 include '../Modele/connexion_bdd.php';
-$reqid = $mysqli->query("SELECT * FROM Scenario");
+$reqid = $mysqli->query("SELECT * FROM scenario");
 $i = 0;
 while ($idma = $reqid -> fetch_array(MYSQLI_NUM)){
 	if ($idma['0']>$i){
@@ -24,7 +24,7 @@ while ($idma = $reqid -> fetch_array(MYSQLI_NUM)){
 $i+=1;
 //echo $i;
 
-$reqscenar = $mysqli->query("INSERT INTO `bdd`.`Scenario` (`Id`, `Nom`, `Recurrence`,`Id_Utilisateur`) VALUES (NULL, '$nom', '$rec','$id')");
+$reqscenar = $mysqli->query("INSERT INTO `bdd`.`scenario` (`Id`, `Nom`, `Recurrence`,`Id_Utilisateur`) VALUES (NULL, '$nom', '$rec','$id')");
 require '../Modele/fonctions.php';
 $tab = $_SESSION['tab_scenar'];
 include '../Modele/connexion_bdd.php';
@@ -33,7 +33,7 @@ foreach ($_POST['consigne'] as $key => $value) {
 	$capt = $tab[$key]['0'];
 	$piece = $tab[$key]['1']; 
 	$fonc = $tab[$key]['2']; 
-	$sql = "INSERT INTO `bdd`.`Programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`,`Id_scenario`) VALUES (NULL, '$Date_start', '$Date_end', '$Time_start', '$Time_end', '$value', NULL,  '$fonc','$capt', '$piece',$i)";
+	$sql = "INSERT INTO `bdd`.`programmation` (`Id`, `Date_start`, `Date_end`, `Time_start`, `Time_end`, `Consigne`, `Correction`, `Id_Fonctionnalite`, `Id_Capteur`, `Id_Pieces`,`Id_scenario`) VALUES (NULL, '$Date_start', '$Date_end', '$Time_start', '$Time_end', '$value', NULL,  '$fonc','$capt', '$piece',$i)";
 	$req = $mysqli->query($sql);
 	
 	

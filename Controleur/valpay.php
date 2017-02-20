@@ -9,11 +9,11 @@ $id = $_GET['id'];
 
 	if ($_GET['val']=="pay"){
 		
-		$mysqli ->query("UPDATE Commande SET Payement='Oui' WHERE Id='$id'");
+		$mysqli ->query("UPDATE commande SET Payement='Oui' WHERE Id='$id'");
 		header('Location: ../index.php?page=cmd');
 	}
 	elseif ($_GET['val']=="suppay") {
-		$mysqli ->query("UPDATE Commande SET Payement='Non' WHERE Id='$id'");
+		$mysqli ->query("UPDATE commande SET Payement='Non' WHERE Id='$id'");
 		header('Location: ../index.php?page=cmd');
 	}
 

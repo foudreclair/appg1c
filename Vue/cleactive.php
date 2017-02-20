@@ -32,7 +32,7 @@ include 'Modele/connexion_bdd.php';
 			<p>Activée ?</p>
 		</div>
 	<?php
-	$req = $mysqli ->query("SELECT * FROM CleAct");
+	$req = $mysqli ->query("SELECT * FROM cleact");
 	$compte = 0;
 	while($cle = $req ->fetch_array(MYSQLI_ASSOC)){
 		$compte +=1;

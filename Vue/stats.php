@@ -33,22 +33,22 @@ function php2js($var) {
     <option>--</option>
     <?php
     include 'Modele/connexion_bdd.php';
-    $reqappart = $mysqli->query("SELECT * FROM Appartements WHERE Id_Utilisateur = '$iduser'");
+    $reqappart = $mysqli->query("SELECT * FROM appartements WHERE Id_Utilisateur = '$iduser'");
     while($appart = $reqappart ->fetch_array(MYSQLI_ASSOC)){
       echo $appart['Nom'];
       $idappart = $appart['Id'];
-      $reqpie = $mysqli->query("SELECT * FROM Pieces WHERE Id_Appartements = '$idappart'");
+      $reqpie = $mysqli->query("SELECT * FROM pieces WHERE Id_Appartements = '$idappart'");
       while($pie = $reqpie ->fetch_array(MYSQLI_ASSOC)){
         $idpie = $pie['Id'];
-        $reqaffec = $mysqli->query("SELECT * FROM Affectation WHERE Id_Pieces = '$idpie'");
+        $reqaffec = $mysqli->query("SELECT * FROM affectation WHERE Id_Pieces = '$idpie'");
         while($affec = $reqaffec ->fetch_array(MYSQLI_ASSOC)){
           $idcapt = $affec['Id'];
           $idfonc = $affec['Id_Fonctionnalite'];
-          $reqnomcapt = $mysqli->query("SELECT * FROM Capteur WHERE Id = '$idcapt'");
+          $reqnomcapt = $mysqli->query("SELECT * FROM capteur WHERE Id = '$idcapt'");
           while($capt = $reqnomcapt ->fetch_array(MYSQLI_ASSOC)){
             $captnom = $capt['Nom'];
           }
-          $reqnomfonc = $mysqli->query("SELECT * FROM Fonctionnalite WHERE Id = '$idfonc'");
+          $reqnomfonc = $mysqli->query("SELECT * FROM fonctionnalite WHERE Id = '$idfonc'");
           while($fonc = $reqnomfonc ->fetch_array(MYSQLI_ASSOC)){
             $foncnom = $fonc['Nom'];
           }
@@ -78,32 +78,32 @@ function php2js($var) {
 
 if (isset($_POST['capt'])){
   $capt = $_POST['capt'];
-  $renom = $mysqli->query("SELECT * FROM Capteur WHERE Id = '$capt'");
+  $renom = $mysqli->query("SELECT * FROM capteur WHERE Id = '$capt'");
   while($captn = $renom ->fetch_array(MYSQLI_ASSOC)){
     $nomcapt = $captn['Nom'];
   }
-  $repi = $mysqli->query("SELECT * FROM Affectation WHERE Id = '$capt'");
+  $repi = $mysqli->query("SELECT * FROM affectation WHERE Id = '$capt'");
   while($pi = $repi ->fetch_array(MYSQLI_ASSOC)){
     $piid = $pi['Id_Pieces'];
   } 
-  $repie = $mysqli->query("SELECT * FROM Pieces WHERE Id = '$piid'");
+  $repie = $mysqli->query("SELECT * FROM pieces WHERE Id = '$piid'");
   while($piec = $repie ->fetch_array(MYSQLI_ASSOC)){
     $pinom = $piec['Nom'];
     $idapp = $piec['Id_Appartements'];
   } 
-  $reapp = $mysqli->query("SELECT * FROM Appartements WHERE Id = '$idapp'");
+  $reapp = $mysqli->query("SELECT * FROM appartements WHERE Id = '$idapp'");
   while($app = $reapp ->fetch_array(MYSQLI_ASSOC)){
     $appnom = $app['Nom'];
   }  
-  $ref = $mysqli->query("SELECT * FROM Affectation WHERE Id = '$capt'");
+  $ref = $mysqli->query("SELECT * FROM affectation WHERE Id = '$capt'");
   while($af = $ref ->fetch_array(MYSQLI_ASSOC)){
     $idf = $af['Id_Fonctionnalite'];
   }
-  $refon = $mysqli->query("SELECT * FROM Fonctionnalite WHERE Id = '$idf'");
+  $refon = $mysqli->query("SELECT * FROM fonctionnalite WHERE Id = '$idf'");
   while($fo = $refon ->fetch_array(MYSQLI_ASSOC)){
     $fonctnom = $fo['Nom'];
   }
-  $requnit = $mysqli->query("SELECT * FROM Statistiques WHERE Id_Capteur = '$capt'");
+  $requnit = $mysqli->query("SELECT * FROM statistiques WHERE Id_Capteur = '$capt'");
   $stat = [];
   while($st = $requnit ->fetch_array(MYSQLI_ASSOC)){
     $unite = $st['Type'];

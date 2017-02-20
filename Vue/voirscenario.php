@@ -1,7 +1,7 @@
 <?php
 include 'gabarit.php';
 include 'Modele/connexion_bdd';
-$result = $mysqli->query('SELECT * FROM Programmation');
+$result = $mysqli->query('SELECT * FROM programmation');
 while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
 ?>
 <div class = "module3">

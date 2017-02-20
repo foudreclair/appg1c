@@ -83,7 +83,7 @@
 	$reqcat = $mysqli->query("SELECT * FROM categories");
 	while ($cat = $reqcat ->fetch_array(MYSQLI_ASSOC)){
 		$idcate = $cat['Id'];
-		$reqpdt = $mysqli->query("SELECT * FROM Catalogue WHERE Id_categorie = '$idcate'");
+		$reqpdt = $mysqli->query("SELECT * FROM catalogue WHERE Id_categorie = '$idcate'");
 		while ($pdt = $reqpdt ->fetch_array(MYSQLI_ASSOC)){
 			?>
 			<option value = "<?php echo $pdt['Id'] ?>"><?php echo $cat['Nom'] ?> // <?php echo $pdt['Nom'] ?></option>

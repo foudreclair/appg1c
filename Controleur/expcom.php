@@ -10,11 +10,11 @@ if($_GET['type']=="art"){
 	//echo "Article";
 	if ($_GET['val']=="exp"){
 		
-		$mysqli ->query("UPDATE Achats SET Expedition='Oui' WHERE Id='$id'");
+		$mysqli ->query("UPDATE achats SET Expedition='Oui' WHERE Id='$id'");
 		header('Location: ../index.php?page=cmd');
 	}
 	elseif ($_GET['val']=="supexp") {
-		$mysqli ->query("UPDATE Achats SET Expedition='Non' WHERE Id='$id'");
+		$mysqli ->query("UPDATE achats SET Expedition='Non' WHERE Id='$id'");
 		header('Location: ../index.php?page=cmd');
 	}
 }
@@ -23,11 +23,11 @@ else{
 	
 	if ($_GET['val']=="exp"){
 		
-		$mysqli ->query("UPDATE Achats SET Expedition='Oui' WHERE Id_Commande='$id'");
+		$mysqli ->query("UPDATE achats SET Expedition='Oui' WHERE Id_Commande='$id'");
 		header('Location: ../index.php?page=cmd');
 	}
 	elseif ($_GET['val']=="supexp") {
-		$mysqli ->query("UPDATE Achats SET Expedition='Non' WHERE Id_Commande='$id'");
+		$mysqli ->query("UPDATE achats SET Expedition='Non' WHERE Id_Commande='$id'");
 		header('Location: ../index.php?page=cmd');
 	}
 }

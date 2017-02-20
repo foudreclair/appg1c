@@ -37,7 +37,7 @@ $iduser = $_SESSION ['id'];
 					<?php
 					
 					include 'Modele/connexion_bdd.php';
-					$result = $mysqli->query ( "SELECT * FROM Appartements WHERE Id_Utilisateur ='$iduser' " );
+					$result = $mysqli->query ( "SELECT * FROM appartements WHERE Id_Utilisateur ='$iduser' " );
 					while ( $donnes = $result->fetch_array ( MYSQLI_ASSOC ) ) {
 						?>
 					<option value="<?php echo $donnes['Id'] ?>"><?php echo $donnes['Nom'] ?></option>

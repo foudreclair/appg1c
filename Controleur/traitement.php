@@ -54,7 +54,7 @@ if (isset ( $_POST ['declencheur'] ) and $_POST ['declencheur'] == '2') {
 	include ('../Modele/connexion_bdd.php');
 	$idappart = $_POST ['appartement_selectionne'];
 	$nom_piece = $_POST ['nom_piece'];
-	$mysqli->query ( "INSERT INTO `bdd`.`Pieces` VALUES (NULL, '$nom_piece', '$idappart')" );
+	$mysqli->query ( "INSERT INTO `bdd`.`pieces` VALUES (NULL, '$nom_piece', '$idappart')" );
 	header ( 'Location: ../index.php?page=ajoutcapteur' );
 	// $nombre_capteurs=$_POST['nombre_capteurs'];
 	// $mysqli -> query ("INSERT INTO `bdd`.`capteur` (`Id`, `Nom`) VALUES (NULL, '$nombre_capteurs')");
@@ -73,8 +73,8 @@ if (isset ( $_POST ['declencheur'] ) and $_POST ['declencheur'] == 4) {
 	$nomcapt = $_POST ['nom_capteur'];
 	$clecapt = $_POST ['id_capteur'];
 	include ('../Modele/connexion_bdd.php');
-	$mysqli->query ( "INSERT INTO `bdd`.`Capteur` VALUES (NULL, '$nomcapt','$clecapt')" );
-	$reqid = $mysqli->query ( "SELECT * FROM Capteur" );
+	$mysqli->query ( "INSERT INTO `bdd`.`capteur` VALUES (NULL, '$nomcapt','$clecapt')" );
+	$reqid = $mysqli->query ( "SELECT * FROM capteur" );
 	$a = 0;
 	while ( $idma = $reqid->fetch_array ( MYSQLI_NUM ) ) {
 		if ($idma ['0'] > $a) {
@@ -102,7 +102,7 @@ if (isset ( $_POST ['declencheur'] ) and $_POST ['declencheur'] == 4) {
 	// echo $fonc;
 	// print_r($foncid);
 	include ('../Modele/connexion_bdd.php');
-	$sqlaff = "INSERT INTO `bdd`.`Affectation` VALUES ('$a', '$idpiece','$fonc')";
+	$sqlaff = "INSERT INTO `bdd`.`affectation` VALUES ('$a', '$idpiece','$fonc')";
 	// echo $sqlaff;
 	$mysqli->query ( $sqlaff );
 	header ( 'Location: ../index.php?page=ajoutcapteur' );
@@ -146,7 +146,7 @@ if (isset ( $_POST ['declencheur'] ) and $_POST ['declencheur'] == '10') {
 	include ('../Modele/connexion_bdd.php');
 	include ('Modele/connexion_bdd.php');
 	// echo (supprimer_appart_succes.php);
-	$sq = "SELECT * FROM Pieces WHERE Id_Appartements = $Id";
+	$sq = "SELECT * FROM pieces WHERE Id_Appartements = $Id";
 	//echo $sq;
 	$res = $mysqli->query ( $sq );
 	// print_r($res);
@@ -154,18 +154,18 @@ if (isset ( $_POST ['declencheur'] ) and $_POST ['declencheur'] == '10') {
 	while ( $sup = $res->fetch_array ( MYSQLI_ASSOC ) ) {
 		//echo '<br>';
 		$Idp = $sup ['Id'];
-		$reqsql = "DELETE FROM Affectation WHERE Id_Pieces = $Idp";
+		$reqsql = "DELETE FROM affectation WHERE Id_Pieces = $Idp";
 		//echo $reqsql;
 		$mysqli->query ( $reqsql );
-		$sqfonc = "DELETE FROM Programmation WHERE Id_Pieces = '$Idp'";
+		$sqfonc = "DELETE FROM programmation WHERE Id_Pieces = '$Idp'";
 		//echo $sqfonc;
 		$mysqli->query ( $sqfonc );
-		$sqpiece = "DELETE FROM Pieces WHERE Id = '$Idp'";
+		$sqpiece = "DELETE FROM pieces WHERE Id = '$Idp'";
 		//echo $sqpiece;
 		$mysqli->query ( $sqpiece );
 	}
 	
-	$queryDELETE = "DELETE FROM Appartements WHERE Id = $Id";
+	$queryDELETE = "DELETE FROM appartements WHERE Id = $Id";
 	//echo $queryDELETE;
 	$mysqli->query ( $queryDELETE );
 	// if ($result) echo "OK";

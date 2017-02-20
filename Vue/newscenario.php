@@ -61,7 +61,7 @@ if (! empty ( $_POST ['appart'] )) {
 									$appart = $_POST ['appart'];
 
 									include ('Modele/connexion_bdd.php');
-									$sql = "SELECT * FROM Pieces WHERE Id_Appartements = '$appart'";
+									$sql = "SELECT * FROM pieces WHERE Id_Appartements = '$appart'";
 									$i = 0;
 									$reqpiece = $mysqli->query ( $sql );
 									$_SESSION ['pscenar'] = [ ];
@@ -89,7 +89,7 @@ if (! empty ( $_POST ['appart'] )) {
 					<option value="rien">--</option>
 				<?php
 							include ('Modele/connexion_bdd.php');
-							$result = $mysqli->query ( "SELECT * FROM Appartements WHERE Id_Utilisateur = '$iduser'" );
+							$result = $mysqli->query ( "SELECT * FROM appartements WHERE Id_Utilisateur = '$iduser'" );
 							while ( $donnees = $result->fetch_array ( MYSQLI_ASSOC ) ) {
 								?>
 			    <option value="<?php echo $donnees['Id'] ?>"><?php echo $donnees['Nom'] ?></option>

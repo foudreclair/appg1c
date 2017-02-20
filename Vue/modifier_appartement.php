@@ -29,7 +29,7 @@ catch (Exception $e)
     <label for="nom">Choix de l'appartement :</label>
     <select name="nom_appart" id="nom_appart">
       <?php
-      $reponse = $mysqli->query('SELECT * FROM Appartements');
+      $reponse = $mysqli->query('SELECT * FROM appartements');
       while($donnees = $reponse->fetch_assoc()) {
               ?>
       <option value="<?php echo $donnees['Nom']; ?>"><?php echo $donnees['Nom'];?></option>

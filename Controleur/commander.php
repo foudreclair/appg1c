@@ -8,13 +8,13 @@ $adresse = htmlspecialchars($_POST['adresse']);
 $cp = htmlspecialchars($_POST['CodePostal']);
 $ville = htmlspecialchars($_POST['ville']);
 $date = date("F j, Y, g:i a");
-$req = $mysqli ->query("SELECT * FROM Utilisateur WHERE id = '$iduser'");
+$req = $mysqli ->query("SELECT * FROM utilisateur WHERE id = '$iduser'");
 while ($don = $req->fetch_array(MYSQLI_ASSOC)){
 	$nom = $don['Nom'];
 	$prenom = $don['Prenom'];
 
 }
-$reqid = $mysqli -> query("SELECT * FROM Commande");
+$reqid = $mysqli -> query("SELECT * FROM commande");
 $idcom= 0;
 while($donne = $reqid->fetch_array(MYSQLI_ASSOC)){
 	if($donne['Id']>$idcom){
@@ -57,12 +57,12 @@ $mess.="
 
 Bonne journée et à bientÃ´t chez Domisep !";
 require 'send_mail.php';
-$reqmail = $mysqli -> query("SELECT * FROM Utilisateur WHERE Id = '$iduser'");
+$reqmail = $mysqli -> query("SELECT * FROM utilisateur WHERE Id = '$iduser'");
 while($mailuser = $reqmail->fetch_array(MYSQLI_ASSOC)){
 	$mail = $mailuser['Mail'];
 }
 sendMail($mail,'Confirmation de votre commande', $mess);
-$mysqli ->query("INSERT INTO `bdd`.`Commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`,`KeyCom`) VALUES (NULL, '$iduser', '$nom', '$prenom', '$adresse', '$cp', '$ville', '$date', $prix, 'Non','$code_aleatoire')");
+$mysqli ->query("INSERT INTO `bdd`.`commande` (`Id`, `Id_Utilisateur`, `Nom`, `Prenom`, `Adresse`, `CodePostal`, `Ville`, `Date`, `Prix`, `Payement`,`KeyCom`) VALUES (NULL, '$iduser', '$nom', '$prenom', '$adresse', '$cp', '$ville', '$date', $prix, 'Non','$code_aleatoire')");
 unset($_SESSION['panier']);
 //unset($_SESSION['prixtot']);
 header('Location: ../index.php?page=validachat');

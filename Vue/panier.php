@@ -19,7 +19,7 @@ include 'Modele/connexion_bdd.php';
 	$total = 0;
 	foreach ($_SESSION['panier'] as $key => $value) {
 		$pdt = $value['0'];
-		$req = $mysqli->query("SELECT * FROM Catalogue WHERE Id = '$pdt'");
+		$req = $mysqli->query("SELECT * FROM catalogue WHERE Id = '$pdt'");
 		while ($don = $req->fetch_array(MYSQLI_ASSOC)){
 			$prix = str_replace(',', '.', $don['Prix']);
 			//echo floatval($prix);

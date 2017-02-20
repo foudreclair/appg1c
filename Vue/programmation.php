@@ -12,7 +12,7 @@ $tab =[];
 foreach ($_SESSION['sce_pieces'] as $key => $value) {
 
 include('Modele/connexion_bdd.php');
-$sql ="SELECT * FROM Affectation WHERE Id_Pieces =$value";
+$sql ="SELECT * FROM affectation WHERE Id_Pieces =$value";
 
 $reqcapteur = $mysqli->query($sql);
 

@@ -8,7 +8,7 @@ $iduser = $_SESSION['id'];
 require('Modele/fonctions.php');
 include('Modele/connexion_bdd.php');
 
-$reqscernar = $mysqli->query("SELECT * FROM Scenario WHERE Id_Utilisateur = '$iduser'");
+$reqscernar = $mysqli->query("SELECT * FROM scenario WHERE Id_Utilisateur = '$iduser'");
 $valscenar = [];
 $nomscenar = [];
 while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
@@ -16,14 +16,14 @@ while ($scenar = $reqscernar ->fetch_array(MYSQLI_ASSOC)) {
 	//echo '<br>';
 	$val=[];
 	$scenarid = $scenar['Id'];
-	$result = $mysqli->query("SELECT * FROM Programmation WHERE Id_scenario = '$scenarid'");
+	$result = $mysqli->query("SELECT * FROM programmation WHERE Id_scenario = '$scenarid'");
 
 	while($donnees = $result ->fetch_array(MYSQLI_ASSOC)){
 
 
 
 		$idcapt = $donnees['Id_Capteur'];
-		$resultcapt = $mysqli->query("SELECT * FROM Capteur WHERE Id = '$idcapt'");
+		$resultcapt = $mysqli->query("SELECT * FROM capteur WHERE Id = '$idcapt'");
 		$idcapteur = $resultcapt->fetch_array(MYSQLI_ASSOC);
 		$donnees['Id_Capteur']=$idcapteur['Nom'];
 		$fonc = select('Fonctionnalite',['Nom','Type_donnees'],'Id='.$donnees['Id_Fonctionnalite']);

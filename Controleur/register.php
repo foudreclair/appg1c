@@ -15,7 +15,7 @@ if (isset ( $_POST ['mail'] ) && isset ( $_POST ['password'] ) && isset ( $_POST
 		
 		include ('../Modele/connexion_bdd.php');
 		//echo $key;
-		$reqcle =  $mysqli->query ( "SELECT * FROM CleAct WHERE Cle='$key'" );
+		$reqcle =  $mysqli->query ( "SELECT * FROM cleact WHERE Cle='$key'" );
 		$ckey = 0;
 		while($cle = $reqcle ->fetch_array(MYSQLI_ASSOC)){
 			$ckey+=1;
@@ -40,7 +40,7 @@ if (isset ( $_POST ['mail'] ) && isset ( $_POST ['password'] ) && isset ( $_POST
 			if ($password_user != $confirm || empty ( $confirm ) || empty ( $password_user )) {
 				header ( 'Location:../index.php?page=connexion&erreur=2' );
 			} else {
-				$mysqli ->query("UPDATE `bdd`.`CleAct` SET `Activee` = 'Oui' WHERE `cleact`.`Id` = '$idkey'");
+				$mysqli ->query("UPDATE `bdd`.`cleact` SET `Activee` = 'Oui' WHERE `cleact`.`Id` = '$idkey'");
 				$insert_user = $mysqli->query ( "INSERT INTO utilisateur (Mail, Password, Nom, Prenom, Date_naissance, Permission) VALUES ('$mail', '$password_user_hash', '$nom', '$prenom', '$date_naissance', '$perm')" );
 				// header('Location:index.php?page=accueil');
 				header ( 'Location:../index.php?page=connexion&succes' );

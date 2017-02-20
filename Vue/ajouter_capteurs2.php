@@ -73,7 +73,7 @@ if (isset ( $_SESSION ['app'] )) {
 	<?php
 		include ('Modele/connexion_bdd.php');
 		$ida = $_SESSION ['app'];
-		$pieces = $mysqli->query ( "SELECT * FROM Pieces WHERE Id_Appartements = '$ida'" );
+		$pieces = $mysqli->query ( "SELECT * FROM pieces WHERE Id_Appartements = '$ida'" );
 		while ( $piece = $pieces->fetch_array ( MYSQLI_ASSOC ) ) {
 			?>
 		<option value="<?php echo $piece['Id'] ?>"><?php echo $piece['Nom'] ?></option>
@@ -99,7 +99,7 @@ if (isset ( $_SESSION ['app'] )) {
 	<?php
 	include ('Modele/connexion_bdd.php');
 	$ida = $_SESSION ['app'];
-	$apps = $mysqli->query ( "SELECT * FROM Appartements WHERE Id_Utilisateur = '$iduser'" );
+	$apps = $mysqli->query ( "SELECT * FROM appartements WHERE Id_Utilisateur = '$iduser'" );
 	while ( $app = $apps->fetch_array ( MYSQLI_ASSOC ) ) {
 		?>
 		<option value="<?php echo $app['Id'] ?>"><?php echo $app['Nom'] ?></option>

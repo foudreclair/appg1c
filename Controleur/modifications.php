@@ -8,7 +8,7 @@ if (empty($_POST['consigne'])){
 else {
 	require('../Modele/fonctions.php');
 	include('../Modele/connexion_bdd.php');
-	$sql = "UPDATE Programmation SET Consigne = ".$_POST['consigne'] ." Where Id= ".$_GET['id'];
+	$sql = "UPDATE programmation SET Consigne = ".$_POST['consigne'] ." Where Id= ".$_GET['id'];
 	$result = $mysqli->query($sql);
 	header("location:".  $_SERVER['HTTP_REFERER']);
 }
